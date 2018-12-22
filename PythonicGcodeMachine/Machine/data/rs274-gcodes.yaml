@@ -1,0 +1,138 @@
+F:
+  meaning: set feed rate
+G0:
+  meaning: rapid positioning
+G1:
+  meaning: linear interpolation
+G10:
+  meaning: coordinate system origin setting
+G17:
+  meaning: XY-plane selection
+G18:
+  meaning: XZ-plane selection
+G19:
+  meaning: YZ-plane selection
+G2:
+  meaning: circular/helical interpolation (clockwise)
+G20:
+  meaning: inch system selection
+G21:
+  meaning: millimeter system selection
+G28:
+  meaning: return to home
+G3:
+  meaning: circular/helical interpolation (counterclockwise)
+G30:
+  meaning: return to secondary home
+G38.2:
+  meaning: straight probe
+G4:
+  meaning: dwell
+G40:
+  meaning: cancel cutter radius compensation
+G41:
+  meaning: start cutter radius compensation left
+G42:
+  meaning: start cutter radius compensation right
+G43:
+  meaning: tool length offset (plus)
+G49:
+  meaning: cancel tool length offset
+G53:
+  meaning: motion in machine coordinate system
+G54:
+  meaning: use preset work coordinate system 1
+G55:
+  meaning: use preset work coordinate system 2
+G56:
+  meaning: use preset work coordinate system 3
+G57:
+  meaning: use preset work coordinate system 4
+G58:
+  meaning: use preset work coordinate system 5
+G59:
+  meaning: use preset work coordinate system 6
+G59.1:
+  meaning: use preset work coordinate system 7
+G59.2:
+  meaning: use preset work coordinate system 8
+G59.3:
+  meaning: use preset work coordinate system 9
+G61:
+  meaning: 'set path control mode: exact path'
+G61.1:
+  meaning: 'set path control mode: exact stop'
+G64:
+  meaning: 'set path control mode: continuous'
+G80:
+  meaning: cancel motion mode (including any canned cycle)
+G81:
+  meaning: 'canned cycle: drilling'
+G82:
+  meaning: 'canned cycle: drilling with dwell'
+G83:
+  meaning: 'canned cycle: peck drilling'
+G84:
+  meaning: 'canned cycle: right hand tapping'
+G85:
+  meaning: 'canned cycle: boring, no dwell, feed out'
+G86:
+  meaning: 'canned cycle: boring, spindle stop, rapid out'
+G87:
+  meaning: 'canned cycle: back boring'
+G88:
+  meaning: 'canned cycle: boring, spindle stop, manual out'
+G89:
+  meaning: 'canned cycle: boring, dwell, feed out'
+G90:
+  meaning: absolute distance mode
+G91:
+  meaning: incremental distance mode
+G92:
+  meaning: offset coordinate systems and set parameters
+G92.1:
+  meaning: cancel offset coordinate systems and set parameters to zero
+G92.2:
+  meaning: cancel offset coordinate systems but do not reset parameters
+G92.3:
+  meaning: apply parameters to offset coordinate systems
+G93:
+  meaning: inverse time feed rate mode
+G94:
+  meaning: units per minute feed rate mode
+G98:
+  meaning: initial level return in canned cycles
+G99:
+  meaning: R-point level return in canned cycles
+M0:
+  meaning: program stop
+M1:
+  meaning: optional program stop
+M2:
+  meaning: program end
+M3:
+  meaning: turn spindle clockwise
+M30:
+  meaning: program end, pallet shuttle, and reset
+M4:
+  meaning: turn spindle counterclockwise
+M48:
+  meaning: enable speed and feed overrides
+M49:
+  meaning: disable speed and feed overrides
+M5:
+  meaning: stop spindle turning
+M6:
+  meaning: tool change
+M60:
+  meaning: pallet shuttle and program stop
+M7:
+  meaning: mist coolant on
+M8:
+  meaning: flood coolant on
+M9:
+  meaning: mist and flood coolant off
+S:
+  meaning: set spindle speed
+T:
+  meaning: select tool

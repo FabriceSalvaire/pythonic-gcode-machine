@@ -1,0 +1,219 @@
+5161:
+  meaning: G28 home X
+  value: 0.0
+5162:
+  meaning: G28 home Y
+  value: 0.0
+5163:
+  meaning: G28 home Z
+  value: 0.0
+5164:
+  meaning: G28 home A
+  value: 0.0
+5165:
+  meaning: G28 home B
+  value: 0.0
+5166:
+  meaning: G28 home C
+  value: 0.0
+5181:
+  meaning: G30 home X
+  value: 0.0
+5182:
+  meaning: G30 home Y
+  value: 0.0
+5183:
+  meaning: G30 home Z
+  value: 0.0
+5184:
+  meaning: G30 home A
+  value: 0.0
+5185:
+  meaning: G30 home B
+  value: 0.0
+5186:
+  meaning: G30 home C
+  value: 0.0
+5211:
+  meaning: G92 offset X
+  value: 0.0
+5212:
+  meaning: G92 offset Y
+  value: 0.0
+5213:
+  meaning: G92 offset Z
+  value: 0.0
+5214:
+  meaning: G92 offset A
+  value: 0.0
+5215:
+  meaning: G92 offset B
+  value: 0.0
+5216:
+  meaning: G92 offset C
+  value: 0.0
+5220:
+  meaning: coordinate system number
+  value: 1.0
+5221:
+  meaning: coordinate system 1 X
+  value: 0.0
+5222:
+  meaning: coordinate system 1 Y
+  value: 0.0
+5223:
+  meaning: coordinate system 1 Z
+  value: 0.0
+5224:
+  meaning: coordinate system 1 A
+  value: 0.0
+5225:
+  meaning: coordinate system 1 B
+  value: 0.0
+5226:
+  meaning: coordinate system 1 C
+  value: 0.0
+5241:
+  meaning: coordinate system 2 X
+  value: 0.0
+5242:
+  meaning: coordinate system 2 Y
+  value: 0.0
+5243:
+  meaning: coordinate system 2 Z
+  value: 0.0
+5244:
+  meaning: coordinate system 2 A
+  value: 0.0
+5245:
+  meaning: coordinate system 2 B
+  value: 0.0
+5246:
+  meaning: coordinate system 2 C
+  value: 0.0
+5261:
+  meaning: coordinate system 3 X
+  value: 0.0
+5262:
+  meaning: coordinate system 3 Y
+  value: 0.0
+5263:
+  meaning: coordinate system 3 Z
+  value: 0.0
+5264:
+  meaning: coordinate system 3 A
+  value: 0.0
+5265:
+  meaning: coordinate system 3 B
+  value: 0.0
+5266:
+  meaning: coordinate system 3 C
+  value: 0.0
+5281:
+  meaning: coordinate system 4 X
+  value: 0.0
+5282:
+  meaning: coordinate system 4 Y
+  value: 0.0
+5283:
+  meaning: coordinate system 4 Z
+  value: 0.0
+5284:
+  meaning: coordinate system 4 A
+  value: 0.0
+5285:
+  meaning: coordinate system 4 B
+  value: 0.0
+5286:
+  meaning: coordinate system 4 C
+  value: 0.0
+5301:
+  meaning: coordinate system 5 X
+  value: 0.0
+5302:
+  meaning: coordinate system 5 Y
+  value: 0.0
+5303:
+  meaning: coordinate system 5 Z
+  value: 0.0
+5304:
+  meaning: coordinate system 5 A
+  value: 0.0
+5305:
+  meaning: coordinate system 5 B
+  value: 0.0
+5306:
+  meaning: coordinate system 5 C
+  value: 0.0
+5321:
+  meaning: coordinate system 6 X
+  value: 0.0
+5322:
+  meaning: coordinate system 6 Y
+  value: 0.0
+5323:
+  meaning: coordinate system 6 Z
+  value: 0.0
+5324:
+  meaning: coordinate system 6 A
+  value: 0.0
+5325:
+  meaning: coordinate system 6 B
+  value: 0.0
+5326:
+  meaning: coordinate system 6 C
+  value: 0.0
+5341:
+  meaning: coordinate system 7 X
+  value: 0.0
+5342:
+  meaning: coordinate system 7 Y
+  value: 0.0
+5343:
+  meaning: coordinate system 7 Z
+  value: 0.0
+5344:
+  meaning: coordinate system 7 A
+  value: 0.0
+5345:
+  meaning: coordinate system 7 B
+  value: 0.0
+5346:
+  meaning: coordinate system 7 C
+  value: 0.0
+5361:
+  meaning: coordinate system 8 X
+  value: 0.0
+5362:
+  meaning: coordinate system 8 Y
+  value: 0.0
+5363:
+  meaning: coordinate system 8 Z
+  value: 0.0
+5364:
+  meaning: coordinate system 8 A
+  value: 0.0
+5365:
+  meaning: coordinate system 8 B
+  value: 0.0
+5366:
+  meaning: coordinate system 8 C
+  value: 0.0
+5381:
+  meaning: coordinate system 9 X
+  value: 0.0
+5382:
+  meaning: coordinate system 9 Y
+  value: 0.0
+5383:
+  meaning: coordinate system 9 Z
+  value: 0.0
+5384:
+  meaning: coordinate system 9 A
+  value: 0.0
+5385:
+  meaning: coordinate system 9 B
+  value: 0.0
+5386:
+  meaning: coordinate system 9 C
+  value: 0.0

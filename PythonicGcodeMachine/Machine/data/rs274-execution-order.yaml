@@ -1,0 +1,22 @@
+# Table 8. Order of Execution
+1: COMMENT # (includes message]
+2: [G93, G94] # set feed rate mode (inverse time or per minute]
+3: F # set feed rate
+4: S # set spindle speed
+5: T # select tool
+6: M6 # change tool
+7: [M3, M4, M5] # spindle on or off
+8: [M7, M8, M9] # coolant on or off
+9: [M48, M49] # enable or disable overrides
+10: G4 # dwell
+11: [G17, G18, G19] # set active plane
+12: [G20, G21] # set length units
+13: [G40, G41, G42] # cutter radius compensation on or off
+14: [G43, G49] # cutter length compensation on or off
+15: [G54, G55, G56, G57, G58, G59, G59.1, G59.2, G59.3] # coordinate system selection
+16: [G61, G61.1, G64] # set path control mode
+17: [G90, G91] # set distance mode
+18: [G98, G99] # set retract mode
+19: [G28, G30,   G10,   G92, G92.1, G92.2, G94] # home or change coordinate system data or set axis offsets
+20: ['G0-G3', 'G80-G89', G53] # perform motion, as modified (possibly) by G53
+21: [M0, M1, M2, M30, M60] # stop

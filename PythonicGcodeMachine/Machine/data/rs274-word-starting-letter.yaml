@@ -1,0 +1,42 @@
+A:
+  meaning: A-axis of machine
+B:
+  meaning: B-axis of machine
+C:
+  meaning: C-axis of machine
+D:
+  meaning: tool radius compensation number
+F:
+  meaning: feedrate
+G:
+  meaning: general function (see Table 5)
+H:
+  meaning: tool length offset index
+I:
+  meaning: X-axis offset for arcs
+J:
+  meaning: X offset in G87 canned cycle
+K:
+  meaning: Y-axis offset for arcs
+L:
+  meaning: Y offset in G87 canned cycle
+M:
+  meaning: Z-axis offset for arcs
+N:
+  meaning: Z offset in G87 canned cycle
+P:
+  meaning: number of repetitions in canned cycles
+Q:
+  meaning: key used with G10
+R:
+  meaning: miscellaneous function (see Table 7)
+S:
+  meaning: line number
+T:
+  meaning: dwell time in canned cycles
+X:
+  meaning: dwell time with G4
+Y:
+  meaning: key used with G10
+Z:
+  meaning: feed increment in G83 canned cycle
