@@ -1,0 +1,17 @@
+#! /usr/bin/bash
+
+find PythonicGCodeMachine -name "flycheck*.py" -exec rm {} \;
+find PythonicGCodeMachine -name "parsetab.py" -exec rm {} \;
+
+api=doc/sphinx/source/api
+rm -rf ${api}
+
+echo
+echo Generate RST API files
+pyterate-rst-api PythonicGCodeMachine
+
+echo
+echo Run Sphinx
+pushd doc/sphinx/
+./make-html #--clean
+popd
