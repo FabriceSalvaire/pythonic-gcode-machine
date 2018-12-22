@@ -4,7 +4,7 @@
 .. include:: abbreviation.txt
 
 ============
- PythonicGcodeMachine
+ PythonicGCodeMachine
 ============
 
 |Pypi License|
@@ -12,21 +12,21 @@
 
 |Pypi Version|
 
-* Quick Link to `Production Branch <https://github.com/FabriceSalvaire/PythonicGcodeMachine/tree/master>`_
-* Quick Link to `Devel Branch <https://github.com/FabriceSalvaire/PythonicGcodeMachine/tree/devel>`_
+* Quick Link to `Production Branch <https://github.com/FabriceSalvaire/PythonicGCodeMachine/tree/master>`_
+* Quick Link to `Devel Branch <https://github.com/FabriceSalvaire/PythonicGCodeMachine/tree/devel>`_
 
 Overview
 ========
 
-What is PythonicGcodeMachine ?
+What is PythonicGCodeMachine ?
 ---------------------
 
-PythonicGcodeMachine is a Python module which implements ...
+PythonicGCodeMachine is a Python module which implements ...
 
 Where is the Documentation ?
 ----------------------------
 
-The documentation is available on the |PythonicGcodeMachineHomePage|_.
+The documentation is available on the |PythonicGCodeMachineHomePage|_.
 
 What are the main features ?
 ----------------------------
