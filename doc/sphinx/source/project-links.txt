@@ -1,0 +1,50 @@
+.. -*- Mode: rst -*-
+
+..
+   |PythonicGCodeMachineUrl|
+   |PythonicGCodeMachineHomePage|_
+   |PythonicGCodeMachineDoc|_
+   |PythonicGCodeMachine@github|_
+   |PythonicGCodeMachine@readthedocs|_
+   |PythonicGCodeMachine@readthedocs-badge|
+   |PythonicGCodeMachine@pypi|_
+
+.. |ohloh| image:: https://www.openhub.net/accounts/230426/widgets/account_tiny.gif
+   :target: https://www.openhub.net/accounts/fabricesalvaire
+   :alt: Fabrice Salvaire's Ohloh profile
+   :height: 15px
+   :width:  80px
+
+.. |PythonicGCodeMachineUrl| replace:: @project_url@
+
+.. |PythonicGCodeMachineHomePage| replace:: PythonicGCodeMachine Home Page
+.. _PythonicGCodeMachineHomePage: @project_url@
+
+.. |PythonicGCodeMachine@readthedocs-badge| image:: https://readthedocs.org/projects/PythonicGCodeMachine/badge/?version=latest
+   :target: http://PythonicGCodeMachine.readthedocs.org/en/latest
+
+.. |PythonicGCodeMachine@github| replace:: https://github.com/FabriceSalvaire/PythonicGCodeMachine
+.. .. _PythonicGCodeMachine@github: https://github.com/FabriceSalvaire/PythonicGCodeMachine
+
+.. |PythonicGCodeMachine@pypi| replace:: https://pypi.python.org/pypi/PythonicGCodeMachine
+.. .. _PythonicGCodeMachine@pypi: https://pypi.python.org/pypi/PythonicGCodeMachine
+
+.. |Build Status| image:: https://travis-ci.org/FabriceSalvaire/PythonicGCodeMachine.svg?branch=master
+   :target: https://travis-ci.org/FabriceSalvaire/PythonicGCodeMachine
+   :alt: PythonicGCodeMachine build status @travis-ci.org
+
+.. |Pypi Version| image:: https://img.shields.io/pypi/v/PythonicGCodeMachine.svg
+   :target: https://pypi.python.org/pypi/PythonicGCodeMachine
+   :alt: PythonicGCodeMachine last version
+
+.. |Pypi License| image:: https://img.shields.io/pypi/l/PythonicGCodeMachine.svg
+   :target: https://pypi.python.org/pypi/PythonicGCodeMachine
+   :alt: PythonicGCodeMachine license
+
+.. |Pypi Python Version| image:: https://img.shields.io/pypi/pyversions/PythonicGCodeMachine.svg
+   :target: https://pypi.python.org/pypi/PythonicGCodeMachine
+   :alt: PythonicGCodeMachine python version
+
+..  coverage test
+..  https://img.shields.io/pypi/status/Django.svg
+..  https://img.shields.io/github/stars/badges/shields.svg?style=social&label=Star
