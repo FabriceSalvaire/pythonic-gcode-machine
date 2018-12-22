@@ -18,11 +18,16 @@
 #
 ####################################################################################################
 
+__all__ = ['GCodeLexerError', 'GCodeLexer, ']
+
 ####################################################################################################
 
 import re
 
-import PythonicGCodeMachine.Lexer as lexer
+try:
+    import ply.lex as lexer
+except ModuleNotFoundError:
+    import PythonicGCodeMachine.PythonLexYacc.lex as lexer
 
 ####################################################################################################
 
@@ -50,7 +55,6 @@ class GCodeLexer:
         'ARC_SINE',
         'ARC_TANGENT',
         'COSINE',
-        'DECIMAL_POINT',
         'DIVIDED_BY',
         'EQUAL_SIGN',
         'EXCLUSIVE_OR',
@@ -58,7 +62,7 @@ class GCodeLexer:
         'FIX_DOWN',
         'FIX_UP',
         'LEFT_BRACKET',
-        'LEFT_PARENTHESIS',
+        # 'LEFT_PARENTHESIS',
         'MINUS',
         'MODULO',
         'NATURAL_LOG_OF',
@@ -67,7 +71,7 @@ class GCodeLexer:
         'PLUS',
         'POWER',
         'RIGHT_BRACKET',
-        'RIGHT_PARENTHESIS',
+        # 'RIGHT_PARENTHESIS',
         'ROUND',
         'SINE',
         'SQUARE_ROOT',
@@ -92,17 +96,16 @@ class GCodeLexer:
     t_ARC_COSINE = r'acos'
     t_ARC_SINE = r'asin'
     t_ARC_TANGENT = r'atan'
-    # t_BLOCK_DELETE = r'\/'
+    # t_BLOCK_DELETE = r'\/' # slash
     t_COSINE = r'cos'
-    t_DECIMAL_POINT = r'\.'
-    t_DIVIDED_BY = r'\/'
+    t_DIVIDED_BY = r'\/' # slash
     t_EQUAL_SIGN = r'='
     t_EXCLUSIVE_OR = r'xor'
     t_E_RAISED_TO = r'exp'
     t_FIX_DOWN = r'fix'
     t_FIX_UP = r'fup'
     t_LEFT_BRACKET = r'\['
-    t_LEFT_PARENTHESIS = r'\('
+    # t_LEFT_PARENTHESIS = r'\('
     t_MINUS = r'-'
     t_MODULO = r'mod'
     t_NATURAL_LOG_OF = r'ln'
@@ -111,7 +114,7 @@ class GCodeLexer:
     t_PLUS = r'\+'
     t_POWER = r'\*\*'
     t_RIGHT_BRACKET = r'\]'
-    t_RIGHT_PARENTHESIS = r'\)'
+    # t_RIGHT_PARENTHESIS = r'\)'
     t_ROUND = r'round'
     t_SINE = r'sin'
     t_SQUARE_ROOT = r'sqrt'
@@ -155,7 +158,7 @@ class GCodeLexer:
 
     def t_REAL(self, t):
         # r'((-)?((\d*\.\d+)(E[\+-]?\d+)?|([1-9]\d*E[\+-]?\d+)))'
-        r'((-)?\d*(\.)?\d+)'
+        r'((\+|-)?(\d+\.\d*|(\.)?\d+))'
         value = t.value
         if '.' in value:
             value = float(value)
@@ -204,14 +207,20 @@ class GCodeLexer:
         self._lexer = lexer.lex(
             module=self,
             reflags=int(re.VERBOSE + re.IGNORECASE),
+            optimize=1,
             **kwargs,
         )
 
     ##############################################
 
+    def input(self, data):
+        return self._lexer.input(data)
+
+    ##############################################
+
     def tokenize(self, data):
 
-        self._lexer.input(data)
+        self.input(data)
         while True:
             token = self._lexer.token()
             if not token:
