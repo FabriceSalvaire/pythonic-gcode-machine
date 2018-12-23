@@ -9,7 +9,7 @@ source_gh_pages=${root_dir}/gh-pages
 echo Source Path: ${root_dir}
 echo HTML Build Path: ${html_build}
 
-origin='git@github.com:FabriceSalvaire/PythonicGcodeMachine.git'
+origin='git@github.com:FabriceSalvaire/pythonic-gcode-machine.git'
 
 ####################################################################################################
 
@@ -20,7 +20,7 @@ if [ -e ${tmp_dir} ]; then
   # To create gh-pages branch
   # git clone ${origin} PythonicGcodeMachine-gh-pages
   # pushd PythonicGcodeMachine-gh-pages
-  # git checkout --orphan  gh-pages
+  # git checkout --orphan gh-pages
   # git rm --cached -r .
 
   git clone ${origin} PythonicGcodeMachine-gh-pages --branch gh-pages --single-branch

@@ -17,10 +17,10 @@
    :height: 15px
    :width:  80px
 
-.. |PythonicGcodeMachineUrl| replace:: @project_url@
+.. |PythonicGcodeMachineUrl| replace:: https://github.com/FabriceSalvaire/pythonic-gcode-machine
 
 .. |PythonicGcodeMachineHomePage| replace:: PythonicGcodeMachine Home Page
-.. _PythonicGcodeMachineHomePage: @project_url@
+.. _PythonicGcodeMachineHomePage: https://github.com/FabriceSalvaire/pythonic-gcode-machine
 
 .. |PythonicGcodeMachine@readthedocs-badge| image:: https://readthedocs.org/projects/PythonicGcodeMachine/badge/?version=latest
    :target: http://PythonicGcodeMachine.readthedocs.org/en/latest
