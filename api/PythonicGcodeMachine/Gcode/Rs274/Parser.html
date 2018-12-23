@@ -1,0 +1,606 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>7.1.1.5.3. Parser &mdash; PythonicGcodeMachine 0.1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../../static/css/PythonicGcodeMachine.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="7.1.2. Machine" href="../../Machine.html" />
+    <link rel="prev" title="7.1.1.5.2. Lexer" href="Lexer.html" /> 
+
+  
+  <script src="../../../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> PythonicGcodeMachine
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview.html">1. Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../overview.html#what-is-pythonicgcodemachine">1.1. What is PythonicGcodeMachine ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../overview.html#how-is-pythonicgcodemachine-licensed">1.2. How is PythonicGcodeMachine licensed ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../overview.html#going-further-with-pythonicgcodemachine">1.3. Going further with PythonicGcodeMachine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../overview.html#which-platforms-are-supported-by-pythonicgcodemachine">1.4. Which platforms are supported by PythonicGcodeMachine ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../overview.html#how-to-install-pythonicgcodemachine">1.5. How to install PythonicGcodeMachine ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../overview.html#which-version-of-python-is-required">1.6. Which version of Python is required ?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../news.html">2. News</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../news.html#v0-2018-12-22">2.1. V0 2018-12-22</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../roadmap.html">3. Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation.html">4. Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#on-windows">4.1. On Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#on-linux">4.2. On Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#on-osx">4.3. On OSX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#installation-from-pypi-repository">4.4. Installation from PyPi Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#install-a-more-recent-version-from-github">4.5. Install a more recent version from Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#installation-from-source">4.6. Installation from Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#dependencies">4.7. Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../faq.html">5. User FAQ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../faq.html#how-to-get-help-or-report-an-issue">5.1. How to get help or report an issue ?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../design-notes.html">6. Design Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../design-notes.html#g-code-parser">6.1. G-Code Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../design-notes.html#g-code-flavours">6.2. G-code flavours</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../reference-manual.html">7. API Documentation</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../../PythonicGcodeMachine.html">7.1. PythonicGcodeMachine</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../Gcode.html">7.1.1. Gcode</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../Fanuc.html">7.1.1.1. Fanuc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Heidenhain.html">7.1.1.2. Heidenhain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../LinuxCnc.html">7.1.1.3. LinuxCnc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../MachineKit.html">7.1.1.4. MachineKit</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../Rs274.html">7.1.1.5. Rs274</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../Machine.html">7.1.2. Machine</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../PythonLexYacc.html">7.1.3. PythonLexYacc</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../PythonLexYacc/lex.html">7.1.3.1. lex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../PythonLexYacc/yacc.html">7.1.3.2. yacc</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../reference-manual.html#indexes">7.2. Indexes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../development.html">8. Development &amp; Community</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../development.html#how-you-can-help">8.1. How you can help ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../development.html#contributors">8.2. Contributors</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../how-to-refer.html">9. How to Refer to PythonicGcodeMachine ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../donate.html">10. How to Help Further ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../related-projects.html">11. Related Projects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../related-projects.html#g-code-tools">11.1. G-code Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../related-projects.html#cam-tools">11.2. CAM Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../bibliography.html">12. Bibliography</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../bibliography.html#g-code">12.1. G-Code</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">PythonicGcodeMachine</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../../reference-manual.html">7. API Documentation</a> &raquo;</li>
+        
+          <li><a href="../../../PythonicGcodeMachine.html">7.1. PythonicGcodeMachine</a> &raquo;</li>
+        
+          <li><a href="../../Gcode.html">7.1.1. Gcode</a> &raquo;</li>
+        
+          <li><a href="../Rs274.html">7.1.1.5. Rs274</a> &raquo;</li>
+        
+      <li>7.1.1.5.3. Parser</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../../_sources/api/PythonicGcodeMachine/Gcode/Rs274/Parser.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-PythonicGcodeMachine.Gcode.Rs274.Parser">
+<span id="parser"></span><h1>7.1.1.5.3. Parser<a class="headerlink" href="#module-PythonicGcodeMachine.Gcode.Rs274.Parser" title="Permalink to this headline">¶</a></h1>
+<p>Module to implement a RS-274 G-code parser.</p>
+<p>Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">parser</span> <span class="o">=</span> <span class="n">GcodeParser</span><span class="p">()</span>
+<span class="n">ast_line</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">gcode_line</span><span class="p">)</span>
+<span class="n">ast_program</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_lines</span><span class="p">(</span><span class="n">gcode_lines</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Implementation</strong></p>
+<p>The parser is generated automatically from the grammar defined in this class using the generator
+<a class="reference external" href="https://www.dabeaz.com/ply/ply.html">PLY</a> which implement a LALR(1) parser similar to the
+tools <strong>lex</strong> and <strong>yacc</strong>.</p>
+<p>The parser construct an <a class="reference external" href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">abstract syntax tree (AST)</a> during the parsing.</p>
+<p>User can subclass this parser to support a derived G-code flavour.</p>
+<p><strong>For references, see</strong></p>
+<ul class="simple">
+<li><a class="reference external" href="https://www.nist.gov/publications/nist-rs274ngc-interpreter-version-3">The NIST RS274NGC Interpreter — Version 3 — Appendix E. Production Rules for the RS274/NGC Language</a></li>
+<li><a class="reference external" href="http://linuxcnc.org/docs/2.7/html/gcode/overview.html">http://linuxcnc.org/docs/2.7/html/gcode/overview.html</a></li>
+</ul>
+<dl class="exception">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeParserError">
+<em class="property">exception </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.Parser.</code><code class="descname">GcodeParserError</code><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Parser.html#GcodeParserError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeParserError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValueError</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeParser">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.Parser.</code><code class="descname">GcodeParser</code><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Parser.html#GcodeParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeParser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeParserMixin" title="PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeParserMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeParserMixin</span></code></a>, <a class="reference internal" href="#PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin" title="PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeParserMixin">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.Parser.</code><code class="descname">GcodeParserMixin</code><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Parser.html#GcodeParserMixin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeParserMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Mixin to implement a RS-274 G-code parser</p>
+<dl class="method">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeParserMixin.parse">
+<code class="descname">parse</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Parser.html#GcodeParserMixin.parse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeParserMixin.parse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse a G-code line.</p>
+<p>Return a <a class="reference internal" href="Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Line" title="PythonicGcodeMachine.Gcode.Rs274.Ast.Line"><code class="xref py py-class docutils literal notranslate"><span class="pre">PythonicGcodeMachine.Gcode.Rs274.Ast.Line</span></code></a> instance.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeParserMixin.parse_lines">
+<code class="descname">parse_lines</code><span class="sig-paren">(</span><em>lines</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Parser.html#GcodeParserMixin.parse_lines"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeParserMixin.parse_lines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse a G-code lines</p>
+<p>Return a <a class="reference internal" href="Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Program" title="PythonicGcodeMachine.Gcode.Rs274.Ast.Program"><code class="xref py py-class docutils literal notranslate"><span class="pre">PythonicGcodeMachine.Gcode.Rs274.Ast.Program</span></code></a> instance.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.Parser.</code><code class="descname">GcodeGrammarMixin</code><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Parser.html#GcodeGrammarMixin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Mixin to implement the grammar.</p>
+<p><strong>Production Language for RS-274</strong></p>
+<p>The symbols in the productions are mostly standard syntax notation. Meanings of the symbols
+are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">=</span></code> The symbol on the left of the equal sign is equivalent to the expression on the right</li>
+<li><code class="docutils literal notranslate"><span class="pre">+</span></code> followed by</li>
+<li><code class="docutils literal notranslate"><span class="pre">|</span></code> or</li>
+<li><code class="docutils literal notranslate"><span class="pre">.</span></code> end of production (a production may have several lines)</li>
+<li><code class="docutils literal notranslate"><span class="pre">[]</span></code> zero or one of the expression inside square brackets may occur</li>
+<li><code class="docutils literal notranslate"><span class="pre">{}</span></code> zero to many of the expression inside curly braces may occur</li>
+<li><code class="docutils literal notranslate"><span class="pre">()</span></code> exactly one of the expression inside parentheses must occur</li>
+</ul>
+</div></blockquote>
+<p>The productions are:</p>
+<blockquote>
+<div><ul class="simple">
+<li>arc_tangent_combo = arc_tangent + expression + divided_by + expression .</li>
+<li>binary_operation = binary_operation1 | binary_operation2 | binary_operation3 .</li>
+<li>binary_operation1 = power .</li>
+<li>binary_operation2 = divided_by | modulo | times .</li>
+<li>binary_operation3 = and | exclusive_or | minus | non_exclusive_or | plus .</li>
+<li>comment = message | ordinary_comment .</li>
+<li>expression = left_bracket + real_value + { binary_operation + real_value } + right_bracket .</li>
+<li>line = [block_delete] + [line_number] + {segment} + end_of_line .</li>
+<li>line_number = letter_n + digit + [digit] + [digit] + [digit] + [digit] .</li>
+<li>message = left_parenthesis + {white_space} + letter_m + {white_space} + letter_s +
+{white_space} + letter_g + {white_space} + comma + {comment_character} +
+right_parenthesis .</li>
+<li>mid_line_letter = letter_a | letter_b | letter_c| letter_d | letter_f | letter_g | letter_h | letter_i
+| letter_j | letter_k | letter_l | letter_m | letter_p | letter_q | letter_r | letter_s | letter_t
+| letter_x | letter_y | letter_z .</li>
+<li>mid_line_word = mid_line_letter + real_value .</li>
+<li>ordinary_comment = left_parenthesis + {comment_character} + right_parenthesis .</li>
+<li>ordinary_unary_combo = ordinary_unary_operation + expression .</li>
+<li>ordinary_unary_operation =
+absolute_value | arc_cosine | arc_sine | cosine | e_raised_to |
+fix_down | fix_up | natural_log_of | round | sine | square_root | tangent .</li>
+<li>parameter_index = real_value .</li>
+<li>parameter_setting = parameter_sign + parameter_index + equal_sign + real_value .</li>
+<li>parameter_value = parameter_sign + parameter_index .</li>
+<li>real_number =
+[ plus | minus ] +
+(( digit + { digit } + [decimal_point] + {digit}) | ( decimal_point + digit + {digit})) .</li>
+<li>real_value = real_number | expression | parameter_value | unary_combo .</li>
+<li>segment = mid_line_word | comment | parameter_setting .</li>
+<li>unary_combo = ordinary_unary_combo | arc_tangent_combo .</li>
+</ul>
+</div></blockquote>
+<dl class="method">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_arc_tangent_combo">
+<code class="descname">p_arc_tangent_combo</code><span class="sig-paren">(</span><em>p</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Parser.html#GcodeGrammarMixin.p_arc_tangent_combo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_arc_tangent_combo" title="Permalink to this definition">¶</a></dt>
+<dd><p>arc_tangent_combo : ARC_TANGENT expression DIVIDED_BY expression</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_binary_operation">
+<code class="descname">p_binary_operation</code><span class="sig-paren">(</span><em>p</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Parser.html#GcodeGrammarMixin.p_binary_operation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_binary_operation" title="Permalink to this definition">¶</a></dt>
+<dd><p>binary_operation : binary_operation1
+| binary_operation2
+| binary_operation3</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_binary_operation1">
+<code class="descname">p_binary_operation1</code><span class="sig-paren">(</span><em>p</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Parser.html#GcodeGrammarMixin.p_binary_operation1"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_binary_operation1" title="Permalink to this definition">¶</a></dt>
+<dd><p>binary_operation1 : POWER</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_binary_operation2">
+<code class="descname">p_binary_operation2</code><span class="sig-paren">(</span><em>p</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Parser.html#GcodeGrammarMixin.p_binary_operation2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_binary_operation2" title="Permalink to this definition">¶</a></dt>
+<dd><p>binary_operation2 : DIVIDED_BY
+| MODULO
+| TIMES</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_binary_operation3">
+<code class="descname">p_binary_operation3</code><span class="sig-paren">(</span><em>p</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Parser.html#GcodeGrammarMixin.p_binary_operation3"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_binary_operation3" title="Permalink to this definition">¶</a></dt>
+<dd><p>binary_operation3 : AND
+| EXCLUSIVE_OR
+| MINUS
+| NON_EXCLUSIVE_OR
+| PLUS</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_comment">
+<code class="descname">p_comment</code><span class="sig-paren">(</span><em>p</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Parser.html#GcodeGrammarMixin.p_comment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_comment" title="Permalink to this definition">¶</a></dt>
+<dd><p>comment : ordinary_comment</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_error">
+<code class="descname">p_error</code><span class="sig-paren">(</span><em>p</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Parser.html#GcodeGrammarMixin.p_error"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_error" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_expression">
+<code class="descname">p_expression</code><span class="sig-paren">(</span><em>p</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Parser.html#GcodeGrammarMixin.p_expression"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_expression" title="Permalink to this definition">¶</a></dt>
+<dd><p>expression : LEFT_BRACKET inner_expression RIGHT_BRACKET</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_inner_expression">
+<code class="descname">p_inner_expression</code><span class="sig-paren">(</span><em>p</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Parser.html#GcodeGrammarMixin.p_inner_expression"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_inner_expression" title="Permalink to this definition">¶</a></dt>
+<dd><p>inner_expression : real_value
+| inner_expression binary_operation real_value</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_line">
+<code class="descname">p_line</code><span class="sig-paren">(</span><em>p</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Parser.html#GcodeGrammarMixin.p_line"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>line : DIVIDED_BY line_right
+| line_right</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_line_content">
+<code class="descname">p_line_content</code><span class="sig-paren">(</span><em>p</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Parser.html#GcodeGrammarMixin.p_line_content"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_line_content" title="Permalink to this definition">¶</a></dt>
+<dd><p>line_content : segments</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_line_number">
+<code class="descname">p_line_number</code><span class="sig-paren">(</span><em>p</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Parser.html#GcodeGrammarMixin.p_line_number"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_line_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>line_number : N POSITIVE_INTEGER
+| N POSITIVE_REAL</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_line_right">
+<code class="descname">p_line_right</code><span class="sig-paren">(</span><em>p</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Parser.html#GcodeGrammarMixin.p_line_right"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_line_right" title="Permalink to this definition">¶</a></dt>
+<dd><p>line_right : line_content
+| line_content EOF_COMMENT</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_mid_line_letter">
+<code class="descname">p_mid_line_letter</code><span class="sig-paren">(</span><em>p</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Parser.html#GcodeGrammarMixin.p_mid_line_letter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_mid_line_letter" title="Permalink to this definition">¶</a></dt>
+<dd><p>mid_line_letter : A
+| B
+| C
+| D
+| F
+| G
+| H
+| I
+| J
+| K
+| L
+| M
+| P
+| Q
+| R
+| S
+| T
+| X
+| Y
+| Z</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_mid_line_word">
+<code class="descname">p_mid_line_word</code><span class="sig-paren">(</span><em>p</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Parser.html#GcodeGrammarMixin.p_mid_line_word"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_mid_line_word" title="Permalink to this definition">¶</a></dt>
+<dd><p>mid_line_word : mid_line_letter real_value</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_numbered_line">
+<code class="descname">p_numbered_line</code><span class="sig-paren">(</span><em>p</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Parser.html#GcodeGrammarMixin.p_numbered_line"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_numbered_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>line_content : line_number segments</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_ordinary_comment">
+<code class="descname">p_ordinary_comment</code><span class="sig-paren">(</span><em>p</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Parser.html#GcodeGrammarMixin.p_ordinary_comment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_ordinary_comment" title="Permalink to this definition">¶</a></dt>
+<dd><p>ordinary_comment : INLINE_COMMENT</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_ordinary_unary_combo">
+<code class="descname">p_ordinary_unary_combo</code><span class="sig-paren">(</span><em>p</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Parser.html#GcodeGrammarMixin.p_ordinary_unary_combo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_ordinary_unary_combo" title="Permalink to this definition">¶</a></dt>
+<dd><p>ordinary_unary_combo : ordinary_unary_operation expression</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_ordinary_unary_operation">
+<code class="descname">p_ordinary_unary_operation</code><span class="sig-paren">(</span><em>p</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Parser.html#GcodeGrammarMixin.p_ordinary_unary_operation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_ordinary_unary_operation" title="Permalink to this definition">¶</a></dt>
+<dd><p>ordinary_unary_operation : ABSOLUTE_VALUE
+| ARC_COSINE
+| ARC_SINE
+| COSINE
+| E_RAISED_TO
+| FIX_DOWN
+| FIX_UP
+| NATURAL_LOG_OF
+| ROUND
+| SINE
+| SQUARE_ROOT
+| TANGENT</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_parameter_index">
+<code class="descname">p_parameter_index</code><span class="sig-paren">(</span><em>p</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Parser.html#GcodeGrammarMixin.p_parameter_index"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_parameter_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter_index : real_value</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_parameter_setting">
+<code class="descname">p_parameter_setting</code><span class="sig-paren">(</span><em>p</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Parser.html#GcodeGrammarMixin.p_parameter_setting"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_parameter_setting" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter_setting : PARAMETER_SIGN parameter_index EQUAL_SIGN real_value</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_parameter_value">
+<code class="descname">p_parameter_value</code><span class="sig-paren">(</span><em>p</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Parser.html#GcodeGrammarMixin.p_parameter_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_parameter_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameter_value : PARAMETER_SIGN parameter_index</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_real_value">
+<code class="descname">p_real_value</code><span class="sig-paren">(</span><em>p</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Parser.html#GcodeGrammarMixin.p_real_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_real_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>real_value : POSITIVE_INTEGER
+| POSITIVE_REAL
+| REAL
+| expression
+| parameter_value
+| unary_combo</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_segment">
+<code class="descname">p_segment</code><span class="sig-paren">(</span><em>p</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Parser.html#GcodeGrammarMixin.p_segment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_segment" title="Permalink to this definition">¶</a></dt>
+<dd><p>segment : mid_line_word
+| comment
+| parameter_setting</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_segments">
+<code class="descname">p_segments</code><span class="sig-paren">(</span><em>p</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Parser.html#GcodeGrammarMixin.p_segments"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_segments" title="Permalink to this definition">¶</a></dt>
+<dd><p>segments : segment
+| segments segment</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_unary_combo">
+<code class="descname">p_unary_combo</code><span class="sig-paren">(</span><em>p</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Parser.html#GcodeGrammarMixin.p_unary_combo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_unary_combo" title="Permalink to this definition">¶</a></dt>
+<dd><p>unary_combo : ordinary_unary_combo
+| arc_tangent_combo</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../Machine.html" class="btn btn-neutral float-right" title="7.1.2. Machine" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Lexer.html" class="btn btn-neutral" title="7.1.1.5.2. Lexer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Fabrice Salvaire
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../../static/jquery.js"></script>
+        <script type="text/javascript" src="../../../../static/underscore.js"></script>
+        <script type="text/javascript" src="../../../../static/doctools.js"></script>
+        <script type="text/javascript" src="../../../../static/getthecode.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../../../static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

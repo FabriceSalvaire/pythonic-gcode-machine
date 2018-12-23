@@ -1,0 +1,646 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>7.1.1.5. Rs274 &mdash; PythonicGcodeMachine 0.1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../static/css/PythonicGcodeMachine.css" type="text/css" />
+  <link rel="stylesheet" href="../../../static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="7.1.1.5.1. Ast" href="Rs274/Ast.html" />
+    <link rel="prev" title="7.1.1.4. MachineKit" href="MachineKit.html" /> 
+
+  
+  <script src="../../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> PythonicGcodeMachine
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../overview.html">1. Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../overview.html#what-is-pythonicgcodemachine">1.1. What is PythonicGcodeMachine ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../overview.html#how-is-pythonicgcodemachine-licensed">1.2. How is PythonicGcodeMachine licensed ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../overview.html#going-further-with-pythonicgcodemachine">1.3. Going further with PythonicGcodeMachine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../overview.html#which-platforms-are-supported-by-pythonicgcodemachine">1.4. Which platforms are supported by PythonicGcodeMachine ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../overview.html#how-to-install-pythonicgcodemachine">1.5. How to install PythonicGcodeMachine ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../overview.html#which-version-of-python-is-required">1.6. Which version of Python is required ?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../news.html">2. News</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../news.html#v0-2018-12-22">2.1. V0 2018-12-22</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../roadmap.html">3. Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">4. Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#on-windows">4.1. On Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#on-linux">4.2. On Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#on-osx">4.3. On OSX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#installation-from-pypi-repository">4.4. Installation from PyPi Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#install-a-more-recent-version-from-github">4.5. Install a more recent version from Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#installation-from-source">4.6. Installation from Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#dependencies">4.7. Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faq.html">5. User FAQ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../faq.html#how-to-get-help-or-report-an-issue">5.1. How to get help or report an issue ?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../design-notes.html">6. Design Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../design-notes.html#g-code-parser">6.1. G-Code Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../design-notes.html#g-code-flavours">6.2. G-code flavours</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../reference-manual.html">7. API Documentation</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../PythonicGcodeMachine.html">7.1. PythonicGcodeMachine</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../Gcode.html">7.1.1. Gcode</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="Fanuc.html">7.1.1.1. Fanuc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Heidenhain.html">7.1.1.2. Heidenhain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LinuxCnc.html">7.1.1.3. LinuxCnc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MachineKit.html">7.1.1.4. MachineKit</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">7.1.1.5. Rs274</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Machine.html">7.1.2. Machine</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../PythonLexYacc.html">7.1.3. PythonLexYacc</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../PythonLexYacc/lex.html">7.1.3.1. lex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PythonLexYacc/yacc.html">7.1.3.2. yacc</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference-manual.html#indexes">7.2. Indexes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../development.html">8. Development &amp; Community</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../development.html#how-you-can-help">8.1. How you can help ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../development.html#contributors">8.2. Contributors</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../how-to-refer.html">9. How to Refer to PythonicGcodeMachine ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../donate.html">10. How to Help Further ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../related-projects.html">11. Related Projects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../related-projects.html#g-code-tools">11.1. G-code Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../related-projects.html#cam-tools">11.2. CAM Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bibliography.html">12. Bibliography</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../bibliography.html#g-code">12.1. G-Code</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">PythonicGcodeMachine</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../reference-manual.html">7. API Documentation</a> &raquo;</li>
+        
+          <li><a href="../../PythonicGcodeMachine.html">7.1. PythonicGcodeMachine</a> &raquo;</li>
+        
+          <li><a href="../Gcode.html">7.1.1. Gcode</a> &raquo;</li>
+        
+      <li>7.1.1.5. Rs274</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/api/PythonicGcodeMachine/Gcode/Rs274.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="rs274">
+<h1>7.1.1.5. Rs274<a class="headerlink" href="#rs274" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Rs274/Ast.html">7.1.1.5.1. Ast</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Rs274/Lexer.html">7.1.1.5.2. Lexer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Rs274/Parser.html">7.1.1.5.3. Parser</a></li>
+</ul>
+</div>
+<span class="target" id="module-PythonicGcodeMachine.Gcode.Rs274"></span><p>Module to implement the G-code language.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Text derived from several sources, like NIST RS-274 paper and Linux CNC project.
+cf. supra for references.</p>
+</div>
+<div class="section" id="history">
+<h2>7.1.1.5.4. History<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h2>
+<p>The G-code language, also called RS-274, is a programming language for numerical control.  It was
+developed by the EIA in the early 1960s, and finally standardised by ISO in February 1980 as RS274D
+/ ISO 6983.</p>
+<p>The G-code language has several flavours and historical versions. A list of reference documents
+follows :</p>
+<ul class="simple">
+<li><a class="reference external" href="https://www.nist.gov/publications/nist-rs274ngc-interpreter-version-3">The NIST RS274NGC Interpreter - Version 3, T. Kramer, F. Proctor, E. Messina, National Institute
+of Standards and Technology, NISTIR 6556, August 17, 2000</a></li>
+<li>The documentation of the <a class="reference external" href="http://linuxcnc.org">Linux CNC</a> project, formerly Enhanced Machine
+Controller developed at NIST,</li>
+<li>EIA Standard RS-274-D Interchangeable Variable Block Data Format for Positioning, Contouring, and
+Contouring/Positioning Numerically Controlled Machines, 2001 Eye Street, NW, Washington,
+D.C. 20006: Electronic Industries Association, February 1979</li>
+</ul>
+</div>
+<div class="section" id="overview">
+<h2>7.1.1.5.5. Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The RS274/NGC language is based on lines of code. Each line (also called a “block”) may include
+commands to a machining center to do several different things.</p>
+<p>A typical line of code consists of an optional line number at the beginning followed by one or more
+“words.” A word consists of a letter followed by a number (or something that evaluates to a
+number). A word may either give a command or provide an argument to a command. For example,
+<code class="code docutils literal notranslate"><span class="pre">G1</span> <span class="pre">X3</span></code> is a valid line of code with two words. <code class="code docutils literal notranslate"><span class="pre">G1</span></code> is a command meaning “move in a
+straight line at the programmed feed rate,” and <code class="code docutils literal notranslate"><span class="pre">X3</span></code> provides an argument value (the value of
+X should be 3 at the end of the move). Most RS274/NGC commands start with either G or M (for
+miscellaneous). The words for these commands are called “G codes” and “M codes.”</p>
+</div>
+<div class="section" id="language-view-of-a-machining-center">
+<h2>7.1.1.5.6. Language View of a Machining Center<a class="headerlink" href="#language-view-of-a-machining-center" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="parameters">
+<h3>7.1.1.5.6.1. Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h3>
+<p>In the RS274/NGC language view, a machining center maintains an array of 5400 numerical
+parameters. Many of them have specific uses. The parameter array should persist over time, even if
+the machining center is powered down.</p>
+</div>
+<div class="section" id="coordinate-systems">
+<h3>7.1.1.5.6.2. Coordinate Systems<a class="headerlink" href="#coordinate-systems" title="Permalink to this headline">¶</a></h3>
+<p>In the RS274/NGC language view, a machining center has an absolute coordinate system and nine
+program coordinate systems.</p>
+<p>You can set the offsets of the nine program coordinate systems using G10 L2 Pn (n is the number of
+the coordinate system) with values for the axes in terms of the absolute coordinate system.</p>
+<p>You can select one of the nine systems by using G54, G55, G56, G57, G58, G59, G59.1, G59.2, or
+G59.3. It is not possible to select the absolute coordinate system directly. You can offset the
+current coordinate system using G92 or G92.3. This offset will then apply to all nine program
+coordinate systems. This offset may be cancelled with G92.1 or G92.2.</p>
+<p>You can make straight moves in the absolute machine coordinate system by using G53 with either G0 or
+G1.</p>
+<p>Data for coordinate systems is stored in parameters.</p>
+<p>During initialization, the coordinate system is selected that is specified by parameter 5220. A
+value of 1 means the first coordinate system (the one G54 activates), a value of 2 means the second
+coordinate system (the one G55 activates), and so on. It is an error for the value of parameter 5220
+to be anything but a whole number between one and nine.</p>
+</div>
+</div>
+<div class="section" id="format-of-a-line">
+<h2>7.1.1.5.7. Format of a Line<a class="headerlink" href="#format-of-a-line" title="Permalink to this headline">¶</a></h2>
+<p>A permissible line of input RS274/NGC code consists of the following, in order, with the restriction
+that there is a maximum (currently 256) to the number of characters allowed on a line.</p>
+<ol class="arabic simple">
+<li>an optional block delete character, which is a slash <code class="code docutils literal notranslate"><span class="pre">/</span></code> .</li>
+<li>an optional line number.</li>
+<li>any number of words, parameter settings, and comments.</li>
+<li>an end of line marker (carriage return or line feed or both).</li>
+</ol>
+<p>Spaces and tabs are allowed anywhere on a line of code and do not change the meaning of the line,
+except inside comments. This makes some strange-looking input legal. The line <code class="code docutils literal notranslate"><span class="pre">g0x</span> <span class="pre">+0.</span> <span class="pre">12</span> <span class="pre">34y</span>
+<span class="pre">7</span></code> is equivalent to <code class="code docutils literal notranslate"><span class="pre">g0</span> <span class="pre">x+0.1234</span> <span class="pre">y7</span></code>, for example.</p>
+<p>Blank lines are allowed in the input. They are to be ignored.</p>
+<p>Input is case insensitive, except in comments, i.e., any letter outside a comment may be in upper or
+lower case without changing the meaning of a line.</p>
+<div class="section" id="line-number">
+<h3>7.1.1.5.7.1. Line Number<a class="headerlink" href="#line-number" title="Permalink to this headline">¶</a></h3>
+<p>A line number is the letter <code class="code docutils literal notranslate"><span class="pre">N</span></code> followed by an integer (with no sign) between 0 and 99999
+written with no more than five digits (000009 is not OK, for example). Line numbers may be repeated
+or used out of order, although normal practice is to avoid such usage. Line numbers may also be
+skipped, and that is normal practice. A line number is not required to be used, but must be in the
+proper place if used.</p>
+</div>
+<div class="section" id="word">
+<h3>7.1.1.5.7.2. Word<a class="headerlink" href="#word" title="Permalink to this headline">¶</a></h3>
+<p>A word is a letter other than <code class="code docutils literal notranslate"><span class="pre">N</span></code> followed by a real value.</p>
+<p>Words may begin with any of the letters shown in the following table. The table includes <code class="code docutils literal notranslate"><span class="pre">N</span></code>
+for completeness, even though, as defined above, line numbers are not words. Several letters
+(<code class="code docutils literal notranslate"><span class="pre">I</span></code>, <code class="code docutils literal notranslate"><span class="pre">J,</span> <span class="pre">K</span></code>, <code class="code docutils literal notranslate"><span class="pre">L</span></code>, <code class="code docutils literal notranslate"><span class="pre">P</span></code>, <code class="code docutils literal notranslate"><span class="pre">R</span></code>) may have different meanings in different
+contexts.</p>
+<p>Table. Linux CNC Words and their meanings Letter</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Letter</th>
+<th class="head">Meaning</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>A</td>
+<td>A axis of machine</td>
+</tr>
+<tr class="row-odd"><td>B</td>
+<td>B axis of machine</td>
+</tr>
+<tr class="row-even"><td>C</td>
+<td>C axis of machine</td>
+</tr>
+<tr class="row-odd"><td>D</td>
+<td>Tool radius compensation number</td>
+</tr>
+<tr class="row-even"><td>F</td>
+<td>Feed rate</td>
+</tr>
+<tr class="row-odd"><td>G</td>
+<td>General function (See table Modal Groups)</td>
+</tr>
+<tr class="row-even"><td>H</td>
+<td>Tool length offset index</td>
+</tr>
+<tr class="row-odd"><td>I</td>
+<td>X offset for arcs and G87 canned cycles</td>
+</tr>
+<tr class="row-even"><td>J</td>
+<td>Y offset for arcs and G87 canned cycles</td>
+</tr>
+<tr class="row-odd"><td>K</td>
+<td>Z offset for arcs and G87 canned cycles.
+Spindle-Motion Ratio for G33 synchronized movements.</td>
+</tr>
+<tr class="row-even"><td>L</td>
+<td>Generic parameter word for G10, M66 and others</td>
+</tr>
+<tr class="row-odd"><td>M</td>
+<td>Miscellaneous function (See table Modal Groups)</td>
+</tr>
+<tr class="row-even"><td>N</td>
+<td>Line number</td>
+</tr>
+<tr class="row-odd"><td>P</td>
+<td>Dwell time in canned cycles and with G4.
+Key used with G10.</td>
+</tr>
+<tr class="row-even"><td>Q</td>
+<td>Feed increment in G73, G83 canned cycles</td>
+</tr>
+<tr class="row-odd"><td>R</td>
+<td>Arc radius or canned cycle plane</td>
+</tr>
+<tr class="row-even"><td>S</td>
+<td>Spindle speed</td>
+</tr>
+<tr class="row-odd"><td>T</td>
+<td>Tool selection</td>
+</tr>
+<tr class="row-even"><td>U</td>
+<td>U axis of machine</td>
+</tr>
+<tr class="row-odd"><td>V</td>
+<td>V axis of machine</td>
+</tr>
+<tr class="row-even"><td>W</td>
+<td>W axis of machine</td>
+</tr>
+<tr class="row-odd"><td>X</td>
+<td>X axis of machine</td>
+</tr>
+<tr class="row-even"><td>Y</td>
+<td>Y axis of machine</td>
+</tr>
+<tr class="row-odd"><td>Z</td>
+<td>Z axis of machine</td>
+</tr>
+</tbody>
+</table>
+<p>A real value is some collection of characters that can be processed to come up with a number. A real
+value may be an explicit number (such as 341 or -0.8807), a parameter value, an expression, or a
+unary operation value.</p>
+</div>
+<div class="section" id="number">
+<h3>7.1.1.5.7.3. Number<a class="headerlink" href="#number" title="Permalink to this headline">¶</a></h3>
+<p>The following rules are used for (explicit) numbers. In these rules a digit is a single character
+between 0 and 9.</p>
+<ul class="simple">
+<li>A number consists of (1) an optional plus or minus sign, followed by (2) zero to many digits,
+followed, possibly, by (3) one decimal point, followed by (4) zero to many digits — provided that
+there is at least one digit somewhere in the number.</li>
+<li>There are two kinds of numbers: integers and decimals. An integer does not have a decimal point in
+it; a decimal does.</li>
+<li>Numbers may have any number of digits, subject to the limitation on line length.</li>
+<li>A non-zero number with no sign as the first character is assumed to be positive.  Notice that
+initial (before the decimal point and the first non-zero digit) and trailing (after the decimal
+point and the last non-zero digit) zeros are allowed but not required. A number written with
+initial or trailing zeros will have the same value when it is read as if the extra zeros were not
+there.</li>
+</ul>
+</div>
+<div class="section" id="parameter-value">
+<h3>7.1.1.5.7.4. Parameter Value<a class="headerlink" href="#parameter-value" title="Permalink to this headline">¶</a></h3>
+<p>A parameter value is the pound character <code class="code docutils literal notranslate"><span class="pre">#</span></code> followed by a real value. The real value must
+evaluate to an integer between 1 and 5399. The integer is a parameter number, and the value of the
+parameter value is whatever number is stored in the numbered parameter.</p>
+<p>The <code class="code docutils literal notranslate"><span class="pre">#</span></code> character takes precedence over other operations, so that, for example, <code class="code docutils literal notranslate"><span class="pre">#1+2</span></code>
+means the number found by adding 2 to the value of parameter 1, not the value found in parameter
+3. Of course, <code class="code docutils literal notranslate"><span class="pre">#[1+2]</span></code> does mean the value found in parameter 3. The <code class="code docutils literal notranslate"><span class="pre">#</span></code> character may
+be repeated; for example <code class="code docutils literal notranslate"><span class="pre">##2</span></code> means the value of the parameter whose index is the (integer)
+value of parameter 2.</p>
+</div>
+<div class="section" id="expressions-and-binary-operations">
+<h3>7.1.1.5.7.5. Expressions and Binary Operations<a class="headerlink" href="#expressions-and-binary-operations" title="Permalink to this headline">¶</a></h3>
+<p>An expression is a set of characters starting with a left bracket <code class="code docutils literal notranslate"><span class="pre">[</span></code> and ending with a
+balancing right bracket <code class="code docutils literal notranslate"><span class="pre">]</span></code>. In between the brackets are numbers, parameter values,
+mathematical operations, and other expressions. An expression may be evaluated to produce a
+number. The expressions on a line are evaluated when the line is read, before anything on the line
+is executed. An example of an expression is <code class="code docutils literal notranslate"><span class="pre">[</span> <span class="pre">1</span> <span class="pre">+</span> <span class="pre">acos[0]</span> <span class="pre">-</span> <span class="pre">[#3</span> <span class="pre">**</span> <span class="pre">[4.0/2]]]</span></code>.</p>
+<p>Binary operations appear only inside expressions. Nine binary operations are defined. There are four
+basic mathematical operations: addition <code class="code docutils literal notranslate"><span class="pre">+</span></code>, subtraction <code class="code docutils literal notranslate"><span class="pre">-</span></code>, multiplication <code class="code docutils literal notranslate"><span class="pre">*</span></code>,
+and division <code class="code docutils literal notranslate"><span class="pre">/</span></code>. There are three logical operations: non-exclusive or <code class="code docutils literal notranslate"><span class="pre">OR</span></code>, exclusive
+or <code class="code docutils literal notranslate"><span class="pre">XOR</span></code>, and logical and <code class="code docutils literal notranslate"><span class="pre">AND</span></code>. The eighth operation is the modulus operation
+<code class="code docutils literal notranslate"><span class="pre">MOD</span></code>. The ninth operation is the “power” operation <code class="code docutils literal notranslate"><span class="pre">**</span></code> of raising the number on the
+left of the operation to the power on the right.  The binary operations are divided into three
+groups. The first group is: power. The second group is: multiplication, division, and modulus. The
+third group is: addition, subtraction, logical non- exclusive or, logical exclusive or, and logical
+and. If operations are strung together (for example in the expression <code class="code docutils literal notranslate"><span class="pre">[2.0</span> <span class="pre">/</span> <span class="pre">3</span> <span class="pre">*</span> <span class="pre">1.5</span> <span class="pre">-</span> <span class="pre">5.5</span> <span class="pre">/</span>
+<span class="pre">11.0]</span></code>), operations in the first group are to be performed before operations in the second group and
+operations in the second group before operations in the third group. If an expression contains more
+than one operation from the same group (such as the first / and * in the example), the operation on
+the left is performed first. Thus, the example is equivalent to: <code class="code docutils literal notranslate"><span class="pre">[((2.0</span> <span class="pre">/</span> <span class="pre">3)</span> <span class="pre">*</span> <span class="pre">1.5)</span> <span class="pre">-</span> <span class="pre">(5.5</span> <span class="pre">/</span>
+<span class="pre">11.0)]</span></code>, which simplifies to <code class="code docutils literal notranslate"><span class="pre">[1.0</span> <span class="pre">-</span> <span class="pre">0.5]</span></code>, which is 0.5.</p>
+<p>The logical operations and modulus are to be performed on any real numbers, not just on integers.
+The number zero is equivalent to logical false, and any non-zero number is equivalent to logical
+true.</p>
+</div>
+<div class="section" id="unary-operation-value">
+<h3>7.1.1.5.7.6. Unary Operation Value<a class="headerlink" href="#unary-operation-value" title="Permalink to this headline">¶</a></h3>
+<p>A unary operation value is either <code class="code docutils literal notranslate"><span class="pre">ATAN</span></code> followed by one expression divided by another
+expression (for example <code class="code docutils literal notranslate"><span class="pre">ATAN[2]/[1+3]</span></code>) or any other unary operation name followed by an
+expression (for example <code class="code docutils literal notranslate"><span class="pre">SIN[90]</span></code>). The unary operations are: <code class="code docutils literal notranslate"><span class="pre">ABS</span></code> (absolute value),
+<code class="code docutils literal notranslate"><span class="pre">ACOS</span></code> (arc cosine), <code class="code docutils literal notranslate"><span class="pre">ASIN</span></code> (arc sine), <code class="code docutils literal notranslate"><span class="pre">ATAN</span></code> (arc tangent), <code class="code docutils literal notranslate"><span class="pre">COS</span></code>
+(cosine), <code class="code docutils literal notranslate"><span class="pre">EXP</span></code> (e raised to the given power), <code class="code docutils literal notranslate"><span class="pre">FIX</span></code> (round down), <code class="code docutils literal notranslate"><span class="pre">FUP</span></code> (round
+up), <code class="code docutils literal notranslate"><span class="pre">LN</span></code> (natural logarithm), <code class="code docutils literal notranslate"><span class="pre">ROUND</span></code> (round to the nearest whole number), <code class="code docutils literal notranslate"><span class="pre">SIN</span></code>
+(sine), <code class="code docutils literal notranslate"><span class="pre">SQRT</span></code> (square root), and <code class="code docutils literal notranslate"><span class="pre">TAN</span></code> (tangent). Arguments to unary operations which
+take angle measures (<code class="code docutils literal notranslate"><span class="pre">COS</span></code>, <code class="code docutils literal notranslate"><span class="pre">SIN</span></code>, and <code class="code docutils literal notranslate"><span class="pre">TAN</span></code>) are in degrees. Values returned by
+unary operations which return angle measures (<code class="code docutils literal notranslate"><span class="pre">ACOS</span></code>, <code class="code docutils literal notranslate"><span class="pre">ASIN</span></code>, and <code class="code docutils literal notranslate"><span class="pre">ATAN</span></code>) are also
+in degrees.</p>
+<p>The <code class="code docutils literal notranslate"><span class="pre">FIX</span></code> operation rounds towards the left (less positive or more negative) on a number line,
+so that <code class="code docutils literal notranslate"><span class="pre">FIX[2.8]</span> <span class="pre">=</span> <span class="pre">2</span></code> and <code class="code docutils literal notranslate"><span class="pre">FIX[-2.8]</span> <span class="pre">=</span> <span class="pre">-3</span></code>, for example. The <code class="code docutils literal notranslate"><span class="pre">FUP</span></code> operation
+rounds towards the right (more positive or less negative) on a number line; <code class="code docutils literal notranslate"><span class="pre">FUP[2.8]</span> <span class="pre">=</span> <span class="pre">3</span></code> and
+<code class="code docutils literal notranslate"><span class="pre">FUP[-2.8]</span> <span class="pre">=</span> <span class="pre">-2</span></code>, for example.</p>
+</div>
+<div class="section" id="parameter-setting">
+<h3>7.1.1.5.7.7. Parameter Setting<a class="headerlink" href="#parameter-setting" title="Permalink to this headline">¶</a></h3>
+<p>A parameter setting is the following four items one after the other: (1) a pound character
+<code class="code docutils literal notranslate"><span class="pre">#</span></code>, (2) a real value which evaluates to an integer between 1 and 5399, (3) an equal sign
+<code class="code docutils literal notranslate"><span class="pre">=</span></code>, and (4) a real value. For example <code class="code docutils literal notranslate"><span class="pre">#3</span> <span class="pre">=</span> <span class="pre">15</span></code> is a parameter setting meaning “set
+parameter 3 to 15.”</p>
+<p>A parameter setting does not take effect until after all parameter values on the same line have
+been found. For example, if parameter 3 has been previously set to 15 and the line <code class="code docutils literal notranslate"><span class="pre">#3=6</span> <span class="pre">G1</span>
+<span class="pre">x#3</span></code> is interpreted, a straight move to a point where x equals 15 will occur and the value of
+parameter 3 will be 6.</p>
+</div>
+<div class="section" id="comments-and-messages">
+<h3>7.1.1.5.7.8. Comments and Messages<a class="headerlink" href="#comments-and-messages" title="Permalink to this headline">¶</a></h3>
+<p>Printable characters and white space inside parentheses is a comment. A left parenthesis always
+starts a comment. The comment ends at the first right parenthesis found thereafter. Once a left
+parenthesis is placed on a line, a matching right parenthesis must appear before the end of the
+line.  Comments may not be nested; it is an error if a left parenthesis is found after the start of
+a comment and before the end of the comment. Here is an example of a line containing a comment:
+<code class="code docutils literal notranslate"><span class="pre">G80</span> <span class="pre">M5</span> <span class="pre">(stop</span> <span class="pre">motion)</span></code>. Comments do not cause a machining center to do anything.</p>
+</div>
+<div class="section" id="item-repeats">
+<h3>7.1.1.5.7.9. Item Repeats<a class="headerlink" href="#item-repeats" title="Permalink to this headline">¶</a></h3>
+<p>A line may have any number of <code class="code docutils literal notranslate"><span class="pre">G</span></code> words, but two <code class="code docutils literal notranslate"><span class="pre">G</span></code> words from the same modal group may
+not appear on the same line.</p>
+<p>A line may have zero to four <code class="code docutils literal notranslate"><span class="pre">M</span></code> words. Two <code class="code docutils literal notranslate"><span class="pre">M</span></code> words from the same modal group may not
+appear on the same line.</p>
+<p>For all other legal letters, a line may have only one word beginning with that letter.</p>
+<p>If a parameter setting of the same parameter is repeated on a line, <code class="code docutils literal notranslate"><span class="pre">#3=15</span> <span class="pre">#3=6</span></code>, for example,
+only the last setting will take effect. It is silly, but not illegal, to set the same parameter
+twice on the same line.</p>
+<p>If more than one comment appears on a line, only the last one will be used; each of the other
+comments will be read and its format will be checked, but it will be ignored thereafter. It is
+expected that putting more than one comment on a line will be very rare.</p>
+</div>
+<div class="section" id="item-order">
+<h3>7.1.1.5.7.10. Item order<a class="headerlink" href="#item-order" title="Permalink to this headline">¶</a></h3>
+<p>The three types of item whose order may vary on a line (as given at the beginning of this section)
+are word, parameter setting, and comment. Imagine that these three types of item are divided into
+three groups by type.</p>
+<p>The first group (the words) may be reordered in any way without changing the meaning of the line.</p>
+<p>If the second group (the parameter settings) is reordered, there will be no change in the meaning of
+the line unless the same parameter is set more than once. In this case, only the last setting of the
+parameter will take effect. For example, after the line <code class="code docutils literal notranslate"><span class="pre">#3=15</span> <span class="pre">#3=6</span></code> has been interpreted, the
+value of parameter 3 will be 6. If the order is reversed to <code class="code docutils literal notranslate"><span class="pre">#3=6</span> <span class="pre">#3=15</span></code> and the line is
+interpreted, the value of parameter 3 will be 15.</p>
+<p>If the third group (the comments) contains more than one comment and is reordered, only the last
+comment will be used.</p>
+<p>If each group is kept in order or reordered without changing the meaning of the line, then the three
+groups may be interleaved in any way without changing the meaning of the line. For example, the line
+<code class="code docutils literal notranslate"><span class="pre">g40</span> <span class="pre">g1</span> <span class="pre">#3=15</span> <span class="pre">(foo)</span> <span class="pre">#4=-7.0</span></code> has five items and means exactly the same thing in any of the 120
+possible orders (such as <code class="code docutils literal notranslate"><span class="pre">#4=-7.0</span> <span class="pre">g1</span> <span class="pre">#3=15</span> <span class="pre">g40</span> <span class="pre">(foo)</span></code>) for the five items.</p>
+</div>
+<div class="section" id="commands-and-machine-modes">
+<h3>7.1.1.5.7.11. Commands and Machine Modes<a class="headerlink" href="#commands-and-machine-modes" title="Permalink to this headline">¶</a></h3>
+<p>In RS274/NGC, many commands cause a machining center to change from one mode to another, and the
+mode stays active until some other command changes it implicitly or explicitly. Such commands are
+called “modal”. For example, if coolant is turned on, it stays on until it is explicitly turned
+off. The <code class="code docutils literal notranslate"><span class="pre">G</span></code> codes for motion are also modal. If a <code class="code docutils literal notranslate"><span class="pre">G1</span></code> (straight move) command is given
+on one line, for example, it will be executed again on the next line if one or more axis words is
+available on the line, unless an explicit command is given on that next line using the axis words or
+cancelling motion.</p>
+<p>“Non-modal” codes have effect only on the lines on which they occur. For example, <code class="code docutils literal notranslate"><span class="pre">G4</span></code> (dwell)
+is non-modal.</p>
+</div>
+</div>
+<div class="section" id="modal-groups">
+<h2>7.1.1.5.8. Modal Groups<a class="headerlink" href="#modal-groups" title="Permalink to this headline">¶</a></h2>
+<p>Modal commands are arranged in sets called “modal groups”, and only one member of a modal group may
+be in force at any given time. In general, a modal group contains commands for which it is logically
+impossible for two members to be in effect at the same time — like measure in inches vs. measure in
+millimeters. A machining center may be in many modes at the same time, with one mode from each modal
+group being in effect.</p>
+<p>For several modal groups, when a machining center is ready to accept commands, one member of the
+group must be in effect. There are default settings for these modal groups. When the machining
+center is turned on or otherwise re-initialized, the default values are automatically in effect.</p>
+<p>Group 1, the first group on the table, is a group of <code class="code docutils literal notranslate"><span class="pre">G</span></code> codes for motion. One of these is
+always in effect. That one is called the current motion mode.</p>
+<p>It is an error to put a G-code from group 1 and a G-code from group 0 on the same line if both of
+them use axis words. If an axis word-using G-code from group 1 is implicitly in effect on a line (by
+having been activated on an earlier line), and a group 0 G-code that uses axis words appears on the
+line, the activity of the group 1 G-code is suspended for that line. The axis word-using G-codes
+from group 0 are <code class="code docutils literal notranslate"><span class="pre">G10</span></code>, <code class="code docutils literal notranslate"><span class="pre">G28</span></code>, <code class="code docutils literal notranslate"><span class="pre">G30</span></code>, and <code class="code docutils literal notranslate"><span class="pre">G92</span></code>.</p>
+</div>
+<div class="section" id="g-and-input-codes">
+<h2>7.1.1.5.9. G and Input Codes<a class="headerlink" href="#g-and-input-codes" title="Permalink to this headline">¶</a></h2>
+<p>See …</p>
+</div>
+<div class="section" id="order-of-execution">
+<h2>7.1.1.5.10. Order of Execution<a class="headerlink" href="#order-of-execution" title="Permalink to this headline">¶</a></h2>
+<p>The order of execution of items on a line is critical to safe and effective machine operation. Items
+are executed in a particular order if they occur on the same line.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Rs274/Ast.html" class="btn btn-neutral float-right" title="7.1.1.5.1. Ast" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="MachineKit.html" class="btn btn-neutral" title="7.1.1.4. MachineKit" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Fabrice Salvaire
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../static/jquery.js"></script>
+        <script type="text/javascript" src="../../../static/underscore.js"></script>
+        <script type="text/javascript" src="../../../static/doctools.js"></script>
+        <script type="text/javascript" src="../../../static/getthecode.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../../static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

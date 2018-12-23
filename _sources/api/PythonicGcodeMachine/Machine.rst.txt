@@ -1,0 +1,10 @@
+
+=========
+ Machine
+=========
+
+.. toctree::
+
+.. automodule:: PythonicGcodeMachine.Machine
+   :members:
+   :show-inheritance:

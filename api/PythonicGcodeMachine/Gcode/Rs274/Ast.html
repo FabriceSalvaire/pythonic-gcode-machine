@@ -1,0 +1,637 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>7.1.1.5.1. Ast &mdash; PythonicGcodeMachine 0.1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../../static/css/PythonicGcodeMachine.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="7.1.1.5.2. Lexer" href="Lexer.html" />
+    <link rel="prev" title="7.1.1.5. Rs274" href="../Rs274.html" /> 
+
+  
+  <script src="../../../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> PythonicGcodeMachine
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview.html">1. Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../overview.html#what-is-pythonicgcodemachine">1.1. What is PythonicGcodeMachine ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../overview.html#how-is-pythonicgcodemachine-licensed">1.2. How is PythonicGcodeMachine licensed ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../overview.html#going-further-with-pythonicgcodemachine">1.3. Going further with PythonicGcodeMachine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../overview.html#which-platforms-are-supported-by-pythonicgcodemachine">1.4. Which platforms are supported by PythonicGcodeMachine ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../overview.html#how-to-install-pythonicgcodemachine">1.5. How to install PythonicGcodeMachine ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../overview.html#which-version-of-python-is-required">1.6. Which version of Python is required ?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../news.html">2. News</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../news.html#v0-2018-12-22">2.1. V0 2018-12-22</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../roadmap.html">3. Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation.html">4. Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#on-windows">4.1. On Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#on-linux">4.2. On Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#on-osx">4.3. On OSX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#installation-from-pypi-repository">4.4. Installation from PyPi Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#install-a-more-recent-version-from-github">4.5. Install a more recent version from Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#installation-from-source">4.6. Installation from Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#dependencies">4.7. Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../faq.html">5. User FAQ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../faq.html#how-to-get-help-or-report-an-issue">5.1. How to get help or report an issue ?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../design-notes.html">6. Design Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../design-notes.html#g-code-parser">6.1. G-Code Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../design-notes.html#g-code-flavours">6.2. G-code flavours</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../reference-manual.html">7. API Documentation</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../../PythonicGcodeMachine.html">7.1. PythonicGcodeMachine</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../Gcode.html">7.1.1. Gcode</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../Fanuc.html">7.1.1.1. Fanuc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Heidenhain.html">7.1.1.2. Heidenhain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../LinuxCnc.html">7.1.1.3. LinuxCnc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../MachineKit.html">7.1.1.4. MachineKit</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../Rs274.html">7.1.1.5. Rs274</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../Machine.html">7.1.2. Machine</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../PythonLexYacc.html">7.1.3. PythonLexYacc</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../PythonLexYacc/lex.html">7.1.3.1. lex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../PythonLexYacc/yacc.html">7.1.3.2. yacc</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../reference-manual.html#indexes">7.2. Indexes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../development.html">8. Development &amp; Community</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../development.html#how-you-can-help">8.1. How you can help ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../development.html#contributors">8.2. Contributors</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../how-to-refer.html">9. How to Refer to PythonicGcodeMachine ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../donate.html">10. How to Help Further ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../related-projects.html">11. Related Projects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../related-projects.html#g-code-tools">11.1. G-code Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../related-projects.html#cam-tools">11.2. CAM Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../bibliography.html">12. Bibliography</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../bibliography.html#g-code">12.1. G-Code</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">PythonicGcodeMachine</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../../reference-manual.html">7. API Documentation</a> &raquo;</li>
+        
+          <li><a href="../../../PythonicGcodeMachine.html">7.1. PythonicGcodeMachine</a> &raquo;</li>
+        
+          <li><a href="../../Gcode.html">7.1.1. Gcode</a> &raquo;</li>
+        
+          <li><a href="../Rs274.html">7.1.1.5. Rs274</a> &raquo;</li>
+        
+      <li>7.1.1.5.1. Ast</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../../_sources/api/PythonicGcodeMachine/Gcode/Rs274/Ast.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-PythonicGcodeMachine.Gcode.Rs274.Ast">
+<span id="ast"></span><h1>7.1.1.5.1. Ast<a class="headerlink" href="#module-PythonicGcodeMachine.Gcode.Rs274.Ast" title="Permalink to this headline">¶</a></h1>
+<p>Module to implement an AST for RS-274 G-code.</p>
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.Program">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.Ast.</code><code class="descname">Program</code><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Ast.html#Program"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.Program" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Class to implement a G-code program</p>
+<p>Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">program</span> <span class="o">=</span> <span class="n">Program</span><span class="p">()</span>
+<span class="n">program</span> <span class="o">+=</span> <span class="n">line</span>
+
+<span class="c1"># Array interface</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">programs</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+
+<span class="nb">str</span><span class="p">(</span><span class="n">program</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.Program.iter_on_not_deleted">
+<code class="descname">iter_on_not_deleted</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Ast.html#Program.iter_on_not_deleted"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.Program.iter_on_not_deleted" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.Program.push">
+<code class="descname">push</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Ast.html#Program.push"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.Program.push" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.Line">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.Ast.</code><code class="descname">Line</code><span class="sig-paren">(</span><em>deleted=False</em>, <em>line_number=None</em>, <em>comment=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Ast.html#Line"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.Line" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Class to implement a G-code line</p>
+<p>Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">line</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">deleted</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">line_number</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="s1">&#39;a comment&#39;</span><span class="p">)</span>
+
+<span class="n">line</span><span class="o">.</span><span class="n">deleted</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">deleted</span><span class="p">)</span>
+<span class="c1"># same apply for line_number and comment</span>
+
+<span class="c1"># Is line not deleted ?</span>
+<span class="nb">bool</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+
+<span class="c1"># Push some items</span>
+<span class="c1"># Note: order doesn&#39;t matter, see RS-274 for details</span>
+<span class="n">line</span> <span class="o">+=</span> <span class="n">Word</span><span class="p">(</span><span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">line</span> <span class="o">+=</span> <span class="n">Comment</span><span class="p">(</span><span class="s1">&#39;move&#39;</span><span class="p">)</span>
+<span class="n">line</span> <span class="o">+=</span> <span class="n">Word</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">line</span> <span class="o">+=</span> <span class="n">Comment</span><span class="p">(</span><span class="s1">&#39;Y value&#39;</span><span class="p">)</span>
+<span class="n">line</span> <span class="o">+=</span> <span class="n">Word</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">line</span> <span class="o">+=</span> <span class="n">ParameterSetting</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">)</span>
+
+<span class="c1"># using expression</span>
+<span class="n">line</span> <span class="o">+=</span> <span class="n">Word</span><span class="p">(</span><span class="s1">&#39;Z&#39;</span><span class="p">,</span> <span class="n">Addition</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="n">Multiply</span><span class="p">(</span><span class="n">Parameter</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span> <span class="n">Cosine</span><span class="p">(</span><span class="mi">30</span><span class="p">))))</span>
+
+<span class="c1"># Array interface</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+
+<span class="nb">str</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">ansi_str</span><span class="p">())</span> <span class="c1"># use ANSI colors, see Line.ANSI_... attributes</span>
+</pre></div>
+</div>
+<p>Expression can be evaluated using <code class="code docutils literal notranslate"><span class="pre">float(obj.value)</span></code>, excepted when we must access a parameter
+value.</p>
+<dl class="attribute">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.Line.ANSI_COMMENT">
+<code class="descname">ANSI_COMMENT</code><em class="property"> = functools.partial(&lt;function color&gt;, fg='green')</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.Line.ANSI_COMMENT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.Line.ANSI_DELETED">
+<code class="descname">ANSI_DELETED</code><em class="property"> = functools.partial(&lt;function color&gt;, fg='red')</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.Line.ANSI_DELETED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.Line.ANSI_G">
+<code class="descname">ANSI_G</code><em class="property"> = functools.partial(&lt;function color&gt;, fg='red')</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.Line.ANSI_G" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.Line.ANSI_LINE_NUMBER">
+<code class="descname">ANSI_LINE_NUMBER</code><em class="property"> = functools.partial(&lt;function color&gt;, fg='blue')</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.Line.ANSI_LINE_NUMBER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.Line.ANSI_SETTING">
+<code class="descname">ANSI_SETTING</code><em class="property"> = functools.partial(&lt;function color&gt;, fg='blue')</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.Line.ANSI_SETTING" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.Line.ANSI_VALUE">
+<code class="descname">ANSI_VALUE</code><em class="property"> = functools.partial(&lt;function color&gt;, fg='black')</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.Line.ANSI_VALUE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.Line.ANSI_X">
+<code class="descname">ANSI_X</code><em class="property"> = functools.partial(&lt;function color&gt;, fg='blue')</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.Line.ANSI_X" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.Line.ansi_str">
+<code class="descname">ansi_str</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Ast.html#Line.ansi_str"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.Line.ansi_str" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.Line.comment">
+<code class="descname">comment</code><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.Line.comment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.Line.deleted">
+<code class="descname">deleted</code><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.Line.deleted" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.Line.line_number">
+<code class="descname">line_number</code><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.Line.line_number" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.Line.push">
+<code class="descname">push</code><span class="sig-paren">(</span><em>item</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Ast.html#Line.push"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.Line.push" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.Comment">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.Ast.</code><code class="descname">Comment</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Ast.html#Comment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.Comment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PythonicGcodeMachine.Gcode.Rs274.Ast.LineItem</span></code></p>
+<p>Class to implement comment</p>
+<dl class="method">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.Comment.ansi_str">
+<code class="descname">ansi_str</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Ast.html#Comment.ansi_str"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.Comment.ansi_str" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.Comment.set">
+<code class="descname">set</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Ast.html#Comment.set"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.Comment.set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.Comment.text">
+<code class="descname">text</code><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.Comment.text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.Word">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.Ast.</code><code class="descname">Word</code><span class="sig-paren">(</span><em>letter</em>, <em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Ast.html#Word"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.Word" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PythonicGcodeMachine.Gcode.Rs274.Ast.LineItem</span></code></p>
+<p>Class to implement word</p>
+<dl class="attribute">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.Word.LETTERS">
+<code class="descname">LETTERS</code><em class="property"> = ('A', 'B', 'C', 'D', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'P', 'Q', 'R', 'S', 'T', 'X', 'Y', 'Z')</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.Word.LETTERS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.Word.ansi_str">
+<code class="descname">ansi_str</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Ast.html#Word.ansi_str"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.Word.ansi_str" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.Word.letter">
+<code class="descname">letter</code><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.Word.letter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.Word.value">
+<code class="descname">value</code><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.Word.value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.ParameterMixin">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.Ast.</code><code class="descname">ParameterMixin</code><span class="sig-paren">(</span><em>parameter</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Ast.html#ParameterMixin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.ParameterMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="attribute">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.ParameterMixin.parameter">
+<code class="descname">parameter</code><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.ParameterMixin.parameter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.ParameterSetting">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.Ast.</code><code class="descname">ParameterSetting</code><span class="sig-paren">(</span><em>parameter</em>, <em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Ast.html#ParameterSetting"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.ParameterSetting" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PythonicGcodeMachine.Gcode.Rs274.Ast.LineItem</span></code>, <a class="reference internal" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.ParameterMixin" title="PythonicGcodeMachine.Gcode.Rs274.Ast.ParameterMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">PythonicGcodeMachine.Gcode.Rs274.Ast.ParameterMixin</span></code></a></p>
+<p>Class to implement parameter setting</p>
+<dl class="method">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.ParameterSetting.ansi_str">
+<code class="descname">ansi_str</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Ast.html#ParameterSetting.ansi_str"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.ParameterSetting.ansi_str" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.ParameterSetting.value">
+<code class="descname">value</code><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.ParameterSetting.value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.Parameter">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.Ast.</code><code class="descname">Parameter</code><span class="sig-paren">(</span><em>parameter</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Ast.html#Parameter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.Parameter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PythonicGcodeMachine.Gcode.Rs274.Ast.RealValue</span></code>, <a class="reference internal" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.ParameterMixin" title="PythonicGcodeMachine.Gcode.Rs274.Ast.ParameterMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">PythonicGcodeMachine.Gcode.Rs274.Ast.ParameterMixin</span></code></a></p>
+<p>Class to implement parameter</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.AbsoluteValue">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.Ast.</code><code class="descname">AbsoluteValue</code><span class="sig-paren">(</span><em>arg</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Ast.html#AbsoluteValue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.AbsoluteValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PythonicGcodeMachine.Gcode.Rs274.Ast.UnaryOperation</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.ArcCosine">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.Ast.</code><code class="descname">ArcCosine</code><span class="sig-paren">(</span><em>arg</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Ast.html#ArcCosine"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.ArcCosine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PythonicGcodeMachine.Gcode.Rs274.Ast.UnaryOperation</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.ArcSine">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.Ast.</code><code class="descname">ArcSine</code><span class="sig-paren">(</span><em>arg</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Ast.html#ArcSine"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.ArcSine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PythonicGcodeMachine.Gcode.Rs274.Ast.UnaryOperation</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.ArcTangent">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.Ast.</code><code class="descname">ArcTangent</code><span class="sig-paren">(</span><em>arg</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Ast.html#ArcTangent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.ArcTangent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PythonicGcodeMachine.Gcode.Rs274.Ast.UnaryOperation</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.Cosine">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.Ast.</code><code class="descname">Cosine</code><span class="sig-paren">(</span><em>arg</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Ast.html#Cosine"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.Cosine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PythonicGcodeMachine.Gcode.Rs274.Ast.UnaryOperation</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.ERaisedTo">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.Ast.</code><code class="descname">ERaisedTo</code><span class="sig-paren">(</span><em>arg</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Ast.html#ERaisedTo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.ERaisedTo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PythonicGcodeMachine.Gcode.Rs274.Ast.UnaryOperation</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.FixDown">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.Ast.</code><code class="descname">FixDown</code><span class="sig-paren">(</span><em>arg</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Ast.html#FixDown"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.FixDown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PythonicGcodeMachine.Gcode.Rs274.Ast.UnaryOperation</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.FixUp">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.Ast.</code><code class="descname">FixUp</code><span class="sig-paren">(</span><em>arg</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Ast.html#FixUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.FixUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PythonicGcodeMachine.Gcode.Rs274.Ast.UnaryOperation</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.NaturalLogOf">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.Ast.</code><code class="descname">NaturalLogOf</code><span class="sig-paren">(</span><em>arg</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Ast.html#NaturalLogOf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.NaturalLogOf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PythonicGcodeMachine.Gcode.Rs274.Ast.UnaryOperation</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.Round">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.Ast.</code><code class="descname">Round</code><span class="sig-paren">(</span><em>arg</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Ast.html#Round"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.Round" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PythonicGcodeMachine.Gcode.Rs274.Ast.UnaryOperation</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.Sine">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.Ast.</code><code class="descname">Sine</code><span class="sig-paren">(</span><em>arg</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Ast.html#Sine"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.Sine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PythonicGcodeMachine.Gcode.Rs274.Ast.UnaryOperation</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.SquareRoot">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.Ast.</code><code class="descname">SquareRoot</code><span class="sig-paren">(</span><em>arg</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Ast.html#SquareRoot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.SquareRoot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PythonicGcodeMachine.Gcode.Rs274.Ast.UnaryOperation</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.Tangent">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.Ast.</code><code class="descname">Tangent</code><span class="sig-paren">(</span><em>arg</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Ast.html#Tangent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.Tangent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PythonicGcodeMachine.Gcode.Rs274.Ast.UnaryOperation</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.Power">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.Ast.</code><code class="descname">Power</code><span class="sig-paren">(</span><em>arg1</em>, <em>arg2</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Ast.html#Power"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.Power" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PythonicGcodeMachine.Gcode.Rs274.Ast.BinaryOperation</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.DividedBy">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.Ast.</code><code class="descname">DividedBy</code><span class="sig-paren">(</span><em>arg1</em>, <em>arg2</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Ast.html#DividedBy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.DividedBy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PythonicGcodeMachine.Gcode.Rs274.Ast.BinaryOperation</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.Modulo">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.Ast.</code><code class="descname">Modulo</code><span class="sig-paren">(</span><em>arg1</em>, <em>arg2</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Ast.html#Modulo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.Modulo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PythonicGcodeMachine.Gcode.Rs274.Ast.BinaryOperation</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.Multiply">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.Ast.</code><code class="descname">Multiply</code><span class="sig-paren">(</span><em>arg1</em>, <em>arg2</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Ast.html#Multiply"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.Multiply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PythonicGcodeMachine.Gcode.Rs274.Ast.BinaryOperation</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.And">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.Ast.</code><code class="descname">And</code><span class="sig-paren">(</span><em>arg1</em>, <em>arg2</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Ast.html#And"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.And" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PythonicGcodeMachine.Gcode.Rs274.Ast.BinaryOperation</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.ExclusiveOr">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.Ast.</code><code class="descname">ExclusiveOr</code><span class="sig-paren">(</span><em>arg1</em>, <em>arg2</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Ast.html#ExclusiveOr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.ExclusiveOr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PythonicGcodeMachine.Gcode.Rs274.Ast.BinaryOperation</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.Subtraction">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.Ast.</code><code class="descname">Subtraction</code><span class="sig-paren">(</span><em>arg1</em>, <em>arg2</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Ast.html#Subtraction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.Subtraction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PythonicGcodeMachine.Gcode.Rs274.Ast.BinaryOperation</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.Or">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.Ast.</code><code class="descname">Or</code><span class="sig-paren">(</span><em>arg1</em>, <em>arg2</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Ast.html#Or"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.Or" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PythonicGcodeMachine.Gcode.Rs274.Ast.BinaryOperation</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Ast.Addition">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.Ast.</code><code class="descname">Addition</code><span class="sig-paren">(</span><em>arg1</em>, <em>arg2</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Ast.html#Addition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Ast.Addition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PythonicGcodeMachine.Gcode.Rs274.Ast.BinaryOperation</span></code></p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Lexer.html" class="btn btn-neutral float-right" title="7.1.1.5.2. Lexer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../Rs274.html" class="btn btn-neutral" title="7.1.1.5. Rs274" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Fabrice Salvaire
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../../static/jquery.js"></script>
+        <script type="text/javascript" src="../../../../static/underscore.js"></script>
+        <script type="text/javascript" src="../../../../static/doctools.js"></script>
+        <script type="text/javascript" src="../../../../static/getthecode.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../../../static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>
