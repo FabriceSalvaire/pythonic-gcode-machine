@@ -3,9 +3,9 @@
 .. include:: project-links.txt
 .. include:: abbreviation.txt
 
-============
- PythonicGcodeMachine
-============
+============================
+ The Pythonic Gcode Machine
+============================
 
 |Pypi License|
 |Pypi Python Version|
@@ -19,9 +19,11 @@ Overview
 ========
 
 What is PythonicGcodeMachine ?
----------------------
+------------------------------
 
-PythonicGcodeMachine is a Python module which implements ...
+.. free and open source
+
+PythonicGcodeMachine is a Python toolkit to work with RS-274 / ISO G-Code.
 
 Where is the Documentation ?
 ----------------------------
