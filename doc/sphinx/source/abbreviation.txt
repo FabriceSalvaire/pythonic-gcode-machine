@@ -14,3 +14,15 @@
 
 .. |Sphinx| replace:: Sphinx
 .. _Sphinx: http://sphinx-doc.org
+
+.. |NIST-RS-274| replace:: The NIST RS274NGC Interpreter — Version 3
+.. _NIST-RS-274: https://www.nist.gov/publications/nist-rs274ngc-interpreter-version-3
+
+.. |LinuxCNC| replace:: Linux CNC
+.. _LinuxCNC: http://linuxcnc.org/docs/2.7/html/gcode/overview.html
+
+.. |Machinekit| replace:: Machinekit
+.. _Machinekit: http://www.machinekit.io
+
+.. |YAML| replace:: YAML
+.. _YAML: https://yaml.org

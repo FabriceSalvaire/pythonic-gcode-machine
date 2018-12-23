@@ -95,15 +95,8 @@ Dependencies
 PythonicGcodeMachine requires the following dependencies:
 
  * |Python|_ 3
- * |Numpy|_
+ * these `Python packages <https://github.com/FabriceSalvaire/pythonic-gcode-machine/blob/master/requirements.txt>`_
 
-Also it is recommanded to have these Python modules:
+For development, you could also need the `dependencies
+<https://github.com/FabriceSalvaire/pythonic-gcode-machine/blob/master/requirements-dev.txt>`_.
 
- * |IPython|_
-
-.. * pip
-.. * virtualenv
-
-To generate the documentation, you will need in addition:
-
- * |Sphinx|_
