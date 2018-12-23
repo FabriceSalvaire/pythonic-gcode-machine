@@ -1,0 +1,106 @@
+F:
+  meaning: set feed rate
+G00:
+  meaning: Rapid traverse
+G01:
+  meaning: Linear interpolation
+G02:
+  meaning: Circular interpolation CW
+G03:
+  meaning: Circular interpolation CCW
+G04:
+  meaning: Dwell
+G09:
+  meaning: Exact stop
+G10:
+  meaning: Programmable data input
+G20:
+  meaning: Input in inch
+G21:
+  meaning: Input in mm
+G22:
+  meaning: Stored stroke check function ON
+G23:
+  meaning: Stored stroke check function OFF
+G27:
+  meaning: Reference position return check
+G28:
+  meaning: Return to reference position
+G32:
+  meaning: Thread cutting
+G40:
+  meaning: Tool nose radius compensation cancel
+G41:
+  meaning: Tool nose radius compensation left
+G42:
+  meaning: Tool nose radius compensation right
+G70:
+  meaning: Finish machining cycle
+G71:
+  meaning: Turning cycle
+G72:
+  meaning: Facing cycle
+G73:
+  meaning: Pattern repeating cycle
+G74:
+  meaning: Peck drilling cycle
+G75:
+  meaning: Grooving cycle
+G76:
+  meaning: Threading cycle
+G92:
+  meaning: Coordinate system setting or max. spindle speed setting
+G94:
+  meaning: Feed per minute
+G95:
+  meaning: Feed per revolution
+G96:
+  meaning: Constant surface speed control
+G97:
+  meaning: Constant surface speed control cancel
+M00:
+  meaning: Program stop
+M01:
+  meaning: Optional program stop
+M02:
+  meaning: End of program
+M03:
+  meaning: Spindle start forward CW
+M04:
+  meaning: Spindle start reverse CCW
+M05:
+  meaning: Spindle stop
+M08:
+  meaning: Coolant ON
+M09:
+  meaning: Coolant OFF
+M29:
+  meaning: Rigid tap mode
+M30:
+  meaning: End of program reset
+M40:
+  meaning: Spindle gear at middle
+M41:
+  meaning: Low gear select
+M42:
+  meaning: High gear select
+M68:
+  meaning: Hydraulic chuck close
+M69:
+  meaning: Hydraulic chuck open
+M78:
+  meaning: Tailstock advancing
+M79:
+  meaning: Tailstock reversing
+M94:
+  meaning: Cancel mirror image
+M95:
+  meaning: Mirror image of X axis
+M98:
+  meaning: Subprogram call
+M99:
+  meaning: End of subprogram
+S:
+  meaning: set spindle speed
+T:
+  meaning: select tool

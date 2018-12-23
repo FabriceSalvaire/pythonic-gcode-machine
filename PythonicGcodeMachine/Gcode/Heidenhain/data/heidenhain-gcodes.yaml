@@ -1,0 +1,473 @@
+F:
+  meaning: set feed rate
+# Tool movements
+G00:
+  meaning: Straight-line interpolation, Cartesian coordinates, rapid traverse
+G01:
+  meaning: Straight-line interpolation, Cartesian coordinates
+G02:
+  meaning: Circular interpolation, Cartesian coordinates, clockwise
+G03:
+  meaning: Circular interpolation, Cartesian coordinates, counterclockwise
+G05:
+  meaning: Circular interpolation, Cartesian coordinates, without indication of direction
+G06:
+  meaning: Circular interpolation, Cartesian coordinates, tangential contour approach
+G07:
+  meaning: Paraxial positioning block
+G10:
+  meaning: Straight-line interpolation, polar coordinates, rapid traverse
+G11:
+  meaning: Straight-line interpolation, polar coordinates
+G12:
+  meaning: Circular interpolation, polar coordinates, clockwise
+G13:
+  meaning: Circular interpolation, polar coordinates, counterclockwise
+G15:
+  meaning: Circular interpolation, polar coordinates, without indication of direction
+G16:
+  meaning: Circular interpolation, polar coordinates, tangential contour approach
+# Chamfer/Rounding/Approach contour/Depart contour
+G24:
+  meaning: Chamfer with length R
+G25:
+  meaning: Corner rounding with radius R
+G26:
+  meaning: Tangential contour approach with radius R
+G27:
+  meaning: Tangential contour approach with radius R
+# Tool definition
+G99:
+  meaning: With tool number T, length L, radius R
+# Tool radius compensation
+G40:
+  meaning: No tool radius compensation
+G41:
+  meaning: Tool radius compensation, left of the contour
+G42:
+  meaning: Tool radius compensation, right of the contour
+G43:
+  meaning: Paraxial compensation for G07, lengthening
+G44:
+  meaning: Paraxial compensation for G07, shortening
+# Blank form definition for graphics
+G30:
+  meaning: (G17/G18/G19) min. point
+G31:
+  meaning: (G90/G91) max. point
+# Cycles for drilling, tapping and thread milling
+G83:
+  meaning: Pecking
+G84:
+  meaning: Tapping with a floating tap holder
+G85:
+  meaning: Rigid tapping
+G86:
+  meaning: Thread cutting
+G200:
+  meaning: Drilling
+G201:
+  meaning: Reaming
+G202:
+  meaning: Boring
+G203:
+  meaning: Universal drilling
+G204:
+  meaning: Back boring
+G205:
+  meaning: Universal pecking
+G206:
+  meaning: Tapping with a floating tap holder
+G207:
+  meaning: Rigid tapping
+G208:
+  meaning: Bore milling
+G209:
+  meaning: Tapping with chip breaking
+Cycles for creating point patterns
+# G220:
+  meaning: Circular pattern
+G221:
+  meaning: Linear pattern
+SL Cycles, group 1
+# G37:
+  meaning: Contour geometry, list of subcontour program numbers
+G56:
+  meaning: Pilot drilling
+G57:
+  meaning: Rough-out
+G58:
+  meaning: Contour milling in clockwise direction (finishing)
+G59:
+  meaning: Contour milling, counterclockwise (finishing)
+# SL cycles, group 2
+G37:
+  meaning: Contour geometry, list of subcontour program numbers
+G120:
+  meaning: Contour data (applies to G121 to G124)
+G121:
+  meaning: Pilot drilling
+G122:
+  meaning: Rough-out
+G123:
+  meaning: Floor finishing
+G124:
+  meaning: Side finishing
+G125:
+  meaning: Contour train (machining open contour)
+G127:
+  meaning: Cylinder surface
+G128:
+  meaning: Cylindrical surface slot
+# Coordinate transformation
+G53:
+  meaning: Datum shift in datum table
+G54:
+  meaning: Datum shift in program
+G28:
+  meaning: Mirror image
+G73:
+  meaning: Rotation of the coordinate system
+G72:
+  meaning: Scaling factor (reduce or enlarge contour)
+G80:
+  meaning: Tilting the working plane
+G247:
+  meaning: Datum setting
+# Cycles for multipass milling
+G60:
+  meaning: Run 3-D data
+G230:
+  meaning: Multipass milling of plane surfaces
+G231:
+  meaning: Multipass milling of tilted surfaces
+G232:
+  meaning: Face milling
+# Special cycles
+G04:
+  meaning: Dwell time with F seconds
+G36:
+  meaning: Spindle orientation
+G39:
+  meaning: Program call
+G62:
+  meaning: Tolerance deviation for fast contour milling
+G440:
+  meaning: Measure axis shift
+G441:
+  meaning: Fast probing
+# Define machining plane
+G17:
+  meaning: Working plane X/Y, tool axis Z
+G18:
+  meaning: Working plane Z/X, tool axis Y
+G19:
+  meaning: Working plane Y/Z, tool axis X
+G20:
+  meaning: Tool axis IV
+# Dimensions
+G90:
+  meaning: Absolute dimensions
+G91:
+  meaning: Incremental dimensions
+# Unit of measure
+G70:
+  meaning: Inches (set at start of program)
+G71:
+  meaning: Millimeters (set at start of program)
+# Other G functions
+G29:
+  meaning: Transfer the last nominal position value as a pole (circle center)
+G38:
+  meaning: STOP program run
+G51:
+  meaning: Next tool number (with central tool file)
+G79:
+  meaning: Cycle call
+G98:
+  meaning: Set label number
+# Cycles for drilling, tapping and thread milling
+G240:
+  meaning: Centering
+G200:
+  meaning: Drilling
+G201:
+  meaning: Reaming
+G202:
+  meaning: Boring
+G203:
+  meaning: Universal drilling
+G204:
+  meaning: Back boring
+G205:
+  meaning: Universal pecking
+G206:
+  meaning: Tapping with a floating tap holder
+G207:
+  meaning: Rigid tapping
+G208:
+  meaning: Bore milling
+G209:
+  meaning: Tapping with chip breaking
+G241:
+  meaning: Single-lip deep-hole drilling
+# Cycles for drilling, tapping and thread milling
+G262:
+  meaning: Thread milling
+G263:
+  meaning: Thread milling/countersinking
+G264:
+  meaning: Thread drilling/milling
+G265:
+  meaning: Helical thread drilling/milling
+G267:
+  meaning: External thread milling
+# Cycles for milling pockets, studs and slots
+G74:
+  meaning: Slot milling
+G75:
+  meaning: Rectangular pocket milling in clockwise direction
+G76:
+  meaning: Rectangular pocket milling in counterclockwise direction
+G77:
+  meaning: Circular pocket milling in clockwise direction
+G78:
+  meaning: Circular pocket milling in counterclockwise direction
+G210:
+  meaning: Slot milling with reciprocating plunge
+G211:
+  meaning: Round slot with reciprocating plunge
+G212:
+  meaning: Rectangular pocket finishing
+G213:
+  meaning: Rectangular stud finishing
+G214:
+  meaning: Circular pocket finishing
+G215:
+  meaning: Circular stud finishing
+# Cycles for milling pockets, studs and slots
+G251:
+  meaning: Rectangular pocket, complete
+G252:
+  meaning: Circular pocket, complete
+G253:
+  meaning: Slot, complete
+G254:
+  meaning: Circular slot, complete
+G256:
+  meaning: Rectangular stud
+G257:
+  meaning: Circular stud
+# Cycles for creating point patterns
+G220:
+  meaning: Circular point pattern
+G221:
+  meaning: Point patterns on lines
+# Cycles for multipass milling
+G230:
+  meaning: Multipass milling of smooth surfaces
+G231:
+  meaning: Multipass milling of tilted surfaces
+G232:
+  meaning: Face milling
+# Touch probe cycles for measuring workpiece misalignment
+G400:
+  meaning: Basic rotation using two points
+G401:
+  meaning: Basic rotation from two holes
+G402:
+  meaning: Basic rotation from two studs
+G403:
+  meaning: Compensate a basic rotation via a rotary axis
+G404:
+  meaning: Set basic rotation
+G405:
+  meaning: Compensating misalignment with the C axis
+# Touch probe cycles for datum setting
+G408:
+  meaning: Slot center reference point
+G409:
+  meaning: Reference point at center of hole
+G410:
+  meaning: Datum from inside of rectangle
+G411:
+  meaning: Datum from outside of rectangle
+G412:
+  meaning: Datum from inside of circle
+G413:
+  meaning: Datum from outside of circle
+G414:
+  meaning: Datum in outside corner
+G415:
+  meaning: Datum in inside corner
+G416:
+  meaning: Datum circle center
+G417:
+  meaning: Datum in touch probe axis
+G418:
+  meaning: Datum in center of 4 holes
+G419:
+  meaning: Reference point in selectable axis
+# Touch probe cycles for workpiece measurement
+G55:
+  meaning: Measure any coordinate
+G420:
+  meaning: Measure any angle
+G421:
+  meaning: Measure hole
+G422:
+  meaning: Measure cylindrical stud
+G423:
+  meaning: Measure rectangular pocket
+G424:
+  meaning: Measure rectangular stud
+G425:
+  meaning: Measure slot
+G426:
+  meaning: Measure ridge
+G427:
+  meaning: Measure any coordinate
+G430:
+  meaning: Measure circle center
+G431:
+  meaning: Measure any plane
+# Touch probe cycles for tool measurement
+G480:
+  meaning: Calibrating the TT
+G481:
+  meaning: Measure tool length
+G482:
+  meaning: Measure tool radius
+G483:
+  meaning: Measure tool length and tool radius
+#
+M0:
+  meaning: Stop program run (Spindle STOP, Coolant OFF)
+M1:
+  meaning: Optional program STOP (Spindle STOP, Coolant OFF)
+M2:
+  meaning: Stop program run (Spindle STOP,Coolant OFF,Go to block 1,Clear the status display(depending on machine parameter))
+M3:
+  meaning: Spindle ON clockwise
+M4:
+  meaning: Spindle ON counterclockwise
+M5:
+  meaning: Spindle STOP
+M6:
+  meaning: Tool change (STOP program run (depending on machine parameter),Spindle STOP)
+M8:
+  meaning: Coolant ON
+M9:
+  meaning: Coolant OFF
+M13:
+  meaning: Spindle ON clockwise (Coolant ON)
+M14:
+  meaning: Spindle ON counterclockwise (Coolant ON)
+M30:
+  meaning: Same as M2
+M89:
+  meaning: Vacant miscellaneous function or Cycle call, modally effective (depending on machine parameter)
+M91:
+  meaning: Within the positioning block: Coordinates are referenced to machine datum
+M92:
+  meaning: Within the positioning block: Coordinates are referenced to position defined by machine tool builder, such as tool change position
+M94:
+  meaning: Reduce the rotary axis display to a value below 360°
+M97:
+  meaning: Machine small contour steps
+M98:
+  meaning: Machine open contours completely
+M99:
+  meaning: Blockwise cycle call (Cycle call, NON-MODAL)
+M101:
+  meaning: Automatic tool change with replacement tool if maximum tool life has expired
+M102:
+  meaning: Reset M101
+M103:
+  meaning: Reduce feed rate during plunging to factor F (percentage)
+M104:
+  meaning: Reactivate the datum as last defined
+M105:
+  meaning: Machining with second kv factor
+M106:
+  meaning: Machining with first kv factor
+M107:
+  meaning: Suppress error message for replacement tools with oversize
+M108:
+  meaning: Reset M107
+M109:
+  meaning: Constant contouring speed at tool cutting edge (increase and decrease feed rate)
+M110:
+  meaning: Constant contouring speed at tool cutting edge (feed rate decrease only)
+M111:
+  meaning: Reset M109/M110
+M112:
+  meaning: Enter contour transition between two contour elements
+M113:
+  meaning: Reset M112
+M114:
+  meaning: Automatic compensation of machine geometry when working with tilted axes
+M115:
+  meaning: Reset M114
+M116:
+  meaning: Feed rate for rotary axes in mm/min
+M117:
+  meaning: Reset M116
+M118:
+  meaning: Superimpose handwheel positioning during program run
+M120:
+  meaning: Pre-calculate radius-compensated contour (LOOK AHEAD)
+M124:
+  meaning: Contour filter
+M126:
+  meaning: Shortest-path traverse of rotary axes
+M127:
+  meaning: Reset M126
+M128:
+  meaning: Retain the position of the tool tip when positioning the tilted axes (TCPM)
+M129:
+  meaning: Reset M128
+M130:
+  meaning: Moving to position in an untilted coordinate system with a tilted working plane
+M134:
+  meaning: Exact stop at nontangential contour transitions when positioning with rotary axes
+M135:
+  meaning: Reset M134
+M136:
+  meaning: Feed rate F in millimeters per spindle revolution
+M137:
+  meaning: Reset M136
+M138:
+  meaning: Selection of tilted axes
+M140:
+  meaning: Retraction from the contour in the tool-axis direction
+M141:
+  meaning: Suppress touch probe monitoring
+M142:
+  meaning: Delete modal program information
+M143:
+  meaning: Delete basic rotation
+M144:
+  meaning: Compensating the machine’s kinematics configuration for ACTUAL/NOMINAL positions at end of block
+M145:
+  meaning: Reset M144
+M148:
+  meaning: Retract the tool automatically from the contour at NC stop
+M149:
+  meaning: Reset M148
+M150:
+  meaning: Suppress limit switch message
+M200:
+  meaning: Laser cutting: Output programmed voltage directly
+M201:
+  meaning: Laser cutting: Output voltage as a function of distance
+M202:
+  meaning: Laser cutting: Output voltage as a function of speed
+M203:
+  meaning: Laser cutting: Output voltage as a function of time (ramp)
+M204:
+  meaning: Laser cutting: Output voltage as a function of time (pulse)
+S:
+  meaning: set spindle speed
+T:
+  meaning: select tool

@@ -1,0 +1,38 @@
+M0:
+  meaning: Program stop
+M1:
+  meaning: Optional stop (program stop only with opt. stop)
+M2:
+  meaning: Program end
+M3:
+  meaning: Spindle ON clockwise
+M4:
+  meaning: Spindle ON counterclockwise
+M5:
+  meaning: Spindle Stop
+M6:
+  meaning: Tool change
+M8:
+  meaning: Coolant ON
+M9:
+  meaning: Coolant OFF
+M10:
+  meaning: Dividing head, clamping ON
+M11:
+  meaning: Dividing head, clamping OFF
+M17:
+  meaning: End of subprogram
+M25:
+  meaning: Open clamp/ machine vice
+M26:
+  meaning: Close clamp/ machine vice
+M27:
+  meaning: Swivel dividing head
+M30:
+  meaning: Main program end
+M71:
+  meaning: Puff blowing device ON
+M72:
+  meaning: Puff blowing device OFF
+M99:
+  meaning: Cycle call

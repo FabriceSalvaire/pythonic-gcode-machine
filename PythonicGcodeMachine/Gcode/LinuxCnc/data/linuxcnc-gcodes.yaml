@@ -1,0 +1,287 @@
+# cf. http://linuxcnc.org/docs/2.7/html/gcode.html
+F:
+  meaning: Set feed rate
+# Motion (X Y Z A B C U V W apply to all motions)
+G0:
+  meaning: Rapid Move
+G1:
+  meaning: Linear Move
+G23:
+  meaning: Arc Move
+  parameters: I J K or R, P
+G3:
+  meaning: Arc Move
+  parameters: I J K or R, P
+G4:
+  meaning: Dwell
+  parameters: P
+G5:
+  meaning: Cubic Spline
+  parameters: I J P Q
+G5.1:
+  meaning: Quadratic Spline
+  parameters: I J
+G5.2:
+  meaning: NURBS
+  parameters: P L
+G38.2:
+  meaning: Straight Probe
+G38.3:
+  meaning: Straight Probe
+G38.4:
+  meaning: Straight Probe
+G38.5:
+  meaning: Straight Probe
+G33:
+  meaning: Spindle Synchronized Motion
+  parameters: K
+G33.1:
+  meaning: Rigid Tapping
+  parameters: K
+G80:
+  meaning: Cancel Canned Cycle
+# Canned cycles (X Y Z or U V W apply to canned cycles, depending on active plane)
+G81:
+  meaning: Drilling Cycle
+  parameters: R L (P)
+G82:
+  meaning: Drilling Cycle, Dwell
+  parameters: R L (P)
+G83:
+  meaning: Drilling Cycle, Peck
+  parameters: R L Q
+G73:
+  meaning: Drilling Cycle, Chip Breaking
+  parameters: R L Q
+G85:
+  meaning: Boring Cycle, Feed Out
+  parameters: R L (P)
+G89:
+  meaning: Boring Cycle, Dwell, Feed Out
+  parameters: R L (P)
+G76:
+  meaning: Threading Cycle
+  parameters: P Z I J R K Q H L E
+# Distance Mode
+G90:
+  meaning: Distance Mode
+G91:
+  meaning: Distance Mode
+G90.1:
+  meaning: Arc Distance Mode
+G91.1:
+  meaning: Arc Distance Mode
+G7:
+  meaning: Lathe Diameter Mode
+G8:
+  meaning: Lathe Radius Mode
+# Feed Rate Mode
+G93:
+  meaning: Feed Rate Mode
+G94:
+  meaning: Feed Rate Mode
+G95:
+  meaning: Feed Rate Mode
+# Spindle Control
+M3:
+  meaning: Spindle Control
+  parameters: S
+M4:
+  meaning: Spindle Control
+  parameters: S
+M5:
+  meaning: Spindle Control
+  parameters: S
+M19:
+  meaning: Orient Spindle
+G96:
+  meaning: Spindle Control Mode
+  parameters: S D
+G97:
+  meaning: Spindle Control Mode
+  parameters: S D
+# Coolant
+M7:
+  meaning: Coolant Control
+M8:
+  meaning: Coolant Control
+M9:
+  meaning: Coolant Control
+# Tool Length Offset
+G43:
+  meaning: Tool Length Offset
+  parameters: H
+G43.1:
+  meaning: Dynamic Tool Length Offset
+G43.2:
+  meaning: Apply additional Tool Length Offset
+  parameters: H
+G49:
+  meaning: Cancel Tool Length Compensation
+# Stopping
+M0:
+  meaning: Program Pause
+M1:
+  meaning: Program Pause
+M2:
+  meaning: Program End
+M30:
+  meaning: Program End
+M60:
+  meaning: Pallet Change Pause
+# Units
+G20:
+  meaning: Units (inch, mm)
+G21:
+  meaning: Units (inch, mm)
+# Plane Selection: (affects G2, G3, G81…G89, G40…G42)
+G17:
+  meaning: Plane Select
+G17.1:
+  meaning: Plane Select
+G18:
+  meaning: Plane Select
+G18.1:
+  meaning: Plane Select
+G19:
+  meaning: Plane Select
+G19.1:
+  meaning: Plane Select
+# Cutter Radius Compensation
+G40:
+  meaning: Compensation Off
+G41:
+  meaning: Cutter Compensation
+  parameters: D
+G42:
+  meaning: Cutter Compensation
+  parameters: D
+G41.1:
+  meaning: Dynamic Cutter Compensation
+  parameters: D L
+G42.1:
+  meaning: Dynamic Cutter Compensation
+  parameters: D L
+# Path Control Mode
+G61.1:
+  meaning: Exact Path Mode
+G61.1:
+  meaning: Exact Path Mode
+G64:
+  meaning: Path Blending
+  parameters: P Q
+# Return Mode in Canned Cycles
+G98:
+  meaning: Canned Cycle Return Level
+G99:
+  meaning: Canned Cycle Return Level
+# Other Modal Codes
+F:
+  meaning: Set Feed Rate
+S:
+  meaning: Set Spindle Speed
+T:
+  meaning: Select Tool)
+M48, M49:
+  meaning: Speed and Feed Override Control
+M50:
+  meaning: Feed Override Control
+  parameters: P0 (off) or P1 (on)
+M51:
+  meaning: Spindle Speed Override Control
+  parameters: P0 (off) or P1 (on)
+M52:
+  meaning: Adaptive Feed Control
+  parameters: P0 (off) or P1 (on)
+M53:
+  meaning: Feed Stop Control
+  parameters: P0 (off) or P1 (on)
+G54-G59.3:
+  meaning: Select Coordinate System
+# Flow-control Codes
+## o sub:
+##   meaning: Subroutines, sub/endsub call
+## o while:
+##   meaning: Looping, while/endwhile do/while
+## o if:
+##   meaning: Conditional, if/else/endif
+## o repeat:
+##   meaning: Repeat a loop of code
+## '[]':
+##   meaning: Indirection
+## o call:
+##   meaning: Call named file
+M70:
+  meaning: Save modal state
+M71:
+  meaning: Invalidate stored state
+M72:
+  meaning: Restore modal state
+M73:
+  meaning: Save and Auto-restore modal state
+# Input/Output Codes
+M62:
+  meaning: Digital Output Control
+M63:
+  meaning: Digital Output Control
+M64:
+  meaning: Digital Output Control
+M65:
+  meaning: Digital Output Control
+  parameters: P
+M66:
+  meaning: Wait on Input
+  parameters: P E L Q
+M67:
+  meaning: Analog Output,Synchronized
+  parameters: T
+M68:
+  meaning: Analog Output, Immediate
+  parameters: T
+# Non-modal Codes
+M6:
+  meaning: Tool Change
+  parameters: T
+M61:
+  meaning: Set Current Too
+  l # Q
+G10 L1:
+  meaning: Set Tool Table
+  parameters: P Q R
+G10 L10:
+  meaning: Set Tool Table
+  parameters: P
+G10 L11:
+  meaning: Set Tool Table
+  parameters: P
+G10 L2:
+  meaning: Set Coordinate System
+  parameters: P R
+G10 L20:
+  meaning: Set Coordinate System
+  parameters: P
+G28:
+  meaning: Go/Set Predefined Position
+G28.1:
+  meaning: Go/Set Predefined Position
+G30:
+  meaning: Go/Set Predefined Position
+G30.1:
+  meaning: Go/Set Predefined Position
+G53:
+  meaning: Move in Machine Coordinates
+G92:
+  meaning: Coordinate System Offset
+G92.1:
+  meaning: Reset G92 Offsets
+G92.2:
+  meaning: Reset G92 Offsets
+G92.3:
+  meaning: Restore G92 Offsets
+M101 - M199: # Don't expand !
+  meaning: User Defined Commands
+  parameters: P Q
+S:
+  meaning: Set spindle speed
+T:
+  meaning: Select tool

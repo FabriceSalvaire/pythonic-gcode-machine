@@ -1,0 +1,134 @@
+F:
+  meaning:  set feed rate
+G00:
+  meaning: Rapid traverse
+G01:
+  meaning: Linear interpolation
+G02:
+  meaning: Circular interpolation CW
+G03:
+  meaning: Circular interpolation CCW
+G04:
+  meaning: Dwell
+G17:
+  meaning: X Y plane selection
+G18:
+  meaning: Z X plane selection
+G19:
+  meaning: Y Z plane selection
+G28:
+  meaning: Return to reference position
+G30:
+  meaning: 2nd, 3rd and 4th reference position return
+G40:
+  meaning: Cutter compensation cancel
+G41:
+  meaning: Cutter compensation left
+G42:
+  meaning: Cutter compensation right
+G43:
+  meaning: Tool length compensation + direction
+G44:
+  meaning: Tool length compensation - direction
+G49:
+  meaning: Tool length compensation cancel
+G53:
+  meaning: Machine coordinate system selection
+G54:
+  meaning: Workpiece coordinate system 1 selection
+G55:
+  meaning: Workpiece coordinate system 2 selection
+G56:
+  meaning: Workpiece coordinate system 3 selection
+G57:
+  meaning: Workpiece coordinate system 4 selection
+G58:
+  meaning: Workpiece coordinate system 5 selection
+G59:
+  meaning: Workpiece coordinate system 6 selection
+G68:
+  meaning: Coordinate rotation
+G69:
+  meaning: Coordinate rotation cancel
+G73:
+  meaning: Peck drilling cycle
+G74:
+  meaning: Left-spiral cutting circle
+G76:
+  meaning: Fine boring cycle
+G80:
+  meaning: Canned cycle cancel
+G81:
+  meaning: Drilling cycle, spot boring cycle
+G82:
+  meaning: Drilling cycle or counter boring cycle
+G83:
+  meaning: Peck drilling cycle
+G84:
+  meaning: Tapping cycle
+G85:
+  meaning: Boring cycle
+G86:
+  meaning: Boring cycle
+G87:
+  meaning: Back boring cycle
+G88:
+  meaning: Boring cycle
+G89:
+  meaning: Boring cycle
+G90:
+  meaning: Absolute command
+G91:
+  meaning: Increment command
+G92:
+  meaning: Setting for work coordinate system or clamp at maximum spindle speed
+G98:
+  meaning: Return to initial point in canned cycle
+G99:
+  meaning: Return to R point in canned cycle
+M00:
+  meaning: Program stop
+M01:
+  meaning: Optional program stop
+M02:
+  meaning: End of program
+M03:
+  meaning: Spindle start forward CW
+M04:
+  meaning: Spindle start reverse CCW
+M05:
+  meaning: Spindle stop
+M06:
+  meaning: Tool change
+M07:
+  meaning: Coolant ON – Mist coolant/Coolant thru spindle
+M08:
+  meaning: Coolant ON – Flood coolant
+M09:
+  meaning: Coolant OFF
+M19:
+  meaning: Spindle orientation
+M28:
+  meaning: Return to origin
+M29:
+  meaning: Rigid tap mode
+M30:
+  meaning: End of program (Reset)
+M41:
+  meaning: Low gear select
+M42:
+  meaning: High gear select
+M94:
+  meaning: Cancel mirror image
+M95:
+  meaning: Mirror image of X axis
+M96:
+  meaning: Mirror image of Y axis
+M98:
+  meaning: Subprogram call
+M99:
+  meaning: End of subprogram
+S:
+  meaning: set spindle speed
+T:
+  meaning: select tool
