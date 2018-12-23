@@ -20,6 +20,7 @@
 
 ####################################################################################################
 
+import math
 import unittest
 
 ####################################################################################################
@@ -72,7 +73,15 @@ class TestAst(unittest.TestCase):
 
     def test_expression(self):
 
-        self.assertEqual(str(Plus(1, 2)), '[1 + 2]')
+        expr = Cosine(45)
+        self.assertEqual(str(expr), 'cos[45]')
+        self.assertEqual(float(expr), math.cos(math.radians(45)))
+
+        self.assertEqual(str(Addition(1, 2)), '[1 + 2]')
+
+        expr = Addition(1, Subtraction(3, 4))
+        self.assertEqual(str(expr), '[1 + [3 - 4]]')
+        self.assertEqual(float(expr), 1 + (3 - 4))
 
 ####################################################################################################
 

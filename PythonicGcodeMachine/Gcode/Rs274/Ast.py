@@ -25,15 +25,16 @@
 
 __all__ = [
     'Program',
-    'LineItem',
+    # 'LineItem',
     'Line',
     'Comment',
     'Word',
-    'RealValue',
+    # 'RealValue',
     'ParameterMixin',
     'ParameterSetting',
     'Parameter',
-    'UnaryOperation',
+
+    # 'UnaryOperation',
     'AbsoluteValue',
     'ArcCosine',
     'ArcSine',
@@ -47,16 +48,17 @@ __all__ = [
     'Sine',
     'SquareRoot',
     'Tangent',
-    'BinaryOperation',
+
+    # 'BinaryOperation',
     'Power',
     'DividedBy',
     'Modulo',
     'Times',
     'And',
     'ExclusiveOr',
-    'Minus',
-    'NonExclusiveOr',
-    'Plus',
+    'Subtraction',
+    'Or',
+    'Addition',
 ]
 
 ####################################################################################################
@@ -424,7 +426,7 @@ class UnaryOperation(RealValue):
 
     ##############################################
 
-    def float(self):
+    def __float__(self):
         return self.__function__(float(self._arg))
 
     ##############################################
@@ -440,55 +442,55 @@ class UnaryOperation(RealValue):
 ####################################################################################################
 
 class AbsoluteValue(UnaryOperation):
-    __function__ = abs
+    __function__ = staticmethod(abs)
     __gcode__ = 'abs'
 
 class ArcCosine(UnaryOperation):
-    __function__ = lambda x: math.acos(math.radians(x))
+    __function__ = staticmethod(lambda x: math.acos(math.radians(x)))
     __gcode__ = 'acos'
 
 class ArcSine(UnaryOperation):
-    __function__ = lambda x: math.degrees(math.asin(x))
+    __function__ = staticmethod(lambda x: math.degrees(math.asin(x)))
     __gcode__ = 'asin'
 
 class ArcTangent(UnaryOperation):
-    __function__ = lambda x: math.degrees(math.atan(x))
+    __function__ = staticmethod(lambda x: math.degrees(math.atan(x)))
     __gcode__ = 'atan'
 
 class Cosine(UnaryOperation):
-    __function__ = lambda x: math.degrees(math.cos(x))
+    __function__ = staticmethod(lambda x: math.cos(math.radians(x)))
     __gcode__ =  'cos'
 
 class ERaisedTo(UnaryOperation):
-    __function__ = math.exp
+    __function__ = staticmethod(math.exp)
     __gcode__ = 'exp'
 
 class FixDown(UnaryOperation):
-    __function__ = math.ceil
+    __function__ = staticmethod(math.ceil)
     __gcode__ = 'fix'
 
 class FixUp(UnaryOperation):
-    __function__ = math.floor
+    __function__ = staticmethod(math.floor)
     __gcode__ = 'fup'
 
 class NaturalLogOf(UnaryOperation):
-    __function__ = math.log
+    __function__ = staticmethod(math.log)
     __gcode__ = 'ln'
 
 class Round(UnaryOperation):
-    __function__ = round
+    __function__ = staticmethod(round)
     __gcode__ =  'round'
 
 class Sine(UnaryOperation):
-    __function__ = lambda x: math.sin(math.radians(x))
+    __function__ = staticmethod(lambda x: math.sin(math.radians(x)))
     __gcode__ = 'sin'
 
 class SquareRoot(UnaryOperation):
-    __function__ = math.sqrt
+    __function__ = staticmethod(math.sqrt)
     __gcode__ = 'sqrt'
 
 class Tangent(UnaryOperation):
-    __function__ = lambda x: ath.tan(math.radians(x))
+    __function__ = staticmethod(lambda x: ath.tan(math.radians(x)))
     __gcode__ = 'tan'
 
 ####################################################################################################
@@ -524,7 +526,7 @@ class BinaryOperation(RealValue):
 
     ##############################################
 
-    def float(self):
+    def __float__(self):
         return self.__function__(float(self._arg1), float(self._arg2))
 
     ##############################################
@@ -540,37 +542,37 @@ class BinaryOperation(RealValue):
 ####################################################################################################
 
 class Power(BinaryOperation):
-    __function__ = lambda a, b: a**b
+    __function__ = staticmethod(lambda a, b: a**b)
     __gcode__ = '**'
 
 class DividedBy(BinaryOperation):
-    __function__ = lambda a, b: a / b
+    __function__ = staticmethod(lambda a, b: a / b)
     __gcode__ = '/'
 
 class Modulo(BinaryOperation):
-    __function__ = lambda a, b: a % b
+    __function__ = staticmethod(lambda a, b: a % b)
     __gcode__ = 'mod'
 
 class Times(BinaryOperation):
-    __function__ = lambda a, b: a * b
+    __function__ = staticmethod(lambda a, b: a * b)
     __gcode__ =  '*'
 
 class And(BinaryOperation):
-    __function__ = lambda a, b: a & b
+    __function__ = staticmethod(lambda a, b: a & b)
     __gcode__ = 'and'
 
 class ExclusiveOr(BinaryOperation):
-    __function__ = lambda a, b: a ^ b
+    __function__ = staticmethod(lambda a, b: a ^ b)
     __gcode__ = 'xor'
 
-class Minus(BinaryOperation):
-    __function__ = lambda a, b: a - b
+class Subtraction(BinaryOperation):
+    __function__ = staticmethod(lambda a, b: a - b)
     __gcode__ = '-'
 
-class NonExclusiveOr(BinaryOperation):
-    __function__ = lambda a, b: a | b
+class Or(BinaryOperation):
+    __function__ = staticmethod(lambda a, b: a | b)
     __gcode__ = 'or'
 
-class Plus(BinaryOperation):
-    __function__ = lambda a, b: a + b
+class Addition(BinaryOperation):
+    __function__ = staticmethod(lambda a, b: a + b)
     __gcode__ = '+'
