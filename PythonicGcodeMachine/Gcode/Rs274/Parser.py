@@ -174,6 +174,7 @@ class GcodeParser:
         p[0] = Ast.Word(p[1], p[2])
 
     def p_mid_line_letter(self, p):
+        # LETTER
         '''mid_line_letter : A
                            | B
                            | C

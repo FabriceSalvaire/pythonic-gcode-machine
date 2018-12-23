@@ -78,10 +78,12 @@ class GcodeLexer:
         'TANGENT',
         'TIMES',
 
+        # 'LETTER',
         'A', 'B', 'C', 'D',
-        'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
+        'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
         'P', 'Q', 'R', 'S', 'T',
         'X', 'Y', 'Z',
+        'N',
 
         'POSITIVE_INTEGER',
         'POSITIVE_REAL',
@@ -121,6 +123,9 @@ class GcodeLexer:
     t_TANGENT = r'tan'
     t_TIMES = r'\*'
 
+    # clash with acos ... ???
+    # t_LETTER = r'(' + '|'.join('abcd' + 'fghijklm' + 'pqrst' + 'xyz') + ')'
+
     t_A = r'a'
     T_B = r'b'
     t_C = r'c'
@@ -134,7 +139,6 @@ class GcodeLexer:
     t_K = r'k'
     t_L = r'l'
     t_M = r'm'
-    t_N = r'n'
 
     t_P = r'p'
     t_Q = r'q'
@@ -145,6 +149,8 @@ class GcodeLexer:
     t_X = r'x'
     t_Y = r'y'
     t_Z = r'z'
+
+    t_N = r'n'
 
     # def t_POSITIVE_INTEGER(self, t):
     #     r'\d+'
