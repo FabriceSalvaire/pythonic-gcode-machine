@@ -7,4 +7,4 @@
  Roadmap
 =========
 
-`Roadmap @Github <https://github.com/FabriceSalvaire/PythonicGCodeMachine/milestones>`_
+`Roadmap @Github <https://github.com/FabriceSalvaire/PythonicGcodeMachine/milestones>`_

@@ -2,7 +2,7 @@
 
 ####################################################################################################
 #
-# PythonicGCodeMachine - @licence_header_description@
+# PythonicGcodeMachine - @licence_header_description@
 # Copyright (C) 2018 Fabrice Salvaire
 #
 # This program is free software: you can redistribute it and/or modify
@@ -31,7 +31,7 @@ setuptools_available = True
 ####################################################################################################
 
 if sys.version_info < (3,):
-    print('PythonicGCodeMachine requires Python 3', file=sys.stderr)
+    print('PythonicGcodeMachine requires Python 3', file=sys.stderr)
     sys.exit(1)
 
 exec(compile(open('setup_data.py').read(), 'setup_data.py', 'exec'))
@@ -51,7 +51,7 @@ setup_dict.update(dict(
     #     'bin/...',
     # ],
     package_data={
-        'PythonicGCodeMachine.Config': ['logging.yml'],
+        'PythonicGcodeMachine.Config': ['logging.yml'],
     },
 
     platforms='any',

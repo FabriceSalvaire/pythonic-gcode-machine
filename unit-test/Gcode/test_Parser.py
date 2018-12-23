@@ -1,6 +1,6 @@
 ####################################################################################################
 #
-# PythonicGCodeMachine - @licence_header_description@
+# PythonicGcodeMachine - @licence_header_description@
 # Copyright (C) 2018 Fabrice Salvaire
 #
 # This program is free software: you can redistribute it and/or modify
@@ -24,8 +24,8 @@ import unittest
 
 ####################################################################################################
 
-from PythonicGCodeMachine.GCode.Lexer import GCodeLexer, GCodeLexerError
-from PythonicGCodeMachine.GCode.Parser import GCodeParser, GCodeParserError
+from PythonicGcodeMachine.Gcode.Lexer import GcodeLexer, GcodeLexerError
+from PythonicGcodeMachine.Gcode.Parser import GcodeParser, GcodeParserError
 
 ####################################################################################################
 
@@ -37,7 +37,7 @@ def print_rule():
 
 ####################################################################################################
 
-class TestGCodeLexer(unittest.TestCase):
+class TestGcodeLexer(unittest.TestCase):
 
     ##############################################
 
@@ -45,7 +45,7 @@ class TestGCodeLexer(unittest.TestCase):
 
         print_rule()
 
-        lexer = GCodeLexer()
+        lexer = GcodeLexer()
 
         for gcode in (
                 'G0 X0 Y0 Z0',
@@ -68,7 +68,7 @@ class TestGCodeLexer(unittest.TestCase):
             try:
                 tokens = lexer.tokenize(gcode)
                 print(list(tokens))
-            except GCodeLexerError as exception:
+            except GcodeLexerError as exception:
                 position, = exception.args
                 print(' ' * position + '^')
                 print('Lexer Error')
@@ -77,12 +77,12 @@ class TestGCodeLexer(unittest.TestCase):
         for gcode in (
                 'G0 (comment (wrong) 2) X0',
         ):
-            with self.assertRaises(GCodeLexerError):
+            with self.assertRaises(GcodeLexerError):
                 list(lexer.tokenize(gcode))
 
 ####################################################################################################
 
-class TestGCodeParser(unittest.TestCase):
+class TestGcodeParser(unittest.TestCase):
 
     ##############################################
 
@@ -90,7 +90,7 @@ class TestGCodeParser(unittest.TestCase):
 
         print_rule()
 
-        parser = GCodeParser()
+        parser = GcodeParser()
 
         for gcode in (
                 'G0 X0 Y0 Z0',
@@ -115,7 +115,7 @@ class TestGCodeParser(unittest.TestCase):
             print(gcode)
             try:
                 parser.parse(gcode)
-            except GCodeParserError as exception:
+            except GcodeParserError as exception:
                 position, = exception.args
                 print(' ' * position + '^')
                 print('Parser Error')
@@ -124,7 +124,7 @@ class TestGCodeParser(unittest.TestCase):
         # for gcode in (
         #         'G0 (comment (wrong) 2) X0',
         # ):
-        #     with self.assertRaises(GCodeLexerError):
+        #     with self.assertRaises(GcodeLexerError):
         #         list(lexer.tokenize(gcode))
 
 ####################################################################################################

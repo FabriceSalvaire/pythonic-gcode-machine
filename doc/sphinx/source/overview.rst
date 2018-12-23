@@ -7,36 +7,36 @@
  Overview
 ==========
 
-What is PythonicGCodeMachine ?
+What is PythonicGcodeMachine ?
 ---------------------
 
-PythonicGCodeMachine is an open source Python module which provides a |Python|_ ....
+PythonicGcodeMachine is an open source Python module which provides a |Python|_ ....
 
-How is PythonicGCodeMachine licensed ?
+How is PythonicGcodeMachine licensed ?
 -----------------------------
 
-PythonicGCodeMachine is licensed under the `GPLv3 <https://www.gnu.org/licenses/quick-guide-gplv3.en.html>`_.
+PythonicGcodeMachine is licensed under the `GPLv3 <https://www.gnu.org/licenses/quick-guide-gplv3.en.html>`_.
 
-Going further with PythonicGCodeMachine
+Going further with PythonicGcodeMachine
 ------------------------------
 
-The best way to know what you can do with PythonicGCodeMachine, and to learn it, is to look at the examples:
+The best way to know what you can do with PythonicGcodeMachine, and to learn it, is to look at the examples:
 
- * :ref:`PythonicGCodeMachine Reference Manual <reference-manual-page>`
+ * :ref:`PythonicGcodeMachine Reference Manual <reference-manual-page>`
  * :ref:`Bibliography <bibliography-page>`
 
-Which platforms are supported by PythonicGCodeMachine ?
+Which platforms are supported by PythonicGcodeMachine ?
 ----------------------------------------------
 
-PythonicGCodeMachine runs on Linux, Windows 64-bit and Mac OS X.
+PythonicGcodeMachine runs on Linux, Windows 64-bit and Mac OS X.
 
-How to install PythonicGCodeMachine ?
+How to install PythonicGcodeMachine ?
 ----------------------------
 
-The procedure to install PythonicGCodeMachine is described in the :ref:`Installation Manual <installation-page>`.
+The procedure to install PythonicGcodeMachine is described in the :ref:`Installation Manual <installation-page>`.
 
 Which version of Python is required ?
 -------------------------------------
 
-PythonicGCodeMachine requires Python 3 and the version 3.5 is recommended so as to benefit from the new *@* syntax
+PythonicGcodeMachine requires Python 3 and the version 3.5 is recommended so as to benefit from the new *@* syntax
 for units.

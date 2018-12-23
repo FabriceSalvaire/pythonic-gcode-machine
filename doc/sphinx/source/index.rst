@@ -42,7 +42,7 @@
 ########
 
 .. image:: /_static/logo.png
-   :alt: PythonicGCodeMachine logo
+   :alt: PythonicGcodeMachine logo
    :width: 750
 
 .. important::
@@ -52,15 +52,15 @@
 Overview
 ********
 
-PythonicGCodeMachine is a free and open source (*) Python module which interface |Python|_ ...
+PythonicGcodeMachine is a free and open source (*) Python module which interface |Python|_ ...
 
 .. rst-class:: small-text
 
-    (*) PythonicGCodeMachine is licensed under GPLv3 therms.
+    (*) PythonicGcodeMachine is licensed under GPLv3 therms.
 
-PythonicGCodeMachine requires Python 3 and works on Linux, Windows and OS X.
+PythonicGcodeMachine requires Python 3 and works on Linux, Windows and OS X.
 
-:ref:`To read more on PythonicGCodeMachine <overview-page>`
+:ref:`To read more on PythonicGcodeMachine <overview-page>`
 
 .. raw:: html
 
@@ -80,7 +80,7 @@ What's changed in versions
 :ref:`Installation-page`
 ========================
 
-How to install PythonicGCodeMachine on your system
+How to install PythonicGcodeMachine on your system
 
 .. rst-class:: column column2
 
@@ -94,7 +94,7 @@ Answers to frequent questions
 :ref:`examples-page`
 ====================
 
-Many examples to learn how to use PythonicGCodeMachine.
+Many examples to learn how to use PythonicGcodeMachine.
 
 .. rst-class:: column column2
 
@@ -115,7 +115,7 @@ Technical reference material, for classes, methods, APIs, commands.
 :ref:`how-to-refer-page`
 ========================
 
-Guidelines to cite PythonicGCodeMachine
+Guidelines to cite PythonicGcodeMachine
 
 .. rst-class:: column column2
 

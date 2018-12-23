@@ -15,7 +15,7 @@ include setup_data.py
 include requirements.txt requirements-dev.txt
 include .travis.yml
 include bower/bower.json
-recursive-include PythonicGCodeMachine *.py *.yml *py.in
+recursive-include PythonicGcodeMachine *.py *.yml *py.in
 recursive-include doc *
 recursive-include doc/sphinx/source/_static *
 recursive-include doc/sphinx/source/_templates *

@@ -1,6 +1,6 @@
 ####################################################################################################
 #
-# PythonicGCodeMachine - @licence_header_description@
+# PythonicGcodeMachine - @licence_header_description@
 # Copyright (C) 2018 Fabrice Salvaire
 #
 # This program is free software: you can redistribute it and/or modify
@@ -71,13 +71,13 @@ else:
 ####################################################################################################
 
 setup_dict = dict(
-    name='PythonicGCodeMachine',
+    name='PythonicGcodeMachine',
     version='0.1.0',
     author='Fabrice Salvaire',
     author_email='fabrice.salvaire@orange.fr',
     description='...',
     license='GPLv3',
     keywords= 'foo bar',
-    url='https://github.com/FabriceSalvaire/PythonicGCodeMachine',
+    url='https://github.com/FabriceSalvaire/PythonicGcodeMachine',
     long_description=long_description,
 )

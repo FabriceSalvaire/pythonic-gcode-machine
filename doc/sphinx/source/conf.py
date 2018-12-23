@@ -2,14 +2,14 @@
 
 ####################################################################################################
 #
-# PythonicGCodeMachine - @licence_header_description@
+# PythonicGcodeMachine - @licence_header_description@
 # Copyright (C) 2018 Fabrice Salvaire
 #
 ####################################################################################################
 
 ####################################################################################################
 #
-# PythonicGCodeMachine documentation build configuration file, created by
+# PythonicGcodeMachine documentation build configuration file, created by
 # sphinx-quickstart on Fri Apr  8 16:54:03 2018.
 #
 # This file is execfile()d with the current directory set to its containing dir.
@@ -45,12 +45,12 @@ logger = logging.getLogger(__name__)
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 # for directory in ,:
 
-PythonicGCodeMachine_path = os.path.abspath(os.path.join(__file__, *['..']*4))
-sys.path.insert(0, PythonicGCodeMachine_path)
+PythonicGcodeMachine_path = os.path.abspath(os.path.join(__file__, *['..']*4))
+sys.path.insert(0, PythonicGcodeMachine_path)
 
 ####################################################################################################
 
-exec(compile(open(os.path.join(PythonicGCodeMachine_path, 'setup_data.py')).read(), 'setup_data.py', 'exec'))
+exec(compile(open(os.path.join(PythonicGcodeMachine_path, 'setup_data.py')).read(), 'setup_data.py', 'exec'))
 
 ####################################################################################################
 #
@@ -88,7 +88,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'PythonicGCodeMachine'
+project = 'PythonicGcodeMachine'
 copyright = '{0.year}, Fabrice Salvaire'.format(datetime.now())
 
 # The version info for the project you're documenting, acts as replacement for
@@ -157,8 +157,8 @@ autodoc_default_flags = [
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-#html_theme = 'PythonicGCodeMachine'
-html_theme = 'PythonicGCodeMachineRtd'
+#html_theme = 'PythonicGcodeMachine'
+html_theme = 'PythonicGcodeMachineRtd'
 # html_theme = 'sphinx_rtd_theme'
 
 # on_rtd is whether we are on readthedocs.org
@@ -241,7 +241,7 @@ html_static_path = ['_static']
 # html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'PythonicGCodeMachine'
+htmlhelp_basename = 'PythonicGcodeMachine'
 
 ####################################################################################################
 #
@@ -259,7 +259,7 @@ latex_font_size = '10pt'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'PythonicGCodeMachine.tex', 'PythonicGCodeMachine Documentation', 'Fabrice Salvaire', 'manual'),
+  ('index', 'PythonicGcodeMachine.tex', 'PythonicGcodeMachine Documentation', 'Fabrice Salvaire', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -293,7 +293,7 @@ latex_logo = None
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'PythonicGCodeMachine', 'PythonicGCodeMachine Documentation', ['Fabrice Salvaire'], 1)
+    ('index', 'PythonicGcodeMachine', 'PythonicGcodeMachine Documentation', ['Fabrice Salvaire'], 1)
 ]
 
 # Example configuration for intersphinx: refer to the Python standard library.

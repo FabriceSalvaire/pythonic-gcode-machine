@@ -4,7 +4,7 @@
  How to Help Further ?
 =======================
 
-If you like PythonicGCodeMachine, you can donate for its developement to my `PayPal account
+If you like PythonicGcodeMachine, you can donate for its developement to my `PayPal account
 <https://www.paypal.me/FabriceSalvaire>`_.
 
 This budget could help me to mainly finance a domain, a vps to host a site, a forum (*) and also to

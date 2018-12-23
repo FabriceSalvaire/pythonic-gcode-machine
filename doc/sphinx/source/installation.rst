@@ -7,7 +7,7 @@
  Installation
 ==============
 
-**Note to Packagers: Please don't create PythonicGCodeMachine package (PiPY do the job)**
+**Note to Packagers: Please don't create PythonicGcodeMachine package (PiPY do the job)**
 
 On Windows
 ----------
@@ -17,18 +17,18 @@ as to get a full featured Python 3 environment.
 
 Then open the `Anaconda Navigator <https://docs.continuum.io/anaconda/navigator/>`_ and launch a console for your root environment.
 
-You can now run *pip* to install PythonicGCodeMachine in your root environment using this command:
+You can now run *pip* to install PythonicGcodeMachine in your root environment using this command:
 
 .. code-block:: sh
 
-  pip install PythonicGCodeMachine
+  pip install PythonicGcodeMachine
 
 On Linux
 --------
 
 Firstly, you have to install Python 3 from your distribution.
 
-Then you can install PythonicGCodeMachine using *pip* or from source. See supra.
+Then you can install PythonicGcodeMachine using *pip* or from source. See supra.
 
 On OSX
 ------
@@ -40,18 +40,18 @@ There are several ways to get Python on OSX:
  * install the `Anaconda Distribution <https://www.anaconda.com/download/>`_.
  * install from Brew `brew install python3` **(reported to work)**
 
-You can install PythonicGCodeMachine using *pip* or from source. See supra.
+You can install PythonicGcodeMachine using *pip* or from source. See supra.
 
 Installation from PyPi Repository
 ---------------------------------
 
-PythonicGCodeMachine is available on the Python Packages |Pypi|_ repository at |PythonicGCodeMachine@pypi|
+PythonicGcodeMachine is available on the Python Packages |Pypi|_ repository at |PythonicGcodeMachine@pypi|
 
 Run this command in the console to install the latest release:
 
 .. code-block:: sh
 
-  pip install PythonicGCodeMachine
+  pip install PythonicGcodeMachine
 
 Install a more recent version from Github
 -----------------------------------------
@@ -61,28 +61,28 @@ commands to install the stable or devel branch:
 
 .. code-block:: sh
 
-  pip install git+https://github.com/FabriceSalvaire/PythonicGCodeMachine
+  pip install git+https://github.com/FabriceSalvaire/PythonicGcodeMachine
 
-  pip install git+https://github.com/FabriceSalvaire/PythonicGCodeMachine@devel
+  pip install git+https://github.com/FabriceSalvaire/PythonicGcodeMachine@devel
 
 Installation from Source
 ------------------------
 
-The PythonicGCodeMachine source code is hosted at |PythonicGCodeMachine@github|
+The PythonicGcodeMachine source code is hosted at |PythonicGcodeMachine@github|
 
 .. add link to pages ...
 
 You have to solution to get the source code, the first one is to clone the repository, but if you
-are not familiar with Git then you can simply download an archive either from the PythonicGCodeMachine Pypi page
+are not familiar with Git then you can simply download an archive either from the PythonicGcodeMachine Pypi page
 (at the bottom) or the GitHub page (see clone or download button).
 
 To clone the Git repository, run this command in a console:
 
 .. code-block:: sh
 
-  git clone https://github.com/FabriceSalvaire/PythonicGCodeMachine.git
+  git clone https://github.com/FabriceSalvaire/PythonicGcodeMachine.git
 
-Then to build and install PythonicGCodeMachine run these commands:
+Then to build and install PythonicGcodeMachine run these commands:
 
 .. code-block:: sh
 
@@ -92,7 +92,7 @@ Then to build and install PythonicGCodeMachine run these commands:
 Dependencies
 ------------
 
-PythonicGCodeMachine requires the following dependencies:
+PythonicGcodeMachine requires the following dependencies:
 
  * |Python|_ 3
  * |Numpy|_

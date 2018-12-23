@@ -1,6 +1,6 @@
 ####################################################################################################
 #
-# PythonicGCodeMachine - @licence_header_description@
+# PythonicGcodeMachine - @licence_header_description@
 # Copyright (C) 2018 Fabrice Salvaire
 #
 # This program is free software: you can redistribute it and/or modify
@@ -18,23 +18,23 @@
 #
 ####################################################################################################
 
-__all__ = ['GCodeParserError', 'GCodeParser']
+__all__ = ['GcodeParserError', 'GcodeParser']
 
 ####################################################################################################
 
 # https://rply.readthedocs.io/en/latest/
 from ply import yacc
 
-from .Lexer import GCodeLexer, GCodeLexerError
+from .Lexer import GcodeLexer, GcodeLexerError
 
 ####################################################################################################
 
-class GCodeParserError(ValueError):
+class GcodeParserError(ValueError):
     pass
 
 ####################################################################################################
 
-class GCodeParser:
+class GcodeParser:
 
     """Class to implement a CGode parser.
 
@@ -256,7 +256,7 @@ class GCodeParser:
     ##############################################
 
     def p_error(self, p):
-        raise GCodeParserError(p.lexpos)
+        raise GcodeParserError(p.lexpos)
 
     ##############################################
 
@@ -268,7 +268,7 @@ class GCodeParser:
     def _build(self, **kwargs):
         """Build the parser"""
 
-        self._lexer = GCodeLexer()
+        self._lexer = GcodeLexer()
         self.tokens = self._lexer.tokens
         self._parser = yacc.yacc(
             module=self,

@@ -1,6 +1,6 @@
 ####################################################################################################
 #
-# PythonicGCodeMachine - @licence_header_description@
+# PythonicGcodeMachine - @licence_header_description@
 # Copyright (C) 2018 Fabrice Salvaire
 #
 # This program is free software: you can redistribute it and/or modify
@@ -18,7 +18,7 @@
 #
 ####################################################################################################
 
-__all__ = ['GCodeLexerError', 'GCodeLexer, ']
+__all__ = ['GcodeLexerError', 'GcodeLexer, ']
 
 ####################################################################################################
 
@@ -27,16 +27,16 @@ import re
 try:
     import ply.lex as lexer
 except ModuleNotFoundError:
-    import PythonicGCodeMachine.PythonLexYacc.lex as lexer
+    import PythonicGcodeMachine.PythonLexYacc.lex as lexer
 
 ####################################################################################################
 
-class GCodeLexerError(ValueError):
+class GcodeLexerError(ValueError):
     pass
 
 ####################################################################################################
 
-class GCodeLexer:
+class GcodeLexer:
 
     """Class to implement a CGode lexer.
 
@@ -177,7 +177,7 @@ class GCodeLexer:
         value = t.value[1:-1]
         position = value.find('(')
         if position != -1:
-            raise GCodeLexerError(t.lexpos + position +1)
+            raise GcodeLexerError(t.lexpos + position +1)
         t.value = value
         return t
 
@@ -192,8 +192,8 @@ class GCodeLexer:
     def t_error(self, t):
         'Error handling rule'
         # t.lexer.skip(1)
-        # raise GCodeLexerError("Illegal character @{} '{}'".format(t.lexpos, t.value))
-        raise GCodeLexerError(t.lexpos)
+        # raise GcodeLexerError("Illegal character @{} '{}'".format(t.lexpos, t.value))
+        raise GcodeLexerError(t.lexpos)
 
     ##############################################
 
