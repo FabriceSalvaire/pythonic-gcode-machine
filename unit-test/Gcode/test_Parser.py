@@ -115,7 +115,7 @@ class TestGcodeParser(unittest.TestCase):
             print(gcode)
             try:
                 line = parser.parse(gcode)
-                print('>', line)
+                print('>', line.ansi_str())
             except GcodeParserError as exception:
                 position, = exception.args
                 print(' ' * position + '^')

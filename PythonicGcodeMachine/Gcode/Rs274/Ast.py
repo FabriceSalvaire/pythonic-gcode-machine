@@ -65,6 +65,8 @@ __all__ = [
 
 import math
 
+import colors
+
 ####################################################################################################
 
 class Program:
@@ -128,7 +130,9 @@ class Program:
 ####################################################################################################
 
 class LineItem:
-    pass
+
+    def ansi_str(self):
+        return str(self)
 
 ####################################################################################################
 
@@ -148,6 +152,14 @@ class Line:
         str(line)
 
     """
+
+    ANSI_DELETED = colors.red
+    ANSI_LINE_NUMBER = colors.blue
+    ANSI_COMMENT = colors.green
+    ANSI_SETTING = colors.blue
+    ANSI_G = colors.red
+    ANSI_X = colors.blue
+    ANSI_VALUE = colors.black
 
     ##############################################
 
@@ -248,6 +260,22 @@ class Line:
 
         return line
 
+    ##############################################
+
+    def ansi_str(self):
+
+        line = ''
+        if not self:
+            # line += self.ANSI_DELETED('/ ')
+            return self.ANSI_DELETED(str(self))
+        if self._line_number:
+            line += self.ANSI_LINE_NUMBER('N{} '.format(self._line_number))
+        line += ' '.join([item.ansi_str() for item in self])
+        if self._comment:
+            line += ' ' + self.ANSI_COMMENT('; ' + self._comment)
+
+        return line
+
 ####################################################################################################
 
 class Comment(LineItem):
@@ -281,6 +309,9 @@ class Comment(LineItem):
 
     def __str__(self):
         return '({0._text})'.format(self)
+
+    def ansi_str(self):
+        return Line.ANSI_COMMENT(str(self))
 
 ####################################################################################################
 
@@ -328,6 +359,13 @@ class Word(LineItem):
 
     def __str__(self):
         return '{0._letter}{0._value}'.format(self)
+
+    def ansi_str(self):
+
+        if self._letter in 'GM':
+            return Line.ANSI_G(str(self))
+        else:
+            return Line.ANSI_X(self._letter) + Line.ANSI_VALUE(str(self._value))
 
 ####################################################################################################
 
@@ -384,6 +422,9 @@ class ParameterSetting(LineItem, ParameterMixin):
 
     def __str__(self):
         return '#{0._parameter}={0._value}'.format(self)
+
+    def ansi_str(self):
+        return Line.ANSI_SETTING('#{0._parameter}='.format(self)) + Line.ANSI_VALUE(str(self._value))
 
 ####################################################################################################
 
