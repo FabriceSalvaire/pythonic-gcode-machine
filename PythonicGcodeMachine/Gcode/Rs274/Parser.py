@@ -18,7 +18,39 @@
 #
 ####################################################################################################
 
-__all__ = ['GcodeParserError', 'GcodeParser']
+"""Module to implement a RS-274 G-code parser.
+
+Usage::
+
+   parser = GcodeParser()
+   ast_line = parser.parse(gcode_line)
+   ast_program = parser.parse_lines(gcode_lines)
+
+**Implementation**
+
+The parser is generated automatically from the grammar defined in this class using the generator
+`PLY <https://www.dabeaz.com/ply/ply.html>`_ which implement a LALR(1) parser similar to the
+tools **lex** and **yacc**.
+
+The parser construct an `abstract syntax tree (AST)
+<https://en.wikipedia.org/wiki/Abstract_syntax_tree>`_ during the parsing.
+
+User can subclass this parser to support a derived G-code flavour.
+
+**For references, see**
+
+* `The NIST RS274NGC Interpreter — Version 3 — Appendix E. Production Rules for the RS274/NGC Language
+  <https://www.nist.gov/publications/nist-rs274ngc-interpreter-version-3>`_
+* http://linuxcnc.org/docs/2.7/html/gcode/overview.html
+
+"""
+
+__all__ = [
+    'GcodeParserError',
+    'GcodeParser',
+    'GcodeParserMixin',
+    'GcodeGrammarMixin',
+]
 
 ####################################################################################################
 
@@ -35,16 +67,11 @@ class GcodeParserError(ValueError):
 
 ####################################################################################################
 
-class GcodeParser:
+class GcodeGrammarMixin:
 
-    """Class to implement a RS-274 G-code parser.
+    """Mixin to implement the grammar.
 
-    For references, see
-
-    * The NIST RS274NGC Interpreter — Version 3 — Appendix E. Production Rules for the RS274/NGC Language
-    * http://linuxcnc.org/docs/2.7/html/gcode/overview.html
-
-    Production Language
+    **Production Language for RS-274**
 
     The symbols in the productions are mostly standard syntax notation. Meanings of the symbols
     are:
@@ -92,14 +119,13 @@ class GcodeParser:
 
     """
 
-    __lexer_cls__ = GcodeLexer
-
     # Build the operation map
+    # Note: sphinx show locals if not _foo
     __operation_map__ = {}
-    for cls_name in Ast.__all__:
-        cls = getattr(Ast, cls_name)
-        if hasattr(cls, '__gcode__'):
-            __operation_map__[cls.__gcode__] = cls
+    for _cls_name in Ast.__all__:
+        _cls = getattr(Ast, _cls_name)
+        if hasattr(_cls, '__gcode__'):
+            __operation_map__[_cls.__gcode__] = _cls
 
     ##############################################
 
@@ -304,6 +330,14 @@ class GcodeParser:
     def p_error(self, p):
         raise GcodeParserError(p.lexpos)
 
+####################################################################################################
+
+class GcodeParserMixin:
+
+    """Mixin to implement a RS-274 G-code parser"""
+
+    __lexer_cls__ = GcodeLexer
+
     ##############################################
 
     def __init__(self):
@@ -333,7 +367,10 @@ class GcodeParser:
 
     def parse(self, line):
 
-        """Parse a G-code line"""
+        """Parse a G-code line.
+
+        Return a :class:`PythonicGcodeMachine.Gcode.Rs274.Ast.Line` instance.
+        """
 
         line = line.strip()
 
@@ -353,10 +390,18 @@ class GcodeParser:
 
     def parse_lines(self, lines):
 
-        """Parse a G-code lines"""
+        """Parse a G-code lines
+
+        Return a :class:`PythonicGcodeMachine.Gcode.Rs274.Ast.Program` instance.
+        """
 
         program = Ast.Program()
         for line in lines.split('\n'):
             program += self.parse(line)
 
         return program
+
+####################################################################################################
+
+class GcodeParser(GcodeParserMixin, GcodeGrammarMixin):
+    pass

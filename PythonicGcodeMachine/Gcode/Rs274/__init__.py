@@ -20,6 +20,10 @@
 
 """Module to implement the G-code language.
 
+.. Note::
+   Text derived from several sources, like NIST RS-274 paper and Linux CNC project.
+   cf. supra for references.
+
 History
 -------
 
@@ -30,8 +34,9 @@ developed by the EIA in the early 1960s, and finally standardised by ISO in Febr
 The G-code language has several flavours and historical versions. A list of reference documents
 follows :
 
-* The NIST RS274NGC Interpreter - Version 3, T. Kramer, F. Proctor, E. Messina, National Institute
+* `The NIST RS274NGC Interpreter - Version 3, T. Kramer, F. Proctor, E. Messina, National Institute
   of Standards and Technology, NISTIR 6556, August 17, 2000
+  <https://www.nist.gov/publications/nist-rs274ngc-interpreter-version-3>`_
 * The documentation of the `Linux CNC <http://linuxcnc.org>`_ project, formerly Enhanced Machine
   Controller developed at NIST,
 * EIA Standard RS-274-D Interchangeable Variable Block Data Format for Positioning, Contouring, and

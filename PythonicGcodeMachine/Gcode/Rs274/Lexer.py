@@ -40,11 +40,6 @@ class GcodeLexer:
 
     """Class to implement a RS-274 G-code lexer.
 
-    For references, see
-
-    * The NIST RS274NGC Interpreter — Version 3 — Appendix E. Production Rules for the RS274/NGC Language
-    * http://linuxcnc.org/docs/2.7/html/gcode/overview.html
-
     """
 
     # List of token names.

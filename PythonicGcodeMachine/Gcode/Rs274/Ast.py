@@ -53,7 +53,7 @@ __all__ = [
     'Power',
     'DividedBy',
     'Modulo',
-    'Times',
+    'Multiply',
     'And',
     'ExclusiveOr',
     'Subtraction',
@@ -77,6 +77,11 @@ class Program:
 
         program = Program()
         program += line
+
+        # Array interface
+        for line in programs:
+            print(line)
+
         str(program)
 
     """
@@ -142,14 +147,36 @@ class Line:
 
     Usage::
 
-        line = Line(def=False, line_number=1, comment='a comment')
+        line = Line(deleted=False, line_number=1, comment='a comment')
+
+        line.deleted = True
+        print(line.deleted)
+        # same apply for line_number and comment
+
+        # Is line not deleted ?
+        bool(line)
+
+        # Push some items
+        # Note: order doesn't matter, see RS-274 for details
         line += Word('G', 0)
         line += Comment('move')
         line += Word('X', 10)
         line += Comment('Y value')
         line += Word('Y', 20)
         line += ParameterSetting('1', 1.2)
+
+        # using expression
+        line += Word('Z', Addition(30, Multiply(Parameter(100), Cosine(30))))
+
+        # Array interface
+        for item in line:
+            print(item)
+
         str(line)
+        print(line.ansi_str()) # use ANSI colors, see Line.ANSI_... attributes
+
+    Expression can be evaluated using :code:`float(obj.value)`, excepted when we must access a parameter
+    value.
 
     """
 
@@ -280,6 +307,8 @@ class Line:
 
 class Comment(LineItem):
 
+    """Class to implement comment"""
+
     ##############################################
 
     def __init__(self, text):
@@ -316,6 +345,8 @@ class Comment(LineItem):
 ####################################################################################################
 
 class Word(LineItem):
+
+    """Class to implement word"""
 
     LETTERS = (
         'A', 'B', 'C', 'D',
@@ -399,6 +430,8 @@ class ParameterMixin:
 
 class ParameterSetting(LineItem, ParameterMixin):
 
+    """Class to implement parameter setting"""
+
     ##############################################
 
     def __init__(self, parameter, value):
@@ -430,6 +463,8 @@ class ParameterSetting(LineItem, ParameterMixin):
 
 class Parameter(RealValue, ParameterMixin):
 
+    """Class to implement parameter"""
+
     ##############################################
 
     def __init__(self, parameter):
@@ -442,6 +477,11 @@ class Parameter(RealValue, ParameterMixin):
 
     def __str__(self):
         return '#{0._parameter}'.format(self)
+
+    ##############################################
+
+    def __float__(self):
+        raise NotImplementedError
 
 ####################################################################################################
 
@@ -594,7 +634,7 @@ class Modulo(BinaryOperation):
     __function__ = staticmethod(lambda a, b: a % b)
     __gcode__ = 'mod'
 
-class Times(BinaryOperation):
+class Multiply(BinaryOperation):
     __function__ = staticmethod(lambda a, b: a * b)
     __gcode__ =  '*'
 
