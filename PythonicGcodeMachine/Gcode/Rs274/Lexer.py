@@ -183,7 +183,7 @@ class GcodeLexer:
 
     def t_EOF_COMMENT(self, t):
         r';.*'
-        t.value = t.value[1:]
+        t.value = t.value[1:].strip()
         return t
 
     # Ignored characters (spaces and tabs)

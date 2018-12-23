@@ -106,15 +106,16 @@ class TestGcodeParser(unittest.TestCase):
                 'N3.1 G0 X1.0 Y0 Z0 ; a eof comment',
                 'N3.1 (comment 1) G0 (comment 2) X1.0 (comment 3) Y0 (comment 4) Z0 ; a eof comment',
 
-                '#3=1. G0 X#3 Y0'
-                'G0 #3=1. X#3 Y0'
+                '#3=1. G0 X#3 Y0',
+                'G0 #3=1. X#3 Y0',
 
-                '#3=1. G0 X [ 1 + acos[0] - [#3 ** [4.0/2]]]'
+                '#3=1. G0 X [ 1 + acos[0] - [#3 ** [4.0/2]]]',
         ):
             print()
             print(gcode)
             try:
-                parser.parse(gcode)
+                line = parser.parse(gcode)
+                print('>', line)
             except GcodeParserError as exception:
                 position, = exception.args
                 print(' ' * position + '^')

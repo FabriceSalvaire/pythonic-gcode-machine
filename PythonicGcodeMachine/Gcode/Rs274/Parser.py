@@ -25,6 +25,7 @@ __all__ = ['GcodeParserError', 'GcodeParser']
 # https://rply.readthedocs.io/en/latest/
 from ply import yacc
 
+from . import Ast
 from .Lexer import GcodeLexer
 
 ####################################################################################################
@@ -93,6 +94,13 @@ class GcodeParser:
 
     __lexer_cls__ = GcodeLexer
 
+    # Build the operation map
+    __operation_map__ = {}
+    for cls_name in Ast.__all__:
+        cls = getattr(Ast, cls_name)
+        if hasattr(cls, '__gcode__'):
+            __operation_map__[cls.__gcode__] = cls
+
     ##############################################
 
     # Start symbol
@@ -100,43 +108,59 @@ class GcodeParser:
         '''line : DIVIDED_BY line_right
                 | line_right
         '''
+        if len(p) == 3:
+            self._line.deleted = True
+        # p[0] = self._line
 
     def p_line_right(self, p):
         '''line_right : line_content
                       | line_content EOF_COMMENT
         '''
+        if len(p) == 3:
+            self._line.comment = p[2]
+        # p[0] = self._line
 
     def p_line_content(self, p):
         'line_content : segments'
-        # p[0] = 
+        # p[0] = self._line
 
     def p_numbered_line(self, p):
         'line_content : line_number segments'
+        self._line.line_number = p[1]
+        # p[0] = self._line
 
     def p_line_number(self, p):
         '''line_number : N POSITIVE_INTEGER
                        | N POSITIVE_REAL
         '''
+        p[0] = p[2]
 
     def p_segments(self, p):
         '''segments : segment
                     | segments segment
         '''
+        if len(p) == 2:
+            self._line += p[1]
+        else:
+            self._line += p[2]
 
     def p_segment(self, p):
         '''segment : mid_line_word
                    | comment
                    | parameter_setting
         '''
+        p[0] = p[1]
 
     ##############################################
 
     def p_comment(self, p):
         'comment : ordinary_comment'
-          # 'comment : message | ordinary_comment':
+        # 'comment : message | ordinary_comment':
+        p[0] = p[1]
 
     def p_ordinary_comment(self, p):
         'ordinary_comment : INLINE_COMMENT'
+        p[0] = Ast.Comment(p[1])
 
     # def p_message(self, p):
       # 'message : left_parenthesis + {white_space} + letter_m + {white_space} + letter_s +
@@ -147,6 +171,7 @@ class GcodeParser:
 
     def p_mid_line_word(self, p):
         'mid_line_word : mid_line_letter real_value'
+        p[0] = Ast.Word(p[1], p[2])
 
     def p_mid_line_letter(self, p):
         '''mid_line_letter : A
@@ -170,15 +195,19 @@ class GcodeParser:
                            | Y
                            | Z
         '''
+        p[0] = str(p[1])
 
     def p_parameter_setting(self, p):
         'parameter_setting : PARAMETER_SIGN parameter_index EQUAL_SIGN real_value'
+        p[0] = Ast.ParameterSetting(p[2], p[4])
 
     def p_parameter_value(self, p):
         'parameter_value : PARAMETER_SIGN parameter_index'
+        p[0] = Ast.Parameter(p[2])
 
     def p_parameter_index(self, p):
         'parameter_index : real_value'
+        p[0] = p[1]
 
     def p_real_value(self, p):
         '''real_value : POSITIVE_INTEGER
@@ -188,6 +217,7 @@ class GcodeParser:
                       | parameter_value
                       | unary_combo
         '''
+        p[0] = p[1]
 
     ##############################################
 
@@ -195,21 +225,29 @@ class GcodeParser:
         '''unary_combo : ordinary_unary_combo
                        | arc_tangent_combo
         '''
+        p[0] = p[1]
 
     def p_ordinary_unary_combo(self, p):
         'ordinary_unary_combo : ordinary_unary_operation expression'
+        p[0] = self.__operation_map__[p[1]](p[2])
 
     def p_expression(self, p):
         'expression : LEFT_BRACKET inner_expression RIGHT_BRACKET'
+        p[0] = p[2]
 
     def p_inner_expression(self, p):
         '''inner_expression : real_value
                             | inner_expression binary_operation real_value
         '''
+        if len(p) == 2:
+            p[0] = p[1]
+        else:
+            p[0] = self.__operation_map__[p[2]](p[1], p[3])
 
     def p_arc_tangent_combo(self, p):
         # atan[1.5]/[1.0]
         'arc_tangent_combo : ARC_TANGENT expression DIVIDED_BY expression'
+        p[0] = DividedBy(ArcTangent(p[2]), p[4])
 
     def p_ordinary_unary_operation(self, p):
         '''ordinary_unary_operation : ABSOLUTE_VALUE
@@ -225,21 +263,25 @@ class GcodeParser:
                                     | SQUARE_ROOT
                                     | TANGENT
         '''
+        p[0] = p[1]
 
     def p_binary_operation(self, p):
         '''binary_operation : binary_operation1
                             | binary_operation2
                             | binary_operation3
         '''
+        p[0] = p[1]
 
     def p_binary_operation1(self, p):
         'binary_operation1 : POWER'
+        p[0] = p[1]
 
     def p_binary_operation2(self, p):
         '''binary_operation2 : DIVIDED_BY
                              | MODULO
                              | TIMES
         '''
+        p[0] = p[1]
 
     def p_binary_operation3(self, p):
         '''binary_operation3 : AND
@@ -248,6 +290,7 @@ class GcodeParser:
                              | NON_EXCLUSIVE_OR
                              | PLUS
         '''
+        p[0] = p[1]
 
     ##############################################
 
@@ -264,11 +307,19 @@ class GcodeParser:
 
     def __init__(self):
         self._build()
+        self._reset()
+
+    ##############################################
+
+    def _reset(self):
+        self._line = None
 
     ##############################################
 
     def _build(self, **kwargs):
+
         """Build the parser"""
+
         self._lexer = self.__lexer_cls__()
         self.tokens = self._lexer.tokens
         self._parser = yacc.yacc(
@@ -280,9 +331,31 @@ class GcodeParser:
     ##############################################
 
     def parse(self, line):
+
+        """Parse a G-code line"""
+
         line = line.strip()
+
+        self._line = Ast.Line()
         ast = self._parser.parse(
             line,
             lexer=self._lexer._lexer,
             # debug=True,
         )
+
+        line = self._line
+        self._reset()
+
+        return line
+
+    ##############################################
+
+    def parse_lines(self, lines):
+
+        """Parse a G-code lines"""
+
+        program = Ast.Program()
+        for line in lines.split('\n'):
+            program += self.parse(line)
+
+        return program

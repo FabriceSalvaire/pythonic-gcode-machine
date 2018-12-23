@@ -239,7 +239,7 @@ class Line:
 
         line = ''
         if not self:
-            line += r'\ '
+            line += '/ '
         if self._line_number:
             line += 'N{} '.format(self._line_number)
         line += ' '.join(map(str, self))
