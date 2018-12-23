@@ -18,7 +18,7 @@
 #
 ####################################################################################################
 
-__all__ = ['GcodeLexerError', 'GcodeLexer, ']
+__all__ = ['GcodeLexerError', 'GcodeLexer']
 
 ####################################################################################################
 
@@ -38,7 +38,7 @@ class GcodeLexerError(ValueError):
 
 class GcodeLexer:
 
-    """Class to implement a CGode lexer.
+    """Class to implement a RS-274 G-code lexer.
 
     For references, see
 
@@ -219,7 +219,6 @@ class GcodeLexer:
     ##############################################
 
     def tokenize(self, data):
-
         self.input(data)
         while True:
             token = self._lexer.token()

@@ -24,8 +24,8 @@ import unittest
 
 ####################################################################################################
 
-from PythonicGcodeMachine.Gcode.Lexer import GcodeLexer, GcodeLexerError
-from PythonicGcodeMachine.Gcode.Parser import GcodeParser, GcodeParserError
+from PythonicGcodeMachine.Gcode.Rs274.Lexer import GcodeLexer, GcodeLexerError
+from PythonicGcodeMachine.Gcode.Rs274.Parser import GcodeParser, GcodeParserError
 
 ####################################################################################################
 

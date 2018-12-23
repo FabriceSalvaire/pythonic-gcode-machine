@@ -25,7 +25,7 @@ __all__ = ['GcodeParserError', 'GcodeParser']
 # https://rply.readthedocs.io/en/latest/
 from ply import yacc
 
-from .Lexer import GcodeLexer, GcodeLexerError
+from .Lexer import GcodeLexer
 
 ####################################################################################################
 
@@ -36,7 +36,7 @@ class GcodeParserError(ValueError):
 
 class GcodeParser:
 
-    """Class to implement a CGode parser.
+    """Class to implement a RS-274 G-code parser.
 
     For references, see
 
@@ -90,6 +90,8 @@ class GcodeParser:
       * unary_combo = ordinary_unary_combo | arc_tangent_combo .
 
     """
+
+    __lexer_cls__ = GcodeLexer
 
     ##############################################
 
@@ -267,8 +269,7 @@ class GcodeParser:
 
     def _build(self, **kwargs):
         """Build the parser"""
-
-        self._lexer = GcodeLexer()
+        self._lexer = self.__lexer_cls__()
         self.tokens = self._lexer.tokens
         self._parser = yacc.yacc(
             module=self,
@@ -279,7 +280,6 @@ class GcodeParser:
     ##############################################
 
     def parse(self, line):
-
         line = line.strip()
         ast = self._parser.parse(
             line,

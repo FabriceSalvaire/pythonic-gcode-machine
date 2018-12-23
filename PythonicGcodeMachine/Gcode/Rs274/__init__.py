@@ -163,7 +163,7 @@ value may be an explicit number (such as 341 or -0.8807), a parameter value, an 
 unary operation value.
 
 Number
-~~~~~
+~~~~~~
 
 The following rules are used for (explicit) numbers. In these rules a digit is a single character
 between 0 and 9.
