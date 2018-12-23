@@ -2,6 +2,7 @@
 
 find PythonicGcodeMachine -name "flycheck*.py" -exec rm {} \;
 find PythonicGcodeMachine -name "parsetab.py" -exec rm {} \;
+find PythonicGcodeMachine -name "lextab.py" -exec rm {} \;
 
 # rm -r doc/build
 # rm -r doc/sphinx/source/api
