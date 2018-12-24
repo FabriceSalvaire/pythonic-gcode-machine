@@ -343,7 +343,7 @@ class ExecutionOrder(YamlMixin, RstMixin):
             path,
             headers=('Order', 'G-codes', 'Comment'),
             columns=('index', 'gcodes', 'meaning'),
-            str_gcodes=lambda item: ', '.join(item),
+            str_gcodes=lambda item: ' '.join(item),
         )
 
 ####################################################################################################
@@ -411,7 +411,7 @@ class ModalGroups(YamlMixin, RstMixin):
             path,
             headers=('Group', 'G-codes', 'Comment'),
             columns=('index', 'gcodes', 'meaning'),
-            str_gcodes=lambda item: '(' + ', '.join(item) + ')',
+            str_gcodes=lambda item: ' '.join(item),
         )
 
 ####################################################################################################

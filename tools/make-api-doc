@@ -10,6 +10,8 @@ find PythonicGcodeMachine -name "lextab.py" -exec rm {} \;
 api=doc/sphinx/source/api
 rm -rf ${api}
 
+python3 PythonicGcodeMachine/Gcode/Rs274/data/make-rst.py
+
 echo
 echo Generate RST API files
 pyterate-rst-api PythonicGcodeMachine
