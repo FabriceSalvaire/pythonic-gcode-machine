@@ -18,7 +18,16 @@
 #
 ####################################################################################################
 
-__all__ = ['GcodeLexerError', 'GcodeLexer']
+"""Module to implement a RS-274 G-code lexer."""
+
+####################################################################################################
+
+__all__ = [
+    'GcodeLexerError',
+    'GcodeLexer',
+    'GcodeLexerMixin',
+    'GcodeTokenMixin',
+]
 
 ####################################################################################################
 
@@ -36,11 +45,9 @@ class GcodeLexerError(ValueError):
 
 ####################################################################################################
 
-class GcodeLexer:
+class GcodeTokenMixin:
 
-    """Class to implement a RS-274 G-code lexer.
-
-    """
+    """Mixin to define RS-274 G-code tokens. """
 
     # List of token names.
     tokens = (
@@ -196,6 +203,12 @@ class GcodeLexer:
         # raise GcodeLexerError("Illegal character @{} '{}'".format(t.lexpos, t.value))
         raise GcodeLexerError(t.lexpos)
 
+####################################################################################################
+
+class GcodeLexerMixin:
+
+    """Class to implement a RS-274 G-code lexer."""
+
     ##############################################
 
     def __init__(self):
@@ -226,3 +239,8 @@ class GcodeLexer:
             if not token:
                 break
             yield token
+
+####################################################################################################
+
+class GcodeLexer(GcodeLexerMixin, GcodeTokenMixin):
+    pass
