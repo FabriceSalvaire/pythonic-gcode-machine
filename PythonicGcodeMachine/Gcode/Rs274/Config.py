@@ -30,7 +30,9 @@ __all__ = [
     'Letters',
     'Gcode',
     'Gcodes',
+    'ModalGroup',
     'ModalGroups',
+    'ExecutionGroup',
     'ExecutionOrder',
 ]
 
@@ -67,9 +69,14 @@ class RstMixin:
 
     ##############################################
 
-    def _make_rst(self, headers, columns=None, show_line_number=False, str_item=None):
+    def _make_rst(self, headers, columns, **kwargs):
 
-        lengths = []
+        number_of_columns = len(headers)
+        if len(columns) != number_of_columns:
+            raise ValueError('Number of columns mismatch')
+        number_of_lines = len(self)
+
+        table = []
         rule = ''
         line_format = ''
         for c, title in enumerate(headers):
@@ -77,36 +84,28 @@ class RstMixin:
                 rule += ' '
                 line_format += ' '
             length = len(title)
-            if columns is not None:
-                column = columns[c]
+            column = columns[c]
+            str_columns = []
+            if hasattr(self, 'sorted_iter'):
+                it = self.sorted_iter()
             else:
-                column = None
-            for line_number, item in enumerate(self):
-                if c == 0  and show_line_number:
-                    text = str(line_number)
-                else:
-                    if column is not None:
-                        text = str(getattr(item, column))
-                    else:
-                        text = str(item)
+                it = self
+            for line_number, item in enumerate(it):
+                formater = kwargs.get('str_' + column, str)
+                field = getattr(item, column)
+                text = formater(field)
                 length = max(len(text), length)
+                str_columns.append(text)
             rule += '='*length
             line_format += '{:' + str(length) + '}'
-            lengths.append(length)
+            table.append(str_columns)
 
         rst = ''
         rst += rule + '\n'
         rst += line_format.format(*headers) + '\n'
         rst += rule + '\n'
-        for line_number, item in enumerate(self):
-            if columns is not None:
-                fields = [getattr(item, column) for column in columns]
-            elif str_item:
-                fields = [str_item(item)]
-            else:
-                fields = [str(item)]
-            if show_line_number:
-                fields = [str(line_number)] + fields
+        for line_number in range(number_of_lines):
+            fields = [table[c][line_number] for c in range(number_of_columns)]
             rst += line_format.format(*fields) + '\n'
         rst += rule + '\n'
 
@@ -267,6 +266,13 @@ class Gcodes(YamlMixin, RstMixin):
     def __getitem__(self, code):
         return self._gcodes[code]
 
+    ##############################################
+
+    def sorted_iter(self):
+
+        items = list(self)
+        items.sort(key=lambda item: str(ord(item.code[0])*1000) + item.code[1:])
+        return items
 
     ##############################################
 
@@ -276,6 +282,27 @@ class Gcodes(YamlMixin, RstMixin):
             headers=('G-code', 'Meaning'),
             columns=('code', 'meaning'),
         )
+####################################################################################################
+
+class ExecutionGroup(MeaningMixin):
+
+    ##############################################
+
+    def __init__(self, index, gcodes, meaning):
+
+        MeaningMixin.__init__(self, meaning)
+        self._index = int(index)
+        self._gcodes = list(gcodes)
+
+    ##############################################
+
+    @property
+    def index(self):
+        return self._index
+
+    @property
+    def gcodes(self):
+        return self._gcodes
 
 ####################################################################################################
 
@@ -288,13 +315,15 @@ class ExecutionOrder(YamlMixin, RstMixin):
         data = self._load_yaml(yaml_path)
         self._order = []
         count = 1
-        for index, gcodes in data.items():
+        for index, d in data.items():
             if index != count:
                 raise ValueError('Unexpected index {} versus {}'.format(index, count))
             count += 1
+            gcodes = d['gcodes']
             if not isinstance(gcodes, list):
-                gcodes = list(gcodes)
-            self._order.append(gcodes)
+                gcodes = [gcodes]
+            group = ExecutionGroup(index, gcodes, d['meaning'])
+            self._order.append(group)
 
     ##############################################
 
@@ -312,10 +341,32 @@ class ExecutionOrder(YamlMixin, RstMixin):
     def to_rst(self, path):
         self._write_rst(
             path,
-            headers=('Order', 'G-codes'),
-            show_line_number=True,
-            str_item=lambda item: '(' + ', '.join(item) + ')'
+            headers=('Order', 'G-codes', 'Comment'),
+            columns=('index', 'gcodes', 'meaning'),
+            str_gcodes=lambda item: ', '.join(item),
         )
+
+####################################################################################################
+
+class ModalGroup(MeaningMixin):
+
+    ##############################################
+
+    def __init__(self, index, gcodes, meaning):
+
+        MeaningMixin.__init__(self, meaning)
+        self._index = int(index)
+        self._gcodes = list(gcodes)
+
+    ##############################################
+
+    @property
+    def index(self):
+        return self._index
+
+    @property
+    def gcodes(self):
+        return self._gcodes
 
 ####################################################################################################
 
@@ -327,8 +378,12 @@ class ModalGroups(YamlMixin, RstMixin):
 
         data = self._load_yaml(yaml_path)
         self._groups = {}
-        for index, gcodes in data.items():
-            self._groups[index] = list(gcodes)
+        for index, d in data.items():
+            gcodes = d['gcodes']
+            if not isinstance(gcodes, list):
+                gcodes = [gcodes]
+            group = ExecutionGroup(index, gcodes, d['meaning'])
+            self._groups[index] = group
 
     ##############################################
 
@@ -339,16 +394,24 @@ class ModalGroups(YamlMixin, RstMixin):
         return iter(self._groups.values())
 
     def __getitem__(self, index):
-        return self._groups[index_]
+        return self._groups[index]
+
+    ##############################################
+
+    def sorted_iter(self):
+
+        items = list(self)
+        items.sort(key=lambda item: item.index)
+        return items
 
     ##############################################
 
     def to_rst(self, path):
         self._write_rst(
             path,
-            headers=('Group', 'G-codes'),
-            show_line_number=True,
-            str_item=lambda item: '(' + ', '.join(item) + ')'
+            headers=('Group', 'G-codes', 'Comment'),
+            columns=('index', 'gcodes', 'meaning'),
+            str_gcodes=lambda item: '(' + ', '.join(item) + ')',
         )
 
 ####################################################################################################

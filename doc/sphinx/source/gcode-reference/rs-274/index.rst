@@ -299,6 +299,9 @@ millimeters. A machining center may be in many modes at the same time, with one 
 group being in effect.
 
 .. The modal groups are shown in Table 4.
+.. Table . Modal Groups
+
+The modal groups are
 
 .. include:: modal_groups.rst
 
