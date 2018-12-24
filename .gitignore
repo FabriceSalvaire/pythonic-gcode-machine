@@ -1,13 +1,19 @@
 *~
+
+# Build files
 __pycache__
-
-doc/sphinx/build/
-doc/sphinx/source/api/
-doc/sphinx/source/examples/
-
 lextab.py
 parser.out
 parsetab.py
+doc/sphinx/build/
+
+# Generated files
+doc/sphinx/source/api/
+doc/sphinx/source/examples/
+doc/sphinx/source/gcode-reference/rs-274/execution_order.rst
+doc/sphinx/source/gcode-reference/rs-274/gcodes.rst
+doc/sphinx/source/gcode-reference/rs-274/letters.rst
+doc/sphinx/source/gcode-reference/rs-274/modal_groups.rst
 
 PythonicGcodeMachine/PythonLexYacc/yacc.py
 ressources
