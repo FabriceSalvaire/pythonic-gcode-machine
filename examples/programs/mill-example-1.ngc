@@ -1,0 +1,16 @@
+; http://www.helmancnc.com/cnc-mill-example-program-g01-g02-g03-g90-g91
+N40 G90 G00 X0 Y0
+N50 G01 X-10 Y-20 R8         (P1)
+N60 G01 X-50 R10             (P2)
+N70 Y10                      (P3)
+N80 X-19.97 Y25.01           (P4)
+N90 G03 X7.97 Y38.99 R18     (P5)
+N100 G01 X30 Y50             (P6)
+N110 G91 X10.1 Y-10.1        (P7)
+N120 G90 G02 X59.9 Y20.1 R14 (P8)
+N130 G01 X70 Y10             (P9)
+N140 Y-20 R10                (P10)
+N150 X50                     (P11)
+N160 G03 X30 R10             (P12)
+N170 G01 X10 R8              (P13)
+N180 X0 Y0

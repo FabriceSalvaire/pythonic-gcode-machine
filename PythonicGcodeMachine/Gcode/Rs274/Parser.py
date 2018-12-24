@@ -395,9 +395,16 @@ class GcodeParserMixin:
         Return a :class:`PythonicGcodeMachine.Gcode.Rs274.Ast.Program` instance.
         """
 
+        if not isinstance(lines, (list, tuple)):
+            lines = lines.split('\n')
+
         program = Ast.Program()
-        for line in lines.split('\n'):
-            program += self.parse(line)
+        for line in lines:
+            try:
+                program += self.parse(line)
+            except GcodeParserError as exception:
+                print('Parse Error:', line)
+                raise exception
 
         return program
 

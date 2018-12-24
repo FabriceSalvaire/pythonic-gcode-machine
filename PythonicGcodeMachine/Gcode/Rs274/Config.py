@@ -135,8 +135,7 @@ class Letters(YamlMixin):
         data = self._load_yaml(yaml_path)
         self._letters = {}
         for letter, d in data.items():
-            letter = Letter(letter, d['meaning'])
-            self._letters[letter] = letter
+            self._letters[letter] = Letter(letter, d['meaning'])
 
     ##############################################
 

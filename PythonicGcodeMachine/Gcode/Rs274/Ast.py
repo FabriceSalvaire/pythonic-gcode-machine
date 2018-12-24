@@ -261,6 +261,18 @@ class Line:
 
     ##############################################
 
+    def iter_on_word(self):
+        for item in self:
+            if isinstance(item, Word):
+                yield item
+
+    def iter_on_setting(self):
+        for item in self:
+            if isinstance(item, ParameterSetting):
+                yield item
+
+    ##############################################
+
     def __repr__(self):
 
         items = []
