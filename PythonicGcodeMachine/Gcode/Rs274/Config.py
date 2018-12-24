@@ -18,22 +18,29 @@
 #
 ####################################################################################################
 
-"""
+"""Module to implement a G-code implementation configuration and an Oriented Object API for the YAML
+configuration files.
+
+See YAML files for examples and :ref:`rs-274-reference-page`.
+
+API implements an array interface or a dictionary interface for a table.
+
 """
 
 ####################################################################################################
 
 __all__ = [
     'Config',
-    'Parameter',
-    'Parameters',
-    'Letters',
-    'Gcode',
-    'Gcodes',
-    'ModalGroup',
-    'ModalGroups',
+    'MeaningMixin',
     'ExecutionGroup',
     'ExecutionOrder',
+    'Gcode',
+    'Gcodes',
+    'Letters',
+    'ModalGroup',
+    'ModalGroups',
+    'Parameter',
+    'Parameters',
 ]
 
 ####################################################################################################
@@ -61,6 +68,7 @@ class MeaningMixin:
 
     @property
     def meaning(self):
+        """A comment"""
         return self._meaning
 
 ####################################################################################################
@@ -134,6 +142,7 @@ class Parameter(MeaningMixin):
 
     @property
     def index(self):
+        """Parameter's index (table key)"""
         return self._index
 
     @property
@@ -143,6 +152,8 @@ class Parameter(MeaningMixin):
 ####################################################################################################
 
 class Parameters(YamlMixin, RstMixin):
+
+    """Class for the table of parameters."""
 
     ##############################################
 
@@ -189,11 +200,14 @@ class Letter(MeaningMixin):
 
     @property
     def letter(self):
+        """G-code letter (table key)"""
         return self._letter
 
 ####################################################################################################
 
 class Letters(YamlMixin, RstMixin):
+
+    """Class for the table of letters."""
 
     ##############################################
 
@@ -230,20 +244,23 @@ class Gcode(MeaningMixin):
 
     ##############################################
 
-    def __init__(self, code, meaning):
+    def __init__(self, gcode, meaning):
 
         MeaningMixin.__init__(self, meaning)
-        self._code = str(code)
+        self._gcode = str(gcode)
 
     ##############################################
 
     @property
-    def code(self):
-        return self._code
+    def gcode(self):
+        """G-code (table key)"""
+        return self._gcode
 
 ####################################################################################################
 
 class Gcodes(YamlMixin, RstMixin):
+
+    """Class for the table of G-codes."""
 
     ##############################################
 
@@ -251,9 +268,9 @@ class Gcodes(YamlMixin, RstMixin):
 
         data = self._load_yaml(yaml_path)
         self._gcodes = {}
-        for code, d in data.items():
-            gcode = Gcode(code, d['meaning'])
-            self._gcodes[code] = gcode
+        for gcode_txt, d in data.items():
+            gcode = Gcode(gcode_txt, d['meaning'])
+            self._gcodes[gcode_txt] = gcode
 
     ##############################################
 
@@ -271,7 +288,7 @@ class Gcodes(YamlMixin, RstMixin):
     def sorted_iter(self):
 
         items = list(self)
-        items.sort(key=lambda item: str(ord(item.code[0])*1000) + item.code[1:])
+        items.sort(key=lambda item: str(ord(item.gcode[0])*1000) + item.gcode[1:])
         return items
 
     ##############################################
@@ -280,8 +297,9 @@ class Gcodes(YamlMixin, RstMixin):
         self._write_rst(
             path,
             headers=('G-code', 'Meaning'),
-            columns=('code', 'meaning'),
+            columns=('gcode', 'meaning'),
         )
+
 ####################################################################################################
 
 class ExecutionGroup(MeaningMixin):
@@ -298,15 +316,19 @@ class ExecutionGroup(MeaningMixin):
 
     @property
     def index(self):
+        """Order index (table key)"""
         return self._index
 
     @property
     def gcodes(self):
+        """G-Codes list"""
         return self._gcodes
 
 ####################################################################################################
 
 class ExecutionOrder(YamlMixin, RstMixin):
+
+    """Class for the execution order table."""
 
     ##############################################
 
@@ -362,15 +384,19 @@ class ModalGroup(MeaningMixin):
 
     @property
     def index(self):
+        """Group id (table key)"""
         return self._index
 
     @property
     def gcodes(self):
+        """G-Codes list"""
         return self._gcodes
 
 ####################################################################################################
 
 class ModalGroups(YamlMixin, RstMixin):
+
+    """Class for the table of modal groups."""
 
     ##############################################
 
@@ -418,6 +444,12 @@ class ModalGroups(YamlMixin, RstMixin):
 
 class Config:
 
+    """Class to register a G-code implementation configuration.
+
+    An instance is build from a set of YAML files.
+
+    """
+
     ##############################################
 
     def __init__(self,
@@ -427,6 +459,9 @@ class Config:
                  modal_groups,
                  parameters,
     ):
+
+        """Each argument is a path to the corresponding YAML file. Files are loaded on demand (lazy loading).
+        """
 
         self._execution_order = str(execution_order)
         self._gcodes = str(gcodes)
@@ -438,30 +473,35 @@ class Config:
 
     @property
     def execution_order(self):
+        """:class:`ExecutionOrder` instance"""
         if isinstance(self._execution_order, str):
             self._execution_order = ExecutionOrder(self._execution_order)
         return self._execution_order
 
     @property
     def gcodes(self):
+        """:class:`Gcodes` instance"""
         if isinstance(self._gcodes, str):
             self._gcodes = Gcodes(self._gcodes)
         return self._gcodes
 
     @property
     def letters(self):
+        """:class:`Letters` instance"""
         if isinstance(self._letters, str):
             self._letters = Letters(self._letters)
         return self._letters
 
     @property
     def modal_groups(self):
+        """:class:`ModalGroups` instance"""
         if isinstance(self._modal_groups, str):
             self._modal_groups = ModalGroups(self._modal_groups)
         return self._modal_groups
 
     @property
     def parameters(self):
+        """:class:`Parameters` instance"""
         if isinstance(self._parameters, str):
             self._parameters = Parameters(self._parameters)
         return self._parameters

@@ -14,6 +14,7 @@ doc/sphinx/source/gcode-reference/rs-274/execution_order.rst
 doc/sphinx/source/gcode-reference/rs-274/gcodes.rst
 doc/sphinx/source/gcode-reference/rs-274/letters.rst
 doc/sphinx/source/gcode-reference/rs-274/modal_groups.rst
+doc/sphinx/source/gcode-reference/rs-274/parameters.rst
 
 PythonicGcodeMachine/PythonLexYacc/yacc.py
 ressources
