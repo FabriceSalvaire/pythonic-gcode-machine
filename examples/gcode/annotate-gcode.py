@@ -1,6 +1,6 @@
 #?##################################################################################################
 #?#
-#?# PythonicGcodeMachine - @licence_header_description@
+#?# PythonicGcodeMachine - A Python G-code Toolkit
 #?# Copyright (C) 2018 Fabrice Salvaire
 #?#
 #?# This program is free software: you can redistribute it and/or modify

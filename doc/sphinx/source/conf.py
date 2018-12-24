@@ -2,7 +2,7 @@
 
 ####################################################################################################
 #
-# PythonicGcodeMachine - @licence_header_description@
+# PythonicGcodeMachine - A Python G-code Toolkit
 # Copyright (C) 2018 Fabrice Salvaire
 #
 ####################################################################################################
@@ -313,4 +313,4 @@ intersphinx_mapping = {'http://docs.python.org/': None}
 # https://github.com/jdillard/sphinx-sitemap
 #
 
-site_url = '@project_url@' # could use setup_dict
+site_url = 'https://github.com/FabriceSalvaire/pythonic-gcode-machine' # could use setup_dict
