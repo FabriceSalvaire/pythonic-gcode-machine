@@ -19,6 +19,8 @@
 ####################################################################################################
 
 """Module to implement an AST for RS-274 G-code.
+
+All classes are clonable.
 """
 
 ####################################################################################################
@@ -64,6 +66,7 @@ __all__ = [
 ####################################################################################################
 
 import math
+import re
 
 import colors
 
@@ -84,12 +87,24 @@ class Program:
 
         str(program)
 
+        program2 = program.clone()
+
     """
 
     ##############################################
 
     def __init__(self):
         self._lines = []
+
+    ##############################################
+
+    def clone(self):
+
+        program = self.__class__()
+        for line in self:
+            program += line.clone()
+
+        return program
 
     ##############################################
 
@@ -134,7 +149,42 @@ class Program:
 
 ####################################################################################################
 
-class LineItem:
+class CloneMixin:
+
+    @staticmethod
+    def _clone_value(value):
+        if hasattr(value, 'clone'):
+            return value.clone()
+        else:
+            return value
+
+####################################################################################################
+
+class LineItem(CloneMixin):
+
+    ##############################################
+
+    def _check_value(self, value):
+
+        if (isinstance(value, (int, float)) or
+            isinstance(value, RealValue)):
+            return value
+        else:
+            try:
+                str_value = str(value)
+            except:
+                raise ValueError("Invalid value {}".format(value))
+            # Fixme:
+            from .Parser import GcodeParser, GcodeParserError
+            parser = GcodeParser()
+            try:
+                # Fixme: parser hack
+                ast = parser.parse('X' + value)
+                return ast[0].value
+            except GcodeParserError:
+                raise ValueError("Invalid G-code value {}".format(value))
+
+    ##############################################
 
     def ansi_str(self):
         return str(self)
@@ -162,11 +212,13 @@ class Line:
         line += Comment('move')
         line += Word('X', 10)
         line += Comment('Y value')
-        line += Word('Y', 20)
+        line += Word('Y', 20.)
         line += ParameterSetting('1', 1.2)
 
-        # using expression
+        # using expression, AST way
         line += Word('Z', Addition(30, Multiply(Parameter(100), Cosine(30))))
+        # string way
+        line += Word('Z', '[30 + [#100 * cos[30]]]')
 
         # Array interface
         for item in line:
@@ -174,6 +226,18 @@ class Line:
 
         str(line)
         print(line.ansi_str()) # use ANSI colors, see Line.ANSI_... attributes
+
+        a_line = line.clone()
+
+    Values can be passed as:
+
+    * int or float,
+    * AST for expression,
+    * any object that "str" evaluate to a valid G-code expression.
+
+    As a shortcut, a G/M-code operation can be passed as string::
+
+        line += 'G0'
 
     Expression can be evaluated using :code:`float(obj.value)`, excepted when we must access a parameter
     value.
@@ -197,6 +261,16 @@ class Line:
         self.comment = comment
 
         self._items = []
+
+    ##############################################
+
+    def clone(self):
+
+        line = self.__class__(self._deleted, self._line_number, self._comment)
+        for item in self:
+            line += item.clone()
+
+        return line
 
     ##############################################
 
@@ -233,13 +307,26 @@ class Line:
 
     ##############################################
 
+    def _push_item(self, item):
+        if not isinstance(item, LineItem):
+            item = Word.from_str(item)
+            # Fixme: try to parse ???
+        self._items.append(item)
+
+    def push_items(self, iterable):
+        """Method to push an iterable"""
+        for item in iterable:
+            self.push(item)
+
     def push(self, item):
-        if isinstance(item, LineItem):
-            self._items.append(item)
+        """Method to push a valid item, a 'G/Mxxx' shortcut string, a list or tuple"""
+        if isinstance(item, (list, tuple, Line)):
+            self.push_items(item)
         else:
-            raise ValueError
+            self._push_item(item)
 
     def __iadd__(self, item):
+        """push shortcut"""
         self.push(item)
         return self
 
@@ -270,6 +357,24 @@ class Line:
         for item in self:
             if isinstance(item, ParameterSetting):
                 yield item
+
+    ##############################################
+
+    def toggle(self):
+        """Toggle deleted flag"""
+        self._deleted = not self._deleted
+
+    def remove_line_number(self):
+        self._line_number = None
+
+    ##############################################
+
+    def remove_comment(self):
+        self._comment = None
+        for i, item in enumerate(self):
+            if isinstance(item, Comment):
+                # self._items.pop(i)
+                del self._items[i]
 
     ##############################################
 
@@ -328,6 +433,11 @@ class Comment(LineItem):
 
     ##############################################
 
+    def clone(self):
+        return self.__class__(self._text)
+
+    ##############################################
+
     def set(self, text):
         if '(' in text:
             raise ValueError('Comment cannot contains a "("')
@@ -367,11 +477,30 @@ class Word(LineItem):
         'X', 'Y', 'Z',
     )
 
+    WORD_RE = re.compile('(G|M)(\d+)')
+
+    ##############################################
+
+    @classmethod
+    def from_str(cls, obj):
+
+        str_obj = str(obj)
+        match = cls.WORD_RE.match(str_obj)
+        if match is not None:
+            return cls(*match.groups())
+        else:
+            raise ValueError(obj)
+
     ##############################################
 
     def __init__(self, letter, value):
         self.letter = letter
         self.value = value
+
+    ##############################################
+
+    def clone(self):
+        return self.__class__(self._letter, self._clone_value(self._value))
 
     ##############################################
 
@@ -392,13 +521,12 @@ class Word(LineItem):
 
     @value.setter
     def value(self, value):
-        # float expression ...
-        self._value = value
+        self._value = self._check_value(value)
 
     ##############################################
 
     def __repr__(self):
-        return 'Word({0._letter} {0._value})'.format(self)
+        return 'Word({0._letter}, {0._value})'.format(self)
 
     def __str__(self):
         return '{0._letter}{0._value}'.format(self)
@@ -412,7 +540,7 @@ class Word(LineItem):
 
 ####################################################################################################
 
-class RealValue:
+class RealValue(CloneMixin):
     pass
 
 ####################################################################################################
@@ -423,6 +551,11 @@ class ParameterMixin:
 
     def __init__(self, parameter):
         self.parameter = parameter
+
+    ##############################################
+
+    def clone(self):
+        return self.__class__(self._parameter)
 
     ##############################################
 
@@ -451,14 +584,18 @@ class ParameterSetting(LineItem, ParameterMixin):
         self.value = value
 
     ##############################################
+
+    def clone(self):
+        return self.__class__(self._parameter, self._clone_value(self._value))
+
+    ##############################################
     @property
     def value(self):
         return self._value
 
     @value.setter
     def value(self, value):
-        # float expression ...
-        self._value = value
+        self._value = self._check_value(value)
 
     ##############################################
 
@@ -506,6 +643,11 @@ class UnaryOperation(RealValue):
 
     def __init__(self, arg):
         self.arg = arg
+
+    ##############################################
+
+    def clone(self):
+        return self.__class__(self._clone_value(self._arg))
 
     ##############################################
 
@@ -598,6 +740,11 @@ class BinaryOperation(RealValue):
     def __init__(self, arg1, arg2):
         self.arg1 = arg1
         self.arg2 = arg2
+
+    ##############################################
+
+    def clone(self):
+        return self.__class__(self._clone_value(self._arg1), self._clone_value(self.arg2))
 
     ##############################################
 
