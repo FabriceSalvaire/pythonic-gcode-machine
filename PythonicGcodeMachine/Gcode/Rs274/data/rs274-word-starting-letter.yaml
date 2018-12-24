@@ -9,7 +9,7 @@ D:
 F:
   meaning: feedrate
 G:
-  meaning: general function (see Table 5)
+  meaning: general function (See table G codes)
 H:
   meaning: tool length offset index
 I:
@@ -21,7 +21,7 @@ K:
 L:
   meaning: number of repetitions in canned cycles / key used with G10
 M:
-  meaning: miscellaneous function (see Table 7)
+  meaning: miscellaneous function (see Table M codes)
 N:
   meaning: line number
 P:

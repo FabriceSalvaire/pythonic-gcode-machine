@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 ####################################################################################################
 #
 # PythonicGcodeMachine - @licence_header_description@
@@ -18,24 +20,25 @@
 #
 ####################################################################################################
 
-"""Module to implement the G-code language.
+"""Script to generate rST files.
 
-See :ref:`rs-274-reference-page` for more details about the RS-274 specification.
 """
 
 ####################################################################################################
 
-from pathlib import Path as _Path
+import pathlib
 
-from .Config import Config as _Config
-from .Parser import GcodeParser, GcodeParserError
+from PythonicGcodeMachine.Gcode.Rs274 import config
 
-_data_path = _Path(__file__).parent.joinpath('data')
+####################################################################################################
 
-config = _Config(
-    execution_order=_data_path.joinpath('rs274-execution-order.yaml'),
-    gcodes=_data_path.joinpath('rs274-gcodes.yaml'),
-    letters=_data_path.joinpath('rs274-word-starting-letter.yaml'),
-    modal_groups=_data_path.joinpath('rs274-modal-groups.yaml'),
-    parameters=_data_path.joinpath('rs274-default-parameter-file.yaml'),
-)
+source_path = pathlib.Path(__file__).absolute().parents[4]
+print('Source:', source_path)
+rst_path = source_path.joinpath('doc', 'sphinx', 'source', 'gcode-reference', 'rs-274')
+print('rST:', rst_path)
+
+config.execution_order.to_rst(rst_path.joinpath('execution_order.rst'))
+config.gcodes.to_rst(rst_path.joinpath('gcodes.rst'))
+config.letters.to_rst(rst_path.joinpath('letters.rst'))
+config.modal_groups.to_rst(rst_path.joinpath('modal_groups.rst'))
+config.parameters.to_rst(rst_path.joinpath('parameters.rst'))

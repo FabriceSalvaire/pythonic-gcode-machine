@@ -63,6 +63,64 @@ class MeaningMixin:
 
 ####################################################################################################
 
+class RstMixin:
+
+    ##############################################
+
+    def _make_rst(self, headers, columns=None, show_line_number=False, str_item=None):
+
+        lengths = []
+        rule = ''
+        line_format = ''
+        for c, title in enumerate(headers):
+            if rule:
+                rule += ' '
+                line_format += ' '
+            length = len(title)
+            if columns is not None:
+                column = columns[c]
+            else:
+                column = None
+            for line_number, item in enumerate(self):
+                if c == 0  and show_line_number:
+                    text = str(line_number)
+                else:
+                    if column is not None:
+                        text = str(getattr(item, column))
+                    else:
+                        text = str(item)
+                length = max(len(text), length)
+            rule += '='*length
+            line_format += '{:' + str(length) + '}'
+            lengths.append(length)
+
+        rst = ''
+        rst += rule + '\n'
+        rst += line_format.format(*headers) + '\n'
+        rst += rule + '\n'
+        for line_number, item in enumerate(self):
+            if columns is not None:
+                fields = [getattr(item, column) for column in columns]
+            elif str_item:
+                fields = [str_item(item)]
+            else:
+                fields = [str(item)]
+            if show_line_number:
+                fields = [str(line_number)] + fields
+            rst += line_format.format(*fields) + '\n'
+        rst += rule + '\n'
+
+        return rst
+
+    ##############################################
+
+    def _write_rst(self, path, *args, **kwargs):
+        print('Write {}'.format(path))
+        with open(path, 'w') as fh:
+            fh.write(self._make_rst(*args, **kwargs))
+
+####################################################################################################
+
 class Parameter(MeaningMixin):
 
     ##############################################
@@ -85,7 +143,7 @@ class Parameter(MeaningMixin):
 
 ####################################################################################################
 
-class Parameters(YamlMixin):
+class Parameters(YamlMixin, RstMixin):
 
     ##############################################
 
@@ -108,6 +166,15 @@ class Parameters(YamlMixin):
     def __getitem__(self, index):
         return self._parameters[index]
 
+    ##############################################
+
+    def to_rst(self, path):
+        self._write_rst(
+            path,
+            headers=('Parameter Number', 'Parameter Value', 'Comment'),
+            columns=('index', 'default_value', 'meaning'),
+        )
+
 ####################################################################################################
 
 class Letter(MeaningMixin):
@@ -127,7 +194,7 @@ class Letter(MeaningMixin):
 
 ####################################################################################################
 
-class Letters(YamlMixin):
+class Letters(YamlMixin, RstMixin):
 
     ##############################################
 
@@ -149,6 +216,15 @@ class Letters(YamlMixin):
     def __getitem__(self, letter):
         return self._letters[letter]
 
+    ##############################################
+
+    def to_rst(self, path):
+        self._write_rst(
+            path,
+            headers=('Letter', 'Meaning'),
+            columns=('letter', 'meaning'),
+        )
+
 ####################################################################################################
 
 class Gcode(MeaningMixin):
@@ -168,7 +244,7 @@ class Gcode(MeaningMixin):
 
 ####################################################################################################
 
-class Gcodes(YamlMixin):
+class Gcodes(YamlMixin, RstMixin):
 
     ##############################################
 
@@ -191,9 +267,19 @@ class Gcodes(YamlMixin):
     def __getitem__(self, code):
         return self._gcodes[code]
 
+
+    ##############################################
+
+    def to_rst(self, path):
+        self._write_rst(
+            path,
+            headers=('G-code', 'Meaning'),
+            columns=('code', 'meaning'),
+        )
+
 ####################################################################################################
 
-class ExecutionOrder(YamlMixin):
+class ExecutionOrder(YamlMixin, RstMixin):
 
     ##############################################
 
@@ -216,14 +302,24 @@ class ExecutionOrder(YamlMixin):
         return len(self._order)
 
     def __iter__(self):
-        return iter(self._order.values())
+        return iter(self._order)
 
     def __getitem__(self, slice_):
         return self._order[slice_]
 
+    ##############################################
+
+    def to_rst(self, path):
+        self._write_rst(
+            path,
+            headers=('Order', 'G-codes'),
+            show_line_number=True,
+            str_item=lambda item: '(' + ', '.join(item) + ')'
+        )
+
 ####################################################################################################
 
-class ModalGroups(YamlMixin):
+class ModalGroups(YamlMixin, RstMixin):
 
     ##############################################
 
@@ -244,6 +340,16 @@ class ModalGroups(YamlMixin):
 
     def __getitem__(self, index):
         return self._groups[index_]
+
+    ##############################################
+
+    def to_rst(self, path):
+        self._write_rst(
+            path,
+            headers=('Group', 'G-codes'),
+            show_line_number=True,
+            str_item=lambda item: '(' + ', '.join(item) + ')'
+        )
 
 ####################################################################################################
 

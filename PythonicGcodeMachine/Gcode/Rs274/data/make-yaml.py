@@ -1,6 +1,30 @@
 #! /usr/bin/env python3
 
 ####################################################################################################
+#
+# PythonicGcodeMachine - @licence_header_description@
+# Copyright (C) 2018 Fabrice Salvaire
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+####################################################################################################
+
+"""Script to generate YAML files from texts copied from the NIST PDF.
+
+"""
+
+####################################################################################################
 
 import pathlib
 import yaml
@@ -295,13 +319,13 @@ B-axis of machine
 C-axis of machine
 tool radius compensation number
 feedrate
-general function (see Table 5)
+general function (See table G codes)
 tool length offset index
 X-axis offset for arcs / X offset in G87 canned cycle
 Y-axis offset for arcs / Y offset in G87 canned cycle
 Z-axis offset for arcs / Z offset in G87 canned cycle
 number of repetitions in canned cycles / key used with G10
-miscellaneous function (see Table 7)
+miscellaneous function (see Table M codes)
 line number
 dwell time in canned cycles / dwell time with G4 / key used with G10
 feed increment in G83 canned cycle

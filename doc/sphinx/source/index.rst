@@ -146,6 +146,8 @@ If you want to donate to the project or need a more professional support.
   roadmap.rst
   installation.rst
   faq.rst
+  examples/index.rst
+  gcode-reference/index.rst
   design-notes.rst
   reference-manual.rst
   development.rst
