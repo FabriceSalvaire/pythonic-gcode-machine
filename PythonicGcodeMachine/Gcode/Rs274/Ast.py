@@ -72,7 +72,28 @@ import colors
 
 ####################################################################################################
 
-class Program:
+class MachineMixin:
+
+    """Mixin to define the target machine for the AST node"""
+
+    ##############################################
+
+    def __init__(self, machine=None):
+        self._machine = machine
+
+    ##############################################
+
+    @property
+    def machine(self):
+        return self._machine
+
+    @machine.setter
+    def machine(self, value):
+        self._machine = value
+
+####################################################################################################
+
+class Program(MachineMixin):
 
     """Class to implement a G-code program
 
@@ -93,14 +114,15 @@ class Program:
 
     ##############################################
 
-    def __init__(self):
+    def __init__(self, machine=None):
+        super().__init__(machine)
         self._lines = []
 
     ##############################################
 
     def clone(self):
 
-        program = self.__class__()
+        program = self.__class__(machine=self._machine)
         for line in self:
             program += line.clone()
 
@@ -151,6 +173,8 @@ class Program:
 
 class CloneMixin:
 
+    """Mixin to provide a method to clone value"""
+
     @staticmethod
     def _clone_value(value):
         if hasattr(value, 'clone'):
@@ -160,7 +184,9 @@ class CloneMixin:
 
 ####################################################################################################
 
-class LineItem(CloneMixin):
+class LineItem(MachineMixin, CloneMixin):
+
+    """Base class for line item"""
 
     ##############################################
 
@@ -191,7 +217,7 @@ class LineItem(CloneMixin):
 
 ####################################################################################################
 
-class Line:
+class Line(MachineMixin):
 
     """Class to implement a G-code line
 
@@ -254,7 +280,9 @@ class Line:
 
     ##############################################
 
-    def __init__(self, deleted=False, line_number=None, comment=None):
+    def __init__(self, deleted=False, line_number=None, comment=None, machine=None):
+
+        super().__init__(machine)
 
         self.deleted = deleted
         self.line_number = line_number
@@ -266,7 +294,7 @@ class Line:
 
     def clone(self):
 
-        line = self.__class__(self._deleted, self._line_number, self._comment)
+        line = self.__class__(self._deleted, self._line_number, self._comment, self._machine)
         for item in self:
             line += item.clone()
 
@@ -428,13 +456,14 @@ class Comment(LineItem):
 
     ##############################################
 
-    def __init__(self, text):
+    def __init__(self, text, machine=None):
+        super().__init__(machine)
         self.set(text)
 
     ##############################################
 
     def clone(self):
-        return self.__class__(self._text)
+        return self.__class__(self._text, self._machine)
 
     ##############################################
 
@@ -493,14 +522,15 @@ class Word(LineItem):
 
     ##############################################
 
-    def __init__(self, letter, value):
+    def __init__(self, letter, value, machine=None):
+        super().__init__(machine)
         self.letter = letter
         self.value = value
 
     ##############################################
 
     def clone(self):
-        return self.__class__(self._letter, self._clone_value(self._value))
+        return self.__class__(self._letter, self._clone_value(self._value), self._machine)
 
     ##############################################
 
@@ -538,24 +568,62 @@ class Word(LineItem):
         else:
             return Line.ANSI_X(self._letter) + Line.ANSI_VALUE(str(self._value))
 
+    ##############################################
+
+    def _check_machine(self):
+        if self._machine is None:
+            raise NameError('Machine is not defined')
+
+    ##############################################
+
+    @property
+    def is_valid_gcode(self):
+        self._check_machine()
+        return str(self) in self._machine.config.gcodes
+
+    ##############################################
+
+    @property
+    def meaning(self):
+        if self.is_valid_gcode:
+            return self._machine.config.gcodes[str(self)].meaning
+        else:
+            return self._machine.config.letters[self.letter].meaning
+
+    ##############################################
+
+    @property
+    def modal_group(self):
+        if self.is_valid_gcode:
+            return self._machine.config.modal_groups[str(self)]
+        else:
+            return None
+
+    ##############################################
+
+    @property
+    def execution_order(self):
+        if self.is_valid_gcode:
+            return self._machine.config.execution_order[str(self)]
+        else:
+            return None
+
 ####################################################################################################
 
-class RealValue(CloneMixin):
+class RealValue(MachineMixin, CloneMixin):
+    """Base class for real value"""
     pass
 
 ####################################################################################################
 
 class ParameterMixin:
 
+    """Mixin for parameter"""
+
     ##############################################
 
     def __init__(self, parameter):
         self.parameter = parameter
-
-    ##############################################
-
-    def clone(self):
-        return self.__class__(self._parameter)
 
     ##############################################
 
@@ -579,14 +647,15 @@ class ParameterSetting(LineItem, ParameterMixin):
 
     ##############################################
 
-    def __init__(self, parameter, value):
+    def __init__(self, parameter, value, machine=None):
+        super().__init__(machine)
         ParameterMixin.__init__(self, parameter)
         self.value = value
 
     ##############################################
 
     def clone(self):
-        return self.__class__(self._parameter, self._clone_value(self._value))
+        return self.__class__(self._parameter, self._clone_value(self._value), self._machine)
 
     ##############################################
     @property
@@ -616,8 +685,14 @@ class Parameter(RealValue, ParameterMixin):
 
     ##############################################
 
-    def __init__(self, parameter):
+    def __init__(self, parameter, machine=None):
+        super().__init__(machine)
         ParameterMixin.__init__(self, parameter)
+
+    ##############################################
+
+    def clone(self):
+        return self.__class__(self._parameter, self._machine)
 
     ##############################################
 
@@ -636,18 +711,21 @@ class Parameter(RealValue, ParameterMixin):
 
 class UnaryOperation(RealValue):
 
+    """Base class for unary operation"""
+
     __function__ = None
     __gcode__ = None
 
     ##############################################
 
-    def __init__(self, arg):
+    def __init__(self, arg, machine=None):
+        super().__init__(machine)
         self.arg = arg
 
     ##############################################
 
     def clone(self):
-        return self.__class__(self._clone_value(self._arg))
+        return self.__class__(self._clone_value(self._arg), self._machine)
 
     ##############################################
 
@@ -732,19 +810,22 @@ class Tangent(UnaryOperation):
 
 class BinaryOperation(RealValue):
 
+    """Base class for binary operation"""
+
     __function__ = None
     __gcode__ = None
 
     ##############################################
 
-    def __init__(self, arg1, arg2):
+    def __init__(self, arg1, arg2, machine=None):
+        super().__init__(machine)
         self.arg1 = arg1
         self.arg2 = arg2
 
     ##############################################
 
     def clone(self):
-        return self.__class__(self._clone_value(self._arg1), self._clone_value(self.arg2))
+        return self.__class__(self._clone_value(self._arg1), self._clone_value(self.arg2), self._machine)
 
     ##############################################
 

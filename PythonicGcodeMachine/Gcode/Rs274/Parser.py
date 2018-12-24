@@ -186,7 +186,7 @@ class GcodeGrammarMixin:
 
     def p_ordinary_comment(self, p):
         'ordinary_comment : INLINE_COMMENT'
-        p[0] = Ast.Comment(p[1])
+        p[0] = Ast.Comment(p[1], self._machine)
 
     # def p_message(self, p):
       # 'message : left_parenthesis + {white_space} + letter_m + {white_space} + letter_s +
@@ -197,7 +197,7 @@ class GcodeGrammarMixin:
 
     def p_mid_line_word(self, p):
         'mid_line_word : mid_line_letter real_value'
-        p[0] = Ast.Word(p[1], p[2])
+        p[0] = Ast.Word(p[1], p[2], self._machine)
 
     def p_mid_line_letter(self, p):
         # LETTER
@@ -226,11 +226,11 @@ class GcodeGrammarMixin:
 
     def p_parameter_setting(self, p):
         'parameter_setting : PARAMETER_SIGN parameter_index EQUAL_SIGN real_value'
-        p[0] = Ast.ParameterSetting(p[2], p[4])
+        p[0] = Ast.ParameterSetting(p[2], p[4], self._machine)
 
     def p_parameter_value(self, p):
         'parameter_value : PARAMETER_SIGN parameter_index'
-        p[0] = Ast.Parameter(p[2])
+        p[0] = Ast.Parameter(p[2], self._machine)
 
     def p_parameter_index(self, p):
         'parameter_index : real_value'
@@ -340,9 +340,17 @@ class GcodeParserMixin:
 
     ##############################################
 
-    def __init__(self):
+    def __init__(self, machine=None):
+
+        self._machine = machine
         self._build()
         self._reset()
+
+    ##############################################
+
+    @property
+    def machine(self):
+        return self._machine
 
     ##############################################
 
@@ -374,7 +382,7 @@ class GcodeParserMixin:
 
         line = line.strip()
 
-        self._line = Ast.Line()
+        self._line = Ast.Line(machine=self._machine)
         ast = self._parser.parse(
             line,
             lexer=self._lexer._lexer,
@@ -398,7 +406,7 @@ class GcodeParserMixin:
         if not isinstance(lines, (list, tuple)):
             lines = lines.split('\n')
 
-        program = Ast.Program()
+        program = Ast.Program(machine=self._machine)
         for line in lines:
             try:
                 program += self.parse(line)

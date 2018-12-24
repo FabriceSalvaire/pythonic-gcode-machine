@@ -32,8 +32,8 @@
 
 ####################################################################################################
 
-from PythonicGcodeMachine.Gcode.Rs274 import *
 from PythonicGcodeMachine.Gcode.Rs274.Ast import *
+from PythonicGcodeMachine.Gcode.Rs274.Parser import GcodeParser
 
 ####################################################################################################
 

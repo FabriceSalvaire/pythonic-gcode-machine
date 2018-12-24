@@ -283,6 +283,9 @@ class Gcodes(YamlMixin, RstMixin):
     def __getitem__(self, code):
         return self._gcodes[code]
 
+    def __contains__(self, code):
+        return code in self._gcodes
+
     ##############################################
 
     def sorted_iter(self):
@@ -336,6 +339,7 @@ class ExecutionOrder(YamlMixin, RstMixin):
 
         data = self._load_yaml(yaml_path)
         self._order = []
+        self._gcode_map = {}
         count = 1
         for index, d in data.items():
             if index != count:
@@ -346,6 +350,14 @@ class ExecutionOrder(YamlMixin, RstMixin):
                 gcodes = [gcodes]
             group = ExecutionGroup(index, gcodes, d['meaning'])
             self._order.append(group)
+            for gcode in gcodes:
+                if '-' in gcode:
+                    start, stop = [int(code[1:]) for code in gcode.split('-')]
+                    letter = gcode[0]
+                    for i in range(start, stop+1):
+                        self._gcode_map['{}{}'.format(letter, i)] = group
+                else:
+                    self._gcode_map[gcode] = group
 
     ##############################################
 
@@ -355,8 +367,11 @@ class ExecutionOrder(YamlMixin, RstMixin):
     def __iter__(self):
         return iter(self._order)
 
-    def __getitem__(self, slice_):
-        return self._order[slice_]
+    def __getitem__(self, index):
+        if isinstance(index, int):
+            return self._order[index]
+        else:
+            return self._gcode_map[index]
 
     ##############################################
 
@@ -404,12 +419,15 @@ class ModalGroups(YamlMixin, RstMixin):
 
         data = self._load_yaml(yaml_path)
         self._groups = {}
+        self._gcode_map = {}
         for index, d in data.items():
             gcodes = d['gcodes']
             if not isinstance(gcodes, list):
                 gcodes = [gcodes]
             group = ExecutionGroup(index, gcodes, d['meaning'])
             self._groups[index] = group
+            for gcode in gcodes:
+                self._gcode_map[gcode] = group
 
     ##############################################
 
@@ -420,7 +438,10 @@ class ModalGroups(YamlMixin, RstMixin):
         return iter(self._groups.values())
 
     def __getitem__(self, index):
-        return self._groups[index]
+        if isinstance(index, int):
+            return self._groups[index]
+        else:
+            return self._gcode_map[index]
 
     ##############################################
 

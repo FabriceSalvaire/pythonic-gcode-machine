@@ -18,19 +18,70 @@
 #
 ####################################################################################################
 
-"""
+"""Module to implement a basic G-code machine.
 """
 
 ####################################################################################################
 
 __all__ = [
+    'GcodeMachine',
 ]
 
 ####################################################################################################
 
-# class Config:
+from pathlib import Path as Path
+
+from .Config import Config
+from .Parser import GcodeParser, GcodeParserError
+
+####################################################################################################
+
+class GcodeMachine:
+
+    PARSER_CLS = GcodeParser
 
     ##############################################
 
-    # def __init__(self,
-    # ):
+    def __init__(self):
+
+        self._config = None
+        self.load_config()
+
+        self._parser = None
+        self.setup_parser()
+
+    ##############################################
+
+    def load_config(self):
+
+        data_path = Path(__file__).parent.joinpath('data')
+        self._config = Config(
+            execution_order=data_path.joinpath('rs274-execution-order.yaml'),
+            gcodes=data_path.joinpath('rs274-gcodes.yaml'),
+            letters=data_path.joinpath('rs274-word-starting-letter.yaml'),
+            modal_groups=data_path.joinpath('rs274-modal-groups.yaml'),
+            parameters=data_path.joinpath('rs274-default-parameter-file.yaml'),
+        )
+
+    ##############################################
+
+    def setup_parser(self):
+
+        self._parser = self.PARSER_CLS(machine=self)
+
+    ##############################################
+
+    @property
+    def config(self):
+        return self._config
+
+    @property
+    def parser(self):
+        return self._parser
+
+    ##############################################
+
+    def reset():
+        pass
+
+    ##############################################

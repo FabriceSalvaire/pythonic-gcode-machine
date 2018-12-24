@@ -25,17 +25,6 @@ See :ref:`rs-274-reference-page` for more details about the RS-274 specification
 
 ####################################################################################################
 
-from pathlib import Path as _Path
-
-from .Config import Config as _Config
-from .Parser import GcodeParser, GcodeParserError
-
-_data_path = _Path(__file__).parent.joinpath('data')
-
-config = _Config(
-    execution_order=_data_path.joinpath('rs274-execution-order.yaml'),
-    gcodes=_data_path.joinpath('rs274-gcodes.yaml'),
-    letters=_data_path.joinpath('rs274-word-starting-letter.yaml'),
-    modal_groups=_data_path.joinpath('rs274-modal-groups.yaml'),
-    parameters=_data_path.joinpath('rs274-default-parameter-file.yaml'),
-)
+# from .Config import Config as _Config
+# from .Parser import GcodeParser, GcodeParserError
+from .Machine import GcodeMachine

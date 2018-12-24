@@ -34,9 +34,17 @@
 
 from pathlib import Path
 
-from PythonicGcodeMachine.Gcode.Rs274 import GcodeParser, config
+from PythonicGcodeMachine.Gcode.Rs274.Machine import GcodeMachine
 
 ####################################################################################################
+
+#r# We build a RS-274 G-code Machine
+
+machine = GcodeMachine()
+
+####################################################################################################
+
+#r# We load a G-code program
 
 program_filename = 'mill-example-1.ngc'
 
@@ -47,8 +55,13 @@ with open(program_path, 'r') as fh:
     if lines[0].startswith(';'):
         lines = lines[1:]
 
-parser = GcodeParser()
-program = parser.parse_lines(lines)
+####################################################################################################
+
+#r# We parse the program
+
+program = machine.parser.parse_lines(lines)
+
+#r# We dump the annotated program
 
 meaning_format = '  {:5}: {}'
 for line in program:
@@ -56,11 +69,11 @@ for line in program:
     # print(line.ansi_str()) # Fixme: pyterate
     print(str(line))
     for word in line.iter_on_word():
-        if word.letter in 'GM':
-            meaning = config.gcodes[str(word)].meaning
-            print(meaning_format.format(str(word), meaning))
+        if word.is_valid_gcode:
+            margin = ' '*9
+            print(meaning_format.format(str(word), word.meaning))
+            print(margin + 'Modal group: {}'.format(word.modal_group.meaning))
+            print(margin + 'Execution order: {}'.format(word.execution_order.index))
         else:
-            letter = word.letter
-            meaning = config.letters[letter].meaning
-            print(meaning_format.format(letter, meaning))
+            print(meaning_format.format(word.letter, word.meaning))
 #o#
