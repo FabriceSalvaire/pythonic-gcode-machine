@@ -3,6 +3,7 @@ __pycache__
 
 doc/sphinx/build/
 doc/sphinx/source/api/
+doc/sphinx/source/examples/
 
 lextab.py
 parser.out

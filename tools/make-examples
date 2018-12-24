@@ -1,0 +1,15 @@
+#! /usr/bin/bash
+
+# Regenerate from scratch
+# examples=doc/sphinx/source/examples
+# rm -rf ${examples}
+
+echo
+echo Generate RST examples files
+MusicaLogLevel=WARNING pyterate # --force
+
+echo
+echo Run Sphinx
+pushd doc/sphinx/
+./make-html # --clean
+popd
