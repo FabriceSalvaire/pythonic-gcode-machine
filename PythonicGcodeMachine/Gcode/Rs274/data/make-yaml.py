@@ -297,23 +297,16 @@ tool radius compensation number
 feedrate
 general function (see Table 5)
 tool length offset index
-X-axis offset for arcs
-X offset in G87 canned cycle
-Y-axis offset for arcs
-Y offset in G87 canned cycle
-Z-axis offset for arcs
-Z offset in G87 canned cycle
-number of repetitions in canned cycles
-key used with G10
+X-axis offset for arcs / X offset in G87 canned cycle
+Y-axis offset for arcs / Y offset in G87 canned cycle
+Z-axis offset for arcs / Z offset in G87 canned cycle
+number of repetitions in canned cycles / key used with G10
 miscellaneous function (see Table 7)
 line number
-dwell time in canned cycles
-dwell time with G4
-key used with G10
+dwell time in canned cycles / dwell time with G4 / key used with G10
 feed increment in G83 canned cycle
 arc radius
-canned cycle plane
-spindle speed
+canned cycle plane / spindle speed
 tool selection
 X-axis of machine
 Y-axis of machine

@@ -13,30 +13,30 @@ G:
 H:
   meaning: tool length offset index
 I:
-  meaning: X-axis offset for arcs
+  meaning: X-axis offset for arcs / X offset in G87 canned cycle
 J:
-  meaning: X offset in G87 canned cycle
+  meaning: Y-axis offset for arcs / Y offset in G87 canned cycle
 K:
-  meaning: Y-axis offset for arcs
+  meaning: Z-axis offset for arcs / Z offset in G87 canned cycle
 L:
-  meaning: Y offset in G87 canned cycle
+  meaning: number of repetitions in canned cycles / key used with G10
 M:
-  meaning: Z-axis offset for arcs
-N:
-  meaning: Z offset in G87 canned cycle
-P:
-  meaning: number of repetitions in canned cycles
-Q:
-  meaning: key used with G10
-R:
   meaning: miscellaneous function (see Table 7)
-S:
+N:
   meaning: line number
-T:
-  meaning: dwell time in canned cycles
-X:
-  meaning: dwell time with G4
-Y:
-  meaning: key used with G10
-Z:
+P:
+  meaning: dwell time in canned cycles / dwell time with G4 / key used with G10
+Q:
   meaning: feed increment in G83 canned cycle
+R:
+  meaning: arc radius
+S:
+  meaning: canned cycle plane / spindle speed
+T:
+  meaning: tool selection
+X:
+  meaning: X-axis of machine
+Y:
+  meaning: Y-axis of machine
+Z:
+  meaning: Z-axis of machine
