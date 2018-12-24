@@ -387,3 +387,26 @@ The order of execution of items on a line is critical to safe and effective mach
 are executed in a particular order if they occur on the same line.
 
 """
+
+####################################################################################################
+
+from pathlib import Path
+
+from .Parser import GcodeParser, GcodeParserError
+
+from .Config import (
+    Parameters,
+    Letters,
+    Gcodes,
+    ModalGroups,
+    ExecutionOrder,
+)
+
+_data_path = Path(__file__).parent.joinpath('data')
+
+# Fixme: lazy
+parameters = Parameters(_data_path.joinpath('rs274-default-parameter-file.yaml'))
+execution_order = ExecutionOrder(_data_path.joinpath('rs274-execution-order.yaml'))
+gcodes = Gcodes(_data_path.joinpath('rs274-gcodes.yaml'))
+modal_groups = ModalGroups(_data_path.joinpath('rs274-modal-groups.yaml'))
+letters = Letters(_data_path.joinpath('rs274-word-starting-letter.yaml'))
