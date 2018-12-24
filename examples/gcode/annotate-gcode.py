@@ -30,7 +30,7 @@
 
 from pathlib import Path
 
-from PythonicGcodeMachine.Gcode.Rs274 import GcodeParser, gcodes, letters
+from PythonicGcodeMachine.Gcode.Rs274 import GcodeParser, config
 
 ####################################################################################################
 
@@ -53,10 +53,10 @@ for line in program:
     print(str(line))
     for word in line.iter_on_word():
         if word.letter in 'GM':
-            meaning = gcodes[str(word)].meaning
+            meaning = config.gcodes[str(word)].meaning
             print(meaning_format.format(str(word), meaning))
         else:
             letter = word.letter
-            meaning = letters[letter].meaning
+            meaning = config.letters[letter].meaning
             print(meaning_format.format(letter, meaning))
 #o#

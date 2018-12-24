@@ -390,23 +390,17 @@ are executed in a particular order if they occur on the same line.
 
 ####################################################################################################
 
-from pathlib import Path
+from pathlib import Path as _Path
 
+from .Config import Config as _Config
 from .Parser import GcodeParser, GcodeParserError
 
-from .Config import (
-    Parameters,
-    Letters,
-    Gcodes,
-    ModalGroups,
-    ExecutionOrder,
+_data_path = _Path(__file__).parent.joinpath('data')
+
+config = _Config(
+    execution_order=_data_path.joinpath('rs274-execution-order.yaml'),
+    gcodes=_data_path.joinpath('rs274-gcodes.yaml'),
+    letters=_data_path.joinpath('rs274-word-starting-letter.yaml'),
+    modal_groups=_data_path.joinpath('rs274-modal-groups.yaml'),
+    parameters=_data_path.joinpath('rs274-default-parameter-file.yaml'),
 )
-
-_data_path = Path(__file__).parent.joinpath('data')
-
-# Fixme: lazy
-parameters = Parameters(_data_path.joinpath('rs274-default-parameter-file.yaml'))
-execution_order = ExecutionOrder(_data_path.joinpath('rs274-execution-order.yaml'))
-gcodes = Gcodes(_data_path.joinpath('rs274-gcodes.yaml'))
-modal_groups = ModalGroups(_data_path.joinpath('rs274-modal-groups.yaml'))
-letters = Letters(_data_path.joinpath('rs274-word-starting-letter.yaml'))
