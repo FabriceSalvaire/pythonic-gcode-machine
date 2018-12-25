@@ -18,6 +18,19 @@
 #
 ####################################################################################################
 
+####################################################################################################
+#
+#                                       G-code documentation
+#
+# Note: This file contains only doc strings for G-codes.
+#       Each G-code has a corresponding class with a doc string.
+#       See also class name format, cf. supra.
+#       For simplicity, doc strings are stored in a Python file instead of a YAML file.
+#       But this documentation can be converted to HTML and stored in a JSON file, if needed for
+#       other purposes.
+#
+####################################################################################################
+
 """G-code documentation from NIST paper, see :ref:`rs-274-reference-page`.
 
 .. warning::
@@ -265,7 +278,7 @@ class G17_G18_G19:
 
 ####################################################################################################
 
-class G20_21:
+class G20_G21:
 
     """**Length Units — G20 and G21**
 
@@ -494,7 +507,7 @@ class G53:
 
 ####################################################################################################
 
-class G54_G59_3:
+class G54_to_G59_3:
 
     """**Select Coordinate System — G54 to G59.3**
 
@@ -512,7 +525,7 @@ class G54_G59_3:
 
 ####################################################################################################
 
-class G61_61_1_G64:
+class G61_G61_1_G64:
 
     """**Set Path Control Mode — G61, G61.1, and G64**
 
