@@ -35,17 +35,24 @@ __all__ = [
     'ExecutionGroup',
     'ExecutionOrder',
     'Gcode',
-    'Gcodes',
+    'GcodeSet',
     'Letters',
     'ModalGroup',
     'ModalGroups',
     'Parameter',
-    'Parameters',
+    'ParameterSet',
 ]
 
 ####################################################################################################
 
 import yaml
+
+####################################################################################################
+
+def ensure_list(obj):
+    if not isinstance(obj, list):
+        obj = [obj]
+    return obj
 
 ####################################################################################################
 
@@ -151,7 +158,7 @@ class Parameter(MeaningMixin):
 
 ####################################################################################################
 
-class Parameters(YamlMixin, RstMixin):
+class ParameterSet(YamlMixin, RstMixin):
 
     """Class for the table of parameters."""
 
@@ -244,10 +251,14 @@ class Gcode(MeaningMixin):
 
     ##############################################
 
-    def __init__(self, gcode, meaning):
+    def __init__(self, gcode, meaning, modal_group=None, execution_order=None):
 
         MeaningMixin.__init__(self, meaning)
         self._gcode = str(gcode)
+
+        # Those are set later due to the initialisation process
+        self._modal_group = modal_group
+        self._execution_order = execution_order
 
     ##############################################
 
@@ -256,9 +267,21 @@ class Gcode(MeaningMixin):
         """G-code (table key)"""
         return self._gcode
 
+    @property
+    def modal_group(self):
+        return self._modal_group
+
+    @property
+    def execution_order(self):
+        return self._execution_order
+
+    @property
+    def execution_order_index(self):
+        return self._execution_order.index
+
 ####################################################################################################
 
-class Gcodes(YamlMixin, RstMixin):
+class GcodeSet(YamlMixin, RstMixin):
 
     """Class for the table of G-codes."""
 
@@ -309,11 +332,12 @@ class ExecutionGroup(MeaningMixin):
 
     ##############################################
 
-    def __init__(self, index, gcodes, meaning):
+    def __init__(self, index, gcodes, raw_gcodes, meaning):
 
         MeaningMixin.__init__(self, meaning)
         self._index = int(index)
         self._gcodes = list(gcodes)
+        self._raw_gcodes = list(raw_gcodes)
 
     ##############################################
 
@@ -327,6 +351,11 @@ class ExecutionGroup(MeaningMixin):
         """G-Codes list"""
         return self._gcodes
 
+    @property
+    def raw_gcodes(self):
+        """Raw G-Codes list"""
+        return self._raw_gcodes
+
 ####################################################################################################
 
 class ExecutionOrder(YamlMixin, RstMixin):
@@ -335,29 +364,41 @@ class ExecutionOrder(YamlMixin, RstMixin):
 
     ##############################################
 
-    def __init__(self, yaml_path):
+    def __init__(self, yaml_path, gcode_set):
 
         data = self._load_yaml(yaml_path)
+
         self._order = []
-        self._gcode_map = {}
         count = 1
         for index, d in data.items():
             if index != count:
                 raise ValueError('Unexpected index {} versus {}'.format(index, count))
             count += 1
-            gcodes = d['gcodes']
-            if not isinstance(gcodes, list):
-                gcodes = [gcodes]
-            group = ExecutionGroup(index, gcodes, d['meaning'])
-            self._order.append(group)
-            for gcode in gcodes:
+
+            raw_gcodes = ensure_list(d['gcodes'])
+
+            gcodes = []
+            for gcode in raw_gcodes:
                 if '-' in gcode:
                     start, stop = [int(code[1:]) for code in gcode.split('-')]
                     letter = gcode[0]
                     for i in range(start, stop+1):
-                        self._gcode_map['{}{}'.format(letter, i)] = group
+                        _gcode = '{}{}'.format(letter, i)
+                        gcodes.append(gcode_set[_gcode])
                 else:
-                    self._gcode_map[gcode] = group
+                    try:
+                        gcode = gcode_set[gcode]
+                    except KeyError:
+                        if gcode != 'COMMENT':
+                            raise ValueError('Invalid G-code {}'.format(gcode))
+                    gcodes.append(gcode)
+
+            group = ExecutionGroup(index, gcodes, raw_gcodes, d['meaning'])
+            self._order.append(group)
+
+            for gcode in gcodes:
+                if isinstance(gcode, Gcode):
+                    gcode._execution_order = group
 
     ##############################################
 
@@ -368,10 +409,7 @@ class ExecutionOrder(YamlMixin, RstMixin):
         return iter(self._order)
 
     def __getitem__(self, index):
-        if isinstance(index, int):
-            return self._order[index]
-        else:
-            return self._gcode_map[index]
+        return self._order[index]
 
     ##############################################
 
@@ -415,19 +453,18 @@ class ModalGroups(YamlMixin, RstMixin):
 
     ##############################################
 
-    def __init__(self, yaml_path):
+    def __init__(self, yaml_path, gcode_set):
 
         data = self._load_yaml(yaml_path)
+
         self._groups = {}
-        self._gcode_map = {}
         for index, d in data.items():
-            gcodes = d['gcodes']
-            if not isinstance(gcodes, list):
-                gcodes = [gcodes]
-            group = ExecutionGroup(index, gcodes, d['meaning'])
+            gcodes = ensure_list(d['gcodes'])
+            gcodes = [gcode_set[gcode] for gcode in gcodes]
+            group = ModalGroup(index, gcodes, d['meaning'])
             self._groups[index] = group
             for gcode in gcodes:
-                self._gcode_map[gcode] = group
+                gcode._modal_group = group
 
     ##############################################
 
@@ -438,10 +475,7 @@ class ModalGroups(YamlMixin, RstMixin):
         return iter(self._groups.values())
 
     def __getitem__(self, index):
-        if isinstance(index, int):
-            return self._groups[index]
-        else:
-            return self._gcode_map[index]
+        return self._groups[index]
 
     ##############################################
 
@@ -484,45 +518,53 @@ class Config:
         """Each argument is a path to the corresponding YAML file. Files are loaded on demand (lazy loading).
         """
 
-        self._execution_order = str(execution_order)
-        self._gcodes = str(gcodes)
-        self._letters = str(letters)
-        self._modal_groups = str(modal_groups)
-        self._parameters = str(parameters)
+        # self._letters = str(letters)
+        # self._parameters = str(parameters)
+
+        # self._gcodes = str(gcodes)
+        # self._modal_groups = str(modal_groups)
+        # self._execution_order = str(execution_order)
+
+        self._letters = Letters(letters)
+        self._parameters = ParameterSet(parameters)
+
+        self._gcodes = GcodeSet(gcodes)
+        self._execution_order = ExecutionOrder(execution_order, self._gcodes)
+        self._modal_groups = ModalGroups(modal_groups, self._gcodes)
 
     ##############################################
 
     @property
     def execution_order(self):
         """:class:`ExecutionOrder` instance"""
-        if isinstance(self._execution_order, str):
-            self._execution_order = ExecutionOrder(self._execution_order)
+        # if isinstance(self._execution_order, str):
+        #     self._execution_order = ExecutionOrder(self._execution_order)
         return self._execution_order
 
     @property
     def gcodes(self):
-        """:class:`Gcodes` instance"""
-        if isinstance(self._gcodes, str):
-            self._gcodes = Gcodes(self._gcodes)
+        """:class:`GcodeSet` instance"""
+        # if isinstance(self._gcodes, str):
+        #     self._gcodes = GcodeSet(self._gcodes)
         return self._gcodes
 
     @property
     def letters(self):
         """:class:`Letters` instance"""
-        if isinstance(self._letters, str):
-            self._letters = Letters(self._letters)
+        # if isinstance(self._letters, str):
+        #     self._letters = Letters(self._letters)
         return self._letters
 
     @property
     def modal_groups(self):
         """:class:`ModalGroups` instance"""
-        if isinstance(self._modal_groups, str):
-            self._modal_groups = ModalGroups(self._modal_groups)
+        # if isinstance(self._modal_groups, str):
+        #     self._modal_groups = ModalGroups(self._modal_groups)
         return self._modal_groups
 
     @property
     def parameters(self):
-        """:class:`Parameters` instance"""
-        if isinstance(self._parameters, str):
-            self._parameters = Parameters(self._parameters)
+        """:class:`ParameterSet` instance"""
+        # if isinstance(self._parameters, str):
+        #     self._parameters = ParameterSet(self._parameters)
         return self._parameters

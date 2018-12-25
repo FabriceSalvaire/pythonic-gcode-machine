@@ -613,9 +613,22 @@ class Word(LineItem):
     ##############################################
 
     @property
+    def _gcode_info(self):
+        return self._machine.config.gcodes[str(self)]
+
+    ##############################################
+
+    @property
+    def gcode_info(self):
+        if self.is_gm_gcode:
+            return self._gcode_info
+
+    ##############################################
+
+    @property
     def meaning(self):
         if self.is_gm_gcode:
-            return self._machine.config.gcodes[str(self)].meaning
+            return self._gcode_info.meaning
         else:
             return self._machine.config.letters[self.letter].meaning
 
@@ -624,7 +637,7 @@ class Word(LineItem):
     @property
     def modal_group(self):
         if self.is_gm_gcode:
-            return self._machine.config.modal_groups[str(self)]
+            return self._gcode_info.modal_group
         else:
             return None
 
@@ -633,7 +646,7 @@ class Word(LineItem):
     @property
     def execution_order(self):
         if self.is_gm_gcode:
-            return self._machine.config.execution_order[str(self)]
+            return self._gcode_info.execution_order
         else:
             return None
 
