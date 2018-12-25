@@ -417,7 +417,7 @@ class ExecutionOrder(YamlMixin, RstMixin):
         self._write_rst(
             path,
             headers=('Order', 'G-codes', 'Comment'),
-            columns=('index', 'gcodes', 'meaning'),
+            columns=('index', 'raw_gcodes', 'meaning'),
             str_gcodes=lambda item: ' '.join(item),
         )
 
@@ -492,7 +492,7 @@ class ModalGroups(YamlMixin, RstMixin):
             path,
             headers=('Group', 'G-codes', 'Comment'),
             columns=('index', 'gcodes', 'meaning'),
-            str_gcodes=lambda item: ' '.join(item),
+            str_gcodes=lambda gcodes: ' '.join([str(gcode) for gcode in gcodes]),
         )
 
 ####################################################################################################
@@ -515,37 +515,29 @@ class Config:
                  parameters,
     ):
 
-        """Each argument is a path to the corresponding YAML file. Files are loaded on demand (lazy loading).
+        """Each argument is a path to the corresponding YAML file.
+
         """
-
-        # self._letters = str(letters)
-        # self._parameters = str(parameters)
-
-        # self._gcodes = str(gcodes)
-        # self._modal_groups = str(modal_groups)
-        # self._execution_order = str(execution_order)
-
-        self._letters = Letters(letters)
-        self._parameters = ParameterSet(parameters)
 
         self._gcodes = GcodeSet(gcodes)
         self._execution_order = ExecutionOrder(execution_order, self._gcodes)
         self._modal_groups = ModalGroups(modal_groups, self._gcodes)
+
+        # self._letters = str(letters)
+        # self._parameters = str(parameters)
+        self._letters = Letters(letters)
+        self._parameters = ParameterSet(parameters)
 
     ##############################################
 
     @property
     def execution_order(self):
         """:class:`ExecutionOrder` instance"""
-        # if isinstance(self._execution_order, str):
-        #     self._execution_order = ExecutionOrder(self._execution_order)
         return self._execution_order
 
     @property
     def gcodes(self):
         """:class:`GcodeSet` instance"""
-        # if isinstance(self._gcodes, str):
-        #     self._gcodes = GcodeSet(self._gcodes)
         return self._gcodes
 
     @property
@@ -558,8 +550,6 @@ class Config:
     @property
     def modal_groups(self):
         """:class:`ModalGroups` instance"""
-        # if isinstance(self._modal_groups, str):
-        #     self._modal_groups = ModalGroups(self._modal_groups)
         return self._modal_groups
 
     @property

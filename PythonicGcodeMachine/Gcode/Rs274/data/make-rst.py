@@ -28,9 +28,12 @@
 
 import pathlib
 
-from PythonicGcodeMachine.Gcode.Rs274 import config
+from PythonicGcodeMachine.Gcode.Rs274.Machine import GcodeMachine
 
 ####################################################################################################
+
+machine = GcodeMachine()
+config = machine.config
 
 source_path = pathlib.Path(__file__).absolute().parents[4]
 print('Source:', source_path)
