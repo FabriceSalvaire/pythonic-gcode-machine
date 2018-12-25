@@ -54,6 +54,8 @@ __all__ = [
 
 ####################################################################################################
 
+from pathlib import Path
+
 # https://rply.readthedocs.io/en/latest/
 from ply import yacc
 
@@ -367,8 +369,10 @@ class GcodeParserMixin:
         self.tokens = self._lexer.tokens
         self._parser = yacc.yacc(
             module=self,
-            # debug=True,
-            optimize=0,
+            debug=False,
+            optimize=1,
+            tabmodule='_parsetab',
+            # outputdir=Path(__file__).parent.joinpath('ply'),
         )
 
     ##############################################

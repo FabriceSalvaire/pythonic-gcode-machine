@@ -222,6 +222,7 @@ class GcodeLexerMixin:
             module=self,
             reflags=int(re.VERBOSE + re.IGNORECASE),
             optimize=1,
+            lextab='_lextab',
             **kwargs,
         )
 

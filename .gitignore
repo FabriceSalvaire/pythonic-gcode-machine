@@ -2,6 +2,8 @@
 
 # Build files
 __pycache__
+_lextab.py
+_parsetab.py
 lextab.py
 parser.out
 parsetab.py
