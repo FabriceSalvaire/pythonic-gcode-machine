@@ -54,6 +54,9 @@ def ensure_list(obj):
         obj = [obj]
     return obj
 
+def format_gcode_list(gcodes):
+    return ' '.join([str(gcode) for gcode in gcodes])
+
 ####################################################################################################
 
 class YamlMixin:
@@ -497,7 +500,7 @@ class ExecutionOrder(YamlMixin, RstMixin):
             path,
             headers=('Order', 'G-codes', 'Comment'),
             columns=('index', 'raw_gcodes', 'meaning'),
-            str_gcodes=lambda item: ' '.join(item),
+            str_raw_gcodes=lambda gcodes: format_gcode_list(gcodes),
         )
 
 ####################################################################################################
@@ -527,7 +530,7 @@ class ModalGroup(MeaningMixin):
     ##############################################
 
     def __repr__(self):
-        return '#{0._index}: ({1}) Meaning: {0._meaning}'.format(self, ' '.join([str(gcode) for gcode in self._gcodes]))
+        return '#{0._index}: ({1}) Meaning: {0._meaning}'.format(self, format_gcode_list(self._gcodes))
 
 ####################################################################################################
 
@@ -576,7 +579,7 @@ class ModalGroupSet(YamlMixin, RstMixin):
             path,
             headers=('Group', 'G-codes', 'Comment'),
             columns=('index', 'gcodes', 'meaning'),
-            str_gcodes=lambda gcodes: ' '.join([str(gcode) for gcode in gcodes]),
+            str_gcodes=lambda gcodes: format_gcode_list(gcodes),
         )
 
 ####################################################################################################

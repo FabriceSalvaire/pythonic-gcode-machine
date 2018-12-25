@@ -321,28 +321,9 @@ from group 0 are :code:`G10`, :code:`G28`, :code:`G30`, and :code:`G92`.
 G and Input Codes
 -----------------
 
+For a documentation on G-codes, see :mod:`PythonicGcodeMachine.Gcode.Rs274.GcodeDoc`.
+
 .. include:: gcodes.rst
-
-..
-  G codes of the RS274/NGC language are shown in Table 5 and described following that.
-
-  In the command prototypes, three dots (...) stand for a real value. As described earlier, a real
-  value may be (1) an explicit number, 4, for example, (2) an expression, :code:`[2+2]`, for example,
-  (3) a parameter value, #88, for example, or (4) a unary function value, :code:`acos[0]`, for
-  example.  In most cases, if axis words (any or all of X..., Y..., Z..., A..., B..., C...) are given,
-  they specify a destination point. Axis numbers are in the currently active coordinate system, unless
-  explicitly described as being in the absolute coordinate system. Where axis words are optional, any
-  omitted axes will have their current value. Any items in the command prototypes not explicitly
-  described as optional are required. It is an error if a required item is omitted.
-
-  In the prototypes, the values following letters are often given as explicit numbers. Unless stated
-  otherwise, the explicit numbers can be real values. For example, :code:`G10 L2` could equally well
-  be written :code:`G[2*5] L[1+1]`. If the value of parameter 100 were 2, :code:`G10 L#100` would also
-  mean the same. Using real values which are not explicit numbers as just shown in the examples is
-  rarely useful.
-
-  If L... is written in a prototype the “...” will often be referred to as the “L number”. Similarly the
-  “...” in H... may be called the “H number”, and so on for any other letter.
 
 Order of Execution
 ------------------
