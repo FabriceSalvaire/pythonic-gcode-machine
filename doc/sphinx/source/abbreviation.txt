@@ -21,6 +21,9 @@
 .. |LinuxCNC| replace:: Linux CNC
 .. _LinuxCNC: http://linuxcnc.org/docs/2.7/html/gcode/overview.html
 
+.. |NIST| replace:: NIST
+.. _NIST: https://www.nist.gov
+
 .. |Machinekit| replace:: Machinekit
 .. _Machinekit: http://www.machinekit.io
 
