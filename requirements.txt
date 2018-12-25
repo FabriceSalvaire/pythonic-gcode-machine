@@ -1,3 +1,4 @@
 ansicolors
+numpy
 ply>=3.11
 PyYAML>=3.13
