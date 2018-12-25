@@ -1,0 +1,222 @@
+
+
+
+
+.. getthecode:: annotate-gcode.py
+    :language: python3
+    :hidden:
+
+===========================
+ Annotate a G-code program
+===========================
+
+For API see
+
+* :mod:`PythonicGcodeMachine.Gcode.Rs274`
+* :mod:`PythonicGcodeMachine.Gcode.Rs274.Ast`
+* :mod:`PythonicGcodeMachine.Gcode.Rs274.Condig`
+* :mod:`PythonicGcodeMachine.Gcode.Rs274.Machine`
+* :mod:`PythonicGcodeMachine.Gcode.Rs274.Parser`
+
+.. code-block:: py3
+
+    
+    
+    from pathlib import Path
+    
+    from PythonicGcodeMachine.Gcode.Rs274.Machine import GcodeMachine
+    
+    
+
+We build a RS-274 G-code Machine
+
+.. code-block:: py3
+
+    
+    machine = GcodeMachine()
+    
+    
+
+We load a G-code program
+
+.. code-block:: py3
+
+    
+    program_filename = 'mill-example-1.ngc'
+    
+    programs_directory = Path(__file__).parents[1].joinpath('programs')
+    program_path = programs_directory.joinpath(program_filename)
+    with open(program_path, 'r') as fh:
+        lines = fh.readlines()
+        if lines[0].startswith(';'):
+            lines = lines[1:]
+    
+    
+
+We parse the program
+
+.. code-block:: py3
+
+    
+    program = machine.parser.parse_lines(lines)
+    
+
+We dump the annotated program
+
+.. code-block:: py3
+
+    
+    def str_list(a_list):
+        return ' '.join([str(item) for item in a_list])
+    
+    meaning_format = '  {:5}: {}'
+    for line in program:
+        print()
+        # print(line.ansi_str()) # Fixme: pyterate
+        print(str(line))
+        line.check_modal_group()
+        for word in line.iter_on_word():
+            if word.is_gm_gcode:
+                margin = ' '*9
+                print(meaning_format.format(str(word), word.meaning))
+                print(margin + 'Modal group: {}'.format(word.modal_group.meaning))
+                print(margin + 'Execution order: {}'.format(word.execution_order.index))
+                print(margin + 'Valid G-code: {}'.format(word.is_valid_gcode))
+            else:
+                print(meaning_format.format(word.letter, word.meaning))
+        print(
+            '  execution:',
+            str_list(line.iter_in_order()), '/',
+            str_list(line.iter_on_x_word()), '/',
+            str_list(line.iter_on_setting()),
+        )
+
+
+.. code-block:: none
+
+    
+    N40 G90 G0 X0 Y0
+      G90  : absolute distance mode
+             Modal group: distance mode
+             Execution order: 17
+             Valid G-code: True
+      G0   : rapid positioning
+             Modal group: None
+             Execution order: 20
+             Valid G-code: True
+      X    : X-axis of machine
+      Y    : Y-axis of machine
+      execution: G90 G0 / X0 Y0 /
+    
+    N50 G1 X-10 Y-20 R8 (P1)
+      G1   : linear interpolation
+             Modal group: None
+             Execution order: 20
+             Valid G-code: True
+      X    : X-axis of machine
+      Y    : Y-axis of machine
+      R    : arc radius
+      execution: G1 / X-10 Y-20 R8 /
+    
+    N60 G1 X-50 R10 (P2)
+      G1   : linear interpolation
+             Modal group: None
+             Execution order: 20
+             Valid G-code: True
+      X    : X-axis of machine
+      R    : arc radius
+      execution: G1 / X-50 R10 /
+    
+    N70 Y10 (P3)
+      Y    : Y-axis of machine
+      execution:  / Y10 /
+    
+    N80 X-19.97 Y25.01 (P4)
+      X    : X-axis of machine
+      Y    : Y-axis of machine
+      execution:  / X-19.97 Y25.01 /
+    
+    N90 G3 X7.97 Y38.99 R18 (P5)
+      G3   : circular/helical interpolation (counterclockwise)
+             Modal group: None
+             Execution order: 20
+             Valid G-code: True
+      X    : X-axis of machine
+      Y    : Y-axis of machine
+      R    : arc radius
+      execution: G3 / X7.97 Y38.99 R18 /
+    
+    N100 G1 X30 Y50 (P6)
+      G1   : linear interpolation
+             Modal group: None
+             Execution order: 20
+             Valid G-code: True
+      X    : X-axis of machine
+      Y    : Y-axis of machine
+      execution: G1 / X30 Y50 /
+    
+    N110 G91 X10.1 Y-10.1 (P7)
+      G91  : incremental distance mode
+             Modal group: distance mode
+             Execution order: 17
+             Valid G-code: True
+      X    : X-axis of machine
+      Y    : Y-axis of machine
+      execution: G91 / X10.1 Y-10.1 /
+    
+    N120 G90 G2 X59.9 Y20.1 R14 (P8)
+      G90  : absolute distance mode
+             Modal group: distance mode
+             Execution order: 17
+             Valid G-code: True
+      G2   : circular/helical interpolation (clockwise)
+             Modal group: None
+             Execution order: 20
+             Valid G-code: True
+      X    : X-axis of machine
+      Y    : Y-axis of machine
+      R    : arc radius
+      execution: G90 G2 / X59.9 Y20.1 R14 /
+    
+    N130 G1 X70 Y10 (P9)
+      G1   : linear interpolation
+             Modal group: None
+             Execution order: 20
+             Valid G-code: True
+      X    : X-axis of machine
+      Y    : Y-axis of machine
+      execution: G1 / X70 Y10 /
+    
+    N140 Y-20 R10 (P10)
+      Y    : Y-axis of machine
+      R    : arc radius
+      execution:  / Y-20 R10 /
+    
+    N150 X50 (P11)
+      X    : X-axis of machine
+      execution:  / X50 /
+    
+    N160 G3 X30 R10 (P12)
+      G3   : circular/helical interpolation (counterclockwise)
+             Modal group: None
+             Execution order: 20
+             Valid G-code: True
+      X    : X-axis of machine
+      R    : arc radius
+      execution: G3 / X30 R10 /
+    
+    N170 G1 X10 R8 (P13)
+      G1   : linear interpolation
+             Modal group: None
+             Execution order: 20
+             Valid G-code: True
+      X    : X-axis of machine
+      R    : arc radius
+      execution: G1 / X10 R8 /
+    
+    N180 X0 Y0
+      X    : X-axis of machine
+      Y    : Y-axis of machine
+      execution:  / X0 Y0 /
+    
+

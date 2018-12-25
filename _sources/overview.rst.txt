@@ -10,7 +10,9 @@
 What is PythonicGcodeMachine ?
 ------------------------------
 
-PythonicGcodeMachine is a free and open source Python toolkit to work with RS-274 / ISO G-Code.
+PythonicGcodeMachine is a free and open source Python toolkit to work with RS-274 / ISO G-code.
+
+.. include:: features.txt
 
 How is PythonicGcodeMachine licensed ?
 --------------------------------------

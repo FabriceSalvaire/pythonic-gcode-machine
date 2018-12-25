@@ -110,48 +110,97 @@
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-to-get-help-or-report-an-issue">5.1. How to get help or report an issue ?</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="design-notes.html">6. Design Notes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="design-notes.html#g-code-parser">6.1. G-Code Parser</a></li>
-<li class="toctree-l2"><a class="reference internal" href="design-notes.html#g-code-flavours">6.2. G-code flavours</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="reference-manual.html">7. API Documentation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="api/PythonicGcodeMachine.html">7.1. PythonicGcodeMachine</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="api/PythonicGcodeMachine/Gcode.html">7.1.1. Gcode</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="api/PythonicGcodeMachine/Gcode/Fanuc.html">7.1.1.1. Fanuc</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/PythonicGcodeMachine/Gcode/Heidenhain.html">7.1.1.2. Heidenhain</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/PythonicGcodeMachine/Gcode/LinuxCnc.html">7.1.1.3. LinuxCnc</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/PythonicGcodeMachine/Gcode/MachineKit.html">7.1.1.4. MachineKit</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/PythonicGcodeMachine/Gcode/Rs274.html">7.1.1.5. Rs274</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="api/PythonicGcodeMachine/Machine.html">7.1.2. Machine</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="api/PythonicGcodeMachine/PythonLexYacc.html">7.1.3. PythonLexYacc</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="api/PythonicGcodeMachine/PythonLexYacc/lex.html">7.1.3.1. lex</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html">7.1.3.2. yacc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/index.html">6. Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/gcode/index.html">6.1. Gcode</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/gcode/annotate-gcode.html">6.1.1. Annotate a G-code program</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/gcode/generate-gcode.html">6.1.2. Generate a G-code program</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/gcode/query-gcode.html">6.1.3. Query G-codes</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="reference-manual.html#indexes">7.2. Indexes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gcode-reference/index.html">7. G-code Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gcode-reference/rs-274/index.html">7.1. RS-274 G-code Reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gcode-reference/rs-274/index.html#history">7.1.1. History</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gcode-reference/rs-274/index.html#overview">7.1.2. Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gcode-reference/rs-274/index.html#language-view-of-a-machining-center">7.1.3. Language View of a Machining Center</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="gcode-reference/rs-274/index.html#parameters">7.1.3.1. Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gcode-reference/rs-274/index.html#coordinate-systems">7.1.3.2. Coordinate Systems</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="development.html">8. Development &amp; Community</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="development.html#how-you-can-help">8.1. How you can help ?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="development.html#contributors">8.2. Contributors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gcode-reference/rs-274/index.html#format-of-a-line">7.1.4. Format of a Line</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="gcode-reference/rs-274/index.html#line-number">7.1.4.1. Line Number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gcode-reference/rs-274/index.html#word">7.1.4.2. Word</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gcode-reference/rs-274/index.html#number">7.1.4.3. Number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gcode-reference/rs-274/index.html#parameter-value">7.1.4.4. Parameter Value</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gcode-reference/rs-274/index.html#expressions-and-binary-operations">7.1.4.5. Expressions and Binary Operations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gcode-reference/rs-274/index.html#unary-operation-value">7.1.4.6. Unary Operation Value</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gcode-reference/rs-274/index.html#parameter-setting">7.1.4.7. Parameter Setting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gcode-reference/rs-274/index.html#comments-and-messages">7.1.4.8. Comments and Messages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gcode-reference/rs-274/index.html#item-repeats">7.1.4.9. Item Repeats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gcode-reference/rs-274/index.html#item-order">7.1.4.10. Item order</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gcode-reference/rs-274/index.html#commands-and-machine-modes">7.1.4.11. Commands and Machine Modes</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="how-to-refer.html">9. How to Refer to PythonicGcodeMachine ?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="donate.html">10. How to Help Further ?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="related-projects.html">11. Related Projects</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="related-projects.html#g-code-tools">11.1. G-code Tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="related-projects.html#cam-tools">11.2. CAM Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gcode-reference/rs-274/index.html#modal-groups">7.1.5. Modal Groups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gcode-reference/rs-274/index.html#g-and-input-codes">7.1.6. G and Input Codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gcode-reference/rs-274/index.html#order-of-execution">7.1.7. Order of Execution</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="bibliography.html">12. Bibliography</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="bibliography.html#g-code">12.1. G-Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="design-notes.html">8. Design Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="design-notes.html#g-code-parser">8.1. G-Code Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="design-notes.html#g-code-flavours">8.2. G-code flavours</a></li>
+<li class="toctree-l2"><a class="reference internal" href="design-notes.html#g-code-generation-and-simulation">8.3. G-code Generation and Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="design-notes.html#computational-geometry-engine">8.4. Computational Geometry Engine</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="design-notes.html#list-of-the-main-open-source-computational-geometry-algorithms-libraries">8.4.1. List of the Main Open Source Computational Geometry Algorithms Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="design-notes.html#the-computational-geometry-algorithms-library">8.4.1.1. The Computational Geometry Algorithms Library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="design-notes.html#open-cascade">8.4.1.2. Open CASCADE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="design-notes.html#g-code-visualisation">8.5. G-code Visualisation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reference-manual.html">9. API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/PythonicGcodeMachine.html">9.1. PythonicGcodeMachine</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/PythonicGcodeMachine/Gcode.html">9.1.1. Gcode</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/PythonicGcodeMachine/Gcode/Fanuc.html">9.1.1.1. Fanuc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/PythonicGcodeMachine/Gcode/Heidenhain.html">9.1.1.2. Heidenhain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/PythonicGcodeMachine/Gcode/LinuxCnc.html">9.1.1.3. LinuxCnc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/PythonicGcodeMachine/Gcode/MachineKit.html">9.1.1.4. MachineKit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/PythonicGcodeMachine/Gcode/Rs274.html">9.1.1.5. Rs274</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/PythonicGcodeMachine/Machine.html">9.1.2. Machine</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/PythonicGcodeMachine/PythonLexYacc.html">9.1.3. PythonLexYacc</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/PythonicGcodeMachine/PythonLexYacc/lex.html">9.1.3.1. lex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html">9.1.3.2. yacc</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference-manual.html#indexes">9.2. Indexes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">10. Development &amp; Community</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="development.html#how-you-can-help">10.1. How you can help ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development.html#contributors">10.2. Contributors</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="how-to-refer.html">11. How to Refer to PythonicGcodeMachine ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="donate.html">12. How to Help Further ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="related-projects.html">13. Related Projects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="related-projects.html#g-code-tools">13.1. G-code Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="related-projects.html#cam-tools">13.2. CAM Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">14. Bibliography</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bibliography.html#g-code">14.1. G-Code</a></li>
 </ul>
 </li>
 </ul>
@@ -289,6 +338,8 @@
 </li>
       <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.ArcTangent">ArcTangent (class in PythonicGcodeMachine.Gcode.Rs274.Ast)</a>
 </li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.LetterSet.AXIS_LETTERS">AXIS_LETTERS (PythonicGcodeMachine.Gcode.Rs274.Config.LetterSet attribute)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -317,25 +368,47 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.call_errorfunc">call_errorfunc() (in module PythonicGcodeMachine.PythonLexYacc.yacc)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/PythonLexYacc/lex.html#PythonicGcodeMachine.PythonLexYacc.lex.Lexer.clone">clone() (PythonicGcodeMachine.PythonLexYacc.lex.Lexer method)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Line.check_modal_group">check_modal_group() (PythonicGcodeMachine.Gcode.Rs274.Ast.Line method)</a>
 </li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Comment.clone">clone() (PythonicGcodeMachine.Gcode.Rs274.Ast.Comment method)</a>
+
+      <ul>
+        <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Line.clone">(PythonicGcodeMachine.Gcode.Rs274.Ast.Line method)</a>
+</li>
+        <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Parameter.clone">(PythonicGcodeMachine.Gcode.Rs274.Ast.Parameter method)</a>
+</li>
+        <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.ParameterSetting.clone">(PythonicGcodeMachine.Gcode.Rs274.Ast.ParameterSetting method)</a>
+</li>
+        <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Program.clone">(PythonicGcodeMachine.Gcode.Rs274.Ast.Program method)</a>
+</li>
+        <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Word.clone">(PythonicGcodeMachine.Gcode.Rs274.Ast.Word method)</a>
+</li>
+        <li><a href="api/PythonicGcodeMachine/PythonLexYacc/lex.html#PythonicGcodeMachine.PythonLexYacc.lex.Lexer.clone">(PythonicGcodeMachine.PythonLexYacc.lex.Lexer method)</a>
+</li>
+      </ul></li>
       <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Comment">Comment (class in PythonicGcodeMachine.Gcode.Rs274.Ast)</a>
 </li>
       <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Line.comment">comment (PythonicGcodeMachine.Gcode.Rs274.Ast.Line attribute)</a>
 </li>
       <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.Grammar.compute_first">compute_first() (PythonicGcodeMachine.PythonLexYacc.yacc.Grammar method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.Grammar.compute_follow">compute_follow() (PythonicGcodeMachine.PythonLexYacc.yacc.Grammar method)</a>
 </li>
       <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.LRGeneratedTable.compute_follow_sets">compute_follow_sets() (PythonicGcodeMachine.PythonLexYacc.yacc.LRGeneratedTable method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.LRGeneratedTable.compute_lookback_includes">compute_lookback_includes() (PythonicGcodeMachine.PythonLexYacc.yacc.LRGeneratedTable method)</a>
 </li>
       <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.LRGeneratedTable.compute_nullable_nonterminals">compute_nullable_nonterminals() (PythonicGcodeMachine.PythonLexYacc.yacc.LRGeneratedTable method)</a>
 </li>
       <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.LRGeneratedTable.compute_read_sets">compute_read_sets() (PythonicGcodeMachine.PythonLexYacc.yacc.LRGeneratedTable method)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.Config">Config (class in PythonicGcodeMachine.Gcode.Rs274.Config)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Machine.html#PythonicGcodeMachine.Gcode.Rs274.Machine.GcodeMachine.config">config (PythonicGcodeMachine.Gcode.Rs274.Machine.GcodeMachine attribute)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.Gcode.convert_doc">convert_doc() (PythonicGcodeMachine.Gcode.Rs274.Config.Gcode method)</a>
 </li>
       <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Cosine">Cosine (class in PythonicGcodeMachine.Gcode.Rs274.Ast)</a>
 </li>
@@ -359,6 +432,8 @@
         <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.PlyLogger.debug">(PythonicGcodeMachine.PythonLexYacc.yacc.PlyLogger method)</a>
 </li>
       </ul></li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.Parameter.default_value">default_value (PythonicGcodeMachine.Gcode.Rs274.Config.Parameter attribute)</a>
+</li>
       <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Line.deleted">deleted (PythonicGcodeMachine.Gcode.Rs274.Ast.Line attribute)</a>
 </li>
   </ul></td>
@@ -368,6 +443,8 @@
       <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.LRParser.disable_defaulted_states">disable_defaulted_states() (PythonicGcodeMachine.PythonLexYacc.yacc.LRParser method)</a>
 </li>
       <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.DividedBy">DividedBy (class in PythonicGcodeMachine.Gcode.Rs274.Ast)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.Gcode.doc">doc (PythonicGcodeMachine.Gcode.Rs274.Config.Gcode attribute)</a>
 </li>
       <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.LRGeneratedTable.dr_relation">dr_relation() (PythonicGcodeMachine.PythonLexYacc.yacc.LRGeneratedTable method)</a>
 </li>
@@ -385,8 +462,6 @@
         <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.LRParser.errok">(PythonicGcodeMachine.PythonLexYacc.yacc.LRParser method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/PythonicGcodeMachine/PythonLexYacc/lex.html#PythonicGcodeMachine.PythonLexYacc.lex.PlyLogger.error">error() (PythonicGcodeMachine.PythonLexYacc.lex.PlyLogger method)</a>
 
       <ul>
@@ -395,7 +470,23 @@
         <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.YaccProduction.error">(PythonicGcodeMachine.PythonLexYacc.yacc.YaccProduction method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.ExclusiveOr">ExclusiveOr (class in PythonicGcodeMachine.Gcode.Rs274.Ast)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Word.execution_order">execution_order (PythonicGcodeMachine.Gcode.Rs274.Ast.Word attribute)</a>
+
+      <ul>
+        <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.Config.execution_order">(PythonicGcodeMachine.Gcode.Rs274.Config.Config attribute)</a>
+</li>
+        <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.Gcode.execution_order">(PythonicGcodeMachine.Gcode.Rs274.Config.Gcode attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.Gcode.execution_order_index">execution_order_index (PythonicGcodeMachine.Gcode.Rs274.Config.Gcode attribute)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.ExecutionGroup">ExecutionGroup (class in PythonicGcodeMachine.Gcode.Rs274.Config)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.ExecutionOrder">ExecutionOrder (class in PythonicGcodeMachine.Gcode.Rs274.Config)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -403,6 +494,8 @@
 <h2 id="F">F</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.F">F (class in PythonicGcodeMachine.Gcode.Rs274.GcodeDoc)</a>
+</li>
       <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.LRGeneratedTable.find_nonterminal_transitions">find_nonterminal_transitions() (PythonicGcodeMachine.PythonLexYacc.yacc.LRGeneratedTable method)</a>
 </li>
       <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.Grammar.find_unreachable">find_unreachable() (PythonicGcodeMachine.PythonLexYacc.yacc.Grammar method)</a>
@@ -417,23 +510,89 @@
 </li>
       <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.format_stack_entry">format_stack_entry() (in module PythonicGcodeMachine.PythonLexYacc.yacc)</a>
 </li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Word.from_str">from_str() (PythonicGcodeMachine.Gcode.Rs274.Ast.Word class method)</a>
+</li>
   </ul></td>
 </tr></table>
 
 <h2 id="G">G</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G0">G0 (class in PythonicGcodeMachine.Gcode.Rs274.GcodeDoc)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G1">G1 (class in PythonicGcodeMachine.Gcode.Rs274.GcodeDoc)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G10">G10 (class in PythonicGcodeMachine.Gcode.Rs274.GcodeDoc)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G17_G18_G19">G17_G18_G19 (class in PythonicGcodeMachine.Gcode.Rs274.GcodeDoc)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G20_G21">G20_G21 (class in PythonicGcodeMachine.Gcode.Rs274.GcodeDoc)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G28_G30">G28_G30 (class in PythonicGcodeMachine.Gcode.Rs274.GcodeDoc)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G2_G3">G2_G3 (class in PythonicGcodeMachine.Gcode.Rs274.GcodeDoc)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G38_2">G38_2 (class in PythonicGcodeMachine.Gcode.Rs274.GcodeDoc)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G4">G4 (class in PythonicGcodeMachine.Gcode.Rs274.GcodeDoc)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G40_G41_G42">G40_G41_G42 (class in PythonicGcodeMachine.Gcode.Rs274.GcodeDoc)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G43_G49">G43_G49 (class in PythonicGcodeMachine.Gcode.Rs274.GcodeDoc)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G53">G53 (class in PythonicGcodeMachine.Gcode.Rs274.GcodeDoc)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G54_to_G59_3">G54_to_G59_3 (class in PythonicGcodeMachine.Gcode.Rs274.GcodeDoc)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G61_G61_1_G64">G61_G61_1_G64 (class in PythonicGcodeMachine.Gcode.Rs274.GcodeDoc)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G80">G80 (class in PythonicGcodeMachine.Gcode.Rs274.GcodeDoc)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G81_to_G89">G81_to_G89 (class in PythonicGcodeMachine.Gcode.Rs274.GcodeDoc)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G90_G91">G90_G91 (class in PythonicGcodeMachine.Gcode.Rs274.GcodeDoc)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G92_G92_1_G92_2_G92_3">G92_G92_1_G92_2_G92_3 (class in PythonicGcodeMachine.Gcode.Rs274.GcodeDoc)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G93_G94">G93_G94 (class in PythonicGcodeMachine.Gcode.Rs274.GcodeDoc)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G98_G99">G98_G99 (class in PythonicGcodeMachine.Gcode.Rs274.GcodeDoc)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.Gcode">Gcode (class in PythonicGcodeMachine.Gcode.Rs274.Config)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.Gcode.gcode">gcode (PythonicGcodeMachine.Gcode.Rs274.Config.Gcode attribute)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Word.gcode_info">gcode_info (PythonicGcodeMachine.Gcode.Rs274.Ast.Word attribute)</a>
+</li>
       <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Parser.html#PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin">GcodeGrammarMixin (class in PythonicGcodeMachine.Gcode.Rs274.Parser)</a>
 </li>
       <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer">GcodeLexer (class in PythonicGcodeMachine.Gcode.Rs274.Lexer)</a>
 </li>
       <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexerError">GcodeLexerError</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexerMixin">GcodeLexerMixin (class in PythonicGcodeMachine.Gcode.Rs274.Lexer)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Machine.html#PythonicGcodeMachine.Gcode.Rs274.Machine.GcodeMachine">GcodeMachine (class in PythonicGcodeMachine.Gcode.Rs274.Machine)</a>
+</li>
       <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Parser.html#PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeParser">GcodeParser (class in PythonicGcodeMachine.Gcode.Rs274.Parser)</a>
 </li>
       <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Parser.html#PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeParserError">GcodeParserError</a>
 </li>
       <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Parser.html#PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeParserMixin">GcodeParserMixin (class in PythonicGcodeMachine.Gcode.Rs274.Parser)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.Config.gcodes">gcodes (PythonicGcodeMachine.Gcode.Rs274.Config.Config attribute)</a>
+
+      <ul>
+        <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.ExecutionGroup.gcodes">(PythonicGcodeMachine.Gcode.Rs274.Config.ExecutionGroup attribute)</a>
+</li>
+        <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.ModalGroup.gcodes">(PythonicGcodeMachine.Gcode.Rs274.Config.ModalGroup attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.GcodeSet">GcodeSet (class in PythonicGcodeMachine.Gcode.Rs274.Config)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin">GcodeTokenMixin (class in PythonicGcodeMachine.Gcode.Rs274.Lexer)</a>
 </li>
       <li><a href="api/PythonicGcodeMachine/PythonLexYacc/lex.html#PythonicGcodeMachine.PythonLexYacc.lex.LexerReflect.get_all">get_all() (PythonicGcodeMachine.PythonLexYacc.lex.LexerReflect method)</a>
 
@@ -447,8 +606,6 @@
         <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.get_caller_module_dict">(in module PythonicGcodeMachine.PythonLexYacc.yacc)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.ParserReflect.get_error_func">get_error_func() (PythonicGcodeMachine.PythonLexYacc.yacc.ParserReflect method)</a>
 </li>
       <li><a href="api/PythonicGcodeMachine/PythonLexYacc/lex.html#PythonicGcodeMachine.PythonLexYacc.lex.LexerReflect.get_literals">get_literals() (PythonicGcodeMachine.PythonLexYacc.lex.LexerReflect method)</a>
@@ -469,6 +626,8 @@
         <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.ParserReflect.get_tokens">(PythonicGcodeMachine.PythonLexYacc.yacc.ParserReflect method)</a>
 </li>
       </ul></li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.LetterSet.GM_LETTERS">GM_LETTERS (PythonicGcodeMachine.Gcode.Rs274.Config.LetterSet attribute)</a>
+</li>
       <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.Grammar">Grammar (class in PythonicGcodeMachine.PythonLexYacc.yacc)</a>
 </li>
       <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.GrammarError">GrammarError</a>
@@ -479,6 +638,14 @@
 <h2 id="I">I</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.ExecutionGroup.index">index (PythonicGcodeMachine.Gcode.Rs274.Config.ExecutionGroup attribute)</a>
+
+      <ul>
+        <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.ModalGroup.index">(PythonicGcodeMachine.Gcode.Rs274.Config.ModalGroup attribute)</a>
+</li>
+        <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.Parameter.index">(PythonicGcodeMachine.Gcode.Rs274.Config.Parameter attribute)</a>
+</li>
+      </ul></li>
       <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.Grammar.infinite_cycles">infinite_cycles() (PythonicGcodeMachine.PythonLexYacc.yacc.Grammar method)</a>
 </li>
       <li><a href="api/PythonicGcodeMachine/PythonLexYacc/lex.html#PythonicGcodeMachine.PythonLexYacc.lex.PlyLogger.info">info() (PythonicGcodeMachine.PythonLexYacc.lex.PlyLogger method)</a>
@@ -487,15 +654,47 @@
         <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.PlyLogger.info">(PythonicGcodeMachine.PythonLexYacc.yacc.PlyLogger method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.input">input() (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer method)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexerMixin.input">input() (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexerMixin method)</a>
 
       <ul>
         <li><a href="api/PythonicGcodeMachine/PythonLexYacc/lex.html#PythonicGcodeMachine.PythonLexYacc.lex.Lexer.input">(PythonicGcodeMachine.PythonLexYacc.lex.Lexer method)</a>
 </li>
       </ul></li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Word.is_axis_gcode">is_axis_gcode (PythonicGcodeMachine.Gcode.Rs274.Ast.Word attribute)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.LetterSet.is_axis_letter">is_axis_letter() (PythonicGcodeMachine.Gcode.Rs274.Config.LetterSet method)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.LetterSet.is_axis_word">is_axis_word() (PythonicGcodeMachine.Gcode.Rs274.Config.LetterSet method)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Word.is_gm_gcode">is_gm_gcode (PythonicGcodeMachine.Gcode.Rs274.Ast.Word attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.LetterSet.is_gm_letter">is_gm_letter() (PythonicGcodeMachine.Gcode.Rs274.Config.LetterSet method)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.LetterSet.is_gm_word">is_gm_word() (PythonicGcodeMachine.Gcode.Rs274.Config.LetterSet method)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Word.is_valid_gcode">is_valid_gcode (PythonicGcodeMachine.Gcode.Rs274.Ast.Word attribute)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Line.iter_in_order">iter_in_order() (PythonicGcodeMachine.Gcode.Rs274.Ast.Line method)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Line.iter_on_g_word">iter_on_g_word() (PythonicGcodeMachine.Gcode.Rs274.Ast.Line method)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Line.iter_on_gm_word">iter_on_gm_word() (PythonicGcodeMachine.Gcode.Rs274.Ast.Line method)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Line.iter_on_letter">iter_on_letter() (PythonicGcodeMachine.Gcode.Rs274.Ast.Line method)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Line.iter_on_m_word">iter_on_m_word() (PythonicGcodeMachine.Gcode.Rs274.Ast.Line method)</a>
+</li>
       <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Program.iter_on_not_deleted">iter_on_not_deleted() (PythonicGcodeMachine.Gcode.Rs274.Ast.Program method)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Line.iter_on_setting">iter_on_setting() (PythonicGcodeMachine.Gcode.Rs274.Ast.Line method)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.GcodeSet.iter_on_slice">iter_on_slice() (PythonicGcodeMachine.Gcode.Rs274.Config.GcodeSet method)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Line.iter_on_word">iter_on_word() (PythonicGcodeMachine.Gcode.Rs274.Ast.Line method)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Line.iter_on_x_word">iter_on_x_word() (PythonicGcodeMachine.Gcode.Rs274.Ast.Line method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -508,6 +707,10 @@
       <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Word.letter">letter (PythonicGcodeMachine.Gcode.Rs274.Ast.Word attribute)</a>
 </li>
       <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Word.LETTERS">LETTERS (PythonicGcodeMachine.Gcode.Rs274.Ast.Word attribute)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.Config.letters">letters (PythonicGcodeMachine.Gcode.Rs274.Config.Config attribute)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.LetterSet">LetterSet (class in PythonicGcodeMachine.Gcode.Rs274.Config)</a>
 </li>
       <li><a href="api/PythonicGcodeMachine/PythonLexYacc/lex.html#PythonicGcodeMachine.PythonLexYacc.lex.lex">lex() (in module PythonicGcodeMachine.PythonLexYacc.lex)</a>
 </li>
@@ -533,6 +736,8 @@
 </li>
       <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.YaccProduction.linespan">linespan() (PythonicGcodeMachine.PythonLexYacc.yacc.YaccProduction method)</a>
 </li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Machine.html#PythonicGcodeMachine.Gcode.Rs274.Machine.GcodeMachine.load_config">load_config() (PythonicGcodeMachine.Gcode.Rs274.Machine.GcodeMachine method)</a>
+</li>
       <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.LRGeneratedTable.lr0_closure">lr0_closure() (PythonicGcodeMachine.PythonLexYacc.yacc.LRGeneratedTable method)</a>
 </li>
       <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.LRGeneratedTable.lr0_goto">lr0_goto() (PythonicGcodeMachine.PythonLexYacc.yacc.LRGeneratedTable method)</a>
@@ -557,10 +762,42 @@
 <h2 id="M">M</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.MiniProduction">MiniProduction (class in PythonicGcodeMachine.PythonLexYacc.yacc)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.M0_M1_M2_M30_M60">M0_M1_M2_M30_M60 (class in PythonicGcodeMachine.Gcode.Rs274.GcodeDoc)</a>
 </li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.M3_M4_M5">M3_M4_M5 (class in PythonicGcodeMachine.Gcode.Rs274.GcodeDoc)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.M48_M48">M48_M48 (class in PythonicGcodeMachine.Gcode.Rs274.GcodeDoc)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.M6">M6 (class in PythonicGcodeMachine.Gcode.Rs274.GcodeDoc)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.M7_M8_M9">M7_M8_M9 (class in PythonicGcodeMachine.Gcode.Rs274.GcodeDoc)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Parser.html#PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeParserMixin.machine">machine (PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeParserMixin attribute)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Word.meaning">meaning (PythonicGcodeMachine.Gcode.Rs274.Ast.Word attribute)</a>
+
+      <ul>
+        <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.MeaningMixin.meaning">(PythonicGcodeMachine.Gcode.Rs274.Config.MeaningMixin attribute)</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.MeaningMixin">MeaningMixin (class in PythonicGcodeMachine.Gcode.Rs274.Config)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.MiniProduction">MiniProduction (class in PythonicGcodeMachine.PythonLexYacc.yacc)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Word.modal_group">modal_group (PythonicGcodeMachine.Gcode.Rs274.Ast.Word attribute)</a>
+
+      <ul>
+        <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.Gcode.modal_group">(PythonicGcodeMachine.Gcode.Rs274.Config.Gcode attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.Config.modal_groups">modal_groups (PythonicGcodeMachine.Gcode.Rs274.Config.Config attribute)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.ModalGroup">ModalGroup (class in PythonicGcodeMachine.Gcode.Rs274.Config)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.ModalGroupSet">ModalGroupSet (class in PythonicGcodeMachine.Gcode.Rs274.Config)</a>
+</li>
       <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Modulo">Modulo (class in PythonicGcodeMachine.Gcode.Rs274.Ast)</a>
 </li>
       <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Multiply">Multiply (class in PythonicGcodeMachine.Gcode.Rs274.Ast)</a>
@@ -650,10 +887,18 @@
       <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Parser.html#PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin.p_unary_combo">p_unary_combo() (PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeGrammarMixin method)</a>
 </li>
       <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Parameter">Parameter (class in PythonicGcodeMachine.Gcode.Rs274.Ast)</a>
+
+      <ul>
+        <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.Parameter">(class in PythonicGcodeMachine.Gcode.Rs274.Config)</a>
 </li>
+      </ul></li>
       <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.ParameterMixin.parameter">parameter (PythonicGcodeMachine.Gcode.Rs274.Ast.ParameterMixin attribute)</a>
 </li>
       <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.ParameterMixin">ParameterMixin (class in PythonicGcodeMachine.Gcode.Rs274.Ast)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.Config.parameters">parameters (PythonicGcodeMachine.Gcode.Rs274.Config.Config attribute)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.ParameterSet">ParameterSet (class in PythonicGcodeMachine.Gcode.Rs274.Config)</a>
 </li>
       <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.ParameterSetting">ParameterSetting (class in PythonicGcodeMachine.Gcode.Rs274.Ast)</a>
 </li>
@@ -663,10 +908,10 @@
         <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.LRParser.parse">(PythonicGcodeMachine.PythonLexYacc.yacc.LRParser method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.parse_grammar">parse_grammar() (in module PythonicGcodeMachine.PythonLexYacc.yacc)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Parser.html#PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeParserMixin.parse_lines">parse_lines() (PythonicGcodeMachine.Gcode.Rs274.Parser.GcodeParserMixin method)</a>
 </li>
       <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.LRParser.parsedebug">parsedebug() (PythonicGcodeMachine.PythonLexYacc.yacc.LRParser method)</a>
@@ -674,6 +919,10 @@
       <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.LRParser.parseopt">parseopt() (PythonicGcodeMachine.PythonLexYacc.yacc.LRParser method)</a>
 </li>
       <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.LRParser.parseopt_notrack">parseopt_notrack() (PythonicGcodeMachine.PythonLexYacc.yacc.LRParser method)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Machine.html#PythonicGcodeMachine.Gcode.Rs274.Machine.GcodeMachine.parser">parser (PythonicGcodeMachine.Gcode.Rs274.Machine.GcodeMachine attribute)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Machine.html#PythonicGcodeMachine.Gcode.Rs274.Machine.GcodeMachine.PARSER_CLS">PARSER_CLS (PythonicGcodeMachine.Gcode.Rs274.Machine.GcodeMachine attribute)</a>
 </li>
       <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.ParserReflect">ParserReflect (class in PythonicGcodeMachine.PythonLexYacc.yacc)</a>
 </li>
@@ -699,6 +948,8 @@
         <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Program.push">(PythonicGcodeMachine.Gcode.Rs274.Ast.Program method)</a>
 </li>
       </ul></li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Line.push_items">push_items() (PythonicGcodeMachine.Gcode.Rs274.Ast.Line method)</a>
+</li>
       <li><a href="api/PythonicGcodeMachine/PythonLexYacc/lex.html#PythonicGcodeMachine.PythonLexYacc.lex.Lexer.push_state">push_state() (PythonicGcodeMachine.PythonLexYacc.lex.Lexer method)</a>
 </li>
       <li><a href="api/PythonicGcodeMachine.html#module-PythonicGcodeMachine">PythonicGcodeMachine (module)</a>
@@ -715,9 +966,19 @@
 </li>
       <li><a href="api/PythonicGcodeMachine/Gcode/Rs274.html#module-PythonicGcodeMachine.Gcode.Rs274">PythonicGcodeMachine.Gcode.Rs274 (module)</a>
 </li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/_lextab.html#module-PythonicGcodeMachine.Gcode.Rs274._lextab">PythonicGcodeMachine.Gcode.Rs274._lextab (module)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/_parsetab.html#module-PythonicGcodeMachine.Gcode.Rs274._parsetab">PythonicGcodeMachine.Gcode.Rs274._parsetab (module)</a>
+</li>
       <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#module-PythonicGcodeMachine.Gcode.Rs274.Ast">PythonicGcodeMachine.Gcode.Rs274.Ast (module)</a>
 </li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#module-PythonicGcodeMachine.Gcode.Rs274.Config">PythonicGcodeMachine.Gcode.Rs274.Config (module)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#module-PythonicGcodeMachine.Gcode.Rs274.GcodeDoc">PythonicGcodeMachine.Gcode.Rs274.GcodeDoc (module)</a>
+</li>
       <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#module-PythonicGcodeMachine.Gcode.Rs274.Lexer">PythonicGcodeMachine.Gcode.Rs274.Lexer (module)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Machine.html#module-PythonicGcodeMachine.Gcode.Rs274.Machine">PythonicGcodeMachine.Gcode.Rs274.Machine (module)</a>
 </li>
       <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Parser.html#module-PythonicGcodeMachine.Gcode.Rs274.Parser">PythonicGcodeMachine.Gcode.Rs274.Parser (module)</a>
 </li>
@@ -735,6 +996,8 @@
 <h2 id="R">R</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.ExecutionGroup.raw_gcodes">raw_gcodes (PythonicGcodeMachine.Gcode.Rs274.Config.ExecutionGroup attribute)</a>
+</li>
       <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.LRTable.read_pickle">read_pickle() (PythonicGcodeMachine.PythonLexYacc.yacc.LRTable method)</a>
 </li>
       <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.LRTable.read_table">read_table() (PythonicGcodeMachine.PythonLexYacc.yacc.LRTable method)</a>
@@ -743,9 +1006,15 @@
 </li>
       <li><a href="api/PythonicGcodeMachine/PythonLexYacc/lex.html#PythonicGcodeMachine.PythonLexYacc.lex.Lexer.readtab">readtab() (PythonicGcodeMachine.PythonLexYacc.lex.Lexer method)</a>
 </li>
+      <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.Production.reduced">reduced (PythonicGcodeMachine.PythonLexYacc.yacc.Production attribute)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.Production.reduced">reduced (PythonicGcodeMachine.PythonLexYacc.yacc.Production attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Line.remove_comment">remove_comment() (PythonicGcodeMachine.Gcode.Rs274.Ast.Line method)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Line.remove_line_number">remove_line_number() (PythonicGcodeMachine.Gcode.Rs274.Ast.Line method)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Machine.html#PythonicGcodeMachine.Gcode.Rs274.Machine.GcodeMachine.reset">reset() (PythonicGcodeMachine.Gcode.Rs274.Machine.GcodeMachine method)</a>
 </li>
       <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.restart">restart() (in module PythonicGcodeMachine.PythonLexYacc.yacc)</a>
 
@@ -763,6 +1032,8 @@
 <h2 id="S">S</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.S">S (class in PythonicGcodeMachine.Gcode.Rs274.GcodeDoc)</a>
+</li>
       <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Comment.set">set() (PythonicGcodeMachine.Gcode.Rs274.Ast.Comment method)</a>
 </li>
       <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.LRParser.set_defaulted_states">set_defaulted_states() (PythonicGcodeMachine.PythonLexYacc.yacc.LRParser method)</a>
@@ -773,9 +1044,11 @@
 </li>
       <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.Grammar.set_precedence">set_precedence() (PythonicGcodeMachine.PythonLexYacc.yacc.Grammar method)</a>
 </li>
+      <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.Grammar.set_start">set_start() (PythonicGcodeMachine.PythonLexYacc.yacc.Grammar method)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.Grammar.set_start">set_start() (PythonicGcodeMachine.PythonLexYacc.yacc.Grammar method)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Machine.html#PythonicGcodeMachine.Gcode.Rs274.Machine.GcodeMachine.setup_parser">setup_parser() (PythonicGcodeMachine.Gcode.Rs274.Machine.GcodeMachine method)</a>
 </li>
       <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.ParserReflect.signature">signature() (PythonicGcodeMachine.PythonLexYacc.yacc.ParserReflect method)</a>
 </li>
@@ -783,6 +1056,12 @@
 </li>
       <li><a href="api/PythonicGcodeMachine/PythonLexYacc/lex.html#PythonicGcodeMachine.PythonLexYacc.lex.Lexer.skip">skip() (PythonicGcodeMachine.PythonLexYacc.lex.Lexer method)</a>
 </li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.GcodeSet.sorted_iter">sorted_iter() (PythonicGcodeMachine.Gcode.Rs274.Config.GcodeSet method)</a>
+
+      <ul>
+        <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.ModalGroupSet.sorted_iter">(PythonicGcodeMachine.Gcode.Rs274.Config.ModalGroupSet method)</a>
+</li>
+      </ul></li>
       <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.SquareRoot">SquareRoot (class in PythonicGcodeMachine.Gcode.Rs274.Ast)</a>
 </li>
       <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Subtraction">Subtraction (class in PythonicGcodeMachine.Gcode.Rs274.Ast)</a>
@@ -793,115 +1072,131 @@
 <h2 id="T">T</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_A">t_A (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.T">T (class in PythonicGcodeMachine.Gcode.Rs274.GcodeDoc)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_ABSOLUTE_VALUE">t_ABSOLUTE_VALUE (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_A">t_A (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_AND">t_AND (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_ABSOLUTE_VALUE">t_ABSOLUTE_VALUE (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_ARC_COSINE">t_ARC_COSINE (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_AND">t_AND (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_ARC_SINE">t_ARC_SINE (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_ARC_COSINE">t_ARC_COSINE (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_ARC_TANGENT">t_ARC_TANGENT (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_ARC_SINE">t_ARC_SINE (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.T_B">T_B (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_ARC_TANGENT">t_ARC_TANGENT (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_C">t_C (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.T_B">T_B (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_COSINE">t_COSINE (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_C">t_C (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_D">t_D (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_COSINE">t_COSINE (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_DIVIDED_BY">t_DIVIDED_BY (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_D">t_D (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_E_RAISED_TO">t_E_RAISED_TO (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_DIVIDED_BY">t_DIVIDED_BY (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_EOF_COMMENT">t_EOF_COMMENT() (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer method)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_E_RAISED_TO">t_E_RAISED_TO (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_EQUAL_SIGN">t_EQUAL_SIGN (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_EOF_COMMENT">t_EOF_COMMENT() (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin method)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_error">t_error() (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer method)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_EQUAL_SIGN">t_EQUAL_SIGN (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_EXCLUSIVE_OR">t_EXCLUSIVE_OR (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_error">t_error() (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin method)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_F">t_F (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_EXCLUSIVE_OR">t_EXCLUSIVE_OR (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_FIX_DOWN">t_FIX_DOWN (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_F">t_F (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_FIX_UP">t_FIX_UP (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_FIX_DOWN">t_FIX_DOWN (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_G">t_G (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_FIX_UP">t_FIX_UP (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_H">t_H (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_G">t_G (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_I">t_I (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_H">t_H (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_ignore">t_ignore (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_I">t_I (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_INLINE_COMMENT">t_INLINE_COMMENT() (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer method)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_ignore">t_ignore (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_J">t_J (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_INLINE_COMMENT">t_INLINE_COMMENT() (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin method)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_K">t_K (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_J">t_J (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_L">t_L (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_K">t_K (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_LEFT_BRACKET">t_LEFT_BRACKET (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_L">t_L (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_M">t_M (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_LEFT_BRACKET">t_LEFT_BRACKET (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_MINUS">t_MINUS (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_M">t_M (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_MINUS">t_MINUS (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_MODULO">t_MODULO (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_N">t_N (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_NATURAL_LOG_OF">t_NATURAL_LOG_OF (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_MODULO">t_MODULO (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_NON_EXCLUSIVE_OR">t_NON_EXCLUSIVE_OR (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_N">t_N (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_P">t_P (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_NATURAL_LOG_OF">t_NATURAL_LOG_OF (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_PARAMETER_SIGN">t_PARAMETER_SIGN (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_NON_EXCLUSIVE_OR">t_NON_EXCLUSIVE_OR (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_PLUS">t_PLUS (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_P">t_P (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_POWER">t_POWER (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_PARAMETER_SIGN">t_PARAMETER_SIGN (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_Q">t_Q (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_PLUS">t_PLUS (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_R">t_R (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_POWER">t_POWER (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_REAL">t_REAL() (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin method)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_Q">t_Q (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_RIGHT_BRACKET">t_RIGHT_BRACKET (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_R">t_R (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_ROUND">t_ROUND (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_REAL">t_REAL() (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer method)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_S">t_S (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_RIGHT_BRACKET">t_RIGHT_BRACKET (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_SINE">t_SINE (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_ROUND">t_ROUND (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_SQUARE_ROOT">t_SQUARE_ROOT (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_S">t_S (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_T">t_T (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_SINE">t_SINE (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_TANGENT">t_TANGENT (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_SQUARE_ROOT">t_SQUARE_ROOT (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_TIMES">t_TIMES (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_T">t_T (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_X">t_X (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_TANGENT">t_TANGENT (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_Y">t_Y (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_TIMES">t_TIMES (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
-</li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_X">t_X (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
-</li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_Y">t_Y (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
-</li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_Z">t_Z (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_Z">t_Z (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
       <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Tangent">Tangent (class in PythonicGcodeMachine.Gcode.Rs274.Ast)</a>
 </li>
       <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Comment.text">text (PythonicGcodeMachine.Gcode.Rs274.Ast.Comment attribute)</a>
+</li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.ExecutionOrder.to_rst">to_rst() (PythonicGcodeMachine.Gcode.Rs274.Config.ExecutionOrder method)</a>
+
+      <ul>
+        <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.GcodeSet.to_rst">(PythonicGcodeMachine.Gcode.Rs274.Config.GcodeSet method)</a>
+</li>
+        <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.LetterSet.to_rst">(PythonicGcodeMachine.Gcode.Rs274.Config.LetterSet method)</a>
+</li>
+        <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.ModalGroupSet.to_rst">(PythonicGcodeMachine.Gcode.Rs274.Config.ModalGroupSet method)</a>
+</li>
+        <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.ParameterSet.to_rst">(PythonicGcodeMachine.Gcode.Rs274.Config.ParameterSet method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Line.toggle">toggle() (PythonicGcodeMachine.Gcode.Rs274.Ast.Line method)</a>
 </li>
       <li><a href="api/PythonicGcodeMachine/PythonLexYacc/lex.html#PythonicGcodeMachine.PythonLexYacc.lex.TOKEN">TOKEN() (in module PythonicGcodeMachine.PythonLexYacc.lex)</a>
 </li>
@@ -913,9 +1208,9 @@
         <li><a href="api/PythonicGcodeMachine/PythonLexYacc/lex.html#PythonicGcodeMachine.PythonLexYacc.lex.Lexer.token">(PythonicGcodeMachine.PythonLexYacc.lex.Lexer method)</a>
 </li>
       </ul></li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.tokenize">tokenize() (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer method)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexerMixin.tokenize">tokenize() (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexerMixin method)</a>
 </li>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.tokens">tokens (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer attribute)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.tokens">tokens (PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin attribute)</a>
 </li>
       <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.traverse">traverse() (in module PythonicGcodeMachine.PythonLexYacc.yacc)</a>
 </li>
@@ -991,9 +1286,11 @@
         <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.PlyLogger.warning">(PythonicGcodeMachine.PythonLexYacc.yacc.PlyLogger method)</a>
 </li>
       </ul></li>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Word">Word (class in PythonicGcodeMachine.Gcode.Rs274.Ast)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Word">Word (class in PythonicGcodeMachine.Gcode.Rs274.Ast)</a>
+      <li><a href="api/PythonicGcodeMachine/Gcode/Rs274/Ast.html#PythonicGcodeMachine.Gcode.Rs274.Ast.Word.WORD_RE">WORD_RE (PythonicGcodeMachine.Gcode.Rs274.Ast.Word attribute)</a>
 </li>
       <li><a href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html#PythonicGcodeMachine.PythonLexYacc.yacc.LRGeneratedTable.write_table">write_table() (PythonicGcodeMachine.PythonLexYacc.yacc.LRGeneratedTable method)</a>
 </li>
@@ -1055,6 +1352,7 @@
         <script type="text/javascript" src="static/jquery.js"></script>
         <script type="text/javascript" src="static/underscore.js"></script>
         <script type="text/javascript" src="static/doctools.js"></script>
+        <script type="text/javascript" src="static/language_data.js"></script>
         <script type="text/javascript" src="static/getthecode.js"></script>
     
 

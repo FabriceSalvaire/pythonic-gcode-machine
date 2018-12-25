@@ -1,0 +1,1290 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>9.1.1.5.3. GcodeDoc &mdash; PythonicGcodeMachine 0.1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../../static/css/PythonicGcodeMachine.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="9.1.1.5.4. Lexer" href="Lexer.html" />
+    <link rel="prev" title="9.1.1.5.2. Config" href="Config.html" /> 
+
+  
+  <script src="../../../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> PythonicGcodeMachine
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview.html">1. Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../overview.html#what-is-pythonicgcodemachine">1.1. What is PythonicGcodeMachine ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../overview.html#how-is-pythonicgcodemachine-licensed">1.2. How is PythonicGcodeMachine licensed ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../overview.html#going-further-with-pythonicgcodemachine">1.3. Going further with PythonicGcodeMachine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../overview.html#which-platforms-are-supported-by-pythonicgcodemachine">1.4. Which platforms are supported by PythonicGcodeMachine ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../overview.html#how-to-install-pythonicgcodemachine">1.5. How to install PythonicGcodeMachine ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../overview.html#which-version-of-python-is-required">1.6. Which version of Python is required ?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../news.html">2. News</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../news.html#v0-2018-12-22">2.1. V0 2018-12-22</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../roadmap.html">3. Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation.html">4. Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#on-windows">4.1. On Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#on-linux">4.2. On Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#on-osx">4.3. On OSX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#installation-from-pypi-repository">4.4. Installation from PyPi Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#install-a-more-recent-version-from-github">4.5. Install a more recent version from Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#installation-from-source">4.6. Installation from Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#dependencies">4.7. Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../faq.html">5. User FAQ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../faq.html#how-to-get-help-or-report-an-issue">5.1. How to get help or report an issue ?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../examples/index.html">6. Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../examples/gcode/index.html">6.1. Gcode</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../examples/gcode/annotate-gcode.html">6.1.1. Annotate a G-code program</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../examples/gcode/generate-gcode.html">6.1.2. Generate a G-code program</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../examples/gcode/query-gcode.html">6.1.3. Query G-codes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../gcode-reference/index.html">7. G-code Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html">7.1. RS-274 G-code Reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#history">7.1.1. History</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#overview">7.1.2. Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#language-view-of-a-machining-center">7.1.3. Language View of a Machining Center</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#parameters">7.1.3.1. Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#coordinate-systems">7.1.3.2. Coordinate Systems</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#format-of-a-line">7.1.4. Format of a Line</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#line-number">7.1.4.1. Line Number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#word">7.1.4.2. Word</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#number">7.1.4.3. Number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#parameter-value">7.1.4.4. Parameter Value</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#expressions-and-binary-operations">7.1.4.5. Expressions and Binary Operations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#unary-operation-value">7.1.4.6. Unary Operation Value</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#parameter-setting">7.1.4.7. Parameter Setting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#comments-and-messages">7.1.4.8. Comments and Messages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#item-repeats">7.1.4.9. Item Repeats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#item-order">7.1.4.10. Item order</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#commands-and-machine-modes">7.1.4.11. Commands and Machine Modes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#modal-groups">7.1.5. Modal Groups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#g-and-input-codes">7.1.6. G and Input Codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#order-of-execution">7.1.7. Order of Execution</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../design-notes.html">8. Design Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../design-notes.html#g-code-parser">8.1. G-Code Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../design-notes.html#g-code-flavours">8.2. G-code flavours</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../design-notes.html#g-code-generation-and-simulation">8.3. G-code Generation and Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../design-notes.html#computational-geometry-engine">8.4. Computational Geometry Engine</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../design-notes.html#list-of-the-main-open-source-computational-geometry-algorithms-libraries">8.4.1. List of the Main Open Source Computational Geometry Algorithms Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../design-notes.html#the-computational-geometry-algorithms-library">8.4.1.1. The Computational Geometry Algorithms Library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../design-notes.html#open-cascade">8.4.1.2. Open CASCADE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../design-notes.html#g-code-visualisation">8.5. G-code Visualisation</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../reference-manual.html">9. API Documentation</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../../PythonicGcodeMachine.html">9.1. PythonicGcodeMachine</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../Gcode.html">9.1.1. Gcode</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../Fanuc.html">9.1.1.1. Fanuc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Heidenhain.html">9.1.1.2. Heidenhain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../LinuxCnc.html">9.1.1.3. LinuxCnc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../MachineKit.html">9.1.1.4. MachineKit</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../Rs274.html">9.1.1.5. Rs274</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../Machine.html">9.1.2. Machine</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../PythonLexYacc.html">9.1.3. PythonLexYacc</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../PythonLexYacc/lex.html">9.1.3.1. lex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../PythonLexYacc/yacc.html">9.1.3.2. yacc</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../reference-manual.html#indexes">9.2. Indexes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../development.html">10. Development &amp; Community</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../development.html#how-you-can-help">10.1. How you can help ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../development.html#contributors">10.2. Contributors</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../how-to-refer.html">11. How to Refer to PythonicGcodeMachine ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../donate.html">12. How to Help Further ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../related-projects.html">13. Related Projects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../related-projects.html#g-code-tools">13.1. G-code Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../related-projects.html#cam-tools">13.2. CAM Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../bibliography.html">14. Bibliography</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../bibliography.html#g-code">14.1. G-Code</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">PythonicGcodeMachine</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../../reference-manual.html">9. API Documentation</a> &raquo;</li>
+        
+          <li><a href="../../../PythonicGcodeMachine.html">9.1. PythonicGcodeMachine</a> &raquo;</li>
+        
+          <li><a href="../../Gcode.html">9.1.1. Gcode</a> &raquo;</li>
+        
+          <li><a href="../Rs274.html">9.1.1.5. Rs274</a> &raquo;</li>
+        
+      <li>9.1.1.5.3. GcodeDoc</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../../_sources/api/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-PythonicGcodeMachine.Gcode.Rs274.GcodeDoc">
+<span id="gcodedoc"></span><h1>9.1.1.5.3. GcodeDoc<a class="headerlink" href="#module-PythonicGcodeMachine.Gcode.Rs274.GcodeDoc" title="Permalink to this headline">¶</a></h1>
+<p>G-code documentation from NIST paper, see <a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#rs-274-reference-page"><span class="std std-ref">RS-274 G-code Reference</span></a>.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Must be checked for PDF to rST errors.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Class Name Format:</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li>G1_G2 for G1 and G2,</li>
+<li>G1_1 for G1.1,</li>
+<li>G1_to_G10 for G1 to G10.</li>
+</ul>
+</div></blockquote>
+</div>
+<p>G codes of the RS274/NGC language are shown in Table 5 and described following that.</p>
+<p>In the command prototypes, three dots (…) stand for a real value. As described earlier, a real value
+may be (1) an explicit number, 4, for example, (2) an expression, [2+2], for example, (3) a
+parameter value, #88, for example, or (4) a unary function value, acos[0], for example.</p>
+<p>In most cases, if axis words (any or all of X…, Y…, Z…, A…, B…, C…) are given, they specify a
+destination point. Axis numbers are in the currently active coordinate system, unless explicitly
+described as being in the absolute coordinate system. Where axis words are optional, any omitted
+axes will have their current value. Any items in the command prototypes not explicitly described as
+optional are required. <strong>It is an error if a required item is omitted.</strong></p>
+<p>In the prototypes, the values following letters are often given as explicit numbers. Unless stated
+otherwise, the explicit numbers can be real values. For example, G10 L2 could equally well be
+written G[2*5] L[1+1]. If the value of parameter 100 were 2, G10 L#100 would also mean the
+same. Using real values which are not explicit numbers as just shown in the examples is rarely
+useful.</p>
+<p>If L… is written in a prototype the “…” will often be referred to as the “L number”. Similarly the
+“…” in H… may be called the “H number”, and so on for any other letter.</p>
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.F">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.</code><code class="descname">F</code><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#F"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.F" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p><strong>Set Feed Rate — F</strong></p>
+<p>To set the feed rate, program F… . The application of the feed rate is as described in Section
+2.1.2.5, unless inverse time feed rate mode is in effect, in which case the feed rate is as
+described in Section 3.5.19.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G0">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.</code><code class="descname">G0</code><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#G0"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p><strong>Rapid Linear Motion — G0</strong></p>
+<p>For rapid linear motion, program G0 X… Y… Z… A… B… C…, where all the axis words are optional,
+except that at least one must be used. The G0 is optional if the current motion mode is G0. This
+will produce coordinated linear motion to the destination point at the current traverse rate (or
+slower if the machine will not go that fast). It is expected that cutting will not take place
+when a G0 command is executing.</p>
+<p><strong>It is an error if:</strong></p>
+<ul class="simple">
+<li>all axis words are omitted.</li>
+</ul>
+<p>If cutter radius compensation is active, the motion will differ from the above; see Appendix
+B. If G53 is programmed on the same line, the motion will also differ; see Section 3.5.12.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G1">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.</code><code class="descname">G1</code><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#G1"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p><strong>Linear Motion at Feed Rate — G1</strong></p>
+<p>For linear motion at feed rate (for cutting or not), program G1 X… Y… Z…  A… B… C…, where all
+the axis words are optional, except that at least one must be used. The G1 is optional if the
+current motion mode is G1. This will produce coordinated linear motion to the destination point
+at the current feed rate (or slower if the machine will not go that fast).</p>
+<p><strong>It is an error if:</strong></p>
+<ul class="simple">
+<li>all axis words are omitted.</li>
+</ul>
+<p>If cutter radius compensation is active, the motion will differ from the above; see Appendix
+B. If G53 is programmed on the same line, the motion will also differ; see Section 3.5.12.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G10">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.</code><code class="descname">G10</code><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#G10"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G10" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p><strong>Set Coordinate System Data — G10</strong></p>
+<p>The RS274/NGC language view of coordinate systems is described in Section 3.2.2.</p>
+<p>To set the coordinate values for the origin of a coordinate system, program G10 L2 P … X… Y… Z…
+A…  B… C…, where the P number must evaluate to an integer in the range 1 to 9 (corresponding to
+G54 to G59.3) and all axis words are optional. The coordinates of the origin of the coordinate
+system specified by the P number are reset to the coordinate values given (in terms of the
+absolute coordinate system). Only those coordinates for which an axis word is included on the
+line will be reset.</p>
+<p><strong>It is an error if:</strong></p>
+<ul class="simple">
+<li>the P number does not evaluate to an integer in the range 1 to 9.  If origin offsets (made by
+G92 or G92.3) were in effect before G10 is used, they will continue to be in effect
+afterwards.</li>
+</ul>
+<p>The coordinate system whose origin is set by a G10 command may be active or inactive at the time
+the G10 is executed.</p>
+<p>Example: G10 L2 P1 x 3.5 y 17.2 sets the origin of the first coordinate system (the one selected
+by G54) to a point where X is 3.5 and Y is 17.2 (in absolute coordinates). The Z coordinate of
+the origin (and the coordinates for any rotational axes) are whatever those coordinates of the
+origin were before the line was executed.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G17_G18_G19">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.</code><code class="descname">G17_G18_G19</code><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#G17_G18_G19"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G17_G18_G19" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p><strong>Plane Selection — G17, G18, and G19</strong></p>
+<p>Program G17 to select the XY-plane, G18 to select the XZ-plane, or G19 to select the YZ-plane.</p>
+<p>The effects of having a plane selected are discussed in Section 3.5.3 and Section 3.5.16.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G20_G21">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.</code><code class="descname">G20_G21</code><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#G20_G21"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G20_G21" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p><strong>Length Units — G20 and G21</strong></p>
+<p>Program G20 to use inches for length units. Program G21 to use millimeters.</p>
+<p>It is usually a good idea to program either G20 or G21 near the beginning of a program before
+any motion occurs, and not to use either one anywhere else in the program.  It is the
+responsibility of the user to be sure all numbers are appropriate for use with the current
+length units.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G28_G30">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.</code><code class="descname">G28_G30</code><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#G28_G30"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G28_G30" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p><strong>Return to Home — G28 and G30</strong></p>
+<p>Two home positions are defined (by parameters 5161-5166 for G28 and parameters 5181-5186 for
+G30). The parameter values are in terms of the absolute coordinate system, but are in
+unspecified length units.</p>
+<p>To return to home position by way of the programmed position, program G28 X… Y… Z… A…  B… C… (or
+use G30). All axis words are optional. The path is made by a traverse move from the current
+position to the programmed position, followed by a traverse move to the home position. If no
+axis words are programmed, the intermediate point is the current point, so only one move is
+made.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G2_G3">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.</code><code class="descname">G2_G3</code><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#G2_G3"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G2_G3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p><strong>Arc at Feed Rate — G2 and G3</strong></p>
+<p>A circular or helical arc is specified using either G2 (clockwise arc)
+or G3 (counterclockwise arc).</p>
+<p>The axis of the circle or helix must be parallel to the X, Y, or Z-axis of the machine
+coordinate system. The axis (or, equivalently, the plane perpendicular to the axis) is selected
+with G17 (Z-axis, XY-plane), G18 (Y-axis, XZ-plane), or G19 (X-axis, YZ-plane). If the arc is
+circular, it lies in a plane parallel to the selected plane.</p>
+<p>If a line of RS274/NGC code makes an arc and includes rotational axis motion, the rotational
+axes turn at a constant rate so that the rotational motion starts and finishes when the XYZ
+motion starts and finishes. Lines of this sort are hardly ever programmed.</p>
+<p>If cutter radius compensation is active, the motion will differ from what is described here. See
+Appendix B.</p>
+<p>Two formats are allowed for specifying an arc. We will call these the center format and the
+radius format. In both formats the G2 or G3 is optional if it is the current motion mode.</p>
+<p><em>Radius Format Arc</em></p>
+<p>In the radius format, the coordinates of the end point of the arc in the selected plane are
+specified along with the radius of the arc. Program G2 X… Y… Z… A… B… C… R… (or use G3 instead
+of G2). R is the radius. The axis words are all optional except that at least one of the two
+words for the axes in the selected plane must be used. The R number is the radius.  A positive
+radius indicates that the arc turns through 180 degrees or less, while a negative radius
+indicates a turn of 180 degrees to 359.999 degrees. If the arc is helical, the value of the end
+point of the arc on the coordinate axis parallel to the axis of the helix is also specified.</p>
+<p><strong>It is an error if:</strong></p>
+<ul class="simple">
+<li>both of the axis words for the axes of the selected plane are omitted,</li>
+<li>the end point of the arc is the same as the current point.</li>
+</ul>
+<p>It is not good practice to program radius format arcs that are nearly full circles or are
+semicircles (or nearly semicircles) because a small change in the location of the end point will
+produce a much larger change in the location of the center of the circle (and, hence, the middle
+of the arc).</p>
+<p>The magnification effect is large enough that rounding error in a number can produce
+out-of-tolerance cuts. Nearly full circles are outrageously bad, semicircles (and nearly so) are
+only very bad. Other size arcs (in the range tiny to 165 degrees or 195 to 345 degrees) are OK.</p>
+<p>Here is an example of a radius format command to mill an arc: G17 G2 x 10 y 15 r 20 z 5.</p>
+<p>That means to make a clockwise (as viewed from the positive Z-axis) circular or helical arc
+whose axis is parallel to the Z-axis, ending where X=10, Y=15, and Z=5, with a radius of 20. If
+the starting value of Z is 5, this is an arc of a circle parallel to the XY-plane; otherwise it
+is a helical arc.</p>
+<p><em>Center Format Arc</em></p>
+<p>In the center format, the coordinates of the end point of the arc in the selected plane are
+specified along with the offsets of the center of the arc from the current location. In this
+format, it is OK if the end point of the arc is the same as the current point.</p>
+<p><strong>It is an error if:</strong></p>
+<ul class="simple">
+<li>when the arc is projected on the selected plane, the distance from the current point to the
+center differs from the distance from the end point to the center by more than 0.0002 inch (if
+inches are being used) or 0.002 millimeter (if millimeters are being used).</li>
+</ul>
+<p>When the XY-plane is selected, program G2 X… Y… Z… A… B… C… I… J… (or use G3 instead of G2). The
+axis words are all optional except that at least one of X and Y must be used. I and J are the
+offsets from the current location (in the X and Y directions, respectively) of the center of the
+circle. I and J are optional except that at least one of the two must be used.</p>
+<p><strong>It is an error if:</strong></p>
+<ul class="simple">
+<li>X and Y are both omitted,</li>
+<li>I and J are both omitted.</li>
+</ul>
+<p>When the XZ-plane is selected, program G2 X… Y… Z… A… B… C… I… K… (or use G3 instead of G2). The
+axis words are all optional except that at least one of X and Z must be used. I and K are the
+offsets from the current location (in the X and Z directions, respectively) of the center of the
+circle. I and K are optional except that at least one of the two must be used.</p>
+<p><strong>It is an error if:</strong></p>
+<ul class="simple">
+<li>X and Z are both omitted,</li>
+<li>I and K are both omitted.</li>
+</ul>
+<p>When the YZ-plane is selected, program G2 X… Y… Z… A… B… C… J… K… (or use G3 instead of G2). The
+axis words are all optional except that at least one of Y and Z must be used. J and K are the
+offsets from the current location (in the Y and Z directions, respectively) of the center of the
+circle. J and K are optional except that at least one of the two must be used.</p>
+<p><strong>It is an error if:</strong></p>
+<ul class="simple">
+<li>Y and Z are both omitted,</li>
+<li>J and K are both omitted.</li>
+</ul>
+<p>Here is an example of a center format command to mill an arc: G17 G2 x 10 y 16 i 3 j 4 z 9.</p>
+<p>That means to make a clockwise (as viewed from the positive z-axis) circular or helical arc
+whose axis is parallel to the Z-axis, ending where X=10, Y=16, and Z=9, with its center offset
+in the X direction by 3 units from the current X location and offset in the Y direction by 4
+units from the current Y location. If the current location has X=7, Y=7 at the outset, the
+center will be at X=10, Y=11. If the starting value of Z is 9, this is a circular arc; otherwise
+it is a helical arc. The radius of this arc would be 5.</p>
+<p>In the center format, the radius of the arc is not specified, but it may be found easily as the
+distance from the center of the circle to either the current point or the end point of the arc.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G38_2">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.</code><code class="descname">G38_2</code><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#G38_2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G38_2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p><strong>Straight Probe — G38.2</strong></p>
+<p><em>The Straight Probe Command</em></p>
+<p>Program G38.2 X… Y… Z… A… B… C… to perform a straight probe operation.  The rotational axis
+words are allowed, but it is better to omit them. If rotational axis words are used, the numbers
+must be the same as the current position numbers so that the rotational axes do not move. The
+linear axis words are optional, except that at least one of them must be used. The tool in the
+spindle must be a probe.</p>
+<p><strong>It is an error if:</strong></p>
+<ul class="simple">
+<li>the current point is less than 0.254 millimeter or 0.01 inch from the programmed point.</li>
+<li>G38.2 is used in inverse time feed rate mode,</li>
+<li>any rotational axis is commanded to move,</li>
+<li>no X, Y, or Z-axis word is used.</li>
+</ul>
+<p>In response to this command, the machine moves the controlled point (which should be at the end
+of the probe tip) in a straight line at the current feed rate toward the programmed point. If
+the probe trips, the probe is retracted slightly from the trip point at the end of command
+execution. If the probe does not trip even after overshooting the programmed point slightly, an
+error is signalled.</p>
+<p>After successful probing, parameters 5061 to 5066 will be set to the coordinates of the location
+of the controlled point at the time the probe tripped.</p>
+<p><em>Using the Straight Probe Command</em></p>
+<p>Using the straight probe command, if the probe shank is kept nominally parallel to the Z-axis
+(i.e., any rotational axes are at zero) and the tool length offset for the probe is used, so
+that the controlled point is at the end of the tip of the probe:</p>
+<ul class="simple">
+<li>without additional knowledge about the probe, the parallelism of a face of a part to the
+XY-plane may, for example, be found.</li>
+<li>if the probe tip radius is known approximately, the parallelism of a face of a part to the YZ
+or XZ-plane may, for example, be found.</li>
+<li>if the shank of the probe is known to be well-aligned with the Z-axis and the probe tip radius
+is known approximately, the center of a circular hole, may, for example, be found.</li>
+<li>if the shank of the probe is known to be well-aligned with the Z-axis and the probe tip radius
+is known precisely, more uses may be made of the straight probe command, such as finding the
+diameter of a circular hole.</li>
+</ul>
+<p>If the straightness of the probe shank cannot be adjusted to high accuracy, it is desirable to
+know the effective radii of the probe tip in at least the +X, -X, +Y, and -Y directions. These
+quantities can be stored in parameters either by being included in the parameter file or by
+being set in an RS274/NGC program.</p>
+<p>Using the probe with rotational axes not set to zero is also feasible.  Doing so is more complex
+than when rotational axes are at zero, and we do not deal with it here.</p>
+<p><em>Example Code</em></p>
+<p>As a usable example, the code for finding the center and diameter of a circular hole is shown in
+Table 6. For this code to yield accurate results, the probe shank must be well-aligned with the
+Z-axis, the cross section of the probe tip at its widest point must be very circular, and the
+probe tip radius (i.e., the radius of the circular cross section) must be known precisely. If
+the probe tip radius is known only approximately (but the other conditions hold), the location
+of the hole center will still be accurate, but the hole diameter will not.</p>
+<p>In Table 6, an entry of the form <em>description of number</em> is meant to be replaced by an actual
+number that matches the <em>description of number</em>. After this section of code has executed, the
+X-value of the center will be in parameter 1041, the Y-value of the center in parameter 1022,
+and the diameter in parameter 1034. In addition, the diameter parallel to the X-axis will be in
+parameter 1024, the diameter parallel to the Y-axis in parameter 1014, and the difference (an
+indicator of circularity) in parameter 1035. The probe tip will be in the hole at the XY center
+of the hole.</p>
+<p>The example does not include a tool change to put a probe in the spindle. Add the tool change
+code at the beginning, if needed.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G4">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.</code><code class="descname">G4</code><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#G4"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G4" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p><strong>Dwell — G4</strong></p>
+<p>For a dwell, program G4 P… . This will keep the axes unmoving for the period of time in seconds
+specified by the P number.</p>
+<p><strong>It is an error if:</strong></p>
+<ul class="simple">
+<li>the P number is negative.</li>
+</ul>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G40_G41_G42">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.</code><code class="descname">G40_G41_G42</code><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#G40_G41_G42"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G40_G41_G42" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p><strong>Cutter Radius Compensation — G40, G41, and G42</strong></p>
+<p>To turn cutter radius compensation off, program G40. It is OK to turn compensation off when it
+is already off.</p>
+<p>Cutter radius compensation may be performed only if the XY-plane is active.</p>
+<p>To turn cutter radius compensation on left (i.e., the cutter stays to the left of the programmed
+path</p>
+<p><strong>Table 6. Code to Probe Hole</strong></p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span>N010 (probe to find center and diameter of circular hole)
+N020 (This program will not run as given here. You have to)
+N030 (insert numbers in place of &lt;description of number&gt;.)
+N040 (Delete lines N020, N030, and N040 when you do that.)
+N050 G0 Z &lt;Z-value of retracted position&gt; F &lt;feed rate&gt;
+N060 #1001=&lt;nominal X-value of hole center&gt;
+N070 #1002=&lt;nominal Y-value of hole center&gt;
+N080 #1003=&lt;some Z-value inside the hole&gt;
+N090 #1004=&lt;probe tip radius&gt;
+N100 #1005=[&lt;nominal hole diameter&gt;/2.0 - #1004]
+N110 G0 X#1001 Y#1002 (move above nominal hole center)
+N120 G0 Z#1003 (move into hole - to be cautious, substitute G1 for G0 here)
+N130 G38.2 X[#1001 + #1005] (probe +X side of hole)
+N140 #1011=#5061 (save results)
+N150 G0 X#1001 Y#1002 (back to center of hole)
+N160 G38.2 X[#1001 - #1005] (probe -X side of hole)
+N170 #1021=[[#1011 + #5061] / 2.0] (find pretty good X-value of hole center)
+N180 G0 X#1021 Y#1002 (back to center of hole)
+N190 G38.2 Y[#1002 + #1005] (probe +Y side of hole)
+N200 #1012=#5062 (save results)
+N210 G0 X#1021 Y#1002 (back to center of hole)
+N220 G38.2 Y[#1002 - #1005] (probe -Y side of hole)
+N230 #1022=[[#1012 + #5062] / 2.0] (find very good Y-value of hole center)
+N240 #1014=[#1012 - #5062 + [2 \* #1004]] (find hole diameter in Y-direction)
+N250 G0 X#1021 Y#1022 (back to center of hole)
+N260 G38.2 X[#1021 + #1005] (probe +X side of hole)
+N270 #1031=#5061 (save results)
+N280 G0 X#1021 Y#1022 (back to center of hole)
+N290 G38.2 X[#1021 - #1005] (probe -X side of hole)
+N300 #1041=[[#1031 + #5061] / 2.0] (find very good X-value of hole center)
+N310 #1024=[#1031 - #5061 + [2 \* #1004]] (find hole diameter in X-direction)
+N320 #1034=[[#1014 + #1024] / 2.0] (find average hole diameter)
+N330 #1035=[#1024 - #1014] (find difference in hole diameters)
+N340 G0 X#1041 Y#1022 (back to center of hole)
+N350 M2 (that’s all, folks)
+</pre></div>
+</div>
+<p>when the tool radius is positive), program G41 D… . To turn cutter radius compensation on right
+(i.e., the cutter stays to the right of the programmed path when the tool radius is positive),
+program G42 D… . The D word is optional; if there is no D word, the radius of the tool currently
+in the spindle will be used. If used, the D number should normally be the slot number of the
+tool in the spindle, although this is not required. It is OK for the D number to be zero; a
+radius value of zero will be used.</p>
+<p><strong>It is an error if:</strong></p>
+<ul class="simple">
+<li>the D number is not an integer, is negative or is larger than the number of carousel slots,</li>
+<li>the XY-plane is not active,</li>
+<li>cutter radius compensation is commanded to turn on when it is already on.</li>
+</ul>
+<p>The behavior of the machining center when cutter radius compensation is on is described in
+Appendix B.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G43_G49">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.</code><code class="descname">G43_G49</code><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#G43_G49"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G43_G49" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p><strong>Tool Length Offsets — G43 and G49</strong></p>
+<p>To use a tool length offset, program G43 H…, where the H number is the desired index in the tool
+table. It is expected that all entries in this table will be positive.  The H number should be,
+but does not have to be, the same as the slot number of the tool currently in the spindle. It is
+OK for the H number to be zero; an offset value of zero will be used.</p>
+<p><strong>It is an error if:</strong></p>
+<ul class="simple">
+<li>the H number is not an integer, is negative, or is larger than the number of carousel slots.</li>
+</ul>
+<p>To use no tool length offset, program G49.</p>
+<p>It is OK to program using the same offset already in use. It is also OK to program using no tool
+length offset if none is currently being used.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G53">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.</code><code class="descname">G53</code><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#G53"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G53" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p><strong>Move in Absolute Coordinates — G53</strong></p>
+<p>For linear motion to a point expressed in absolute coordinates, program G1 G53 X… Y… Z…  A… B…
+C…  (or use G0 instead of G1), where all the axis words are optional, except that at least one
+must be used. The G0 or G1 is optional if it is the current motion mode. G53 is not modal and
+must be programmed on each line on which it is intended to be active.  This will produce
+coordinated linear motion to the programmed point. If G1 is active, the speed of motion is the
+current feed rate (or slower if the machine will not go that fast). If G0 is active, the speed
+of motion is the current traverse rate (or slower if the machine will not go that fast).</p>
+<p><strong>It is an error if:</strong></p>
+<ul class="simple">
+<li>G53 is used without G0 or G1 being active,</li>
+<li>G53 is used while cutter radius compensation is on.</li>
+</ul>
+<p>See Section 3.2.2 for an overview of coordinate systems.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G54_to_G59_3">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.</code><code class="descname">G54_to_G59_3</code><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#G54_to_G59_3"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G54_to_G59_3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p><strong>Select Coordinate System — G54 to G59.3</strong></p>
+<p>To select coordinate system 1, program G54, and similarly for other coordinate systems. The
+system-number—G-code pairs are: (1—G54), (2—G55), (3—G56), (4—G57), (5—G58), (6—G59), (7—G59.1),
+(8—G59.2), and (9—G59.3).</p>
+<p><strong>It is an error if:</strong></p>
+<ul class="simple">
+<li>one of these G-codes is used while cutter radius compensation is on.</li>
+</ul>
+<p>See Section 3.2.2 for an overview of coordinate systems.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G61_G61_1_G64">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.</code><code class="descname">G61_G61_1_G64</code><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#G61_G61_1_G64"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G61_G61_1_G64" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p><strong>Set Path Control Mode — G61, G61.1, and G64</strong></p>
+<p>Program G61 to put the machining center into exact path mode, G61.1 for exact stop mode, or G64
+for continuous mode. It is OK to program for the mode that is already active. See Section
+2.1.2.16 for a discussion of these modes.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G80">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.</code><code class="descname">G80</code><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#G80"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G80" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p><strong>Cancel Modal Motion — G80</strong></p>
+<p>Program G80 to ensure no axis motion will occur.</p>
+<p><strong>It is an error if:</strong></p>
+<ul class="simple">
+<li>Axis words are programmed when G80 is active, unless a modal group 0 G code is programmed
+which uses axis words.</li>
+</ul>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G81_to_G89">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.</code><code class="descname">G81_to_G89</code><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#G81_to_G89"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G81_to_G89" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p><strong>Canned Cycles — G81 to G89</strong></p>
+<p>The canned cycles G81 through G89 have been implemented as described in this section. Two
+examples are given with the description of G81 below.</p>
+<p>All canned cycles are performed with respect to the currently selected plane. Any of the three
+planes (XY, YZ, ZX) may be selected. Throughout this section, most of the descriptions assume
+the XY-plane has been selected. The behavior is always analogous if the YZ or XZ-plane is
+selected.</p>
+<p>Rotational axis words are allowed in canned cycles, but it is better to omit them. If rotational
+axis words are used, the numbers must be the same as the current position numbers so that the
+rotational axes do not move.</p>
+<p>All canned cycles use X, Y, R, and Z numbers in the NC code. These numbers are used to determine
+X, Y, R, and Z positions. The R (usually meaning retract) position is along the axis
+perpendicular to the currently selected plane (Z-axis for XY-plane, X-axis for YZ-plane, Y-axis
+for XZ-plane). Some canned cycles use additional arguments.</p>
+<p>For canned cycles, we will call a number “sticky” if, when the same cycle is used on several
+lines of code in a row, the number must be used the first time, but is optional on the rest of
+the lines.</p>
+<p>Sticky numbers keep their value on the rest of the lines if they are not explicitly programmed
+to be different. The R number is always sticky.</p>
+<p>In incremental distance mode: when the XY-plane is selected, X, Y, and R numbers are treated as
+increments to the current position and Z as an increment from the Z-axis position before the
+move involving Z takes place; when the YZ or XZ-plane is selected, treatment of the axis words
+is analogous. In absolute distance mode, the X, Y, R, and Z numbers are absolute positions in
+the current coordinate system.</p>
+<p>The L number is optional and represents the number of repeats. L=0 is not allowed. If the repeat
+feature is used, it is normally used in incremental distance mode, so that the same sequence of
+motions is repeated in several equally spaced places along a straight line. In absolute distance
+mode, L &gt; 1 means “do the same cycle in the same place several times,” Omitting the L word is
+equivalent to specifying L=1. The L number is not sticky.</p>
+<p>When L&gt;1 in incremental mode with the XY-plane selected, the X and Y positions are determined by
+adding the given X and Y numbers either to the current X and Y positions (on the first go-
+around) or to the X and Y positions at the end of the previous go-around (on the
+repetitions). The R and Z positions do not change during the repeats.</p>
+<p>The height of the retract move at the end of each repeat (called “clear Z” in the descriptions
+below) is determined by the setting of the retract mode: either to the original Z position (if
+that is above the R position and the retract mode is G98, OLD_Z), or otherwise to the R
+position. See Section 3.5.20</p>
+<p><strong>It is an error if:</strong></p>
+<ul class="simple">
+<li>X, Y, and Z words are all missing during a canned cycle,</li>
+<li>a P number is required and a negative P number is used,</li>
+<li>an L number is used that does not evaluate to a positive integer,</li>
+<li>rotational axis motion is used during a canned cycle,</li>
+<li>inverse time feed rate is active during a canned cycle,</li>
+<li>cutter radius compensation is active during a canned cycle.</li>
+</ul>
+<p>When the XY plane is active, the Z number is sticky, and <strong>it is an error if:</strong></p>
+<ul class="simple">
+<li>the Z number is missing and the same canned cycle was not already active,</li>
+<li>the R number is less than the Z number.</li>
+</ul>
+<p>When the XZ plane is active, the Y number is sticky, and <strong>it is an error if:</strong></p>
+<ul class="simple">
+<li>the Y number is missing and the same canned cycle was not already active,</li>
+<li>the R number is less than the Y number.</li>
+</ul>
+<p>When the YZ plane is active, the X number is sticky, and <strong>it is an error if:</strong></p>
+<ul class="simple">
+<li>the X number is missing and the same canned cycle was not already active,</li>
+<li>the R number is less than the X number.</li>
+</ul>
+<p><em>Preliminary and In-Between Motion</em></p>
+<p>At the very beginning of the execution of any of the canned cycles, with the XY-plane selected,
+if the current Z position is below the R position, the Z-axis is traversed to the R
+position. This happens only once, regardless of the value of L.</p>
+<p>In addition, at the beginning of the first cycle and each repeat, the following one or two moves
+are made:</p>
+<ol class="arabic simple">
+<li>a straight traverse parallel to the XY-plane to the given XY-position,</li>
+</ol>
+<p>2. a straight traverse of the Z-axis only to the R position, if it is not already at the R
+position.</p>
+<p>If the XZ or YZ plane is active, the preliminary and in-between motions are analogous.</p>
+<p><em>G81 Cycle</em></p>
+<p>The G81 cycle is intended for drilling. Program G81 X… Y… Z… A… B… C… R…  L…</p>
+<ol class="arabic simple" start="0">
+<li>Preliminary motion, as described above.</li>
+<li>Move the Z-axis only at the current feed rate to the Z position.</li>
+<li>Retract the Z-axis at traverse rate to clear Z.</li>
+</ol>
+<p><strong>Example 1</strong></p>
+<p>Suppose the current position is (1, 2, 3) and the XY-plane has been selected, and the following
+line of NC code is interpreted.</p>
+<p>G90 G81 G98 X4 Y5 Z1.5 R2.8</p>
+<p>This calls for absolute distance mode (G90) and OLD_Z retract mode (G98) and calls for the G81
+drilling cycle to be performed once. The X number and X position are 4.  The Y number and Y
+position are 5. The Z number and Z position are 1.5. The R number and clear Z are 2.8. Old Z is
+3.</p>
+<p>The following moves take place.</p>
+<ol class="arabic simple">
+<li>a traverse parallel to the XY-plane to (4,5,3)</li>
+<li>a traverse parallel to the Z-axis to (4,5,2.8)</li>
+<li>a feed parallel to the Z-axis to (4,5,1.5)</li>
+<li>a traverse parallel to the Z-axis to (4,5,3)</li>
+</ol>
+<p><strong>Example 2</strong></p>
+<p>Suppose the current position is (1, 2, 3) and the XY-plane has been selected, and the following
+line of NC code is interpreted.</p>
+<p>G91 G81 G98 X4 Y5 Z-0.6 R1.8 L3</p>
+<p>This calls for incremental distance mode (G91) and OLD_Z retract mode (G98) and calls for the
+G81 drilling cycle to be repeated three times. The X number is 4, the Y number is 5, the Z
+number is -0.6 and the R number is 1.8. The initial X position is 5 (=1+4), the initial Y
+position is 7 (=2+5), the clear Z position is 4.8 (=1.8+3), and the Z position is 4.2
+(=4.8-0.6). Old Z is 3.</p>
+<p>The first move is a traverse along the Z-axis to (1,2,4.8), since old Z &lt; clear Z.</p>
+<p>The first repeat consists of 3 moves.</p>
+<ol class="arabic simple">
+<li>a traverse parallel to the XY-plane to (5,7,4.8)</li>
+<li>a feed parallel to the Z-axis to (5,7, 4.2)</li>
+<li>a traverse parallel to the Z-axis to (5,7,4.8)</li>
+</ol>
+<p>The second repeat consists of 3 moves. The X position is reset to 9 (=5+4) and the Y position to
+12 (=7+5).</p>
+<ol class="arabic simple">
+<li>a traverse parallel to the XY-plane to (9,12,4.8)</li>
+<li>a feed parallel to the Z-axis to (9,12, 4.2)</li>
+<li>a traverse parallel to the Z-axis to (9,12,4.8)</li>
+</ol>
+<p>The third repeat consists of 3 moves. The X position is reset to 13 (=9+4) and the Y position to
+17 (=12+5).</p>
+<ol class="arabic simple">
+<li>a traverse parallel to the XY-plane to (13,17,4.8)</li>
+<li>a feed parallel to the Z-axis to (13,17, 4.2)</li>
+<li>a traverse parallel to the Z-axis to (13,17,4.8)</li>
+</ol>
+<p><em>G82 Cycle</em></p>
+<p>The G82 cycle is intended for drilling. Program G82 X… Y… Z… A… B… C… R…  L… P…</p>
+<ol class="arabic simple" start="0">
+<li>Preliminary motion, as described above.</li>
+<li>Move the Z-axis only at the current feed rate to the Z position.</li>
+<li>Dwell for the P number of seconds.</li>
+<li>Retract the Z-axis at traverse rate to clear Z.</li>
+</ol>
+<p><em>G83 Cycle</em></p>
+<p>The G83 cycle (often called peck drilling) is intended for deep drilling or milling with chip
+breaking. The retracts in this cycle clear the hole of chips and cut off any long stringers
+(which are common when drilling in aluminum). This cycle takes a Q number which represents a
+“delta” increment along the Z-axis. Program G83 X… Y… Z… A… B… C… R… L… Q…</p>
+<ol class="arabic simple" start="0">
+<li>Preliminary motion, as described above.</li>
+<li>Move the Z-axis only at the current feed rate downward by delta or to the Z position,
+whichever is less deep.</li>
+<li>Rapid back out to the clear_z.</li>
+<li>Rapid back down to the current hole bottom, backed off a bit.</li>
+<li>Repeat steps 1, 2, and 3 until the Z position is reached at step 1.</li>
+<li>Retract the Z-axis at traverse rate to clear Z.</li>
+</ol>
+<p><strong>It is an error if:</strong></p>
+<ul class="simple">
+<li>the Q number is negative or zero.</li>
+</ul>
+<p><em>G84 Cycle</em></p>
+<p>The G84 cycle is intended for right-hand tapping with a tap tool.</p>
+<p>Program G84 X… Y… Z… A… B… C… R… L…</p>
+<ol class="arabic simple" start="0">
+<li>Preliminary motion, as described above.</li>
+<li>Start speed-feed synchronization.</li>
+<li>Move the Z-axis only at the current feed rate to the Z position.</li>
+<li>Stop the spindle.</li>
+<li>Start the spindle counterclockwise.</li>
+<li>Retract the Z-axis at the current feed rate to clear Z.</li>
+<li>If speed-feed synch was not on before the cycle started, stop it.</li>
+<li>Stop the spindle.</li>
+<li>Start the spindle clockwise.</li>
+</ol>
+<p>The spindle must be turning clockwise before this cycle is used. <strong>It is an error if:</strong></p>
+<ul class="simple">
+<li>the spindle is not turning clockwise before this cycle is executed.</li>
+</ul>
+<p>With this cycle, the programmer must be sure to program the speed and feed in the correct
+proportion to match the pitch of threads being made. The relationship is that the spindle speed
+equals the feed rate times the pitch (in threads per length unit). For example, if the pitch is
+2 threads per millimeter, the active length units are millimeters, and the feed rate has been
+set with the command F150, then the speed should be set with the command S300, since 150 x 2 =
+300.</p>
+<p>If the feed and speed override switches are enabled and not set at 100%, the one set at the
+lower setting will take effect. The speed and feed rates will still be synchronized.</p>
+<p><em>G85 Cycle</em></p>
+<p>The G85 cycle is intended for boring or reaming, but could be used for drilling or milling.</p>
+<p>Program G85 X… Y… Z… A… B… C… R… L…</p>
+<ol class="arabic simple" start="0">
+<li>Preliminary motion, as described above.</li>
+<li>Move the Z-axis only at the current feed rate to the Z position.</li>
+<li>Retract the Z-axis at the current feed rate to clear Z.</li>
+</ol>
+<p><em>G86 Cycle</em></p>
+<p>The G86 cycle is intended for boring. This cycle uses a P number for the number of seconds to
+dwell. Program G86 X… Y… Z… A… B… C… R… L… P…</p>
+<ol class="arabic simple" start="0">
+<li>Preliminary motion, as described above.</li>
+<li>Move the Z-axis only at the current feed rate to the Z position.</li>
+<li>Dwell for the P number of seconds.</li>
+<li>Stop the spindle turning.</li>
+<li>Retract the Z-axis at traverse rate to clear Z.</li>
+<li>Restart the spindle in the direction it was going.</li>
+</ol>
+<p>The spindle must be turning before this cycle is used. <strong>It is an error if:</strong></p>
+<ul class="simple">
+<li>the spindle is not turning before this cycle is executed.</li>
+</ul>
+<p><em>G87 Cycle</em></p>
+<p>The G87 cycle is intended for back boring.</p>
+<p>Program G87 X… Y… Z… A… B… C… R… L… I… J… K…</p>
+<p>The situation, as shown in Figure 1, is that you have a through hole and you want to counterbore
+the bottom of hole. To do this you put an L-shaped tool in the spindle with a cutting surface on
+the UPPER side of its base. You stick it carefully through the hole when it is not spinning and
+is oriented so it fits through the hole, then you move it so the stem of the L is on the axis of
+the hole, start the spindle, and feed the tool upward to make the counterbore.  Then you stop
+the tool, get it out of the hole, and restart it.</p>
+<p>This cycle uses I and J numbers to indicate the position for inserting and removing the tool. I
+and J will always be increments from the X position and the Y position, regardless of the
+distance mode setting. This cycle also uses a K number to specify the position along the Z-axis
+of the controlled point top of the counterbore. The K number is a Z-value in the current
+coordinate system in absolute distance mode, and an increment (from the Z position) in
+incremental distance mode.</p>
+<ol class="arabic simple" start="0">
+<li>Preliminary motion, as described above.</li>
+<li>Move at traverse rate parallel to the XY-plane to the point indicated by I and J.</li>
+<li>Stop the spindle in a specific orientation.</li>
+<li>Move the Z-axis only at traverse rate downward to the Z position.</li>
+<li>Move at traverse rate parallel to the XY-plane to the X,Y location.</li>
+<li>Start the spindle in the direction it was going before.</li>
+<li>Move the Z-axis only at the given feed rate upward to the position indicated by K.</li>
+<li>Move the Z-axis only at the given feed rate back down to the Z position.</li>
+<li>Stop the spindle in the same orientation as before.</li>
+<li>Move at traverse rate parallel to the XY-plane to the point indicated by I and J.</li>
+<li>Move the Z-axis only at traverse rate to the clear Z.</li>
+<li>Move at traverse rate parallel to the XY-plane to the specified X,Y location.</li>
+<li>Restart the spindle in the direction it was going before.</li>
+</ol>
+<p>When programming this cycle, the I and J numbers must be chosen so that when the tool is stopped
+in an oriented position, it will fit through the hole. Because different cutters are made
+differently, it may take some analysis and/or experimentation to determine appropriate values
+for I and J.</p>
+<p><em>G88 Cycle</em></p>
+<p>The G88 cycle is intended for boring. This cycle uses a P word, where P specifies the number of
+seconds to dwell. Program G88 X… Y… Z… A… B… C… R… L… P…</p>
+<ol class="arabic simple" start="0">
+<li>Preliminary motion, as described above.</li>
+<li>Move the Z-axis only at the current feed rate to the Z position.</li>
+<li>Dwell for the P number of seconds.</li>
+<li>Stop the spindle turning.</li>
+</ol>
+<p><strong>Figure 1. G87 Cycle</strong></p>
+<p>The eight subfigures are labelled with the steps from the description above.</p>
+<ol class="arabic simple" start="4">
+<li>Stop the program so the operator can retract the spindle manually.</li>
+<li>Restart the spindle in the direction it was going.</li>
+</ol>
+<p><em>G89 Cycle</em></p>
+<p>The G89 cycle is intended for boring. This cycle uses a P number, where P specifies the number
+of seconds to dwell. program G89 X… Y… Z… A… B… C… R… L… P…</p>
+<ol class="arabic simple" start="0">
+<li>Preliminary motion, as described above.</li>
+<li>Move the Z-axis only at the current feed rate to the Z position.</li>
+<li>Dwell for the P number of seconds.</li>
+<li>Retract the Z-axis at the current feed rate to clear Z.</li>
+</ol>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G90_G91">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.</code><code class="descname">G90_G91</code><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#G90_G91"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G90_G91" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p><strong>Set Distance Mode — G90 and G91</strong></p>
+<p>Interpretation of RS274/NGC code can be in one of two distance modes: absolute or incremental.</p>
+<p>To go into absolute distance mode, program G90. In absolute distance mode, axis numbers (X, Y,
+Z, A, B, C) usually represent positions in terms of the currently active coordinate system. Any
+exceptions to that rule are described explicitly in this Section 3.5.</p>
+<p>To go into incremental distance mode, program G91. In incremental distance mode, axis numbers
+(X, Y, Z, A, B, C) usually represent increments from the current values of the numbers.</p>
+<p>I and J numbers always represent increments, regardless of the distance mode setting. K numbers
+represent increments in all but one usage (see Section 3.5.16.8), where the meaning changes with
+distance mode.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G92_G92_1_G92_2_G92_3">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.</code><code class="descname">G92_G92_1_G92_2_G92_3</code><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#G92_G92_1_G92_2_G92_3"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G92_G92_1_G92_2_G92_3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p><strong>3.5.18 Coordinate System Offsets — G92, G92.1, G92.2, G92.3</strong></p>
+<p>See Section 3.2.2 for an overview of coordinate systems.</p>
+<p>To make the current point have the coordinates you want (without motion), program G92 X…  Y… Z…
+A…  B… C… , where the axis words contain the axis numbers you want.  All axis words are
+optional, except that at least one must be used. If an axis word is not used for a given axis,
+the coordinate on that axis of the current point is not changed.</p>
+<p><strong>It is an error if:</strong></p>
+<ul class="simple">
+<li>all axis words are omitted.</li>
+</ul>
+<p>When G92 is executed, the origin of the currently active coordinate system moves. To do this,
+origin offsets are calculated so that the coordinates of the current point with respect to the
+moved origin are as specified on the line containing the G92. In addition, parameters 5211 to
+5216 are set to the X, Y, Z, A, B, and C-axis offsets. The offset for an axis is the amount the
+origin must be moved so that the coordinate of the controlled point on the axis has the
+specified value.</p>
+<p>Here is an example. Suppose the current point is at X=4 in the currently specified coordinate
+system and the current X-axis offset is zero, then G92 x7 sets the X-axis offset to -3, sets
+parameter 5211 to -3, and causes the X-coordinate of the current point to be 7.</p>
+<p>The axis offsets are always used when motion is specified in absolute distance mode using any of
+the nine coordinate systems (those designated by G54 - G59.3). Thus all nine coordinate systems
+are affected by G92.</p>
+<p>Being in incremental distance mode has no effect on the action of G92.</p>
+<p>Non-zero offsets may be already be in effect when the G92 is called. If this is the case, the
+new value of each offset is A+B, where A is what the offset would be if the old offset were
+zero, and B is the old offset. For example, after the previous example, the X-value of the
+current point is 7. If G92 x9 is then programmed, the new X-axis offset is -5, which is
+calculated by [[7-9] + -3].</p>
+<p>To reset axis offsets to zero, program G92.1 or G92.2. G92.1 sets parameters 5211 to 5216 to
+zero, whereas G92.2 leaves their current values alone.</p>
+<p>To set the axis offset values to the values given in parameters 5211 to 5216, program G92.3.</p>
+<p>You can set axis offsets in one program and use the same offsets in another program. Program G92
+in the first program. This will set parameters 5211 to 5216. Do not use G92.1 in the remainder
+of the first program. The parameter values will be saved when the first program exits and
+restored when the second one starts up. Use G92.3 near the beginning of the second program.</p>
+<p>That will restore the offsets saved in the first program. If other programs are to run between
+the the program that sets the offsets and the one that restores them, make a copy of the
+parameter file written by the first program and use it as the parameter file for the second
+program.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G93_G94">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.</code><code class="descname">G93_G94</code><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#G93_G94"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G93_G94" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p><strong>Set Feed Rate Mode — G93 and G94</strong></p>
+<p>Two feed rate modes are recognized: units per minute and inverse time.  Program G94 to start the
+units per minute mode. Program G93 to start the inverse time mode.</p>
+<p>In units per minute feed rate mode, an F word (no, not <em>that</em> F word; we mean * feedrate*) is
+interpreted to mean the controlled point should move at a certain number of inches per minute,
+millimeters per minute, or degrees per minute, depending upon what length units are being used
+and which axis or axes are moving.</p>
+<p>In inverse time feed rate mode, an F word means the move should be completed in [one divided by
+the F number] minutes. For example, if the F number is 2.0, the move should be completed in half
+a minute.</p>
+<p>When the inverse time feed rate mode is active, an F word must appear on every line which has a
+G1, G2, or G3 motion, and an F word on a line that does not have G1, G2, or G3 is ignored. Being
+in inverse time feed rate mode does not affect G0 (rapid traverse) motions.</p>
+<p><strong>It is an error if:</strong></p>
+<ul class="simple">
+<li>inverse time feed rate mode is active and a line with G1, G2, or G3 (explicitly or implicitly)
+does not have an F word.</li>
+</ul>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G98_G99">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.</code><code class="descname">G98_G99</code><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#G98_G99"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.G98_G99" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p><strong>Set Canned Cycle Return Level — G98 and G99</strong></p>
+<p>When the spindle retracts during canned cycles, there is a choice of how far it retracts: (1)
+retract perpendicular to the selected plane to the position indicated by the R word, or (2)
+retract perpendicular to the selected plane to the position that axis was in just before the
+canned cycle started (unless that position is lower than the position indicated by the R word,
+in which case use the R word position).</p>
+<p>To use option (1), program G99. To use option (2), program G98. Remember that the R word has
+different meanings in absolute distance mode and incremental distance mode.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.M0_M1_M2_M30_M60">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.</code><code class="descname">M0_M1_M2_M30_M60</code><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#M0_M1_M2_M30_M60"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.M0_M1_M2_M30_M60" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p><strong>Program Stopping and Ending — M0, M1, M2, M30, M60</strong></p>
+<p>To stop a running program temporarily (regardless of the setting of the optional stop switch),
+program M0.</p>
+<p>To stop a running program temporarily (but only if the optional stop switch is on), program M1.</p>
+<p>It is OK to program M0 and M1 in MDI mode, but the effect will probably not be noticeable,
+because normal behavior in MDI mode is to stop after each line of input, anyway.</p>
+<p>To exchange pallet shuttles and then stop a running program temporarily (regardless of the
+setting of the optional stop switch), program M60.</p>
+<p>If a program is stopped by an M0, M1, or M60, pressing the cycle start button will restart the
+program at the following line.</p>
+<p>To end a program, program M2. To exchange pallet shuttles and then end a program, program
+M30. Both of these commands have the following effects.</p>
+<ol class="arabic simple">
+<li>Axis offsets are set to zero (like G92.2) and origin offsets are set to the default (like G54).</li>
+<li>Selected plane is set to CANON_PLANE_XY (like G17).</li>
+<li>Distance mode is set to MODE_ABSOLUTE (like G90).</li>
+<li>Feed rate mode is set to UNITS_PER_MINUTE (like G94).</li>
+<li>Feed and speed overrides are set to ON (like M48).</li>
+<li>Cutter compensation is turned off (like G40).</li>
+<li>The spindle is stopped (like M5).</li>
+<li>The current motion mode is set to G_1 (like G1).</li>
+<li>Coolant is turned off (like M9).</li>
+</ol>
+<p>No more lines of code in an RS274/NGC file will be executed after the M2 or M30 command is
+executed. Pressing cycle start will start the program back at the beginning of the file.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.M3_M4_M5">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.</code><code class="descname">M3_M4_M5</code><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#M3_M4_M5"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.M3_M4_M5" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p><strong>Spindle Control — M3, M4, M5</strong></p>
+<p>To start the spindle turning clockwise at the currently programmed speed, program M3.</p>
+<p>To start the spindle turning counterclockwise at the currently programmed speed, program M4.</p>
+<p>To stop the spindle from turning, program M5.</p>
+<p>It is OK to use M3 or M4 if the spindle speed is set to zero. If this is done (or if the speed
+override switch is enabled and set to zero), the spindle will not start turning.  If, later, the
+spindle speed is set above zero (or the override switch is turned up), the spindle will start
+turning. It is OK to use</p>
+<p>M3 or M4 when the spindle is already turning or to use M5 when the spindle is already stopped.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.M48_M48">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.</code><code class="descname">M48_M48</code><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#M48_M48"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.M48_M48" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p><strong>Override Control — M48 and M49</strong></p>
+<p>To enable the speed and feed override switches, program M48. To disable both switches, program
+M49. See Section 2.2.1 for more details. It is OK to enable or disable the switches when they
+are already enabled or disabled.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.M6">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.</code><code class="descname">M6</code><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#M6"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.M6" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p><strong>Tool Change — M6</strong></p>
+<p>To change a tool in the spindle from the tool currently in the spindle to the tool most recently
+selected (using a T word — see Section 3.7.3), program M6. When the tool change is complete:</p>
+<ul class="simple">
+<li>The spindle will be stopped.</li>
+<li>The tool that was selected (by a T word on the same line or on any line after the previous
+tool change) will be in the spindle. The T number is an integer giving the changer slot of the
+tool (not its id).</li>
+<li>If the selected tool was not in the spindle before the tool change, the tool that was in the
+spindle (if there was one) will be in its changer slot.</li>
+<li>The coordinate axes will be stopped in the same absolute position they were in before the tool
+change (but the spindle may be re-oriented).</li>
+<li>No other changes will be made. For example, coolant will continue to flow during the tool
+change unless it has been turned off by an M9.</li>
+</ul>
+<p>The tool change may include axis motion while it is in progress. It is OK (but not useful) to
+program a change to the tool already in the spindle. It is OK if there is no tool in the
+selected slot; in that case, the spindle will be empty after the tool change. If slot zero was
+last selected, there will definitely be no tool in the spindle after a tool change.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.M7_M8_M9">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.</code><code class="descname">M7_M8_M9</code><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#M7_M8_M9"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.M7_M8_M9" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p><strong>Coolant Control — M7, M8, M9</strong></p>
+<ul class="simple">
+<li>To turn mist coolant on, program M7.</li>
+<li>To turn flood coolant on, program M8.</li>
+<li>To turn all coolant off, program M9.</li>
+</ul>
+<p>It is always OK to use any of these commands, regardless of what coolant is on or off.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.S">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.</code><code class="descname">S</code><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#S"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.S" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p><strong>Set Spindle Speed — S</strong></p>
+<p>To set the speed in revolutions per minute (rpm) of the spindle, program S… . The spindle will
+turn at that speed when it has been programmed to start turning. It is OK to program an S word
+whether the spindle is turning or not. If the speed override switch is enabled and not set at
+100%, the speed will be different from what is programmed. It is OK to program S0; the spindle
+will not turn if that is done.</p>
+<p><strong>It is an error if:</strong></p>
+<ul class="simple">
+<li>the S number is negative.</li>
+</ul>
+<p>As described in Section 3.5.16.5, if a G84 (tapping) canned cycle is active and the feed and
+speed override switches are enabled, the one set at the lower setting will take effect. The
+speed and feed rates will still be synchronized. In this case, the speed may differ from what is
+programmed, even if the speed override switch is set at 100%.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.T">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.</code><code class="descname">T</code><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/GcodeDoc.html#T"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.GcodeDoc.T" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p><strong>Select Tool — T</strong></p>
+<p>To select a tool, program T…, where the T number is the carousel slot for the tool. The tool is
+not changed until an M6 is programmed (see Section 3.6.3). The T word may appear on the same
+line as the M6 or on a previous line. It is OK, but not normally useful, if T words appear on
+two or more lines with no tool change. The carousel may move a lot, but only the most recent T
+word will take effect at the next tool change. It is OK to program T0; no tool will be
+selected. This is useful if you want the spindle to be empty after a tool change.</p>
+<p><strong>It is an error if:</strong></p>
+<ul class="simple">
+<li>a negative T number is used,</li>
+<li>a T number larger than the number of slots in the carousel is used.</li>
+</ul>
+<p>On some machines, the carousel will move when a T word is programmed, at the same time machining
+is occurring. On such machines, programming the T word several lines before a tool change will
+save time. A common programming practice for such machines is to put the T word for the next
+tool to be used on the line after a tool change. This maximizes the time available for the
+carousel to move.</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Lexer.html" class="btn btn-neutral float-right" title="9.1.1.5.4. Lexer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Config.html" class="btn btn-neutral" title="9.1.1.5.2. Config" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Fabrice Salvaire
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../../static/jquery.js"></script>
+        <script type="text/javascript" src="../../../../static/underscore.js"></script>
+        <script type="text/javascript" src="../../../../static/doctools.js"></script>
+        <script type="text/javascript" src="../../../../static/language_data.js"></script>
+        <script type="text/javascript" src="../../../../static/getthecode.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../../../static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

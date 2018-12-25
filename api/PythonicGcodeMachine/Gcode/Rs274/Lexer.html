@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>7.1.1.5.2. Lexer &mdash; PythonicGcodeMachine 0.1.0 documentation</title>
+  <title>9.1.1.5.4. Lexer &mdash; PythonicGcodeMachine 0.1.0 documentation</title>
   
 
   
@@ -28,8 +28,8 @@
   <link rel="stylesheet" href="../../../../static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="7.1.1.5.3. Parser" href="Parser.html" />
-    <link rel="prev" title="7.1.1.5.1. Ast" href="Ast.html" /> 
+    <link rel="next" title="9.1.1.5.5. Machine" href="Machine.html" />
+    <link rel="prev" title="9.1.1.5.3. GcodeDoc" href="GcodeDoc.html" /> 
 
   
   <script src="../../../../static/js/modernizr.min.js"></script>
@@ -111,48 +111,97 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../faq.html#how-to-get-help-or-report-an-issue">5.1. How to get help or report an issue ?</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../design-notes.html">6. Design Notes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../design-notes.html#g-code-parser">6.1. G-Code Parser</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../design-notes.html#g-code-flavours">6.2. G-code flavours</a></li>
-</ul>
-</li>
-<li class="toctree-l1 current"><a class="reference internal" href="../../../../reference-manual.html">7. API Documentation</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../../../PythonicGcodeMachine.html">7.1. PythonicGcodeMachine</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="../../Gcode.html">7.1.1. Gcode</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="../Fanuc.html">7.1.1.1. Fanuc</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../Heidenhain.html">7.1.1.2. Heidenhain</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../LinuxCnc.html">7.1.1.3. LinuxCnc</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../MachineKit.html">7.1.1.4. MachineKit</a></li>
-<li class="toctree-l4 current"><a class="reference internal" href="../Rs274.html">7.1.1.5. Rs274</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../Machine.html">7.1.2. Machine</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../PythonLexYacc.html">7.1.3. PythonLexYacc</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../PythonLexYacc/lex.html">7.1.3.1. lex</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../PythonLexYacc/yacc.html">7.1.3.2. yacc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../examples/index.html">6. Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../examples/gcode/index.html">6.1. Gcode</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../examples/gcode/annotate-gcode.html">6.1.1. Annotate a G-code program</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../examples/gcode/generate-gcode.html">6.1.2. Generate a G-code program</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../examples/gcode/query-gcode.html">6.1.3. Query G-codes</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../reference-manual.html#indexes">7.2. Indexes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../gcode-reference/index.html">7. G-code Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html">7.1. RS-274 G-code Reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#history">7.1.1. History</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#overview">7.1.2. Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#language-view-of-a-machining-center">7.1.3. Language View of a Machining Center</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#parameters">7.1.3.1. Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#coordinate-systems">7.1.3.2. Coordinate Systems</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../development.html">8. Development &amp; Community</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../development.html#how-you-can-help">8.1. How you can help ?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../development.html#contributors">8.2. Contributors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#format-of-a-line">7.1.4. Format of a Line</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#line-number">7.1.4.1. Line Number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#word">7.1.4.2. Word</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#number">7.1.4.3. Number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#parameter-value">7.1.4.4. Parameter Value</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#expressions-and-binary-operations">7.1.4.5. Expressions and Binary Operations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#unary-operation-value">7.1.4.6. Unary Operation Value</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#parameter-setting">7.1.4.7. Parameter Setting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#comments-and-messages">7.1.4.8. Comments and Messages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#item-repeats">7.1.4.9. Item Repeats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#item-order">7.1.4.10. Item order</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#commands-and-machine-modes">7.1.4.11. Commands and Machine Modes</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../how-to-refer.html">9. How to Refer to PythonicGcodeMachine ?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../donate.html">10. How to Help Further ?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../related-projects.html">11. Related Projects</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../related-projects.html#g-code-tools">11.1. G-code Tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../related-projects.html#cam-tools">11.2. CAM Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#modal-groups">7.1.5. Modal Groups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#g-and-input-codes">7.1.6. G and Input Codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#order-of-execution">7.1.7. Order of Execution</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../bibliography.html">12. Bibliography</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../bibliography.html#g-code">12.1. G-Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../design-notes.html">8. Design Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../design-notes.html#g-code-parser">8.1. G-Code Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../design-notes.html#g-code-flavours">8.2. G-code flavours</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../design-notes.html#g-code-generation-and-simulation">8.3. G-code Generation and Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../design-notes.html#computational-geometry-engine">8.4. Computational Geometry Engine</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../design-notes.html#list-of-the-main-open-source-computational-geometry-algorithms-libraries">8.4.1. List of the Main Open Source Computational Geometry Algorithms Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../design-notes.html#the-computational-geometry-algorithms-library">8.4.1.1. The Computational Geometry Algorithms Library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../design-notes.html#open-cascade">8.4.1.2. Open CASCADE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../design-notes.html#g-code-visualisation">8.5. G-code Visualisation</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../reference-manual.html">9. API Documentation</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../../PythonicGcodeMachine.html">9.1. PythonicGcodeMachine</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../Gcode.html">9.1.1. Gcode</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../Fanuc.html">9.1.1.1. Fanuc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Heidenhain.html">9.1.1.2. Heidenhain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../LinuxCnc.html">9.1.1.3. LinuxCnc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../MachineKit.html">9.1.1.4. MachineKit</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../Rs274.html">9.1.1.5. Rs274</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../Machine.html">9.1.2. Machine</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../PythonLexYacc.html">9.1.3. PythonLexYacc</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../PythonLexYacc/lex.html">9.1.3.1. lex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../PythonLexYacc/yacc.html">9.1.3.2. yacc</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../reference-manual.html#indexes">9.2. Indexes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../development.html">10. Development &amp; Community</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../development.html#how-you-can-help">10.1. How you can help ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../development.html#contributors">10.2. Contributors</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../how-to-refer.html">11. How to Refer to PythonicGcodeMachine ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../donate.html">12. How to Help Further ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../related-projects.html">13. Related Projects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../related-projects.html#g-code-tools">13.1. G-code Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../related-projects.html#cam-tools">13.2. CAM Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../bibliography.html">14. Bibliography</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../bibliography.html#g-code">14.1. G-Code</a></li>
 </ul>
 </li>
 </ul>
@@ -200,15 +249,15 @@
     
       <li><a href="../../../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../../../../reference-manual.html">7. API Documentation</a> &raquo;</li>
+          <li><a href="../../../../reference-manual.html">9. API Documentation</a> &raquo;</li>
         
-          <li><a href="../../../PythonicGcodeMachine.html">7.1. PythonicGcodeMachine</a> &raquo;</li>
+          <li><a href="../../../PythonicGcodeMachine.html">9.1. PythonicGcodeMachine</a> &raquo;</li>
         
-          <li><a href="../../Gcode.html">7.1.1. Gcode</a> &raquo;</li>
+          <li><a href="../../Gcode.html">9.1.1. Gcode</a> &raquo;</li>
         
-          <li><a href="../Rs274.html">7.1.1.5. Rs274</a> &raquo;</li>
+          <li><a href="../Rs274.html">9.1.1.5. Rs274</a> &raquo;</li>
         
-      <li>7.1.1.5.2. Lexer</li>
+      <li>9.1.1.5.4. Lexer</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -228,7 +277,8 @@
            <div itemprop="articleBody">
             
   <div class="section" id="module-PythonicGcodeMachine.Gcode.Rs274.Lexer">
-<span id="lexer"></span><h1>7.1.1.5.2. Lexer<a class="headerlink" href="#module-PythonicGcodeMachine.Gcode.Rs274.Lexer" title="Permalink to this headline">¶</a></h1>
+<span id="lexer"></span><h1>9.1.1.5.4. Lexer<a class="headerlink" href="#module-PythonicGcodeMachine.Gcode.Rs274.Lexer" title="Permalink to this headline">¶</a></h1>
+<p>Module to implement a RS-274 G-code lexer.</p>
 <dl class="exception">
 <dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexerError">
 <em class="property">exception </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.Lexer.</code><code class="descname">GcodeLexerError</code><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#GcodeLexerError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexerError" title="Permalink to this definition">¶</a></dt>
@@ -238,285 +288,298 @@
 <dl class="class">
 <dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer">
 <em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.Lexer.</code><code class="descname">GcodeLexer</code><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#GcodeLexer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexerMixin" title="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexerMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexerMixin</span></code></a>, <a class="reference internal" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin" title="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexerMixin">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.Lexer.</code><code class="descname">GcodeLexerMixin</code><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#GcodeLexerMixin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexerMixin" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>Class to implement a RS-274 G-code lexer.</p>
-<dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.T_B">
-<code class="descname">T_B</code><em class="property"> = 'b'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.T_B" title="Permalink to this definition">¶</a></dt>
+<dl class="method">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexerMixin.input">
+<code class="descname">input</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#GcodeLexerMixin.input"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexerMixin.input" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.input">
-<code class="descname">input</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#GcodeLexer.input"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.input" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexerMixin.tokenize">
+<code class="descname">tokenize</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#GcodeLexerMixin.tokenize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexerMixin.tokenize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin">
+<em class="property">class </em><code class="descclassname">PythonicGcodeMachine.Gcode.Rs274.Lexer.</code><code class="descname">GcodeTokenMixin</code><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#GcodeTokenMixin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Mixin to define RS-274 G-code tokens.</p>
+<dl class="attribute">
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.T_B">
+<code class="descname">T_B</code><em class="property"> = 'b'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.T_B" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_A">
-<code class="descname">t_A</code><em class="property"> = 'a'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_A" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_A">
+<code class="descname">t_A</code><em class="property"> = 'a'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_A" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_ABSOLUTE_VALUE">
-<code class="descname">t_ABSOLUTE_VALUE</code><em class="property"> = 'abs'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_ABSOLUTE_VALUE" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_ABSOLUTE_VALUE">
+<code class="descname">t_ABSOLUTE_VALUE</code><em class="property"> = 'abs'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_ABSOLUTE_VALUE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_AND">
-<code class="descname">t_AND</code><em class="property"> = 'and'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_AND" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_AND">
+<code class="descname">t_AND</code><em class="property"> = 'and'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_AND" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_ARC_COSINE">
-<code class="descname">t_ARC_COSINE</code><em class="property"> = 'acos'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_ARC_COSINE" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_ARC_COSINE">
+<code class="descname">t_ARC_COSINE</code><em class="property"> = 'acos'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_ARC_COSINE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_ARC_SINE">
-<code class="descname">t_ARC_SINE</code><em class="property"> = 'asin'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_ARC_SINE" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_ARC_SINE">
+<code class="descname">t_ARC_SINE</code><em class="property"> = 'asin'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_ARC_SINE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_ARC_TANGENT">
-<code class="descname">t_ARC_TANGENT</code><em class="property"> = 'atan'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_ARC_TANGENT" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_ARC_TANGENT">
+<code class="descname">t_ARC_TANGENT</code><em class="property"> = 'atan'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_ARC_TANGENT" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_C">
-<code class="descname">t_C</code><em class="property"> = 'c'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_C" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_C">
+<code class="descname">t_C</code><em class="property"> = 'c'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_C" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_COSINE">
-<code class="descname">t_COSINE</code><em class="property"> = 'cos'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_COSINE" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_COSINE">
+<code class="descname">t_COSINE</code><em class="property"> = 'cos'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_COSINE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_D">
-<code class="descname">t_D</code><em class="property"> = 'd'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_D" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_D">
+<code class="descname">t_D</code><em class="property"> = 'd'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_D" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_DIVIDED_BY">
-<code class="descname">t_DIVIDED_BY</code><em class="property"> = '\\/'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_DIVIDED_BY" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_DIVIDED_BY">
+<code class="descname">t_DIVIDED_BY</code><em class="property"> = '\\/'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_DIVIDED_BY" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_EOF_COMMENT">
-<code class="descname">t_EOF_COMMENT</code><span class="sig-paren">(</span><em>t</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#GcodeLexer.t_EOF_COMMENT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_EOF_COMMENT" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_EOF_COMMENT">
+<code class="descname">t_EOF_COMMENT</code><span class="sig-paren">(</span><em>t</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#GcodeTokenMixin.t_EOF_COMMENT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_EOF_COMMENT" title="Permalink to this definition">¶</a></dt>
 <dd><p>;.*</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_EQUAL_SIGN">
-<code class="descname">t_EQUAL_SIGN</code><em class="property"> = '='</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_EQUAL_SIGN" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_EQUAL_SIGN">
+<code class="descname">t_EQUAL_SIGN</code><em class="property"> = '='</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_EQUAL_SIGN" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_EXCLUSIVE_OR">
-<code class="descname">t_EXCLUSIVE_OR</code><em class="property"> = 'xor'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_EXCLUSIVE_OR" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_EXCLUSIVE_OR">
+<code class="descname">t_EXCLUSIVE_OR</code><em class="property"> = 'xor'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_EXCLUSIVE_OR" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_E_RAISED_TO">
-<code class="descname">t_E_RAISED_TO</code><em class="property"> = 'exp'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_E_RAISED_TO" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_E_RAISED_TO">
+<code class="descname">t_E_RAISED_TO</code><em class="property"> = 'exp'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_E_RAISED_TO" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_F">
-<code class="descname">t_F</code><em class="property"> = 'f'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_F" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_F">
+<code class="descname">t_F</code><em class="property"> = 'f'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_F" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_FIX_DOWN">
-<code class="descname">t_FIX_DOWN</code><em class="property"> = 'fix'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_FIX_DOWN" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_FIX_DOWN">
+<code class="descname">t_FIX_DOWN</code><em class="property"> = 'fix'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_FIX_DOWN" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_FIX_UP">
-<code class="descname">t_FIX_UP</code><em class="property"> = 'fup'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_FIX_UP" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_FIX_UP">
+<code class="descname">t_FIX_UP</code><em class="property"> = 'fup'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_FIX_UP" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_G">
-<code class="descname">t_G</code><em class="property"> = 'g'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_G" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_G">
+<code class="descname">t_G</code><em class="property"> = 'g'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_G" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_H">
-<code class="descname">t_H</code><em class="property"> = 'h'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_H" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_H">
+<code class="descname">t_H</code><em class="property"> = 'h'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_H" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_I">
-<code class="descname">t_I</code><em class="property"> = 'i'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_I" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_I">
+<code class="descname">t_I</code><em class="property"> = 'i'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_I" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_INLINE_COMMENT">
-<code class="descname">t_INLINE_COMMENT</code><span class="sig-paren">(</span><em>t</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#GcodeLexer.t_INLINE_COMMENT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_INLINE_COMMENT" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_INLINE_COMMENT">
+<code class="descname">t_INLINE_COMMENT</code><span class="sig-paren">(</span><em>t</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#GcodeTokenMixin.t_INLINE_COMMENT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_INLINE_COMMENT" title="Permalink to this definition">¶</a></dt>
 <dd><p>([^)]*)</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_J">
-<code class="descname">t_J</code><em class="property"> = 'j'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_J" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_J">
+<code class="descname">t_J</code><em class="property"> = 'j'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_J" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_K">
-<code class="descname">t_K</code><em class="property"> = 'k'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_K" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_K">
+<code class="descname">t_K</code><em class="property"> = 'k'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_K" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_L">
-<code class="descname">t_L</code><em class="property"> = 'l'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_L" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_L">
+<code class="descname">t_L</code><em class="property"> = 'l'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_L" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_LEFT_BRACKET">
-<code class="descname">t_LEFT_BRACKET</code><em class="property"> = '\\['</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_LEFT_BRACKET" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_LEFT_BRACKET">
+<code class="descname">t_LEFT_BRACKET</code><em class="property"> = '\\['</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_LEFT_BRACKET" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_M">
-<code class="descname">t_M</code><em class="property"> = 'm'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_M" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_M">
+<code class="descname">t_M</code><em class="property"> = 'm'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_M" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_MINUS">
-<code class="descname">t_MINUS</code><em class="property"> = '-'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_MINUS" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_MINUS">
+<code class="descname">t_MINUS</code><em class="property"> = '-'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_MINUS" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_MODULO">
-<code class="descname">t_MODULO</code><em class="property"> = 'mod'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_MODULO" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_MODULO">
+<code class="descname">t_MODULO</code><em class="property"> = 'mod'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_MODULO" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_N">
-<code class="descname">t_N</code><em class="property"> = 'n'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_N" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_N">
+<code class="descname">t_N</code><em class="property"> = 'n'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_N" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_NATURAL_LOG_OF">
-<code class="descname">t_NATURAL_LOG_OF</code><em class="property"> = 'ln'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_NATURAL_LOG_OF" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_NATURAL_LOG_OF">
+<code class="descname">t_NATURAL_LOG_OF</code><em class="property"> = 'ln'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_NATURAL_LOG_OF" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_NON_EXCLUSIVE_OR">
-<code class="descname">t_NON_EXCLUSIVE_OR</code><em class="property"> = 'or'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_NON_EXCLUSIVE_OR" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_NON_EXCLUSIVE_OR">
+<code class="descname">t_NON_EXCLUSIVE_OR</code><em class="property"> = 'or'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_NON_EXCLUSIVE_OR" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_P">
-<code class="descname">t_P</code><em class="property"> = 'p'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_P" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_P">
+<code class="descname">t_P</code><em class="property"> = 'p'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_P" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_PARAMETER_SIGN">
-<code class="descname">t_PARAMETER_SIGN</code><em class="property"> = '\\#'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_PARAMETER_SIGN" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_PARAMETER_SIGN">
+<code class="descname">t_PARAMETER_SIGN</code><em class="property"> = '\\#'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_PARAMETER_SIGN" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_PLUS">
-<code class="descname">t_PLUS</code><em class="property"> = '\\+'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_PLUS" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_PLUS">
+<code class="descname">t_PLUS</code><em class="property"> = '\\+'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_PLUS" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_POWER">
-<code class="descname">t_POWER</code><em class="property"> = '\\*\\*'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_POWER" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_POWER">
+<code class="descname">t_POWER</code><em class="property"> = '\\*\\*'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_POWER" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_Q">
-<code class="descname">t_Q</code><em class="property"> = 'q'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_Q" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_Q">
+<code class="descname">t_Q</code><em class="property"> = 'q'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_Q" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_R">
-<code class="descname">t_R</code><em class="property"> = 'r'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_R" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_R">
+<code class="descname">t_R</code><em class="property"> = 'r'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_R" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_REAL">
-<code class="descname">t_REAL</code><span class="sig-paren">(</span><em>t</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#GcodeLexer.t_REAL"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_REAL" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_REAL">
+<code class="descname">t_REAL</code><span class="sig-paren">(</span><em>t</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#GcodeTokenMixin.t_REAL"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_REAL" title="Permalink to this definition">¶</a></dt>
 <dd><p>((+|-)?(d+.d*|(.)?d+))</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_RIGHT_BRACKET">
-<code class="descname">t_RIGHT_BRACKET</code><em class="property"> = '\\]'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_RIGHT_BRACKET" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_RIGHT_BRACKET">
+<code class="descname">t_RIGHT_BRACKET</code><em class="property"> = '\\]'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_RIGHT_BRACKET" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_ROUND">
-<code class="descname">t_ROUND</code><em class="property"> = 'round'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_ROUND" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_ROUND">
+<code class="descname">t_ROUND</code><em class="property"> = 'round'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_ROUND" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_S">
-<code class="descname">t_S</code><em class="property"> = 's'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_S" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_S">
+<code class="descname">t_S</code><em class="property"> = 's'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_S" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_SINE">
-<code class="descname">t_SINE</code><em class="property"> = 'sin'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_SINE" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_SINE">
+<code class="descname">t_SINE</code><em class="property"> = 'sin'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_SINE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_SQUARE_ROOT">
-<code class="descname">t_SQUARE_ROOT</code><em class="property"> = 'sqrt'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_SQUARE_ROOT" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_SQUARE_ROOT">
+<code class="descname">t_SQUARE_ROOT</code><em class="property"> = 'sqrt'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_SQUARE_ROOT" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_T">
-<code class="descname">t_T</code><em class="property"> = 't'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_T" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_T">
+<code class="descname">t_T</code><em class="property"> = 't'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_T" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_TANGENT">
-<code class="descname">t_TANGENT</code><em class="property"> = 'tan'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_TANGENT" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_TANGENT">
+<code class="descname">t_TANGENT</code><em class="property"> = 'tan'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_TANGENT" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_TIMES">
-<code class="descname">t_TIMES</code><em class="property"> = '\\*'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_TIMES" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_TIMES">
+<code class="descname">t_TIMES</code><em class="property"> = '\\*'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_TIMES" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_X">
-<code class="descname">t_X</code><em class="property"> = 'x'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_X" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_X">
+<code class="descname">t_X</code><em class="property"> = 'x'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_X" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_Y">
-<code class="descname">t_Y</code><em class="property"> = 'y'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_Y" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_Y">
+<code class="descname">t_Y</code><em class="property"> = 'y'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_Y" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_Z">
-<code class="descname">t_Z</code><em class="property"> = 'z'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_Z" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_Z">
+<code class="descname">t_Z</code><em class="property"> = 'z'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_Z" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_error">
-<code class="descname">t_error</code><span class="sig-paren">(</span><em>t</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#GcodeLexer.t_error"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_error" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_error">
+<code class="descname">t_error</code><span class="sig-paren">(</span><em>t</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#GcodeTokenMixin.t_error"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_error" title="Permalink to this definition">¶</a></dt>
 <dd><p>Error handling rule</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_ignore">
-<code class="descname">t_ignore</code><em class="property"> = ' \t'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.t_ignore" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.tokenize">
-<code class="descname">tokenize</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/PythonicGcodeMachine/Gcode/Rs274/Lexer.html#GcodeLexer.tokenize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.tokenize" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_ignore">
+<code class="descname">t_ignore</code><em class="property"> = ' \t'</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.t_ignore" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.tokens">
-<code class="descname">tokens</code><em class="property"> = ('ABSOLUTE_VALUE', 'AND', 'ARC_COSINE', 'ARC_SINE', 'ARC_TANGENT', 'COSINE', 'DIVIDED_BY', 'EQUAL_SIGN', 'EXCLUSIVE_OR', 'E_RAISED_TO', 'FIX_DOWN', 'FIX_UP', 'LEFT_BRACKET', 'MINUS', 'MODULO', 'NATURAL_LOG_OF', 'NON_EXCLUSIVE_OR', 'PARAMETER_SIGN', 'PLUS', 'POWER', 'RIGHT_BRACKET', 'ROUND', 'SINE', 'SQUARE_ROOT', 'TANGENT', 'TIMES', 'A', 'B', 'C', 'D', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'P', 'Q', 'R', 'S', 'T', 'X', 'Y', 'Z', 'N', 'POSITIVE_INTEGER', 'POSITIVE_REAL', 'REAL', 'INLINE_COMMENT', 'EOF_COMMENT')</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeLexer.tokens" title="Permalink to this definition">¶</a></dt>
+<dt id="PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.tokens">
+<code class="descname">tokens</code><em class="property"> = ('ABSOLUTE_VALUE', 'AND', 'ARC_COSINE', 'ARC_SINE', 'ARC_TANGENT', 'COSINE', 'DIVIDED_BY', 'EQUAL_SIGN', 'EXCLUSIVE_OR', 'E_RAISED_TO', 'FIX_DOWN', 'FIX_UP', 'LEFT_BRACKET', 'MINUS', 'MODULO', 'NATURAL_LOG_OF', 'NON_EXCLUSIVE_OR', 'PARAMETER_SIGN', 'PLUS', 'POWER', 'RIGHT_BRACKET', 'ROUND', 'SINE', 'SQUARE_ROOT', 'TANGENT', 'TIMES', 'A', 'B', 'C', 'D', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'P', 'Q', 'R', 'S', 'T', 'X', 'Y', 'Z', 'N', 'POSITIVE_INTEGER', 'POSITIVE_REAL', 'REAL', 'INLINE_COMMENT', 'EOF_COMMENT')</em><a class="headerlink" href="#PythonicGcodeMachine.Gcode.Rs274.Lexer.GcodeTokenMixin.tokens" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -531,10 +594,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Parser.html" class="btn btn-neutral float-right" title="7.1.1.5.3. Parser" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Machine.html" class="btn btn-neutral float-right" title="9.1.1.5.5. Machine" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Ast.html" class="btn btn-neutral" title="7.1.1.5.1. Ast" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="GcodeDoc.html" class="btn btn-neutral" title="9.1.1.5.3. GcodeDoc" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -568,6 +631,7 @@
         <script type="text/javascript" src="../../../../static/jquery.js"></script>
         <script type="text/javascript" src="../../../../static/underscore.js"></script>
         <script type="text/javascript" src="../../../../static/doctools.js"></script>
+        <script type="text/javascript" src="../../../../static/language_data.js"></script>
         <script type="text/javascript" src="../../../../static/getthecode.js"></script>
     
 

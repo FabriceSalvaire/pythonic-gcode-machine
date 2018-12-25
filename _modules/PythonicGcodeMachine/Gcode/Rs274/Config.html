@@ -1,0 +1,1008 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>PythonicGcodeMachine.Gcode.Rs274.Config &mdash; PythonicGcodeMachine 0.1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../../static/css/PythonicGcodeMachine.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+
+  
+  <script src="../../../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> PythonicGcodeMachine
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview.html">1. Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../overview.html#what-is-pythonicgcodemachine">1.1. What is PythonicGcodeMachine ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../overview.html#how-is-pythonicgcodemachine-licensed">1.2. How is PythonicGcodeMachine licensed ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../overview.html#going-further-with-pythonicgcodemachine">1.3. Going further with PythonicGcodeMachine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../overview.html#which-platforms-are-supported-by-pythonicgcodemachine">1.4. Which platforms are supported by PythonicGcodeMachine ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../overview.html#how-to-install-pythonicgcodemachine">1.5. How to install PythonicGcodeMachine ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../overview.html#which-version-of-python-is-required">1.6. Which version of Python is required ?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../news.html">2. News</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../news.html#v0-2018-12-22">2.1. V0 2018-12-22</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../roadmap.html">3. Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation.html">4. Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#on-windows">4.1. On Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#on-linux">4.2. On Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#on-osx">4.3. On OSX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#installation-from-pypi-repository">4.4. Installation from PyPi Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#install-a-more-recent-version-from-github">4.5. Install a more recent version from Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#installation-from-source">4.6. Installation from Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#dependencies">4.7. Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../faq.html">5. User FAQ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../faq.html#how-to-get-help-or-report-an-issue">5.1. How to get help or report an issue ?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../examples/index.html">6. Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../examples/gcode/index.html">6.1. Gcode</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../examples/gcode/annotate-gcode.html">6.1.1. Annotate a G-code program</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../examples/gcode/generate-gcode.html">6.1.2. Generate a G-code program</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../examples/gcode/query-gcode.html">6.1.3. Query G-codes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../gcode-reference/index.html">7. G-code Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html">7.1. RS-274 G-code Reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#history">7.1.1. History</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#overview">7.1.2. Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#language-view-of-a-machining-center">7.1.3. Language View of a Machining Center</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#parameters">7.1.3.1. Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#coordinate-systems">7.1.3.2. Coordinate Systems</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#format-of-a-line">7.1.4. Format of a Line</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#line-number">7.1.4.1. Line Number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#word">7.1.4.2. Word</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#number">7.1.4.3. Number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#parameter-value">7.1.4.4. Parameter Value</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#expressions-and-binary-operations">7.1.4.5. Expressions and Binary Operations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#unary-operation-value">7.1.4.6. Unary Operation Value</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#parameter-setting">7.1.4.7. Parameter Setting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#comments-and-messages">7.1.4.8. Comments and Messages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#item-repeats">7.1.4.9. Item Repeats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#item-order">7.1.4.10. Item order</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#commands-and-machine-modes">7.1.4.11. Commands and Machine Modes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#modal-groups">7.1.5. Modal Groups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#g-and-input-codes">7.1.6. G and Input Codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../gcode-reference/rs-274/index.html#order-of-execution">7.1.7. Order of Execution</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../design-notes.html">8. Design Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../design-notes.html#g-code-parser">8.1. G-Code Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../design-notes.html#g-code-flavours">8.2. G-code flavours</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../design-notes.html#g-code-generation-and-simulation">8.3. G-code Generation and Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../design-notes.html#computational-geometry-engine">8.4. Computational Geometry Engine</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../design-notes.html#list-of-the-main-open-source-computational-geometry-algorithms-libraries">8.4.1. List of the Main Open Source Computational Geometry Algorithms Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../design-notes.html#the-computational-geometry-algorithms-library">8.4.1.1. The Computational Geometry Algorithms Library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../design-notes.html#open-cascade">8.4.1.2. Open CASCADE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../design-notes.html#g-code-visualisation">8.5. G-code Visualisation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference-manual.html">9. API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/PythonicGcodeMachine.html">9.1. PythonicGcodeMachine</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/PythonicGcodeMachine/Gcode.html">9.1.1. Gcode</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/PythonicGcodeMachine/Gcode/Fanuc.html">9.1.1.1. Fanuc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/PythonicGcodeMachine/Gcode/Heidenhain.html">9.1.1.2. Heidenhain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/PythonicGcodeMachine/Gcode/LinuxCnc.html">9.1.1.3. LinuxCnc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/PythonicGcodeMachine/Gcode/MachineKit.html">9.1.1.4. MachineKit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/PythonicGcodeMachine/Gcode/Rs274.html">9.1.1.5. Rs274</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/PythonicGcodeMachine/Machine.html">9.1.2. Machine</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/PythonicGcodeMachine/PythonLexYacc.html">9.1.3. PythonLexYacc</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/PythonicGcodeMachine/PythonLexYacc/lex.html">9.1.3.1. lex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/PythonicGcodeMachine/PythonLexYacc/yacc.html">9.1.3.2. yacc</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../reference-manual.html#indexes">9.2. Indexes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../development.html">10. Development &amp; Community</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../development.html#how-you-can-help">10.1. How you can help ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../development.html#contributors">10.2. Contributors</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../how-to-refer.html">11. How to Refer to PythonicGcodeMachine ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../donate.html">12. How to Help Further ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../related-projects.html">13. Related Projects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../related-projects.html#g-code-tools">13.1. G-code Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../related-projects.html#cam-tools">13.2. CAM Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../bibliography.html">14. Bibliography</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../bibliography.html#g-code">14.1. G-Code</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">PythonicGcodeMachine</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>PythonicGcodeMachine.Gcode.Rs274.Config</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for PythonicGcodeMachine.Gcode.Rs274.Config</h1><div class="highlight"><pre>
+<span></span><span class="c1">####################################################################################################</span>
+<span class="c1">#</span>
+<span class="c1"># PythonicGcodeMachine - A Python G-code Toolkit</span>
+<span class="c1"># Copyright (C) 2018 Fabrice Salvaire</span>
+<span class="c1">#</span>
+<span class="c1"># This program is free software: you can redistribute it and/or modify</span>
+<span class="c1"># it under the terms of the GNU General Public License as published by</span>
+<span class="c1"># the Free Software Foundation, either version 3 of the License, or</span>
+<span class="c1"># (at your option) any later version.</span>
+<span class="c1">#</span>
+<span class="c1"># This program is distributed in the hope that it will be useful,</span>
+<span class="c1"># but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="c1"># MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<span class="c1"># GNU General Public License for more details.</span>
+<span class="c1">#</span>
+<span class="c1"># You should have received a copy of the GNU General Public License</span>
+<span class="c1"># along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<span class="c1">#</span>
+<span class="c1">####################################################################################################</span>
+
+<span class="sd">&quot;&quot;&quot;Module to implement a G-code implementation configuration and an Oriented Object API for the YAML</span>
+<span class="sd">configuration files.</span>
+
+<span class="sd">See YAML files for examples and :ref:`rs-274-reference-page`.</span>
+
+<span class="sd">API implements an array interface or a dictionary interface for a table.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1">####################################################################################################</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;Config&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;MeaningMixin&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;ExecutionGroup&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;ExecutionOrder&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Gcode&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;GcodeSet&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;LetterSet&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;ModalGroup&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;ModalGroupSet&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Parameter&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;ParameterSet&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="c1">####################################################################################################</span>
+
+<span class="kn">import</span> <span class="nn">yaml</span>
+
+<span class="c1">####################################################################################################</span>
+
+<span class="k">def</span> <span class="nf">ensure_list</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="p">[</span><span class="n">obj</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">obj</span>
+
+<span class="k">def</span> <span class="nf">format_gcode_list</span><span class="p">(</span><span class="n">gcodes</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">gcode</span><span class="p">)</span> <span class="k">for</span> <span class="n">gcode</span> <span class="ow">in</span> <span class="n">gcodes</span><span class="p">])</span>
+
+<span class="c1">####################################################################################################</span>
+
+<span class="k">class</span> <span class="nc">YamlMixin</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">_load_yaml</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">yaml_path</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">yaml_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fh</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">data</span>
+
+<span class="c1">####################################################################################################</span>
+
+<div class="viewcode-block" id="MeaningMixin"><a class="viewcode-back" href="../../../../api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.MeaningMixin">[docs]</a><span class="k">class</span> <span class="nc">MeaningMixin</span><span class="p">:</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meaning</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_meaning</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">meaning</span><span class="p">)</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">meaning</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;A comment&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_meaning</span></div>
+
+<span class="c1">####################################################################################################</span>
+
+<span class="k">class</span> <span class="nc">RstMixin</span><span class="p">:</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="k">def</span> <span class="nf">_make_rst</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">headers</span><span class="p">,</span> <span class="n">columns</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+        <span class="n">number_of_columns</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">headers</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">columns</span><span class="p">)</span> <span class="o">!=</span> <span class="n">number_of_columns</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Number of columns mismatch&#39;</span><span class="p">)</span>
+        <span class="n">number_of_lines</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+        <span class="n">table</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">rule</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="n">line_format</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">title</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">headers</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">rule</span><span class="p">:</span>
+                <span class="n">rule</span> <span class="o">+=</span> <span class="s1">&#39; &#39;</span>
+                <span class="n">line_format</span> <span class="o">+=</span> <span class="s1">&#39; &#39;</span>
+            <span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+            <span class="n">column</span> <span class="o">=</span> <span class="n">columns</span><span class="p">[</span><span class="n">c</span><span class="p">]</span>
+            <span class="n">str_columns</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;sorted_iter&#39;</span><span class="p">):</span>
+                <span class="n">it</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sorted_iter</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">it</span> <span class="o">=</span> <span class="bp">self</span>
+            <span class="k">for</span> <span class="n">line_number</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">it</span><span class="p">):</span>
+                <span class="n">formater</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;str_&#39;</span> <span class="o">+</span> <span class="n">column</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+                <span class="n">field</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">column</span><span class="p">)</span>
+                <span class="n">text</span> <span class="o">=</span> <span class="n">formater</span><span class="p">(</span><span class="n">field</span><span class="p">)</span>
+                <span class="n">length</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">),</span> <span class="n">length</span><span class="p">)</span>
+                <span class="n">str_columns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+            <span class="n">rule</span> <span class="o">+=</span> <span class="s1">&#39;=&#39;</span><span class="o">*</span><span class="n">length</span>
+            <span class="n">line_format</span> <span class="o">+=</span> <span class="s1">&#39;{:&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">length</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;}&#39;</span>
+            <span class="n">table</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">str_columns</span><span class="p">)</span>
+
+        <span class="n">rst</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="n">rst</span> <span class="o">+=</span> <span class="n">rule</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+        <span class="n">rst</span> <span class="o">+=</span> <span class="n">line_format</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">headers</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+        <span class="n">rst</span> <span class="o">+=</span> <span class="n">rule</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+        <span class="k">for</span> <span class="n">line_number</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_of_lines</span><span class="p">):</span>
+            <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="n">table</span><span class="p">[</span><span class="n">c</span><span class="p">][</span><span class="n">line_number</span><span class="p">]</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_of_columns</span><span class="p">)]</span>
+            <span class="n">rst</span> <span class="o">+=</span> <span class="n">line_format</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">fields</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+        <span class="n">rst</span> <span class="o">+=</span> <span class="n">rule</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+
+        <span class="k">return</span> <span class="n">rst</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="k">def</span> <span class="nf">_write_rst</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Write </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
+            <span class="n">fh</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_make_rst</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">))</span>
+
+<span class="c1">####################################################################################################</span>
+
+<div class="viewcode-block" id="Parameter"><a class="viewcode-back" href="../../../../api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.Parameter">[docs]</a><span class="k">class</span> <span class="nc">Parameter</span><span class="p">(</span><span class="n">MeaningMixin</span><span class="p">):</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">meaning</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+
+        <span class="n">MeaningMixin</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meaning</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_index</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Parameter&#39;s index (table key)&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_index</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">default_value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;#</span><span class="si">{0._index}</span><span class="s1">: </span><span class="si">{0._meaning}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
+
+<span class="c1">####################################################################################################</span>
+
+<div class="viewcode-block" id="ParameterSet"><a class="viewcode-back" href="../../../../api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.ParameterSet">[docs]</a><span class="k">class</span> <span class="nc">ParameterSet</span><span class="p">(</span><span class="n">YamlMixin</span><span class="p">,</span> <span class="n">RstMixin</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;Class for the table of parameters.&quot;&quot;&quot;</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">yaml_path</span><span class="p">):</span>
+
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_yaml</span><span class="p">(</span><span class="n">yaml_path</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_parameters</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">parameter</span> <span class="o">=</span> <span class="n">Parameter</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;meaning&#39;</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_parameters</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">parameter</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_parameters</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">iter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_parameters</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+
+    <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parameters</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+
+    <span class="c1">##############################################</span>
+
+<div class="viewcode-block" id="ParameterSet.to_rst"><a class="viewcode-back" href="../../../../api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.ParameterSet.to_rst">[docs]</a>    <span class="k">def</span> <span class="nf">to_rst</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_write_rst</span><span class="p">(</span>
+            <span class="n">path</span><span class="p">,</span>
+            <span class="n">headers</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Parameter Number&#39;</span><span class="p">,</span> <span class="s1">&#39;Parameter Value&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">),</span>
+            <span class="n">columns</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;index&#39;</span><span class="p">,</span> <span class="s1">&#39;default_value&#39;</span><span class="p">,</span> <span class="s1">&#39;meaning&#39;</span><span class="p">),</span>
+        <span class="p">)</span></div></div>
+
+<span class="c1">####################################################################################################</span>
+
+<span class="k">class</span> <span class="nc">Letter</span><span class="p">(</span><span class="n">MeaningMixin</span><span class="p">):</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">letter</span><span class="p">,</span> <span class="n">meaning</span><span class="p">):</span>
+
+        <span class="n">MeaningMixin</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meaning</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_letter</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">letter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;G-code letter (table key)&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_letter</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;#</span><span class="si">{0._letter}</span><span class="s1">: </span><span class="si">{0._meaning}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+<span class="c1">####################################################################################################</span>
+
+<div class="viewcode-block" id="LetterSet"><a class="viewcode-back" href="../../../../api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.LetterSet">[docs]</a><span class="k">class</span> <span class="nc">LetterSet</span><span class="p">(</span><span class="n">YamlMixin</span><span class="p">,</span> <span class="n">RstMixin</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;Class for the table of letters.&quot;&quot;&quot;</span>
+
+    <span class="n">GM_LETTERS</span> <span class="o">=</span> <span class="s1">&#39;GM&#39;</span>
+    <span class="n">AXIS_LETTERS</span> <span class="o">=</span> <span class="s1">&#39;XYZABC&#39;</span> <span class="c1"># 6-axis</span>
+
+    <span class="c1">##############################################</span>
+
+<div class="viewcode-block" id="LetterSet.is_gm_letter"><a class="viewcode-back" href="../../../../api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.LetterSet.is_gm_letter">[docs]</a>    <span class="k">def</span> <span class="nf">is_gm_letter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">letter</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">letter</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">GM_LETTERS</span></div>
+
+<div class="viewcode-block" id="LetterSet.is_axis_letter"><a class="viewcode-back" href="../../../../api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.LetterSet.is_axis_letter">[docs]</a>    <span class="k">def</span> <span class="nf">is_axis_letter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">letter</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">letter</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">AXIS_LETTERS</span></div>
+
+    <span class="c1">##############################################</span>
+
+<div class="viewcode-block" id="LetterSet.is_gm_word"><a class="viewcode-back" href="../../../../api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.LetterSet.is_gm_word">[docs]</a>    <span class="k">def</span> <span class="nf">is_gm_word</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_gm_letter</span><span class="p">(</span><span class="n">word</span><span class="o">.</span><span class="n">letter</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="LetterSet.is_axis_word"><a class="viewcode-back" href="../../../../api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.LetterSet.is_axis_word">[docs]</a>    <span class="k">def</span> <span class="nf">is_axis_word</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_axis_letter</span><span class="p">(</span><span class="n">word</span><span class="o">.</span><span class="n">letter</span><span class="p">)</span></div>
+
+    <span class="c1">##############################################</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">yaml_path</span><span class="p">):</span>
+
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_yaml</span><span class="p">(</span><span class="n">yaml_path</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_letters</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">letter</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_letters</span><span class="p">[</span><span class="n">letter</span><span class="p">]</span> <span class="o">=</span> <span class="n">Letter</span><span class="p">(</span><span class="n">letter</span><span class="p">,</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;meaning&#39;</span><span class="p">])</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_letters</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">iter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_letters</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+
+    <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">letter</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_letters</span><span class="p">[</span><span class="n">letter</span><span class="p">]</span>
+
+    <span class="c1">##############################################</span>
+
+<div class="viewcode-block" id="LetterSet.to_rst"><a class="viewcode-back" href="../../../../api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.LetterSet.to_rst">[docs]</a>    <span class="k">def</span> <span class="nf">to_rst</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_write_rst</span><span class="p">(</span>
+            <span class="n">path</span><span class="p">,</span>
+            <span class="n">headers</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Letter&#39;</span><span class="p">,</span> <span class="s1">&#39;Meaning&#39;</span><span class="p">),</span>
+            <span class="n">columns</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;letter&#39;</span><span class="p">,</span> <span class="s1">&#39;meaning&#39;</span><span class="p">),</span>
+        <span class="p">)</span></div></div>
+
+<span class="c1">####################################################################################################</span>
+
+<div class="viewcode-block" id="Gcode"><a class="viewcode-back" href="../../../../api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.Gcode">[docs]</a><span class="k">class</span> <span class="nc">Gcode</span><span class="p">(</span><span class="n">MeaningMixin</span><span class="p">):</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gcode</span><span class="p">,</span> <span class="n">meaning</span><span class="p">,</span>
+                 <span class="n">modal_group</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">execution_order</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">doc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+
+        <span class="n">MeaningMixin</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meaning</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gcode</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">gcode</span><span class="p">)</span>
+
+        <span class="c1"># Those are set later due to the initialisation process</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_modal_group</span> <span class="o">=</span> <span class="n">modal_group</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_execution_order</span> <span class="o">=</span> <span class="n">execution_order</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_doc</span> <span class="o">=</span> <span class="n">doc</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">gcode</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;G-code (table key)&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gcode</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">modal_group</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_modal_group</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">execution_order</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_execution_order</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">execution_order_index</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_execution_order</span><span class="o">.</span><span class="n">index</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">doc</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_doc</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gcode</span>
+
+    <span class="c1">##############################################</span>
+
+<div class="viewcode-block" id="Gcode.convert_doc"><a class="viewcode-back" href="../../../../api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.Gcode.convert_doc">[docs]</a>    <span class="k">def</span> <span class="nf">convert_doc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">format</span><span class="p">):</span>
+        <span class="kn">import</span> <span class="nn">pypandoc</span>
+        <span class="k">return</span> <span class="n">pypandoc</span><span class="o">.</span><span class="n">convert_text</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">doc</span><span class="p">,</span> <span class="s1">&#39;rst&#39;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="nb">format</span><span class="p">)</span></div></div>
+
+<span class="c1">####################################################################################################</span>
+
+<div class="viewcode-block" id="GcodeSet"><a class="viewcode-back" href="../../../../api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.GcodeSet">[docs]</a><span class="k">class</span> <span class="nc">GcodeSet</span><span class="p">(</span><span class="n">YamlMixin</span><span class="p">,</span> <span class="n">RstMixin</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;Class for the table of G-codes.&quot;&quot;&quot;</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">yaml_path</span><span class="p">):</span>
+
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_yaml</span><span class="p">(</span><span class="n">yaml_path</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gcodes</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">gcode_txt</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">gcode</span> <span class="o">=</span> <span class="n">Gcode</span><span class="p">(</span><span class="n">gcode_txt</span><span class="p">,</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;meaning&#39;</span><span class="p">])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_gcodes</span><span class="p">[</span><span class="n">gcode_txt</span><span class="p">]</span> <span class="o">=</span> <span class="n">gcode</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_sorted_gcodes</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_gcodes</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">iter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_gcodes</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+
+    <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gcodes</span><span class="p">[</span><span class="n">code</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">code</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gcodes</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="k">def</span> <span class="nf">_sort</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sorted_gcodes</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">items</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+            <span class="n">items</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">gcode</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">*</span><span class="mi">1000</span><span class="p">)</span> <span class="o">+</span> <span class="n">item</span><span class="o">.</span><span class="n">gcode</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_sorted_gcodes</span> <span class="o">=</span> <span class="n">items</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sorted_gcodes</span>
+
+    <span class="c1">##############################################</span>
+
+<div class="viewcode-block" id="GcodeSet.sorted_iter"><a class="viewcode-back" href="../../../../api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.GcodeSet.sorted_iter">[docs]</a>    <span class="k">def</span> <span class="nf">sorted_iter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">iter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_sort</span><span class="p">())</span></div>
+
+    <span class="c1">##############################################</span>
+
+<div class="viewcode-block" id="GcodeSet.iter_on_slice"><a class="viewcode-back" href="../../../../api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.GcodeSet.iter_on_slice">[docs]</a>    <span class="k">def</span> <span class="nf">iter_on_slice</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">):</span>
+
+        <span class="n">start_index</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">stop_index</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_sort</span><span class="p">()):</span>
+            <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">gcode</span> <span class="o">==</span> <span class="n">start</span><span class="p">:</span>
+                <span class="n">start_index</span> <span class="o">=</span> <span class="n">i</span>
+            <span class="k">elif</span> <span class="n">item</span><span class="o">.</span><span class="n">gcode</span> <span class="o">==</span> <span class="n">stop</span><span class="p">:</span>
+                <span class="n">stop_index</span> <span class="o">=</span> <span class="n">i</span>
+        <span class="k">if</span> <span class="n">start_index</span> <span class="o">&gt;</span> <span class="n">stop_index</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> &gt; </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="nb">iter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_sorted_gcodes</span><span class="p">[</span><span class="n">start_index</span><span class="p">:</span><span class="n">stop_index</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span></div>
+
+    <span class="c1">##############################################</span>
+
+<div class="viewcode-block" id="GcodeSet.to_rst"><a class="viewcode-back" href="../../../../api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.GcodeSet.to_rst">[docs]</a>    <span class="k">def</span> <span class="nf">to_rst</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_write_rst</span><span class="p">(</span>
+            <span class="n">path</span><span class="p">,</span>
+            <span class="n">headers</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;G-code&#39;</span><span class="p">,</span> <span class="s1">&#39;Meaning&#39;</span><span class="p">),</span>
+            <span class="n">columns</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;gcode&#39;</span><span class="p">,</span> <span class="s1">&#39;meaning&#39;</span><span class="p">),</span>
+        <span class="p">)</span></div></div>
+
+<span class="c1">####################################################################################################</span>
+
+<div class="viewcode-block" id="ExecutionGroup"><a class="viewcode-back" href="../../../../api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.ExecutionGroup">[docs]</a><span class="k">class</span> <span class="nc">ExecutionGroup</span><span class="p">(</span><span class="n">MeaningMixin</span><span class="p">):</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">gcodes</span><span class="p">,</span> <span class="n">raw_gcodes</span><span class="p">,</span> <span class="n">meaning</span><span class="p">):</span>
+
+        <span class="n">MeaningMixin</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meaning</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_index</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gcodes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">gcodes</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_raw_gcodes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">raw_gcodes</span><span class="p">)</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Order index (table key)&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_index</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">gcodes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;G-Codes list&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gcodes</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">raw_gcodes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Raw G-Codes list&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_raw_gcodes</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;#</span><span class="si">{0._index}</span><span class="s1"> Meaning: </span><span class="si">{0._meaning}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
+
+<span class="c1">####################################################################################################</span>
+
+<div class="viewcode-block" id="ExecutionOrder"><a class="viewcode-back" href="../../../../api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.ExecutionOrder">[docs]</a><span class="k">class</span> <span class="nc">ExecutionOrder</span><span class="p">(</span><span class="n">YamlMixin</span><span class="p">,</span> <span class="n">RstMixin</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;Class for the execution order table.&quot;&quot;&quot;</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">yaml_path</span><span class="p">,</span> <span class="n">gcode_set</span><span class="p">):</span>
+
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_yaml</span><span class="p">(</span><span class="n">yaml_path</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_order</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">index</span> <span class="o">!=</span> <span class="n">count</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Unexpected index </span><span class="si">{}</span><span class="s1"> versus </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">count</span><span class="p">))</span>
+            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+            <span class="n">raw_gcodes</span> <span class="o">=</span> <span class="n">ensure_list</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;gcodes&#39;</span><span class="p">])</span>
+
+            <span class="n">gcodes</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">gcode</span> <span class="ow">in</span> <span class="n">raw_gcodes</span><span class="p">:</span>
+                <span class="k">if</span> <span class="s1">&#39;-&#39;</span> <span class="ow">in</span> <span class="n">gcode</span><span class="p">:</span>
+                    <span class="n">start</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">code</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="k">for</span> <span class="n">code</span> <span class="ow">in</span> <span class="n">gcode</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)]</span>
+                    <span class="n">letter</span> <span class="o">=</span> <span class="n">gcode</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+                        <span class="n">_gcode</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">letter</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+                        <span class="n">gcodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">gcode_set</span><span class="p">[</span><span class="n">_gcode</span><span class="p">])</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="n">gcode</span> <span class="o">=</span> <span class="n">gcode_set</span><span class="p">[</span><span class="n">gcode</span><span class="p">]</span>
+                    <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">gcode</span> <span class="o">!=</span> <span class="s1">&#39;COMMENT&#39;</span><span class="p">:</span>
+                            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Invalid G-code </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">gcode</span><span class="p">))</span>
+                    <span class="n">gcodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">gcode</span><span class="p">)</span>
+
+            <span class="n">group</span> <span class="o">=</span> <span class="n">ExecutionGroup</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">gcodes</span><span class="p">,</span> <span class="n">raw_gcodes</span><span class="p">,</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;meaning&#39;</span><span class="p">])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">gcode</span> <span class="ow">in</span> <span class="n">gcodes</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">gcode</span><span class="p">,</span> <span class="n">Gcode</span><span class="p">):</span>
+                    <span class="n">gcode</span><span class="o">.</span><span class="n">_execution_order</span> <span class="o">=</span> <span class="n">group</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">iter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_order</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+
+    <span class="c1">##############################################</span>
+
+<div class="viewcode-block" id="ExecutionOrder.to_rst"><a class="viewcode-back" href="../../../../api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.ExecutionOrder.to_rst">[docs]</a>    <span class="k">def</span> <span class="nf">to_rst</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_write_rst</span><span class="p">(</span>
+            <span class="n">path</span><span class="p">,</span>
+            <span class="n">headers</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Order&#39;</span><span class="p">,</span> <span class="s1">&#39;G-codes&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">),</span>
+            <span class="n">columns</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;index&#39;</span><span class="p">,</span> <span class="s1">&#39;raw_gcodes&#39;</span><span class="p">,</span> <span class="s1">&#39;meaning&#39;</span><span class="p">),</span>
+            <span class="n">str_raw_gcodes</span><span class="o">=</span><span class="k">lambda</span> <span class="n">gcodes</span><span class="p">:</span> <span class="n">format_gcode_list</span><span class="p">(</span><span class="n">gcodes</span><span class="p">),</span>
+        <span class="p">)</span></div></div>
+
+<span class="c1">####################################################################################################</span>
+
+<div class="viewcode-block" id="ModalGroup"><a class="viewcode-back" href="../../../../api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.ModalGroup">[docs]</a><span class="k">class</span> <span class="nc">ModalGroup</span><span class="p">(</span><span class="n">MeaningMixin</span><span class="p">):</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">gcodes</span><span class="p">,</span> <span class="n">meaning</span><span class="p">):</span>
+
+        <span class="n">MeaningMixin</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meaning</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_index</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gcodes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">gcodes</span><span class="p">)</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Group id (table key)&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_index</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">gcodes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;G-Codes list&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gcodes</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;#</span><span class="si">{0._index}</span><span class="s1">: (</span><span class="si">{1}</span><span class="s1">) Meaning: </span><span class="si">{0._meaning}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">format_gcode_list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_gcodes</span><span class="p">))</span></div>
+
+<span class="c1">####################################################################################################</span>
+
+<div class="viewcode-block" id="ModalGroupSet"><a class="viewcode-back" href="../../../../api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.ModalGroupSet">[docs]</a><span class="k">class</span> <span class="nc">ModalGroupSet</span><span class="p">(</span><span class="n">YamlMixin</span><span class="p">,</span> <span class="n">RstMixin</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;Class for the table of modal groups.&quot;&quot;&quot;</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">yaml_path</span><span class="p">,</span> <span class="n">gcode_set</span><span class="p">):</span>
+
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_yaml</span><span class="p">(</span><span class="n">yaml_path</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_groups</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">gcodes</span> <span class="o">=</span> <span class="n">ensure_list</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;gcodes&#39;</span><span class="p">])</span>
+            <span class="n">gcodes</span> <span class="o">=</span> <span class="p">[</span><span class="n">gcode_set</span><span class="p">[</span><span class="n">gcode</span><span class="p">]</span> <span class="k">for</span> <span class="n">gcode</span> <span class="ow">in</span> <span class="n">gcodes</span><span class="p">]</span>
+            <span class="n">group</span> <span class="o">=</span> <span class="n">ModalGroup</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">gcodes</span><span class="p">,</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;meaning&#39;</span><span class="p">])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_groups</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">group</span>
+            <span class="k">for</span> <span class="n">gcode</span> <span class="ow">in</span> <span class="n">gcodes</span><span class="p">:</span>
+                <span class="n">gcode</span><span class="o">.</span><span class="n">_modal_group</span> <span class="o">=</span> <span class="n">group</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_groups</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">iter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_groups</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+
+    <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_groups</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+
+    <span class="c1">##############################################</span>
+
+<div class="viewcode-block" id="ModalGroupSet.sorted_iter"><a class="viewcode-back" href="../../../../api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.ModalGroupSet.sorted_iter">[docs]</a>    <span class="k">def</span> <span class="nf">sorted_iter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="n">items</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">items</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">item</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">items</span></div>
+
+    <span class="c1">##############################################</span>
+
+<div class="viewcode-block" id="ModalGroupSet.to_rst"><a class="viewcode-back" href="../../../../api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.ModalGroupSet.to_rst">[docs]</a>    <span class="k">def</span> <span class="nf">to_rst</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_write_rst</span><span class="p">(</span>
+            <span class="n">path</span><span class="p">,</span>
+            <span class="n">headers</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Group&#39;</span><span class="p">,</span> <span class="s1">&#39;G-codes&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">),</span>
+            <span class="n">columns</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;index&#39;</span><span class="p">,</span> <span class="s1">&#39;gcodes&#39;</span><span class="p">,</span> <span class="s1">&#39;meaning&#39;</span><span class="p">),</span>
+            <span class="n">str_gcodes</span><span class="o">=</span><span class="k">lambda</span> <span class="n">gcodes</span><span class="p">:</span> <span class="n">format_gcode_list</span><span class="p">(</span><span class="n">gcodes</span><span class="p">),</span>
+        <span class="p">)</span></div></div>
+
+<span class="c1">####################################################################################################</span>
+
+<div class="viewcode-block" id="Config"><a class="viewcode-back" href="../../../../api/PythonicGcodeMachine/Gcode/Rs274/Config.html#PythonicGcodeMachine.Gcode.Rs274.Config.Config">[docs]</a><span class="k">class</span> <span class="nc">Config</span><span class="p">:</span>
+
+    <span class="sd">&quot;&quot;&quot;Class to register a G-code implementation configuration.</span>
+
+<span class="sd">    An instance is build from a set of YAML files.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                 <span class="n">execution_order</span><span class="p">,</span>
+                 <span class="n">gcodes</span><span class="p">,</span>
+                 <span class="n">letters</span><span class="p">,</span>
+                 <span class="n">modal_groups</span><span class="p">,</span>
+                 <span class="n">parameters</span><span class="p">,</span>
+    <span class="p">):</span>
+
+        <span class="sd">&quot;&quot;&quot;Each argument is a path to the corresponding YAML file.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gcodes</span> <span class="o">=</span> <span class="n">GcodeSet</span><span class="p">(</span><span class="n">gcodes</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_execution_order</span> <span class="o">=</span> <span class="n">ExecutionOrder</span><span class="p">(</span><span class="n">execution_order</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gcodes</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_modal_groups</span> <span class="o">=</span> <span class="n">ModalGroupSet</span><span class="p">(</span><span class="n">modal_groups</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gcodes</span><span class="p">)</span>
+
+        <span class="c1"># self._letters = str(letters)</span>
+        <span class="c1"># self._parameters = str(parameters)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_letters</span> <span class="o">=</span> <span class="n">LetterSet</span><span class="p">(</span><span class="n">letters</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_parameters</span> <span class="o">=</span> <span class="n">ParameterSet</span><span class="p">(</span><span class="n">parameters</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_load_doc</span><span class="p">()</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="k">def</span> <span class="nf">_load_doc</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">GcodeDoc</span> <span class="k">as</span> <span class="n">gcode_doc</span>
+        <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">gcode_doc</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_load_gcode_doc_cls</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="k">def</span> <span class="nf">_set_gcode_doc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gcode</span><span class="p">,</span> <span class="bp">cls</span><span class="p">):</span>
+        <span class="n">rst_doc</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="vm">__doc__</span>
+        <span class="n">rst_doc</span> <span class="o">=</span> <span class="n">rst_doc</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span><span class="o">*</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gcodes</span><span class="p">[</span><span class="n">gcode</span><span class="p">]</span><span class="o">.</span><span class="n">_doc</span> <span class="o">=</span> <span class="n">rst_doc</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="k">def</span> <span class="nf">_load_gcode_doc_cls</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">cls</span><span class="p">):</span>
+
+        <span class="n">cls_name</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span>
+        <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_letters</span><span class="o">.</span><span class="n">GM_LETTERS</span><span class="p">:</span>
+            <span class="n">cls_name</span> <span class="o">=</span> <span class="n">cls_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;_&#39;</span> <span class="o">+</span> <span class="n">letter</span><span class="p">,</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">letter</span><span class="p">)</span>
+        <span class="n">cls_name</span> <span class="o">=</span> <span class="n">cls_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;_to&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
+        <span class="n">cls_name</span> <span class="o">=</span> <span class="n">cls_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
+        <span class="n">gcodes</span> <span class="o">=</span> <span class="n">cls_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">gcodes</span><span class="p">):</span>
+            <span class="n">gcode</span> <span class="o">=</span> <span class="n">gcodes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">gcode</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">):</span>
+                <span class="n">start</span> <span class="o">=</span> <span class="n">gcode</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">stop</span> <span class="o">=</span> <span class="n">gcodes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                <span class="k">for</span> <span class="n">_gcode</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gcodes</span><span class="o">.</span><span class="n">iter_on_slice</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">):</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_set_gcode_doc</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">_gcode</span><span class="p">),</span> <span class="bp">cls</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_set_gcode_doc</span><span class="p">(</span><span class="n">gcode</span><span class="p">,</span> <span class="bp">cls</span><span class="p">)</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">execution_order</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;:class:`ExecutionOrder` instance&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_execution_order</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">gcodes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;:class:`GcodeSet` instance&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gcodes</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">letters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;:class:`LetterSet` instance&quot;&quot;&quot;</span>
+        <span class="c1"># if isinstance(self._letters, str):</span>
+        <span class="c1">#     self._letters = LetterSet(self._letters)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_letters</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">modal_groups</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;:class:`ModalGroupSet` instance&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_modal_groups</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;:class:`ParameterSet` instance&quot;&quot;&quot;</span>
+        <span class="c1"># if isinstance(self._parameters, str):</span>
+        <span class="c1">#     self._parameters = ParameterSet(self._parameters)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parameters</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Fabrice Salvaire
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../../static/jquery.js"></script>
+        <script type="text/javascript" src="../../../../static/underscore.js"></script>
+        <script type="text/javascript" src="../../../../static/doctools.js"></script>
+        <script type="text/javascript" src="../../../../static/language_data.js"></script>
+        <script type="text/javascript" src="../../../../static/getthecode.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../../../static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

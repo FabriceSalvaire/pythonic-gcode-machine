@@ -1,0 +1,8 @@
+
+=========
+ _lextab
+=========
+
+.. automodule:: PythonicGcodeMachine.Gcode.Rs274._lextab
+   :members:
+   :show-inheritance:

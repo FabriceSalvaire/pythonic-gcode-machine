@@ -1,0 +1,25 @@
+====== ====================================================================
+Letter Meaning                                                             
+====== ====================================================================
+A      A-axis of machine                                                   
+B      B-axis of machine                                                   
+C      C-axis of machine                                                   
+D      tool radius compensation number                                     
+F      feedrate                                                            
+G      general function (See table G codes)                                
+H      tool length offset index                                            
+I      X-axis offset for arcs / X offset in G87 canned cycle               
+J      Y-axis offset for arcs / Y offset in G87 canned cycle               
+K      Z-axis offset for arcs / Z offset in G87 canned cycle               
+L      number of repetitions in canned cycles / key used with G10          
+M      miscellaneous function (see Table M codes)                          
+N      line number                                                         
+P      dwell time in canned cycles / dwell time with G4 / key used with G10
+Q      feed increment in G83 canned cycle                                  
+R      arc radius                                                          
+S      canned cycle plane / spindle speed                                  
+T      tool selection                                                      
+X      X-axis of machine                                                   
+Y      Y-axis of machine                                                   
+Z      Z-axis of machine                                                   
+====== ====================================================================

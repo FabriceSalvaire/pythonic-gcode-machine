@@ -1,0 +1,8 @@
+
+=========
+ Machine
+=========
+
+.. automodule:: PythonicGcodeMachine.Gcode.Rs274.Machine
+   :members:
+   :show-inheritance:

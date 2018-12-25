@@ -1,0 +1,8 @@
+
+===========
+ _parsetab
+===========
+
+.. automodule:: PythonicGcodeMachine.Gcode.Rs274._parsetab
+   :members:
+   :show-inheritance:

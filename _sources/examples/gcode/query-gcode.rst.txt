@@ -1,0 +1,140 @@
+
+
+
+
+.. getthecode:: query-gcode.py
+    :language: python3
+    :hidden:
+
+===============
+ Query G-codes
+===============
+
+For API see
+
+* :mod:`PythonicGcodeMachine.Gcode.Rs274`
+* :mod:`PythonicGcodeMachine.Gcode.Rs274.Config`
+* :mod:`PythonicGcodeMachine.Gcode.Rs274.Machine`
+
+.. code-block:: py3
+
+    
+    
+    from pathlib import Path
+    
+    from PythonicGcodeMachine.Gcode.Rs274.Machine import GcodeMachine
+    
+    
+
+We build a RS-274 G-code Machine
+
+.. code-block:: py3
+
+    
+    machine = GcodeMachine()
+    
+    
+
+We get G-code information
+
+.. code-block:: py3
+
+    
+    gcode = machine.config.gcodes['G0']
+    
+    print('Modal group:', gcode.modal_group)
+    print('Execution order:', gcode.execution_order)
+
+
+.. code-block:: none
+
+    Modal group: #1: (G0 G1 G2 G3 G38.2 G80 G81 G82 G83 G84 G85 G86 G87 G88 G89) Meaning: None
+    Execution order: #20 Meaning: perform motion, as modified (possibly) by G53
+    
+
+
+.. code-block:: py3
+
+    
+    print('\nreStructuredText doc:\n')
+    print(gcode.doc)
+
+
+.. code-block:: none
+
+    
+    reStructuredText doc:
+    
+    **Rapid Linear Motion — G0**
+    
+    For rapid linear motion, program G0 X… Y… Z… A… B… C…, where all the axis words are optional,
+    except that at least one must be used. The G0 is optional if the current motion mode is G0. This
+    will produce coordinated linear motion to the destination point at the current traverse rate (or
+    slower if the machine will not go that fast). It is expected that cutting will not take place
+    when a G0 command is executing.
+    
+    **It is an error if:**
+    
+    * all axis words are omitted.
+    
+    If cutter radius compensation is active, the motion will differ from the above; see Appendix
+    B. If G53 is programmed on the same line, the motion will also differ; see Section 3.5.12.
+    
+    
+    
+
+Convert the reStructuredText doc using `pypandoc <https://github.com/bebraw/pypandoc>`_ and
+`Pandoc <https://pandoc.org>`_
+
+.. code-block:: py3
+
+    
+    try:
+        print('\nMarkdown doc:')
+        print(gcode.convert_doc('md'))
+    except (ImportError, RuntimeError):
+        pass
+
+
+.. code-block:: none
+
+    
+    Markdown doc:
+    
+    **Rapid Linear Motion — G0**
+    
+    For rapid linear motion, program G0 X… Y… Z… A… B… C…, where all the
+    axis words are optional, except that at least one must be used. The G0
+    is optional if the current motion mode is G0. This will produce
+    coordinated linear motion to the destination point at the current
+    traverse rate (or slower if the machine will not go that fast). It is
+    expected that cutting will not take place when a G0 command is
+    executing.
+    
+    **It is an error if:**
+    
+    -  all axis words are omitted.
+    
+    If cutter radius compensation is active, the motion will differ from the
+    above; see Appendix B. If G53 is programmed on the same line, the motion
+    will also differ; see Section 3.5.12.
+    
+    
+
+
+.. code-block:: py3
+
+    
+    try:
+        print('\nHTML doc:')
+        print(gcode.convert_doc('html5'))
+    except (ImportError, RuntimeError):
+        pass
+
+
+.. code-block:: none
+
+    
+    HTML doc:
+    
+

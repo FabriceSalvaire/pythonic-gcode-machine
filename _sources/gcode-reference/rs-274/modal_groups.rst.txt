@@ -1,0 +1,17 @@
+===== ========================================================= ================================================================
+Group G-codes                                                   Comment                                                         
+===== ========================================================= ================================================================
+0     G4 G10 G28 G30 G53 G92 G92.1 G92.2 G92.3                  group for non-modal G codes                                     
+1     G0 G1 G2 G3 G38.2 G80 G81 G82 G83 G84 G85 G86 G87 G88 G89 None                                                            
+2     G17 G18 G19                                               plane selection                                                 
+3     G90 G91                                                   distance mode                                                   
+4     M0 M1 M2 M30 M60                                          stopping                                                        
+5     G93 G94                                                   feed rate mode                                                  
+6     M6                                                        tool change                                                     
+7     M3 M4 M5                                                  spindle turning                                                 
+8     M7 M8 M9                                                  coolant (special case: M7 and M8 may be active at the same time)
+9     M48 M49                                                   enable/disable feed and speed override switches                 
+10    G98 G99                                                   return mode in canned cycles                                    
+12    G54 G55 G56 G57 G58 G59 G59.1 G59.2 G59.3                 coordinate system selection                                     
+13    G61 G61.1 G64                                             path control mode                                               
+===== ========================================================= ================================================================

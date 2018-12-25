@@ -1,0 +1,8 @@
+
+========
+ Config
+========
+
+.. automodule:: PythonicGcodeMachine.Gcode.Rs274.Config
+   :members:
+   :show-inheritance:

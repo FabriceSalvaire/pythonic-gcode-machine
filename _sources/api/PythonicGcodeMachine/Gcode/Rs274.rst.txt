@@ -5,8 +5,13 @@
 
 .. toctree::
     Rs274/Ast
+    Rs274/Config
+    Rs274/GcodeDoc
     Rs274/Lexer
+    Rs274/Machine
     Rs274/Parser
+    Rs274/_lextab
+    Rs274/_parsetab
 
 .. automodule:: PythonicGcodeMachine.Gcode.Rs274
    :members:

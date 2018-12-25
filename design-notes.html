@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>6. Design Notes &mdash; PythonicGcodeMachine 0.1.0 documentation</title>
+  <title>8. Design Notes &mdash; PythonicGcodeMachine 0.1.0 documentation</title>
   
 
   
@@ -28,8 +28,8 @@
   <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="7. API Documentation" href="reference-manual.html" />
-    <link rel="prev" title="5. User FAQ" href="faq.html" /> 
+    <link rel="next" title="9. API Documentation" href="reference-manual.html" />
+    <link rel="prev" title="7.1. RS-274 G-code Reference" href="gcode-reference/rs-274/index.html" /> 
 
   
   <script src="static/js/modernizr.min.js"></script>
@@ -111,48 +111,97 @@
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-to-get-help-or-report-an-issue">5.1. How to get help or report an issue ?</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">6. Design Notes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#g-code-parser">6.1. G-Code Parser</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#g-code-flavours">6.2. G-code flavours</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="reference-manual.html">7. API Documentation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="api/PythonicGcodeMachine.html">7.1. PythonicGcodeMachine</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="api/PythonicGcodeMachine/Gcode.html">7.1.1. Gcode</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="api/PythonicGcodeMachine/Gcode/Fanuc.html">7.1.1.1. Fanuc</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/PythonicGcodeMachine/Gcode/Heidenhain.html">7.1.1.2. Heidenhain</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/PythonicGcodeMachine/Gcode/LinuxCnc.html">7.1.1.3. LinuxCnc</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/PythonicGcodeMachine/Gcode/MachineKit.html">7.1.1.4. MachineKit</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/PythonicGcodeMachine/Gcode/Rs274.html">7.1.1.5. Rs274</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="api/PythonicGcodeMachine/Machine.html">7.1.2. Machine</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="api/PythonicGcodeMachine/PythonLexYacc.html">7.1.3. PythonLexYacc</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="api/PythonicGcodeMachine/PythonLexYacc/lex.html">7.1.3.1. lex</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html">7.1.3.2. yacc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/index.html">6. Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/gcode/index.html">6.1. Gcode</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/gcode/annotate-gcode.html">6.1.1. Annotate a G-code program</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/gcode/generate-gcode.html">6.1.2. Generate a G-code program</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/gcode/query-gcode.html">6.1.3. Query G-codes</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="reference-manual.html#indexes">7.2. Indexes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gcode-reference/index.html">7. G-code Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gcode-reference/rs-274/index.html">7.1. RS-274 G-code Reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gcode-reference/rs-274/index.html#history">7.1.1. History</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gcode-reference/rs-274/index.html#overview">7.1.2. Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gcode-reference/rs-274/index.html#language-view-of-a-machining-center">7.1.3. Language View of a Machining Center</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="gcode-reference/rs-274/index.html#parameters">7.1.3.1. Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gcode-reference/rs-274/index.html#coordinate-systems">7.1.3.2. Coordinate Systems</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="development.html">8. Development &amp; Community</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="development.html#how-you-can-help">8.1. How you can help ?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="development.html#contributors">8.2. Contributors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gcode-reference/rs-274/index.html#format-of-a-line">7.1.4. Format of a Line</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="gcode-reference/rs-274/index.html#line-number">7.1.4.1. Line Number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gcode-reference/rs-274/index.html#word">7.1.4.2. Word</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gcode-reference/rs-274/index.html#number">7.1.4.3. Number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gcode-reference/rs-274/index.html#parameter-value">7.1.4.4. Parameter Value</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gcode-reference/rs-274/index.html#expressions-and-binary-operations">7.1.4.5. Expressions and Binary Operations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gcode-reference/rs-274/index.html#unary-operation-value">7.1.4.6. Unary Operation Value</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gcode-reference/rs-274/index.html#parameter-setting">7.1.4.7. Parameter Setting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gcode-reference/rs-274/index.html#comments-and-messages">7.1.4.8. Comments and Messages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gcode-reference/rs-274/index.html#item-repeats">7.1.4.9. Item Repeats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gcode-reference/rs-274/index.html#item-order">7.1.4.10. Item order</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gcode-reference/rs-274/index.html#commands-and-machine-modes">7.1.4.11. Commands and Machine Modes</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="how-to-refer.html">9. How to Refer to PythonicGcodeMachine ?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="donate.html">10. How to Help Further ?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="related-projects.html">11. Related Projects</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="related-projects.html#g-code-tools">11.1. G-code Tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="related-projects.html#cam-tools">11.2. CAM Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gcode-reference/rs-274/index.html#modal-groups">7.1.5. Modal Groups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gcode-reference/rs-274/index.html#g-and-input-codes">7.1.6. G and Input Codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gcode-reference/rs-274/index.html#order-of-execution">7.1.7. Order of Execution</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="bibliography.html">12. Bibliography</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="bibliography.html#g-code">12.1. G-Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">8. Design Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#g-code-parser">8.1. G-Code Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#g-code-flavours">8.2. G-code flavours</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#g-code-generation-and-simulation">8.3. G-code Generation and Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#computational-geometry-engine">8.4. Computational Geometry Engine</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#list-of-the-main-open-source-computational-geometry-algorithms-libraries">8.4.1. List of the Main Open Source Computational Geometry Algorithms Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-computational-geometry-algorithms-library">8.4.1.1. The Computational Geometry Algorithms Library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#open-cascade">8.4.1.2. Open CASCADE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#g-code-visualisation">8.5. G-code Visualisation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reference-manual.html">9. API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/PythonicGcodeMachine.html">9.1. PythonicGcodeMachine</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/PythonicGcodeMachine/Gcode.html">9.1.1. Gcode</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/PythonicGcodeMachine/Gcode/Fanuc.html">9.1.1.1. Fanuc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/PythonicGcodeMachine/Gcode/Heidenhain.html">9.1.1.2. Heidenhain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/PythonicGcodeMachine/Gcode/LinuxCnc.html">9.1.1.3. LinuxCnc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/PythonicGcodeMachine/Gcode/MachineKit.html">9.1.1.4. MachineKit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/PythonicGcodeMachine/Gcode/Rs274.html">9.1.1.5. Rs274</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/PythonicGcodeMachine/Machine.html">9.1.2. Machine</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/PythonicGcodeMachine/PythonLexYacc.html">9.1.3. PythonLexYacc</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/PythonicGcodeMachine/PythonLexYacc/lex.html">9.1.3.1. lex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/PythonicGcodeMachine/PythonLexYacc/yacc.html">9.1.3.2. yacc</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference-manual.html#indexes">9.2. Indexes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">10. Development &amp; Community</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="development.html#how-you-can-help">10.1. How you can help ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development.html#contributors">10.2. Contributors</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="how-to-refer.html">11. How to Refer to PythonicGcodeMachine ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="donate.html">12. How to Help Further ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="related-projects.html">13. Related Projects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="related-projects.html#g-code-tools">13.1. G-code Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="related-projects.html#cam-tools">13.2. CAM Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">14. Bibliography</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bibliography.html#g-code">14.1. G-Code</a></li>
 </ul>
 </li>
 </ul>
@@ -200,7 +249,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>6. Design Notes</li>
+      <li>8. Design Notes</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -220,9 +269,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="design-notes">
-<span id="design-note-page"></span><h1>6. Design Notes<a class="headerlink" href="#design-notes" title="Permalink to this headline">¶</a></h1>
+<span id="design-note-page"></span><h1>8. Design Notes<a class="headerlink" href="#design-notes" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="g-code-parser">
-<h2>6.1. G-Code Parser<a class="headerlink" href="#g-code-parser" title="Permalink to this headline">¶</a></h2>
+<h2>8.1. G-Code Parser<a class="headerlink" href="#g-code-parser" title="Permalink to this headline">¶</a></h2>
 <p>The RS-274 parser is generated automatically from the grammar defined in the paper <a class="reference external" href="https://www.nist.gov/publications/nist-rs274ngc-interpreter-version-3">The NIST RS274NGC Interpreter — Version 3</a>
 (Appendix E) using the generator <a class="reference external" href="https://www.dabeaz.com/ply/ply.html">PLY</a> which implement a
 LALR(1) parser similar to the tools <strong>lex</strong> and <strong>yacc</strong>.</p>
@@ -230,8 +279,92 @@ LALR(1) parser similar to the tools <strong>lex</strong> and <strong>yacc</stron
 <p>User can subclass this parser to support a derived G-code flavour.</p>
 </div>
 <div class="section" id="g-code-flavours">
-<h2>6.2. G-code flavours<a class="headerlink" href="#g-code-flavours" title="Permalink to this headline">¶</a></h2>
+<h2>8.2. G-code flavours<a class="headerlink" href="#g-code-flavours" title="Permalink to this headline">¶</a></h2>
 <p>The different flavours are partly handled in <a class="reference external" href="https://yaml.org">YAML</a> files.</p>
+</div>
+<div class="section" id="g-code-generation-and-simulation">
+<h2>8.3. G-code Generation and Simulation<a class="headerlink" href="#g-code-generation-and-simulation" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="computational-geometry-engine">
+<h2>8.4. Computational Geometry Engine<a class="headerlink" href="#computational-geometry-engine" title="Permalink to this headline">¶</a></h2>
+<p>The computational geometry engine requires these features :</p>
+<ul class="simple">
+<li>import standard 2D object file, e.g. SVG and DXF</li>
+<li>import standard 3D object file, e.g. STL</li>
+<li>2D path erosion and dilation, e.g. to compute cutter radius compensation</li>
+<li>2D/3D Minkowski sum along a path</li>
+<li>3D extrusion</li>
+<li>3D Boolean operation : object - tool path</li>
+</ul>
+<div class="section" id="list-of-the-main-open-source-computational-geometry-algorithms-libraries">
+<h3>8.4.1. List of the Main Open Source Computational Geometry Algorithms Libraries<a class="headerlink" href="#list-of-the-main-open-source-computational-geometry-algorithms-libraries" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="the-computational-geometry-algorithms-library">
+<h4>8.4.1.1. The Computational Geometry Algorithms Library<a class="headerlink" href="#the-computational-geometry-algorithms-library" title="Permalink to this headline">¶</a></h4>
+<p><a class="reference external" href="https://www.cgal.org">CGAL</a> is a software project that provides easy access to efficient and
+reliable geometric algorithms in the form of a C++ library. CGAL is used in various areas needing
+geometric computation, such as geographic information systems, computer aided design, molecular
+biology, medical imaging, computer graphics, and robotics.</p>
+<p>CGAL is used in:</p>
+<ul class="simple">
+<li>many academic projects</li>
+<li><a class="reference external" href="http://www.openscad.org">OpenSCAD</a></li>
+</ul>
+<p>Git repository and Python binding:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/CGAL/cgal">https://github.com/CGAL/cgal</a></li>
+<li><a class="reference external" href="https://github.com/CGAL/cgal-swig-bindings">https://github.com/CGAL/cgal-swig-bindings</a></li>
+<li><a class="reference external" href="https://github.com/sciencectn/cgal-bindings">https://github.com/sciencectn/cgal-bindings</a></li>
+</ul>
+<p>STL (STereoLithography) format support:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://en.wikipedia.org/wiki/STL_(file_format">https://en.wikipedia.org/wiki/STL_(file_format</a>)</li>
+<li><a class="reference external" href="https://doc.cgal.org/latest/Polyhedron/classCGAL_1_1Polyhedron__incremental__builder__3.html">https://doc.cgal.org/latest/Polyhedron/classCGAL_1_1Polyhedron__incremental__builder__3.html</a><ul>
+<li>include/CGAL/IO/Polyhedron_builder_from_STL.h</li>
+</ul>
+</li>
+<li><a class="reference external" href="https://github.com/CGAL/cgal/blob/master/Polyhedron/demo/Polyhedron/Plugins/IO/STL_io_plugin.cpp">https://github.com/CGAL/cgal/blob/master/Polyhedron/demo/Polyhedron/Plugins/IO/STL_io_plugin.cpp</a><ul>
+<li>demo/Polyhedron/Plugins/IO/STL_io_plugin.cpp</li>
+</ul>
+</li>
+<li><a class="reference external" href="https://github.com/CGAL/cgal/blob/master/Polyhedron_IO/include/CGAL/IO/STL_reader.h">https://github.com/CGAL/cgal/blob/master/Polyhedron_IO/include/CGAL/IO/STL_reader.h</a><ul>
+<li>include/CGAL/IO/STL_reader.h</li>
+<li>include/CGAL/IO/STL_writer.h</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="open-cascade">
+<h4>8.4.1.2. Open CASCADE<a class="headerlink" href="#open-cascade" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><a class="reference external" href="https://www.opencascade.com">https://www.opencascade.com</a></li>
+<li><a class="reference external" href="https://github.com/tpaviot/oce">Open CASCADE Community Edition</a></li>
+<li><a class="reference external" href="https://github.com/tpaviot/pythonocc-core">https://github.com/tpaviot/pythonocc-core</a> — python wrapper</li>
+</ul>
+<p>Open CASCADE is used in:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.salome-platform.org">Salome</a></li>
+<li><a class="reference external" href="https://freecadweb.org">FreeCAD</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="g-code-visualisation">
+<h2>8.5. G-code Visualisation<a class="headerlink" href="#g-code-visualisation" title="Permalink to this headline">¶</a></h2>
+<p>The open source <a class="reference external" href="https://www.qt.io">Qt</a> framework provide a multi-platform User Interface framework with 3D support.</p>
+<ul>
+<li><p class="first"><a class="reference external" href="https://doc.qt.io/qt-5/qt3d-index.html">Qt 3D</a></p>
+<p>Qt 3D provides functionality for near-realtime simulation systems with support for 2D and 3D rendering in both Qt C++ and Qt Quick applications.</p>
+</li>
+<li><p class="first"><a class="reference external" href="https://doc.qt.io/qt-5/qt3drender-qmesh.html">QMesh Class</a></p>
+<p>QMesh supports the following formats:</p>
+<ul class="simple">
+<li>Wavefront OBJ</li>
+<li>Stanford Triangle Format PLY</li>
+<li>STL (STereoLithography)</li>
+<li>Autodesk FBX if the SDK is installed</li>
+</ul>
+</li>
+</ul>
 </div>
 </div>
 
@@ -243,10 +376,10 @@ LALR(1) parser similar to the tools <strong>lex</strong> and <strong>yacc</stron
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="reference-manual.html" class="btn btn-neutral float-right" title="7. API Documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="reference-manual.html" class="btn btn-neutral float-right" title="9. API Documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="faq.html" class="btn btn-neutral" title="5. User FAQ" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="gcode-reference/rs-274/index.html" class="btn btn-neutral" title="7.1. RS-274 G-code Reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -280,6 +413,7 @@ LALR(1) parser similar to the tools <strong>lex</strong> and <strong>yacc</stron
         <script type="text/javascript" src="static/jquery.js"></script>
         <script type="text/javascript" src="static/underscore.js"></script>
         <script type="text/javascript" src="static/doctools.js"></script>
+        <script type="text/javascript" src="static/language_data.js"></script>
         <script type="text/javascript" src="static/getthecode.js"></script>
     
 
