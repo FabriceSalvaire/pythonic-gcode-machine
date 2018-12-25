@@ -101,6 +101,8 @@ What is PythonicGcodeMachine ?
 
 PythonicGcodeMachine is a Python toolkit to work with RS-274 / ISO G-Code.
 
+.. include: features.txt
+
 Where is the Documentation ?
 ----------------------------
 

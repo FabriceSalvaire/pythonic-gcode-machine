@@ -10,23 +10,9 @@
 What is PythonicGcodeMachine ?
 ------------------------------
 
-PythonicGcodeMachine is a free and open source Python toolkit to work with RS-274 / ISO G-Code.
+PythonicGcodeMachine is a free and open source Python toolkit to work with RS-274 / ISO G-code.
 
-PythonicGcodeMachine features:
-
-* a compliant RS-274 / ISO G-Code parser which is automatically generated from grammar and easy to
-  derivate to support other flavours,
-* an abstract syntax tree (AST) API,
-* some G-code flavour aspects are handled by YAML files for maximum flexibility,
-* tools to manipulate and validate G-code,
-* and more ..
-
-PythonicGcodeMachine supports these G-code flavours:
-
-* RS-274 **(full support)**
-* Fanuc *(partially)*
-* Heidenhain *(partially)*
-* LinuxCNC *(partially)*
+.. include:: features.txt
 
 How is PythonicGcodeMachine licensed ?
 --------------------------------------

@@ -37,9 +37,9 @@
 
    <div class="reduced-width">
 
-############################
- The Pythonic Gcode Machine
-############################
+#############################
+ The Pythonic G-code Machine
+#############################
 
 .. .. image:: /_static/logo.png
 ..    :alt: PythonicGcodeMachine logo
@@ -49,7 +49,7 @@
 Overview
 ********
 
-PythonicGcodeMachine is a free and open source (*) Python toolkit to work with RS-274 / ISO G-Code.
+PythonicGcodeMachine is a free and open source (*) Python toolkit to work with RS-274 / ISO G-code.
 
 .. rst-class:: small-text
 
