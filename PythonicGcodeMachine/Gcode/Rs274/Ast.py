@@ -382,14 +382,25 @@ class Line(MachineMixin):
                 yield item
 
     def iter_on_gm_word(self):
-        for item in self:
-            if isinstance(item, Word) and item.is_gm_gcode:
+        for item in self.iter_on_word():
+            if item.is_gm_gcode:
                 yield item
 
     def iter_on_x_word(self):
-        for item in self:
-            if isinstance(item, Word) and not item.is_gm_gcode:
+        for item in self.iter_on_word():
+            if not item.is_gm_gcode:
                 yield item
+
+    def iter_on_letter(self, letters):
+        for item in self.iter_on_word():
+            if item.letter in letters:
+                yield item
+
+    def iter_on_g_word(self):
+        return self.iter_on_letter('G')
+
+    def iter_on_m_word(self):
+        return self.iter_on_letter('M')
 
     def iter_on_setting(self):
         for item in self:
@@ -418,6 +429,19 @@ class Line(MachineMixin):
             if isinstance(item, Comment):
                 # self._items.pop(i)
                 del self._items[i]
+
+    ##############################################
+
+    def check_modal_group(self):
+
+        modal_groups = {}
+        for item in self.iter_on_gm_word():
+            group = item.modal_group
+            modal_groups.setdefault(group, 0)
+            modal_groups[group] += 1
+        errors = [modal_group for modal_group, count in modal_groups.items() if count > 1]
+        if errors:
+            raise ValueError("Modal group errors {}".format(errors))
 
     ##############################################
 
@@ -514,6 +538,7 @@ class Word(LineItem):
 
     """Class to implement word"""
 
+    # Fixme: config ???
     LETTERS = (
         'A', 'B', 'C', 'D',
         'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', # 'N',
@@ -594,12 +619,20 @@ class Word(LineItem):
         if self._machine is None:
             raise NameError('Machine is not defined')
 
+    @property
+    def _machine_config(self):
+        self._check_machine()
+        return self._machine.config
+
     ##############################################
 
     @property
     def is_gm_gcode(self):
-        self._check_machine()
-        return self._machine.is_gm_word(self)
+        return self._machine_config.letters.is_gm_word(self)
+
+    @property
+    def is_axis_gcode(self):
+        return self._machine_config.letters.is_axis_word(self)
 
     ##############################################
 

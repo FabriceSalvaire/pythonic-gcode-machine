@@ -40,8 +40,6 @@ class GcodeMachine:
 
     PARSER_CLS = GcodeParser
 
-    GM_LETTERS = 'GM'
-
     ##############################################
 
     def __init__(self):
@@ -63,7 +61,7 @@ class GcodeMachine:
             letters=data_path.joinpath('rs274-word-starting-letter.yaml'),
             modal_groups=data_path.joinpath('rs274-modal-groups.yaml'),
             parameters=data_path.joinpath('rs274-default-parameter-file.yaml'),
-        )
+       )
 
     ##############################################
 
@@ -85,13 +83,3 @@ class GcodeMachine:
 
     def reset():
         pass
-
-    ##############################################
-
-    def is_gm_letter(self, letter):
-        return letter in self.GM_LETTERS
-
-    ##############################################
-
-    def is_gm_word(self, word):
-        return self.is_gm_letter(word.letter)

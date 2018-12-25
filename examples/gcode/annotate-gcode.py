@@ -28,6 +28,8 @@
 #r#
 #r# * :mod:`PythonicGcodeMachine.Gcode.Rs274`
 #r# * :mod:`PythonicGcodeMachine.Gcode.Rs274.Ast`
+#r# * :mod:`PythonicGcodeMachine.Gcode.Rs274.Condig`
+#r# * :mod:`PythonicGcodeMachine.Gcode.Rs274.Machine`
 #r# * :mod:`PythonicGcodeMachine.Gcode.Rs274.Parser`
 
 ####################################################################################################
@@ -71,6 +73,7 @@ for line in program:
     print()
     # print(line.ansi_str()) # Fixme: pyterate
     print(str(line))
+    line.check_modal_group()
     for word in line.iter_on_word():
         if word.is_gm_gcode:
             margin = ' '*9

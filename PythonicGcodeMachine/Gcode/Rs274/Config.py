@@ -36,9 +36,9 @@ __all__ = [
     'ExecutionOrder',
     'Gcode',
     'GcodeSet',
-    'Letters',
+    'LetterSet',
     'ModalGroup',
-    'ModalGroups',
+    'ModalGroupSet',
     'Parameter',
     'ParameterSet',
 ]
@@ -156,6 +156,11 @@ class Parameter(MeaningMixin):
     def default_value(self):
         return self._value
 
+    ##############################################
+
+    def __repr__(self):
+        return '#{0._index}: {0._meaning}'.format(self)
+
 ####################################################################################################
 
 class ParameterSet(YamlMixin, RstMixin):
@@ -210,11 +215,35 @@ class Letter(MeaningMixin):
         """G-code letter (table key)"""
         return self._letter
 
+    ##############################################
+
+    def __repr__(self):
+        return '#{0._letter}: {0._meaning}'.format(self)
+
 ####################################################################################################
 
-class Letters(YamlMixin, RstMixin):
+class LetterSet(YamlMixin, RstMixin):
 
     """Class for the table of letters."""
+
+    GM_LETTERS = 'GM'
+    AXIS_LETTERS = 'XYZABC' # 6-axis
+
+    ##############################################
+
+    def is_gm_letter(self, letter):
+        return letter in self.GM_LETTERS
+
+    def is_axis_letter(self, letter):
+        return letter in self.AXIS_LETTERS
+
+    ##############################################
+
+    def is_gm_word(self, word):
+        return self.is_gm_letter(word.letter)
+
+    def is_axis_word(self, word):
+        return self.is_axis_letter(word.letter)
 
     ##############################################
 
@@ -251,7 +280,11 @@ class Gcode(MeaningMixin):
 
     ##############################################
 
-    def __init__(self, gcode, meaning, modal_group=None, execution_order=None):
+    def __init__(self, gcode, meaning,
+                 modal_group=None,
+                 execution_order=None,
+                 doc=None,
+    ):
 
         MeaningMixin.__init__(self, meaning)
         self._gcode = str(gcode)
@@ -259,6 +292,7 @@ class Gcode(MeaningMixin):
         # Those are set later due to the initialisation process
         self._modal_group = modal_group
         self._execution_order = execution_order
+        self._doc = doc
 
     ##############################################
 
@@ -279,6 +313,21 @@ class Gcode(MeaningMixin):
     def execution_order_index(self):
         return self._execution_order.index
 
+    @property
+    def doc(self):
+        return self._doc
+
+    ##############################################
+
+    def __str__(self):
+        return self._gcode
+
+    ##############################################
+
+    def convert_doc(self, format):
+        import pypandoc
+        return pypandoc.convert_text(self.doc, 'rst', format=format)
+
 ####################################################################################################
 
 class GcodeSet(YamlMixin, RstMixin):
@@ -294,6 +343,8 @@ class GcodeSet(YamlMixin, RstMixin):
         for gcode_txt, d in data.items():
             gcode = Gcode(gcode_txt, d['meaning'])
             self._gcodes[gcode_txt] = gcode
+
+        self._sorted_gcodes = None
 
     ##############################################
 
@@ -311,11 +362,34 @@ class GcodeSet(YamlMixin, RstMixin):
 
     ##############################################
 
-    def sorted_iter(self):
+    def _sort(self):
 
-        items = list(self)
-        items.sort(key=lambda item: str(ord(item.gcode[0])*1000) + item.gcode[1:])
-        return items
+        if self._sorted_gcodes is None:
+            items = list(self)
+            items.sort(key=lambda item: str(ord(item.gcode[0])*1000) + item.gcode[1:])
+            self._sorted_gcodes = items
+        return self._sorted_gcodes
+
+    ##############################################
+
+    def sorted_iter(self):
+        return iter(self._sort())
+
+    ##############################################
+
+    def iter_on_slice(self, start, stop):
+
+        start_index = None
+        stop_index = None
+        for i, item in enumerate(self._sort()):
+            if item.gcode == start:
+                start_index = i
+            elif item.gcode == stop:
+                stop_index = i
+        if start_index > stop_index:
+            raise ValueError('{} > {}'.format(start, stop))
+
+        return iter(self._sorted_gcodes[start_index:stop_index+1])
 
     ##############################################
 
@@ -355,6 +429,11 @@ class ExecutionGroup(MeaningMixin):
     def raw_gcodes(self):
         """Raw G-Codes list"""
         return self._raw_gcodes
+
+    ##############################################
+
+    def __str__(self):
+        return '#{0._index} Meaning: {0._meaning}'.format(self)
 
 ####################################################################################################
 
@@ -445,9 +524,14 @@ class ModalGroup(MeaningMixin):
         """G-Codes list"""
         return self._gcodes
 
+    ##############################################
+
+    def __repr__(self):
+        return '#{0._index}: ({1}) Meaning: {0._meaning}'.format(self, ' '.join([str(gcode) for gcode in self._gcodes]))
+
 ####################################################################################################
 
-class ModalGroups(YamlMixin, RstMixin):
+class ModalGroupSet(YamlMixin, RstMixin):
 
     """Class for the table of modal groups."""
 
@@ -521,12 +605,53 @@ class Config:
 
         self._gcodes = GcodeSet(gcodes)
         self._execution_order = ExecutionOrder(execution_order, self._gcodes)
-        self._modal_groups = ModalGroups(modal_groups, self._gcodes)
+        self._modal_groups = ModalGroupSet(modal_groups, self._gcodes)
 
         # self._letters = str(letters)
         # self._parameters = str(parameters)
-        self._letters = Letters(letters)
+        self._letters = LetterSet(letters)
         self._parameters = ParameterSet(parameters)
+
+        self._load_doc()
+
+    ##############################################
+
+    def _load_doc(self):
+
+        from . import GcodeDoc as gcode_doc
+        for obj in gcode_doc.__dict__.values():
+            if isinstance(obj, type):
+                self._load_gcode_doc_cls(obj)
+
+    ##############################################
+
+    def _set_gcode_doc(self, gcode, cls):
+        rst_doc = cls.__doc__
+        rst_doc = rst_doc.replace('\n' + ' '*4, '\n')
+        self._gcodes[gcode]._doc = rst_doc
+
+    ##############################################
+
+    def _load_gcode_doc_cls(self, cls):
+
+        cls_name = cls.__name__
+        for letter in self._letters.GM_LETTERS:
+            cls_name = cls_name.replace('_' + letter, ' ' + letter)
+        cls_name = cls_name.replace('_to', '-')
+        cls_name = cls_name.replace('_', '.')
+        gcodes = cls_name.split(' ')
+        i = 0
+        while i < len(gcodes):
+            gcode = gcodes[i]
+            if gcode.endswith('-'):
+                start = gcode[:-1]
+                i += 1
+                stop = gcodes[i]
+                for _gcode in self._gcodes.iter_on_slice(start, stop):
+                    self._set_gcode_doc(str(_gcode), cls)
+            else:
+                self._set_gcode_doc(gcode, cls)
+            i += 1
 
     ##############################################
 
@@ -542,14 +667,14 @@ class Config:
 
     @property
     def letters(self):
-        """:class:`Letters` instance"""
+        """:class:`LetterSet` instance"""
         # if isinstance(self._letters, str):
-        #     self._letters = Letters(self._letters)
+        #     self._letters = LetterSet(self._letters)
         return self._letters
 
     @property
     def modal_groups(self):
-        """:class:`ModalGroups` instance"""
+        """:class:`ModalGroupSet` instance"""
         return self._modal_groups
 
     @property
