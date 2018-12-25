@@ -40,6 +40,8 @@ class GcodeMachine:
 
     PARSER_CLS = GcodeParser
 
+    GM_LETTERS = 'GM'
+
     ##############################################
 
     def __init__(self):
@@ -85,3 +87,11 @@ class GcodeMachine:
         pass
 
     ##############################################
+
+    def is_gm_letter(self, letter):
+        return letter in self.GM_LETTERS
+
+    ##############################################
+
+    def is_gm_word(self, word):
+        return self.is_gm_letter(word.letter)

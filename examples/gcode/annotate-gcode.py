@@ -69,11 +69,12 @@ for line in program:
     # print(line.ansi_str()) # Fixme: pyterate
     print(str(line))
     for word in line.iter_on_word():
-        if word.is_valid_gcode:
+        if word.is_gm_gcode:
             margin = ' '*9
             print(meaning_format.format(str(word), word.meaning))
             print(margin + 'Modal group: {}'.format(word.modal_group.meaning))
             print(margin + 'Execution order: {}'.format(word.execution_order.index))
+            print(margin + 'Valid G-code: {}'.format(word.is_valid_gcode))
         else:
             print(meaning_format.format(word.letter, word.meaning))
 #o#

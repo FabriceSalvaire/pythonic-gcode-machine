@@ -563,7 +563,12 @@ class Word(LineItem):
 
     def ansi_str(self):
 
-        if self._letter in 'GM':
+        if self._machine:
+            gm = self._machine.GM_LETTERS
+        else:
+            gm = 'GM'
+
+        if self._letter in gm:
             return Line.ANSI_G(str(self))
         else:
             return Line.ANSI_X(self._letter) + Line.ANSI_VALUE(str(self._value))
@@ -577,15 +582,24 @@ class Word(LineItem):
     ##############################################
 
     @property
-    def is_valid_gcode(self):
+    def is_gm_gcode(self):
         self._check_machine()
-        return str(self) in self._machine.config.gcodes
+        return self._machine.is_gm_word(self)
+
+    ##############################################
+
+    @property
+    def is_valid_gcode(self):
+        if self.is_gm_gcode:
+            return str(self) in self._machine.config.gcodes
+        else:
+            return True
 
     ##############################################
 
     @property
     def meaning(self):
-        if self.is_valid_gcode:
+        if self.is_gm_gcode:
             return self._machine.config.gcodes[str(self)].meaning
         else:
             return self._machine.config.letters[self.letter].meaning
@@ -594,7 +608,7 @@ class Word(LineItem):
 
     @property
     def modal_group(self):
-        if self.is_valid_gcode:
+        if self.is_gm_gcode:
             return self._machine.config.modal_groups[str(self)]
         else:
             return None
@@ -603,7 +617,7 @@ class Word(LineItem):
 
     @property
     def execution_order(self):
-        if self.is_valid_gcode:
+        if self.is_gm_gcode:
             return self._machine.config.execution_order[str(self)]
         else:
             return None
