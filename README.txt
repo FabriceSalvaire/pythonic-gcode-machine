@@ -3,9 +3,9 @@
 .. include:: project-links.txt
 .. include:: abbreviation.txt
 
-============================
- The Pythonic Gcode Machine
-============================
+=============================
+ The Pythonic G-code Machine
+=============================
 
 |Pypi License|
 |Pypi Python Version|

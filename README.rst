@@ -79,9 +79,9 @@
 .. |YAML| replace:: YAML
 .. _YAML: https://yaml.org
 
-============================
- The Pythonic Gcode Machine
-============================
+=============================
+ The Pythonic G-code Machine
+=============================
 
 |Pypi License|
 |Pypi Python Version|
