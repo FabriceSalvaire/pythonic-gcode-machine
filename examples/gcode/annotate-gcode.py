@@ -63,6 +63,9 @@ program = machine.parser.parse_lines(lines)
 
 #r# We dump the annotated program
 
+def str_list(a_list):
+    return ' '.join([str(item) for item in a_list])
+
 meaning_format = '  {:5}: {}'
 for line in program:
     print()
@@ -77,4 +80,10 @@ for line in program:
             print(margin + 'Valid G-code: {}'.format(word.is_valid_gcode))
         else:
             print(meaning_format.format(word.letter, word.meaning))
+    print(
+        '  execution:',
+        str_list(line.iter_in_order()), '/',
+        str_list(line.iter_on_x_word()), '/',
+        str_list(line.iter_on_setting()),
+    )
 #o#

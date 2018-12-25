@@ -381,10 +381,25 @@ class Line(MachineMixin):
             if isinstance(item, Word):
                 yield item
 
+    def iter_on_gm_word(self):
+        for item in self:
+            if isinstance(item, Word) and item.is_gm_gcode:
+                yield item
+
+    def iter_on_x_word(self):
+        for item in self:
+            if isinstance(item, Word) and not item.is_gm_gcode:
+                yield item
+
     def iter_on_setting(self):
         for item in self:
             if isinstance(item, ParameterSetting):
                 yield item
+
+    def iter_in_order(self):
+        words = [word for word in self.iter_on_gm_word()]
+        words.sort(key=lambda word: word.execution_order.index)
+        return words
 
     ##############################################
 
