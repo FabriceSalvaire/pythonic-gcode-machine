@@ -46,7 +46,7 @@ G Code Quick Reference Table
 ==================================== ===========================================
 Code                                 Description
 ==================================== ===========================================
-`G0 <#gcode:g0>`__                   Coordinated Motion at Rapid Rate
+`G0 <gcode_g0>`_                     Coordinated Motion at Rapid Rate
 `G1 <#gcode:g1>`__                   Coordinated Motion at Feed Rate
 `G2 G3 <#gcode:g2-g3>`__             Coordinated Helical Motion at Feed Rate
 `G4 <#gcode:g4>`__                   Dwell
@@ -102,7 +102,7 @@ Code                                 Description
 G0 Rapid Move
 -------------
 
-::
+.. code:: text
 
    G0 axes
 
@@ -120,7 +120,7 @@ coordinated move. The maximum rapid traverse rate can be slower than the MAX_VEL
 
 G0 Example
 
-::
+.. code:: text
 
    G90 (set absolute distance mode)
    G0 X1 Y-2.3 (Rapid linear move from current location to X1 Y-2.3)
@@ -137,7 +137,7 @@ Section for more information.
 The path of a G0 rapid motion can be rounded at direction changes and depends on the `trajectory
 control <#sec:trajectory-control>`__ settings and maximum acceleration of the axes.
 
-It is an error if:
+**It is an error if:**
 
 * An axis letter is without a real value.
 * An axis letter is used that is not configured
@@ -145,7 +145,7 @@ It is an error if:
 G1 Linear Move
 --------------
 
-::
+.. code:: text
 
    G1 axes
 
@@ -156,7 +156,7 @@ current feed rate (or slower).
 
 G1 Example
 
-::
+.. code:: text
 
    G90 (set absolute distance mode)
    G1 X1.2 Y-3 F10 (linear move at a feed rate of 10 from current position to X1.2 Y-3)
@@ -173,7 +173,7 @@ Compensation <#sec:cutter-compensation>`__ Section.
 If 'G53' is programmed on the same line, the motion will also differ; see the `G53 <#gcode:g53>`__
 Section for more information.
 
-It is an error if:
+**It is an error if:**
 
 * No feed rate has been set.
 * An axis letter is without a real value.
@@ -182,7 +182,7 @@ It is an error if:
 G2, G3 Arc Move
 ---------------
 
-::
+.. code:: text
 
    G2 or G3 axes offsets (center format)
    G2 or G3 axes R- (radius format)
@@ -221,7 +221,7 @@ respectively.
 
 Two formats are allowed for specifying an arc: Center Format and Radius Format.
 
-It is an error if:
+**It is an error if:**
 
 * No feed rate has been set.
 * The P word is not an integer.
@@ -269,7 +269,7 @@ For more information on 'Absolute Arc Distance Mode see the `G90.1 <#gcode:g90.1
 
 XY-plane (G17)
 
-::
+.. code:: text
 
    G2 or G3 <X- Y- Z- I- J- P->
 
@@ -280,7 +280,7 @@ XY-plane (G17)
 
 XZ-plane (G18)
 
-::
+.. code:: text
 
    G2 or G3 <X- Z- Y- I- K- P->
 
@@ -291,7 +291,7 @@ XZ-plane (G18)
 
 YZ-plane (G19)
 
-::
+.. code:: text
 
    G2 or G3 <Y- Z- X- J- K- P->
 
@@ -300,7 +300,7 @@ YZ-plane (G19)
 * 'K' - Z offset
 * 'P' - number of turns
 
-It is an error if:
+**It is an error if:**
 
 * No feed rate is set with the `F <#sec:set-feed-rate>`__ word.
 * No offsets are programmed.
@@ -331,7 +331,7 @@ center position is at X1 Y0. This gives us an offset from the start position of 
 
 G2 Example Line
 
-.. code:: highlight
+.. code:: text
 
    G0 X0 Y0
    G2 X1 Y1 I1 F10 (clockwise arc in the XY plane)
@@ -346,7 +346,7 @@ X1 Y0.5 for both moves. The G2 move the J offset is 0.5 and the G3 move the J of
 
 G2-G3 Example Line
 
-.. code:: highlight
+.. code:: text
 
    G0 X0 Y0
    G2 X0 Y1 I1 J0.5 F25 (clockwise arc in the XY plane)
@@ -360,7 +360,7 @@ In the next example we show how the arc can make a helix in the Z axis by adding
 
 G2 Example Helix
 
-.. code:: highlight
+.. code:: text
 
    G0 X0 Y0 Z0
    G17 G2 X10 Y16 I3 J4 Z-1 (helix arc with Z added)
@@ -369,7 +369,7 @@ In the next example we show how to make more than one turn using the P word.
 
 P word Example
 
-::
+.. code:: text
 
    G0 X0 Y0 Z0
    G2 X0 Y1 Z-1 I1 J0.5 P2 F25
@@ -380,7 +380,7 @@ distance from the center of the circle to either the current point or the end po
 Radius Format Arcs
 ~~~~~~~~~~~~~~~~~~
 
-::
+.. code:: text
 
    G2 or G3 axes R- <P->
 
@@ -402,14 +402,14 @@ that the arc turns through less than 180 degrees, while a negative radius indica
 than 180 degrees. If the arc is helical, the value of the end point of the arc on the coordinate
 axis parallel to the axis of the helix is also specified.
 
-It is an error if:
+**It is an error if:**
 
 * both of the axis words for the axes of the selected plane are omitted
 * the end point of the arc is the same as the current point.
 
 G2 Example Line
 
-.. code:: highlight
+.. code:: text
 
    G17 G2 X10 Y15 R20 Z5 (radius format with arc)
 
@@ -421,7 +421,7 @@ helical arc.
 G4 Dwell
 --------
 
-::
+.. code:: text
 
    G4 P-
 
@@ -433,18 +433,18 @@ used. G4 does not affect spindle, coolant and any I/O.
 
 G4 Example Line
 
-::
+.. code:: text
 
    G4 P0.5 (wait for 0.5 seconds before proceeding)
 
-It is an error if:
+**It is an error if:**
 
 * the P number is negative or not specified.
 
 G5 Cubic Spline
 ---------------
 
-::
+.. code:: text
 
    G5 X- Y- <I- J-> P- Q-
 
@@ -465,7 +465,7 @@ For example, to program a curvy N shape:
 
 G5 Sample initial cubic spline
 
-::
+.. code:: text
 
    G90 G17
    G0 X0 Y0
@@ -475,11 +475,11 @@ A second curvy N that attaches smoothly to this one can now be made without spec
 
 G5 Sample subsequent cubic spline
 
-::
+.. code:: text
 
    G5 P0 Q-3 X2 Y2
 
-It is an error if:
+**It is an error if:**
 
 * P and Q are not both specified
 * Just one of I or J are specified
@@ -492,7 +492,7 @@ It is an error if:
 G5.1 Quadratic Spline
 ---------------------
 
-::
+.. code:: text
 
    G5.1 X- Y- I- J-
 
@@ -506,13 +506,13 @@ For example, to program a parabola, through the origin, from X-2 Y4 to X2 Y4:
 
 G5.1 Sample quadratic spline
 
-::
+.. code:: text
 
    G90 G17
    G0 X-2 Y4
    G5.1 X2 I2 J-8
 
-It is an error if:
+**It is an error if:**
 
 * both I and J offset are unspecified or zero
 * An axis other than X or Y is specified
@@ -523,7 +523,7 @@ It is an error if:
 G5.2 G5.3 NURBS Block
 ---------------------
 
-::
+.. code:: text
 
    G5.2 <P-> <X- Y-> <L->
    X- Y- <P->
@@ -543,7 +543,7 @@ The default weight if P is unspecified is 1. The default order if L is unspecifi
 
 G5.2 Example
 
-.. code:: highlight
+.. code:: text
 
    G0 X0 Y0 (rapid move)
    F10 (set feed rate)
@@ -564,14 +564,12 @@ Sample NURBS Output
 
 |Sample NURBS Output|
 
-More information on NURBS can be found here:
-
-http://wiki.linuxcnc.org/cgi-bin/wiki.pl?NURBS
+More information on NURBS can be found here: http://wiki.linuxcnc.org/cgi-bin/wiki.pl?NURBS
 
 G7 Lathe Diameter Mode
 ----------------------
 
-::
+.. code:: text
 
    G7
 
@@ -582,7 +580,7 @@ cutter to 0.500” from the center of the lathe thus giving a 1” diameter part
 G8 Lathe Radius Mode
 --------------------
 
-::
+.. code:: text
 
    G8
 
@@ -593,7 +591,7 @@ diameter.  G8 is default at power up.
 G10 L1 Set Tool Table
 ---------------------
 
-::
+.. code:: text
 
    G10 L1 P- axes <R- I- J- Q->
 
@@ -609,12 +607,12 @@ A valid G10 L1 rewrites and reloads the tool table.
 
 G10 L1 Example Line
 
-::
+.. code:: text
 
    G10 L1 P1 Z1.5 (set tool 1 Z offset from the machine origin to 1.5)
    G10 L1 P2 R0.015 Q3 (lathe example setting tool 2 radius to 0.015 and orientation to 3)
 
-It is an error if:
+**It is an error if:**
 
 * Cutter Compensation is on
 * The P number is unspecified
@@ -627,7 +625,7 @@ For more information on cutter orientation used by the 'Q' word, see the `Lathe 
 G10 L2 Set Coordinate System
 ----------------------------
 
-::
+.. code:: text
 
    G10 L2 P- <axes R->
 
@@ -667,27 +665,23 @@ Important Concepts:
 
 * G10 L2 Pn does not change from the current coordinate system to the one specified by P, you have
   to use G54-59.3 to select a coordinate system.
-
 * When a rotation is in effect jogging an axis will only move that axis in a positive or negative
   direction and not along the rotated axis.
-
 * If a 'G52' local offset or 'G92' origin offset was in effect before 'G10 L2', it will continue to
   be in effect afterwards.
-
 * When programming a coordinate system with R, any 'G52' or 'G92' will be applied **after** the
   rotation.
-
 * The coordinate system whose origin is set by a 'G10' command may be active or inactive at the time
   the 'G10' is executed. If it is currently active, the new coordinates take effect immediately.
 
-It is an error if:
+**It is an error if:**
 
 * The P number does not evaluate to an integer in the range 0 to 9.
 * An axis is programmed that is not defined in the configuration.
 
 G10 L2 Example Line
 
-.. code:: highlight
+.. code:: text
 
    G10 L2 P1 X3.5 Y17.2
 
@@ -697,7 +691,7 @@ the other coordinates are not changed.
 
 G10 L2 Example Line
 
-.. code:: highlight
+.. code:: text
 
    G10 L2 P1 X0 Y0 Z0 (clear offsets for X,Y & Z axes in coordinate system 1)
 
@@ -708,7 +702,7 @@ The coordinate system is described in the `Coordinate System <#cha:coordinate-sy
 G10 L10 Set Tool Table
 ----------------------
 
-::
+.. code:: text
 
    G10 L10 P- axes <R- I- J- Q->
 
@@ -726,17 +720,17 @@ G10 L10 command will not be changed. This could be useful with a probe move as d
 
 G10 L10 Example
 
-::
+.. code:: text
 
    T1 M6 G43 (load tool 1 and tool length offsets)
    G10 L10 P1 Z1.5 (set the current position for Z to be 1.5)
    G43 (reload the tool length offsets from the changed tool table)
    M2 (end program)
 
-* See `T <#sec:select-tool>`__ & `M6 <#mcode:m6>`__, and `G43 <#gcode:g43>`__/`G43.1
-   <#gcode:g43.1>`__ sections for more information.
+* See `T <#sec:select-tool>`__ & `M6 <#mcode:m6>`__, and `G43 <#gcode:g43>`__ / `G43.1
+  <#gcode:g43.1>`__ sections for more information.
 
-It is an error if:
+**It is an error if:**
 
 * Cutter Compensation is on
 * The P number is unspecified
@@ -746,7 +740,7 @@ It is an error if:
 G10 L11 Set Tool Table
 ----------------------
 
-::
+.. code:: text
 
    G10 L11 P- axes <R- I- J- Q->
 
@@ -764,7 +758,7 @@ offset active.
 This allows the user to set the G59.3 coordinate system according to a fixed point on the machine,
 and then use that fixture to measure tools without regard to other currently-active offsets.
 
-It is an error if:
+**It is an error if:**
 
 * Cutter Compensation is on
 * The P number is unspecified
@@ -774,7 +768,7 @@ It is an error if:
 G10 L20 Set Coordinate System
 -----------------------------
 
-::
+.. code:: text
 
    G10 L20 P- axes
 
@@ -785,11 +779,11 @@ is set to a calculated value that makes the current coordinates become the given
 
 G10 L20 Example Line
 
-::
+.. code:: text
 
    G10 L20 P1 X1.5 (set the X axis current location in coordinate system 1 to 1.5)
 
-It is an error if:
+**It is an error if:**
 
 * The P number does not evaluate to an integer in the range 0 to 9.
 * An axis is programmed that is not defined in the configuration.
@@ -845,7 +839,7 @@ G28 is issued. If no positions are stored with G28.1 then all axes will go to th
 
 G28 Example Line
 
-::
+.. code:: text
 
    G28 Z2.5 (rapid to Z2.5 then to Z location specified in #5163)
 
@@ -876,7 +870,7 @@ are stored with G30.1 then all axes will go to the `machine origin
 
 G30 Example Line
 
-::
+.. code:: text
 
    G30 Z2.5 (rapid to Z2.5 then to the Z location specified in #5i83)
 
@@ -887,7 +881,7 @@ It is an error if :
 G33 Spindle Synchronized Motion
 -------------------------------
 
-::
+.. code:: text
 
    G33 X- Y- Z- K- $-
 
@@ -927,7 +921,7 @@ See the Integrators Manual for more information on spindle synchronized motion.
 
 G33 Example
 
-::
+.. code:: text
 
    G90 (absolute distance mode)
    G0 X1 Z0.1 (rapid to position)
@@ -940,7 +934,7 @@ G33 Example
 * See `G90 <#gcode:g90-g91>`__ & `G0 <#gcode:g0>`__ & `M2 <#mcode:m2-m30>`__ sections for more
    information.
 
-It is an error if:
+**It is an error if:**
 
 * All axis words are omitted.
 * The spindle is not turning when this command is executed
@@ -951,7 +945,7 @@ It is an error if:
 G33.1 Rigid Tapping
 -------------------
 
-::
+.. code:: text
 
    G33.1 X- Y- Z- K- I- $-
 
@@ -984,7 +978,7 @@ All the axis words are optional, except that at least one must be used.
 
 G33.1 Example
 
-.. code:: highlight
+.. code:: text
 
    G90 (set absolute mode)
    G0 X1.000 Y1.000 Z0.100 (rapid move to starting position)
@@ -995,7 +989,7 @@ G33.1 Example
 * See `G90 <#gcode:g90-g91>`__ & `G0 <#gcode:g0>`__ &
    `M2 <#mcode:m2-m30>`__ sections for more information.
 
-It is an error if:
+**It is an error if:**
 
 * All axis words are omitted.
 
@@ -1007,7 +1001,7 @@ It is an error if:
 G38.n Straight Probe
 --------------------
 
-::
+.. code:: text
 
    G38.n axes
 
@@ -1045,7 +1039,7 @@ An example file 'smartprobe.ngc' is included (in the examples directory) to demo
 moves to log to a file the coordinates of a part. The program 'smartprobe.ngc' could be used with
 'ngcgui' with minimal changes.
 
-It is an error if:
+**It is an error if:**
 
 * the current point is the same as the programmed point.
 * no axis word is used
@@ -1061,7 +1055,7 @@ G40 Compensation Off
 
 G40 Example
 
-::
+.. code:: text
 
    ; current location is X1 after finishing cutter compensated move
    G40 (turn compensation off)
@@ -1070,7 +1064,7 @@ G40 Example
 
 See `G0 <#gcode:g0>`__ & `M2 <#mcode:m2-m30>`__ sections for more information.
 
-It is an error if:
+**It is an error if:**
 
 * A G2/G3 arc move is programmed next after a G40.
 * The linear move after turning compensation off is less than the tool diameter.
@@ -1078,7 +1072,7 @@ It is an error if:
 G41, G42 Cutter Compensation
 ----------------------------
 
-::
+.. code:: text
 
    G41 <D-> (left of programmed path)
    G42 <D-> (right of programmed path)
@@ -1109,7 +1103,7 @@ User M100-M199 commands are allowed when Cutter Compensation is on.
 The behavior of the machining center when cutter compensation is on is described in the `Cutter
 Compensation <#sec:cutter-compensation>`__ Section along with code examples.
 
-It is an error if:
+**It is an error if:**
 
 * The D number is not a valid tool number or 0.
 * The YZ plane is active.
@@ -1120,7 +1114,7 @@ It is an error if:
 G41.1, G42.1 Dynamic Cutter Compensation
 ----------------------------------------
 
-::
+.. code:: text
 
    G41.1 D- <L-> (left of programmed path)
    G42.1 D- <L-> (right of programmed path)
@@ -1131,7 +1125,7 @@ G41.1, G42.1 Dynamic Cutter Compensation
 G41.1 & G42.1 function the same as G41 & G42 with the added scope of being able to program the tool
 diameter. The L word defaults to 0 if unspecified.
 
-It is an error if:
+**It is an error if:**
 
 * The YZ plane is active.
 * The L number is not in the range from 0 to 9 inclusive.
@@ -1141,7 +1135,7 @@ It is an error if:
 G43 Tool Length Offset
 ----------------------
 
-::
+.. code:: text
 
    G43 <H->
 
@@ -1157,11 +1151,11 @@ axis is moved, that axis’s endpoint is the compensated location.
 
 G43 H- Example Line
 
-::
+.. code:: text
 
    G43 H1 (set tool offsets using the values from tool 1 in the tool table)
 
-It is an error if:
+**It is an error if:**
 
 * the H number is not an integer, or
 * the H number is negative, or
@@ -1173,7 +1167,7 @@ It is an error if:
 G43.1: Dynamic Tool Length Offset
 ---------------------------------
 
-::
+.. code:: text
 
    G43.1 axes
 
@@ -1183,7 +1177,7 @@ G43.1: Dynamic Tool Length Offset
 
 G43.1 Example
 
-::
+.. code:: text
 
    G90 (set absolute mode)
    T1 M6 G43 (load tool 1 and tool length offsets, Z is at machine 0 and DRO shows Z1.500)
@@ -1193,7 +1187,7 @@ G43.1 Example
 * See `G90 <#gcode:g90-g91>`__ & `T <#sec:select-tool>`__ &
    `M6 <#mcode:m6>`__ sections for more information.
 
-It is an error if:
+**It is an error if:**
 
 * motion is commanded on the same line as 'G43.1'
 
@@ -1202,7 +1196,7 @@ It is an error if:
 G43.2: Apply additional Tool Length Offset
 ------------------------------------------
 
-::
+.. code:: text
 
    G43.2 H-
 
@@ -1212,7 +1206,7 @@ G43.2 applies an additional simultaneous tool offset.
 
 G43.2 Example
 
-::
+.. code:: text
 
    G90 (set absolute mode)
    T1 M6 (load tool 1)
@@ -1227,7 +1221,7 @@ you should have only one of each.
 Like the other G43 commands, G43.2 does not cause any motion. The next time a compensated axis is
 moved, that axis’s endpoint is the compensated location.
 
-It is an error if:
+**It is an error if:**
 
 * 'H' is unspecified, or
 * the given tool number does not exist in the tool table
@@ -1243,7 +1237,7 @@ length offset if none is currently being used.
 G53 Move in Machine Coordinates
 -------------------------------
 
-::
+.. code:: text
 
    G53 axes
 
@@ -1256,14 +1250,14 @@ coordinate system has offsets in effect.
 
 G53 Example
 
-::
+.. code:: text
 
    G53 G0 X0 Y0 Z0 (rapid linear move to the machine origin)
    G53 X2 (rapid linear move to absolute coordinate X2)
 
 * See `G0 <#gcode:g0>`__ section for more information.
 
-It is an error if:
+**It is an error if:**
 
 * G53 is used without G0 or G1 being active,
 * or G53 is used while cutter compensation is on.
@@ -1300,7 +1294,7 @@ G59.2  8  5361 5362 5363 5364 5365 5366 5367 5368 5369 5370
 G59.3  9  5381 5382 5383 5384 5385 5386 5387 5388 5389 5390
 ====== == ==== ==== ==== ==== ==== ==== ==== ==== ==== ====
 
-It is an error if:
+**It is an error if:**
 
 * selecting a coordinate system is used while cutter compensation is on.
 
@@ -1319,7 +1313,7 @@ G61, G61.1 Exact Path Mode
 G64 Path Blending
 -----------------
 
-::
+.. code:: text
 
    G64 <P- <Q->>
 
@@ -1346,7 +1340,7 @@ G64 Path Blending
 
 G64 P- Example Line
 
-::
+.. code:: text
 
    G64 P0.015 (set path following to be within 0.015 of the actual path)
 
@@ -1355,14 +1349,12 @@ It is a good idea to include a path control specification in the preamble of eac
 G73 Drilling Cycle with Chip Breaking
 -------------------------------------
 
-::
+.. code:: text
 
    G73 X- Y- Z- R- Q- <L->
 
 * 'R' - retract position along the Z axis.
-
 * 'Q' - delta increment along the Z axis.
-
 * 'L' - repeat
 
 The 'G73' cycle is drilling or milling with chip breaking. This cycle takes a Q number which
@@ -1380,7 +1372,7 @@ represents a 'delta' increment along the Z axis.
 #. Repeat steps 2 and 3 until the Z position is reached at step 2.
 #. The Z axis does a rapid move to the R position.
 
-It is an error if:
+**It is an error if:**
 
 * the Q number is negative or zero.
 * the R number is not specified
@@ -1388,7 +1380,7 @@ It is an error if:
 G74 Left-hand Tapping Cycle, Dwell
 ----------------------------------
 
-::
+.. code:: text
 
    G74 (X- Y- Z-) or (U- V- W-) R- L- P- $-
 
@@ -1410,7 +1402,7 @@ by S. In example S100 F125 gives pitch of 1.25MM per revolution.
 G76 Threading Cycle
 -------------------
 
-::
+.. code:: text
 
    G76 P- Z- I- J- R- K- Q- H- E- L- $-
 
@@ -1421,14 +1413,11 @@ Figure 3. G76 Threading
 * 'Drive Line' - A line through the initial X position parallel to the Z.
 * 'P-' - The 'thread pitch' in distance per revolution.
 * 'Z-' - The final position of threads. At the end of the cycle the tool will be at this Z position.
-
 * 'I-' - The 'thread peak' offset from the 'drive line'. Negative 'I' values are external threads,
    and positive 'I' values are internal threads. Generally the material has been turned to this size
    before the 'G76' cycle.
-
 * 'J-' - A positive value specifying the 'initial cut depth'. The first threading cut will be 'J'
    beyond the 'thread peak' position.
-
 * 'K-' - A positive value specifying the 'full thread depth'. The final threading cut will be 'K'
    beyond the 'thread peak' position.
 
@@ -1437,26 +1426,21 @@ Optional settings
 * '$-' - The spindle number to which the motion will be synchronised (default 0). For example is $1
    is programmed then the motion will begin on the reset od spindle.1.index-enable and proceed in
    synchrony with the value of spindle.1.revs
-
 * 'R-' - The 'depth degression'. 'R1.0' selects constant depth on successive threading
    passes. 'R2.0' selects constant area. Values between 1.0 and 2.0 select decreasing depth but
    increasing area.  Values above 2.0 select decreasing area. Beware that unnecessarily high
    degression values will cause a large number of passes to be used. (degression = a descent by
    stages or steps.)
-
 * 'Q-' - The 'compound slide angle' is the angle (in degrees) describing to what extent successive
    passes should be offset along the drive line. This is used to cause one side of the tool to
    remove more material than the other. A positive 'Q' value causes the leading edge of the tool to
    cut more heavily. Typical values are 29, 29.5 or 30.
-
 * 'H-' - The number of 'spring passes'. Spring passes are additional passes at full thread depth. If
    no additional passes are desired, program 'H0'.
-
 * 'E-' - Specifies the distance along the drive line used for the taper. The angle of the taper will
    be so the last pass tapers to the thread crest over the distance specified with E.' E0.2' will
    give a taper for the first/last 0.2 length units along the thread. For a 45 degree taper program
    E the same as K
-
 * 'L-' - Specifies which ends of the thread get the taper. Program 'L0' for no taper (the default),
    'L1' for entry taper, 'L2' for exit taper, or 'L3' for both entry and exit tapers. Entry tapers
    will pause at the drive line to synchronize with the index pulse then move at the `feed rate
@@ -1480,7 +1464,7 @@ speed while threading.
 The final position of the tool will be at the end of the 'drive line'. A safe Z move will be needed
 with an internal thread to remove the tool from the hole.
 
-It is an error if:
+**It is an error if:**
 
 * The active plane is not the ZX plane
 * Other axis words, such as X- or Y-, are specified
@@ -1505,7 +1489,7 @@ executed on any machine using the 'sim/lathe.ini' configuration.
 
 G76 Example
 
-.. code:: highlight
+.. code:: text
 
    G0 Z-0.5 X0.2
    G76 P0.05 Z-1 I-.075 J0.008 K0.045 Q29.5 L2 E0.045
@@ -1579,7 +1563,7 @@ the `G98 G99 <#gcode:g98-g99>`__ Section.
 Canned Cycle Errors
 ~~~~~~~~~~~~~~~~~~~
 
-It is an error if:
+**It is an error if:**
 
 * axis words are all missing during a canned cycle,
 * axis words from different groups (XYZ) (UVW) are used together,
@@ -1625,7 +1609,7 @@ good canned cycle should be obvious.
 
 Eight Holes
 
-::
+.. code:: text
 
    N100 G90 G0 X0 Y0 Z0 (move coordinate home)
    N110 G1 F10 X0 G4 P0.1
@@ -1647,7 +1631,7 @@ This example demonstrates the use of the L word to repeat a set of incremental d
 successive blocks of code within the same G81 motion mode. Here we produce 12 holes using five lines
 of code in the canned motion mode.
 
-::
+.. code:: text
 
    N1000 G90 G0 X0 Y0 Z0 (move coordinate home)
    N1010 G1 F50 X0 G4 P0.1
@@ -1673,13 +1657,13 @@ G80 Cancel Canned Cycle
 * 'G80' - cancel canned cycle modal motion. 'G80' is part of modal group 1, so programming any other
   G code from modal group 1 will also cancel the canned cycle.
 
-It is an error if:
+**It is an error if:**
 
 * Axis words are programmed when G80 is active.
 
 G80 Example
 
-::
+.. code:: text
 
    G90 G81 X1 Y1 Z1.5 R2.8 (absolute distance canned cycle)
    G80 (turn off canned cycle motion)
@@ -1689,7 +1673,7 @@ The following code produces the same final position and machine state as the pre
 
 G0 Example
 
-::
+.. code:: text
 
    G90 G81 X1 Y1 Z1.5 R2.8 (absolute distance canned cycle)
    G0 X0 Y0 Z0 (rapid move to coordinate home)
@@ -1704,7 +1688,7 @@ drills (G81) a set of eight holes as shown in the following caption.
 
 G80 Example 1
 
-::
+.. code:: text
 
    N100 G90 G0 X0 Y0 Z0 (coordinate home)
    N110 G1 X0 G4 P0.1
@@ -1734,7 +1718,7 @@ canned cycle.
 G81 Drilling Cycle
 ------------------
 
-::
+.. code:: text
 
    G81 (X- Y- Z-) or (U- V- W-) R- L-
 
@@ -1751,7 +1735,7 @@ Example 1 - Absolute Position G81
 
 Suppose the current position is (X1, Y2, Z3) and the following line of NC code is interpreted.
 
-.. code:: highlight
+.. code:: text
 
    G90 G98 G81 X4 Y5 Z1.5 R2.8
 
@@ -1779,7 +1763,7 @@ Example 2 - Relative Position G81
 
 Suppose the current position is (X1, Y2, Z3) and the following line of NC code is interpreted.
 
-.. code:: highlight
+.. code:: text
 
    G91 G98 G81 X4 Y5 Z-0.6 R1.8 L3
 
@@ -1818,7 +1802,7 @@ Example 3 - Relative Position G81
 Now suppose that you execute the first G81 block of code but from (X0, Y0, Z0) rather than from (X1,
 Y2, Z3).
 
-::
+.. code:: text
 
    G90 G98 G81 X4 Y5 Z1.5 R2.8
 
@@ -1831,7 +1815,7 @@ Example 4 - Absolute G81 R > Z
 
 This is a plot of the path of motion for the second g81 block of code.
 
-::
+.. code:: text
 
    G91 G98 G81 X4 Y5 Z-0.6 R1.8 L3
 
@@ -1843,7 +1827,7 @@ example 3 with the final Z depth being 0.6 below the R value.
 
 Example 5 - Relative position R > Z
 
-::
+.. code:: text
 
    G90 G98 G81 X4 Y5 Z-0.6 R1.8
 
@@ -1855,7 +1839,7 @@ the Z move in the same location again.
 G82 Drilling Cycle, Dwell
 -------------------------
 
-::
+.. code:: text
 
    G82 (X- Y- Z-) or (U- V- W-) R- L- P-
 
@@ -1863,8 +1847,7 @@ The 'G82' cycle is intended for drilling with a dwell at the bottom of the hole.
 
 #. Preliminary motion, as described in the `Preliminary and In-Between Motion
    <#gcode:preliminary-motion>`__ section.
-#. Move the Z-axis at the current `feed rate <#sec:set-feed-rate>`__ to
-   the Z position.
+#. Move the Z-axis at the current `feed rate <#sec:set-feed-rate>`__ to the Z position.
 #. Dwell for the P number of seconds.
 #. The Z-axis does a `rapid move <#gcode:g0>`__ to clear Z.
 
@@ -1874,7 +1857,7 @@ the Z move. The length of the dwell is specified by a 'P-' word in the G82 block
 G83 Peck Drilling Cycle
 -----------------------
 
-::
+.. code:: text
 
    G83 (X- Y- Z-) or (U- V- W-) R- L- Q-
 
@@ -1894,14 +1877,14 @@ as G81 with the addition of retracts during the drilling operation.
 #. Repeat steps 2, 3, and 4 until the Z position is reached at step 2.
 #. The Z-axis does a `rapid move <#gcode:g0>`__ to clear Z.
 
-It is an error if:
+**It is an error if:**
 
 * the Q number is negative or zero.
 
 G84 Right-hand Tapping Cycle, Dwell
 -----------------------------------
 
-::
+.. code:: text
 
    G84 (X- Y- Z-) or (U- V- W-) R- L- P- $-
 
@@ -1923,7 +1906,7 @@ by S. In example S100 F125 gives pitch of 1.25MM per revolution.
 G85 Boring Cycle, Feed Out
 --------------------------
 
-::
+.. code:: text
 
    G85 (X- Y- Z-) or (U- V- W-) R- L-
 
@@ -1931,7 +1914,6 @@ The 'G85' cycle is intended for boring or reaming, but could be used for drillin
 
 #. Preliminary motion, as described in the `Preliminary and In-Between
    Motion <#gcode:preliminary-motion>`__ section.
-
 #. Move the Z-axis only at the current `feed rate <#sec:set-feed-rate>`__ to the Z position.
 #. Retract the Z-axis at the current feed rate to the R plane if it is lower than the initial Z.
 #. Retract at the traverse rate to clear Z.
@@ -1939,7 +1921,7 @@ The 'G85' cycle is intended for boring or reaming, but could be used for drillin
 G86 Boring Cycle, Spindle Stop, Rapid Move Out
 ----------------------------------------------
 
-::
+.. code:: text
 
    G86 (X- Y- Z-) or (U- V- W-) R- L- P- $-
 
@@ -1954,7 +1936,7 @@ dwell.
 #. The Z-axis does a `rapid move <#gcode:g0>`__ to clear Z.
 #. Restart the spindle in the direction it was going.
 
-It is an error if:
+**It is an error if:**
 
 * the spindle is not turning before this cycle is executed.
 
@@ -1971,7 +1953,7 @@ This code is currently unimplemented in LinuxCNC. It is accepted, but the behavi
 G89 Boring Cycle, Dwell, Feed Out
 ---------------------------------
 
-::
+.. code:: text
 
    G89 (X- Y- Z-) or (U- V- W-) R- L- P-
 
@@ -1990,20 +1972,19 @@ G90, G91 Distance Mode
 * 'G90' - absolute distance mode In absolute distance mode, axis numbers (X, Y, Z, A, B, C, U, V, W)
    usually represent positions in terms of the currently active coordinate system. Any exceptions to
    that rule are described explicitly in the `G80 G89 <#gcode:g80-g89>`__ Section.
-
 * 'G91' - incremental distance mode In incremental distance mode, axis numbers usually represent
    increments from the current coordinate.
 
 G90 Example
 
-::
+.. code:: text
 
    G90 (set absolute distance mode)
    G0 X2.5 (rapid move to coordinate X2.5 including any offsets in effect)
 
 G91 Example
 
-::
+.. code:: text
 
    G91 (set incremental distance mode)
    G0 X2.5 (rapid move 2.5 from current position along the X axis)
@@ -2017,14 +1998,13 @@ G90.1, G91.1 Arc Distance Mode
 
 * 'G90.1' - absolute distance mode for I, J & K offsets. When G90.1 is in effect I and J both must
    be specified with G2/3 for the XY plane or J and K for the XZ plane or it is an error.
-
 * 'G91.1' - incremental distance mode for I, J & K offsets. G91.1 Returns I, J & K to their default
    behavior.
 
 G92 Coordinate System Offset
 ----------------------------
 
-::
+.. code:: text
 
    G92 axes
 
@@ -2051,7 +2031,7 @@ Being in incremental distance mode (G91 instead of G90) has no effect on the act
 'G92' offsets may be already be in effect when the 'G92' is called. If this is the case, the offset
 is replaced with a new offset that makes the current point become the specified value.
 
-It is an error if:
+**It is an error if:**
 
 * all axis words are omitted.
 
@@ -2109,16 +2089,16 @@ G93, G94, G95: Feed Rate Mode
    suitable for threading, for threading use G33 or G76. G95 requires that spindle.N.speed-in to be
    connected. The actual spindle to which the feed is synchronised is chosen by the $ parameter
 
-It is an error if:
+**It is an error if:**
 
 * Inverse time feed mode is active and a line with G1, G2, or G3 (explicitly or implicitly) does not
-   have an F word.
+  have an F word.
 * A new feed rate is not specified after switching to G94 or G95
 
 G96, G97 Spindle Control Mode
 -----------------------------
 
-::
+.. code:: text
 
    G96 <D-> S- <$-> (Constant Surface Speed Mode)
    G97 S- <$-> (RPM Mode)
@@ -2140,11 +2120,11 @@ issuing M3.
 
 G96 Example Line
 
-::
+.. code:: text
 
    G96 D2500 S250 (set CSS with a max rpm of 2500 and a surface speed of 250)
 
-It is an error if:
+**It is an error if:**
 
 * S is not specified with G96
 * A feed move is specified in G96 mode while the spindle is not turning
@@ -2163,7 +2143,7 @@ mode.
 
 G98 Retract to Origin
 
-::
+.. code:: text
 
    G0 X1 Y2 Z3
    G90 G98 G81 X4 Y5 Z-0.6 R1.8 F10

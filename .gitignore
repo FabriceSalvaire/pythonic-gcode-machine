@@ -18,6 +18,11 @@ doc/sphinx/source/gcode-reference/rs-274/letters.rst
 doc/sphinx/source/gcode-reference/rs-274/modal_groups.rst
 doc/sphinx/source/gcode-reference/rs-274/parameters.rst
 
+doc/sphinx/source/gcode-reference/linuxcnc/images/*_fr.png
+doc/sphinx/source/gcode-reference/linuxcnc/images/*_fr.svg
+doc/sphinx/source/gcode-reference/linuxcnc/tmp/
+pandoc
+
 PythonicGcodeMachine/PythonLexYacc/yacc.py
 ressources
 
