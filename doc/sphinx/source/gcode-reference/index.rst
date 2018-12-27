@@ -8,4 +8,4 @@
 
 .. toctree::
   rs-274/index.rst
-
+  linuxcnc/index.rst

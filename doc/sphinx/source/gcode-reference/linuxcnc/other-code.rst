@@ -1,0 +1,49 @@
+Other Codes
+===========
+
+F: Set Feed Rate
+----------------
+
+'Fx' - set the feed rate to 'x'. 'x' is usually in machine units (inches or millimeters) per minute.
+
+The application of the feed rate is as described in the `Feed Rate <#sub:feed-rate>`__ Section,
+unless 'inverse time feed rate mode' or 'feed per revolution mode' are in effect, in which case the
+feed rate is as described in the `G93 G94 G95 <#gcode:g93-g94-g95>`__ Section.
+
+S: Set Spindle Speed
+--------------------
+
+'Sx' - set the speed of the spindle to 'x' revolutions per minute (RPM).
+
+The spindle will turn at that speed when a 'M3' or 'M4' is in effect. It is OK to program an S word
+whether the spindle is turning or not. If the speed override switch is enabled and not set at 100%,
+the speed will be different from what is programmed. It is OK to program S0, the spindle will not
+turn if that is done.
+
+It is an error if:
+
+*  the S number is negative.
+
+T: Select Tool
+--------------
+
+'Tx' - prepare to change to tool 'x'.
+
+The tool is not changed until an 'M6' is programmed (see Section `M6 <#mcode:m6>`__). The T word may
+appear on the same line as the 'M6' or on a previous line. It is OK if T words appear on two or more
+lines with no tool change. Only the the most recent T word will take effect at the next tool change.
+
+It is an error if:
+
+*  a negative T number is used,
+* T number is used that does not appear in the tool table file (with the exception that T0 on
+  nonrandom toolchangers **is** accepted, as noted above).
+
+On some machines, the carousel will move when a T word is programmed, at the same time machining is
+occurring. On such machines, programming the T word several lines before a tool change will save
+time. A common programming practice for such machines is to put the T word for the next tool to be
+used on the line after a tool change. This maximizes the time available for the carousel to move.
+
+Rapid moves after a 'T<n>' will not show on the AXIS preview until after a feed move. This is for
+machines that travel long distances to change the tool like a lathe. This can be very confusing at
+first. To turn this feature off for the current tool program a G1 without any move after the 'T<n>'.
